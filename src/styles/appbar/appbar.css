@@ -1,14 +1,17 @@
    
   .app-bar {
     padding: 8px 16px;
-    background-color: white;
+    background-color: transparent;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 10px;
-    position: sticky;
+    position: fixed; 
     top: 0;
-    z-index: 99;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    left: 0;
+    color: white;
+    right: 0;
+    color: white;
+    z-index: 98;
   }
    
   .app-bar .app-bar__menu {
@@ -30,10 +33,11 @@
   }
    
   .app-bar .app-bar__brand a {
-    color: #db0000;
+    color: white;
     text-transform: uppercase;
     font-size: 22px;
     user-select: none;
+    text-decoration: none;
   }
    
   .app-bar .app-bar__navigation {
@@ -43,7 +47,8 @@
     width: 150px;
     transition: all 0.3s;
     padding: 8px;
-    background-color: white;
+    color: white;
+    background-color: transparent; 
     overflow: hidden;
   }
    
@@ -52,10 +57,13 @@
   }
    
   .app-bar .app-bar__navigation ul li a {
-    display: inline-block;
+    display: grid;
     text-decoration: none;
-    color: black;
+    background-color: transparent;
     padding: 8px;
+    font-size: medium;
+    color: white;
     margin-bottom: 5px;
     width: 100%;
+    z-index: 98;
   }

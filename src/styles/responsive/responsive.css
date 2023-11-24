@@ -6,6 +6,7 @@
    
     .app-bar .app-bar__brand a {
       font-size: 1.5em;
+      text-decoration: none;
     }
    
     .app-bar .app-bar__menu {
@@ -32,5 +33,6 @@
   @media screen and (min-width: 800px) {
     .app-bar .app-bar__brand h1 {
       font-size: 2em;
+      text-decoration: none;
     }
   }

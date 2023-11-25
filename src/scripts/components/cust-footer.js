@@ -15,7 +15,7 @@ class AppFooter extends HTMLElement {
                     margin: 0 auto;
                     font-size: 0.8em;
                 }
-
+                
                 .footer {
                     display: flex;
                     flex-direction: row;
@@ -64,14 +64,6 @@ class AppFooter extends HTMLElement {
                     font-size: 24px;
                 }
 
-                .fauna-types {
-                    font-weight: bold;
-                }
-
-                .fauna-types ul {
-                    padding-left: 20px;
-                }
-
                 .fauna-game {
                     text-align: left;
                     margin-top: 20px;
@@ -80,12 +72,12 @@ class AppFooter extends HTMLElement {
                 .fauna-game button {
                     background-color: #29ADB2;
                     color: white;
-                    padding: 10px 20px;
+                    padding: 10px 50px; 
                     border: none;
-                    border-radius: 5px;
+                    border-radius: 10px;
                     cursor: pointer;
                 }
-
+                
                 .copyright {
                     width: 100%; 
                     text-align: center;
@@ -102,13 +94,16 @@ class AppFooter extends HTMLElement {
                         <li>
                             <div class="social-media-icons">
                                 <a href="#">
+                                <i class="fab fa-youtobe"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#">
                                     <i class="fab fa-facebook"></i>
                                 </a>
                                 <a href="#">
                                     <i class="fab fa-twitter"></i>
-                                </a>
-                                <a href="#">
-                                    <i class="fab fa-instagram"></i>
                                 </a>
                             </div>
                         </li>
@@ -118,13 +113,11 @@ class AppFooter extends HTMLElement {
                 <div class="footer-section">
                     <h2>Jenis Fauna</h2>
                     <div class="fauna-types">
-                        <ul>
-                            <li>Mamalia</li>
-                            <li>Reptil</li>
-                            <li>Burung</li>
-                            <li>Amfibi</li>
-                            <li>Ikan</li>
-                        </ul>
+                        <p>Mamalia</p>
+                        <p>Reptil</p>
+                        <p>Burung</p>
+                        <p>Amfibi</p>
+                        <p>Ikan</p>
                     </div>
                 </div>
 

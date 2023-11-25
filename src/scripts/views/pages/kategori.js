@@ -18,7 +18,7 @@ const KategoriPage = {
   <div class="container w-100 mt-5">
       <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #112546;">
-          <img src="/images/icon/search.png" alt="mdo" width="32" height="32" class="rounded-circle"> Semua Kategori
+          <img src="/images/icon/search.png" alt="Search" width="32" height="32" class="rounded-circle"> Semua Kategori
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <li class="dropdown-submenu">

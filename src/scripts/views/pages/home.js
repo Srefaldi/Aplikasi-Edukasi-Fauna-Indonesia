@@ -14,6 +14,44 @@ const HomePage = {
           </div>
         </div>
       </div>
+      <div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-6 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="/images/home/pulau/jawa.jpg" class="bd-placeholder-img card-img-top" alt="Pulau Jawa" width="100%" height="225">
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/100" class="bd-placeholder-img card-img-top" alt="Linux" width="100%" height="225">
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/100" class="bd-placeholder-img card-img-top" alt="Linux" width="100%" height="225">
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/100" class="bd-placeholder-img card-img-top" alt="Linux" width="100%" height="225">
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/100" class="bd-placeholder-img card-img-top" alt="Linux" width="100%" height="225">
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/100" class="bd-placeholder-img card-img-top" alt="Linux" width="100%" height="225">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
     `;
   },
 

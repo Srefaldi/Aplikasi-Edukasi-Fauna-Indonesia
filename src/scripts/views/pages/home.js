@@ -18,7 +18,6 @@ const HomePage = {
   },
 
   async afterRender() {
-    // Fungsi ini akan dipanggil setelah render()
   },
 };
 

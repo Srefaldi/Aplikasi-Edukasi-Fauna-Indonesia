@@ -24,6 +24,7 @@
     border: none;
     font-size: 18px;
     padding: 8px;
+    color: white;
     cursor: pointer;
   }
    
@@ -61,9 +62,11 @@
     text-decoration: none;
     background-color: transparent;
     padding: 8px;
+    list-style-type: none;
     font-size: medium;
     color: white;
     margin-bottom: 5px;
     width: 100%;
     z-index: 98;
   }
+  

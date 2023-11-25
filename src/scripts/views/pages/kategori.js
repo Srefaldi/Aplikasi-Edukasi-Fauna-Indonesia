@@ -1,6 +1,6 @@
 const KategoriPage = {
   imagePaths: [
-    '/images/home/komodo.png'
+    '/images/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg'
   ],
   async render() {
     return `

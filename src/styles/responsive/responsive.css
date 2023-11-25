@@ -36,3 +36,8 @@
       text-decoration: none;
     }
   }
+  @media (max-width: 767px) {
+    .flex-md-row {
+      height: auto; /* Atur tinggi menjadi otomatis */
+    }
+  }

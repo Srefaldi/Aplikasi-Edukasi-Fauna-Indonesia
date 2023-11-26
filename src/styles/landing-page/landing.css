@@ -1,4 +1,4 @@
-  .container {
+  .containerr {
     min-height: 100vh;
     display: flex;
     margin-top: 60px;
@@ -6,7 +6,7 @@
     width: 100%;
   }
   
-  .container__left {
+  .container__leftt {
     flex: 1;
     background-image: url("/src/public/images/landing/bg.jpg");
     background-position: center center;
@@ -14,30 +14,30 @@
     background-repeat: no-repeat;
   }
   
-  .left__content {
+  .left__contentt {
     margin: 5rem 3rem 0 auto;
     padding: 1rem;
     max-width: 400px;
     text-align: right;
   }
   
-  .left__content h6 {
+  .left__contentt h6 {
     margin-bottom: 1rem;
     font-weight: 600;
     color: #112546;
   }
   
-  .left__content p {
+  .left__contentt p {
     color: white;
   }
   
-  .container__right {
+  .container__rightt {
     flex: 1.5;
     position: relative;
   }
   
   
-  .right__content {
+  .right__contentt {
     text-align: right;
     max-width: 600px;
     margin-left: 8rem;
@@ -45,26 +45,26 @@
     padding: 2rem;
   }
   
-  .right__content h1 {
+  .right__contentt h1 {
     font-size: 3rem;
     font-weight: 600;
     line-height: 3.5rem;
-    color: #29ADB2;
+    color: white;
   }
   
-  .right__content h4 {
+  .right__contentt h4 {
     margin-bottom: 2rem;
     font-size: 1.5rem;
     font-weight: 500;
-    color: var(--white);
+    color: white;
   }
   
-  .right__content p {
+  .right__contentt p {
     margin-bottom: 3rem;
-    color: var(--white);
+    color: white;
   }
   
-  .btn {
+  .btnn {
     margin-bottom: 3rem;
     min-width: 120px;
     padding: 0.75rem 1rem;
@@ -74,13 +74,13 @@
     cursor: pointer;
   }
   
-  .primary__btn {
+  .primary__btnn {
     margin-right: 1rem;
     color: white;
     background-color: #29ADB2;
   }
   
-  .secondary__btn {
+  .secondary__btnn {
     color: white;
   }
   
@@ -89,40 +89,40 @@
       justify-content: center;
     }
   
-    .nav__links {
+    .nav__linkss {
       gap: 1rem;
     }
   
-    .container {
+    .containerr {
       flex-direction: column;
     }
   
-    .container__left {
+    .container__leftt {
       min-height: 700px;
     }
   
-    .left__content {
+    .left__contentt {
       max-width: none;
       margin: 6rem 0;
       text-align: center;
     }
   
-    .container__right {
+    .container__rightt {
       min-height: 700px;
     }
   
-    .container__right img {
+    .container__rightt img {
       left: 50%;
       top: 0;
       transform: translate(-50%, -100%);
     }
   
-    .right__content {
+    .right__contentt {
       text-align: center;
       margin: 8rem auto;
     }
   
-    .socials {
+    .socialss {
       justify-content: center;
     }
   }

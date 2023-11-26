@@ -33,14 +33,14 @@ const LandingPage = {
     </div>
   </div>
 
-  <h1 class="heading"> <span>about</span> us </h1>
-    <div class="row">
+  <h1 class="headings"> <span>about</span> us </h1>
+    <div class="row-landing">
       <div class="img-container">
         <img src="../images/landing/bg.jpg">
         <h4>Best Education Website</h4>
       </div>
       <div class="about-content">
-        <h4>Why Choose Us</h4>
+        <h3>Why Choose Us</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
         Amet vitae sapiente exercitationem tenetur. 
         Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. 

@@ -33,7 +33,7 @@ const LandingPage = {
     </div>
   </div>
 
-  <h1 class="headings"> <span>about</span> us </h1>
+    <h1 class="headings"> <span>about</span> us </h1>
     <div class="row-landing">
       <div class="img-container">
         <img src="../images/landing/bg.jpg">
@@ -50,6 +50,44 @@ const LandingPage = {
         <a href="#" class="btn-learn">Learn More</a>
       </div>
     </div>
+
+    <div class="icons-container">
+      <div class="icons-item">
+        <img src="../images/landing/quizz.png" alt="">
+        <div class="icons-info">
+          <h3>Materi</h3>
+          <span>edukasi indonesia</span>
+        </div>
+      </div>
+      <div class="icons-item">
+        <img src="../images/landing/quizz.png" alt="">
+        <div class="icons-info">
+          <h3>Pemantauan</h3>
+          <span>edukasi indonesia</span>
+        </div>
+      </div>
+      <div class="icons-item">
+        <img src="../images/landing/quizz.png" alt="">
+        <div class="icons-info">
+          <h3>Game</h3>
+          <span>edukasi indonesia</span>
+        </div>
+      </div>
+      <div class="icons-item">
+        <img src="../images/landing/quizz.png" alt="">
+        <div class="icons-info">
+          <h3>Quiz</h3>
+          <span>edukasi indonesia</span>
+        </div>
+      </div>
+    </div>
+
+    
+
+
+
+
+
   
           `;
   },

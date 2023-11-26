@@ -1,0 +1,128 @@
+  .container {
+    min-height: 100vh;
+    display: flex;
+    margin-top: 60px;
+    background-color: #112546;
+    width: 100%;
+  }
+  
+  .container__left {
+    flex: 1;
+    background-image: url("/src/public/images/landing/bg.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .left__content {
+    margin: 5rem 3rem 0 auto;
+    padding: 1rem;
+    max-width: 400px;
+    text-align: right;
+  }
+  
+  .left__content h6 {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #112546;
+  }
+  
+  .left__content p {
+    color: white;
+  }
+  
+  .container__right {
+    flex: 1.5;
+    position: relative;
+  }
+  
+  
+  .right__content {
+    text-align: right;
+    max-width: 600px;
+    margin-left: 8rem;
+    margin-top: 8rem;
+    padding: 2rem;
+  }
+  
+  .right__content h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+    color: #29ADB2;
+  }
+  
+  .right__content h4 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+  
+  .right__content p {
+    margin-bottom: 3rem;
+    color: var(--white);
+  }
+  
+  .btn {
+    margin-bottom: 3rem;
+    min-width: 120px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    border: 1px solid white;
+    cursor: pointer;
+  }
+  
+  .primary__btn {
+    margin-right: 1rem;
+    color: white;
+    background-color: #29ADB2;
+  }
+  
+  .secondary__btn {
+    color: white;
+  }
+  
+  @media (width < 780px) {
+    nav {
+      justify-content: center;
+    }
+  
+    .nav__links {
+      gap: 1rem;
+    }
+  
+    .container {
+      flex-direction: column;
+    }
+  
+    .container__left {
+      min-height: 700px;
+    }
+  
+    .left__content {
+      max-width: none;
+      margin: 6rem 0;
+      text-align: center;
+    }
+  
+    .container__right {
+      min-height: 700px;
+    }
+  
+    .container__right img {
+      left: 50%;
+      top: 0;
+      transform: translate(-50%, -100%);
+    }
+  
+    .right__content {
+      text-align: center;
+      margin: 8rem auto;
+    }
+  
+    .socials {
+      justify-content: center;
+    }
+  }

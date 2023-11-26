@@ -32,6 +32,24 @@ const LandingPage = {
       </div> 
     </div>
   </div>
+
+  <h1 class="heading"> <span>about</span> us </h1>
+    <div class="row">
+      <div class="img-container">
+        <img src="../images/landing/bg.jpg">
+        <h4>Best Education Website</h4>
+      </div>
+      <div class="about-content">
+        <h4>Why Choose Us</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Amet vitae sapiente exercitationem tenetur. 
+        Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. 
+        Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, 
+        veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. 
+        Reprehenderit deserunt nesciunt vero provident.</p>
+        <a href="#" class="btn-learn">Learn More</a>
+      </div>
+    </div>
   
           `;
   },

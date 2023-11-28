@@ -1,7 +1,7 @@
    
   .app-bar {
     padding: 8px 16px;
-    /* background-color: white; */
+    background-color: white;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 10px;

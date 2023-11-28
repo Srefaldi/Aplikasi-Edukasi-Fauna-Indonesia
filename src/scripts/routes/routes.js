@@ -3,6 +3,7 @@ import KuisPage from '../views/pages/kuis';
 import HomePage from '../views/pages/home';
 import LandingPage from '../views/pages/landing-page';
 import LoginPage from '../views/pages/login';
+import RegisterPage from '../views/pages/register';
 
 const routes = {
   '/': LandingPage,
@@ -10,6 +11,7 @@ const routes = {
   '/kategori': KategoriPage,
   '/quiz': KuisPage,
   '/login' : LoginPage,
+  '/register' : RegisterPage,
 };
 
 export default routes;

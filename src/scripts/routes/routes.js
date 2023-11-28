@@ -4,6 +4,7 @@ import HomePage from '../views/pages/home';
 import LandingPage from '../views/pages/landing-page';
 import LoginPage from '../views/pages/login';
 import RegisterPage from '../views/pages/register';
+import DetailPage from '../views/pages/detail'; 
 
 const routes = {
   '/': LandingPage,
@@ -12,6 +13,7 @@ const routes = {
   '/quiz': KuisPage,
   '/login' : LoginPage,
   '/register' : RegisterPage,
+  '/detail': DetailPage, 
 };
 
 export default routes;

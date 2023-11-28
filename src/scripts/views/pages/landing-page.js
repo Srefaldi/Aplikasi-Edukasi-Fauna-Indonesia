@@ -154,29 +154,36 @@ const LandingPage = {
           <a href=""><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
-      </div>
-    
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      </div> 
     </div>
+
+    <h3 class="contact-headings"> contact </h3>
+    <div class="row">
+          <div class="col-lg-4 col-md-4">
+            <div class="info-box mb-4">
+              <i class="bx bx-map"></i>
+              <h3>Our Address</h3>
+              <p>Banjarmasin, Kalimantan Selatan, Indonesia</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4">
+            <div class="info-box  mb-4">
+              <i class="bx bx-envelope"></i>
+              <h3>Email Us</h3>
+              <p>edukasifauna@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-4">
+            <div class="info-box  mb-4">
+              <i class="bx bx-phone-call"></i>
+              <h3>Call Us</h3>
+              <p>+62 895340751951</p>
+            </div>
+          </div>
+
+        </div>
 
 
     

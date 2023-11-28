@@ -202,12 +202,12 @@
 
 /* icon section */
 .icons-container {
-  background: #eee;
+  background: rgba(17, 37, 70, 0.05);
   display: grid;
   grid-template-columns: auto auto auto auto;
   gap: 1.5rem;
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .icons-container .icons-item {
@@ -232,4 +232,63 @@
   color: #29ADB2;
   padding-bottom: .5rem;
   font-size: 1.2rem;
+}
+
+/* team section */
+
+.team-headings {
+  text-align: center;
+  font-size: 4rem;
+  color: #333;
+  padding: 1rem;
+  margin: 2rem 0;
+  background: rgba(17, 37, 70, 0.05);
+}
+
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  text-align: center;
+  padding: 2rem 16px; /* 16px padding pada sisi kiri dan kanan */
+  padding-bottom: 3rem
+}
+
+.member {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.member .pic {
+  overflow: hidden;
+}
+
+.member-info {
+  position: absolute;
+  top: 85%;
+  left: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 20px 0;
+  color: #2f4d5a;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  max-height: 95px;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.member h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #2f4d5a;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.member span {
+  font-style: italic;
+  display: block;
+  font-size: 13px;
 }

@@ -33,6 +33,7 @@ const LandingPage = {
     </div>
   </div>
 
+
     <h1 class="headings"> <span>about</span> us </h1>
     <div class="row-landing">
       <div class="img-container">
@@ -50,6 +51,7 @@ const LandingPage = {
         <a href="#" class="btn-learn">Learn More</a>
       </div>
     </div>
+
 
     <div class="icons-container">
       <div class="icons-item">
@@ -81,6 +83,103 @@ const LandingPage = {
         </div>
       </div>
     </div>
+
+    <h3 class="team-headings"> <span>our</span> team </h3>
+    <div class="team-container">
+      <div class="member" data-aos="fade-up">
+      <div class="pic"><img src="../images/landing/nanda.jpeg" class="img-fluid" alt=""></div>
+      <div class="member-info">
+        <h4>Khoyrur Roykhan</h4>
+        <span>Chief Executive Officer</span>
+        <div class="social">
+          <a href=""><i class="bi bi-twitter"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="member" data-aos="fade-up">
+      <div class="pic"><img src="../images/landing/nanda.jpeg" class="img-fluid" alt=""></div>
+      <div class="member-info">
+        <h4>Sopia Refaldi</h4>
+        <span>Chief Executive Officer</span>
+        <div class="social">
+          <a href=""><i class="bi bi-twitter"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="member" data-aos="fade-up">
+      <div class="pic"><img src="../images/landing/nanda.jpeg" class="img-fluid" alt=""></div>
+      <div class="member-info">
+        <h4>Marzaq Syihab</h4>
+        <span>Chief Executive Officer</span>
+        <div class="social">
+          <a href=""><i class="bi bi-twitter"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="member" data-aos="fade-up">
+      <div class="pic"><img src="../images/landing/nanda.jpeg" class="img-fluid" alt=""></div>
+      <div class="member-info">
+        <h4>Alda Amorita Azza</h4>
+        <span>Chief Executive Officer</span>
+        <div class="social">
+          <a href=""><i class="bi bi-twitter"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="member" data-aos="fade-up">
+      <div class="pic"><img src="../images/landing/nanda.jpeg" class="img-fluid" alt=""></div>
+      <div class="member-info">
+        <h4>Difana Nanda PZ</h4>
+        <span>Chief Executive Officer</span>
+        <div class="social">
+          <a href=""><i class="bi bi-twitter"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      </div>
+    
+     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    
 
     
 

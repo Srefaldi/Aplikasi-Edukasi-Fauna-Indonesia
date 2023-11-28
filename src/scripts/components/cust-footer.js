@@ -84,6 +84,9 @@ class AppFooter extends HTMLElement {
                     border-top: 1px solid #fff;
                     padding-top: 10px;
                 }
+                a {
+                    color: white;
+                }
             </style>
             <div class="footer">
                 <div class="footer-section">
@@ -91,6 +94,7 @@ class AppFooter extends HTMLElement {
                     <ul>
                         <li>Hubungi Kami</li>
                         <p>edukasifauna@gmail.com</p>
+                        <a href="#/login">Masuk Sebagai Admin</a>
                         <li>
                             <div class="social-media-icons">
                                 <a href="#">

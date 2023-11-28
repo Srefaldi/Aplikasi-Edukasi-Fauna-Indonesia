@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "jquery": "^3.7.1",
+    "mysql": "^2.18.1",
     "regenerator-runtime": "^0.14.0"
   }
 }

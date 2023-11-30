@@ -1,15 +1,15 @@
 import express from "express";
-import dotenv from "dotenv";
-import cookieParser from "cookie-parser";
-import cors from "cors";
-import db from "./config/Database.js";
-import router from "./routes/index.js";
-dotenv.config();
+import Database from "./config/Database.js";
+import UserModel from "./models/UserModel.js";
 const app = express();
- 
-app.use(cors({ credentials:true, origin:'http://localhost:3000' }));
-app.use(cookieParser());
-app.use(express.json());
-app.use(router);
- 
+
+try {
+    await Database.authenticate();
+    console.log('Database Connected...');
+    await UserModel.sync()
+} catch (error) {;
+    console.error(error);
+    
+}
+
 app.listen(5000, ()=> console.log('Server running at port 5000'));

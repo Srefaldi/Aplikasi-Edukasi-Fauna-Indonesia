@@ -18,26 +18,32 @@ const DetailPage = {
       },
       
 
-  async render() {
-    const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const faunaId = url.id;
-    
-    const faunaData = await this.fetchFaunaData(); // Fetch fauna data
-
-    const faunaDetail = faunaData.find(item => item.nama === faunaId);
-
-    if (!faunaDetail) {
-      return '<p>Detail not found</p>';
-    }
-
-    const faunaDetailTemplate = createFaunaDetailTemplate(faunaDetail);
-
-    return `
-      <div class="container">
-        ${faunaDetailTemplate}
-      </div>
-    `;
-  },
+      async render() {
+        const url = UrlParser.parseActiveUrlWithoutCombiner();
+        console.log('URL:', url); // Tambahkan log untuk memeriksa nilai URL
+        const faunaId = url.id;
+        console.log('faunaId:', faunaId); // Tambahkan log untuk memeriksa nilai faunaId
+        
+        const faunaData = await this.fetchFaunaData(); // Fetch fauna data
+      
+        // Perubahan pada bagian ini:
+        const faunaDetail = faunaData.find(item => item.nama.toLowerCase() === faunaId.toLowerCase());
+      
+        if (!faunaDetail) {
+          return '<p>Detail not found</p>';
+        }
+      
+        const faunaDetailTemplate = createFaunaDetailTemplate(faunaDetail);
+      
+        return `
+          <div class="container">
+            ${faunaDetailTemplate}
+          </div>
+        `;
+      },
+      
+      
+      
 
   async afterRender() {
     // Any additional logic after rendering

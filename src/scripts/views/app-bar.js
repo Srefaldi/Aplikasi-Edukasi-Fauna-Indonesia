@@ -24,8 +24,21 @@ class App {
   async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-    this._content.innerHTML = await page.render();
-    await page.afterRender();
+  
+    if (page) {
+      try {
+        this._content.innerHTML = await page.render();
+        if (typeof page.afterRender === 'function') {
+          await page.afterRender();
+        }
+      } catch (error) {
+        console.error('Error rendering page:', error);
+        
+      }
+    } else {
+      console.error('Page not found for URL:', url);
+      
+    }
   }
 }
 

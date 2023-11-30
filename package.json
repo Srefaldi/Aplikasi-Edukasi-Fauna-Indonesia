@@ -29,8 +29,11 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
     "jquery": "^3.7.1",
     "mysql": "^2.18.1",
-    "regenerator-runtime": "^0.14.0"
+    "regenerator-runtime": "^0.14.0",
+    "url": "^0.11.3"
   }
 }

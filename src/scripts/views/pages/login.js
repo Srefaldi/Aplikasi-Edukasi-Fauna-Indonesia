@@ -48,7 +48,39 @@ const LoginPage = {
     },
   
     afterRender() {
-      // Tambahkan logika atau fungsi-fungsi tambahan setelah elemen-elemen dirender
+      const loginForm = document.querySelector('form');
+  
+      // Tambahkan event listener untuk menangani submit form
+      loginForm.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Hindari pengiriman formulir secara default
+  
+        // Ambil nilai input email dan password
+        const email = document.getElementById('floatingInputGroup1').value;
+        const password = document.getElementById('floatingPassword').value;
+  
+        // Kirim data login menggunakan fetch atau metode lainnya
+        try {
+          const response = await fetch('/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+  
+          // Periksa status respons
+          if (response.ok) {
+            // Redirect ke halaman home-admin jika login berhasil
+            window.location.href = '#/home-admin';
+          } else {
+            // Handle non-2xx response (e.g., display an error message)
+            const errorMessage = await response.text();
+            console.error(`Error during login: ${response.status} - ${errorMessage}`);
+          }
+        } catch (error) {
+          console.error('Error during login:', error);
+        }
+      });
     },
   };
   

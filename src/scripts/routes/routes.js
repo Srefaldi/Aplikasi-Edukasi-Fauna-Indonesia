@@ -5,6 +5,7 @@ import LandingPage from '../views/pages/landing-page';
 import LoginPage from '../views/pages/login';
 import RegisterPage from '../views/pages/register';
 import HomeAdmin from '../views/pages/home-admin';
+import DetailPage from '../views/pages/detail';
 
 const routes = {
   '/': LandingPage,
@@ -14,6 +15,7 @@ const routes = {
   '/login': LoginPage,
   '/register': RegisterPage,
   '/home-admin': HomeAdmin,
+  '/detail/:id' : DetailPage
 };
 
 

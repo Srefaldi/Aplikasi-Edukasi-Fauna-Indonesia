@@ -6,13 +6,13 @@ const LandingPage = {
     return `
     
     <!-- Hero Section -->
-    <div class="container-fluid px-0 overflow-hidden"> 
-      <div class="row mx-0"> 
-        <div class="col-lg-12 px-0"> 
-          <img id="homeImage" class="img-fluid w-100" src="${this.imagePaths[0]}" alt="Foto Home">
-        </div>
+  <div class="container-fluid px-0"> 
+    <div class="row mx-0"> 
+      <div class="col-lg-12 px-0"> 
+        <img id="homeImage" class="img-fluid w-100" src="${this.imagePaths[0]}" alt="Foto Home">
       </div>
     </div>
+  </div> 
   <div class="containerr mb-5">
     <div class="container__leftt">
       <div class="left__contentt">
@@ -55,7 +55,7 @@ const LandingPage = {
 
 
     <h1 class="headings"> <span>our</span> service </h1>
-    <div class="icons-container">
+  <div class="icons-container">
       <div class="icons-item">
         <img src="../images/landing/quizz.png" alt="">
         <div class="icons-info">
@@ -211,17 +211,17 @@ const LandingPage = {
             <input type="radio" id="star5" name="rating" value="5" required>
             <label for="star5" class="fas fa-star"></label>
           </div>
-        <h5>Your Review</h5>
-        <textarea name="message" rows="4" required></textarea>
-        <button type="submit">Submit Review</button>
-      </form>
+          <h5>Your Review</h5>
+          <textarea name="message" rows="4" required></textarea>
+          <button type="submit">Submit Review</button>
+        </form>
+      </div>
     </div>
-  </div>
 
   <h3 class="team-headings"> <span>our</span> team </h3>
-    <div class="team-container">
-      <div class="member" data-aos="fade-up">
-      <div class="pic"><img src="../images/landing/nanda.jpeg" class="img-fluid" alt=""></div>
+<div class="team-container">
+  <div class="member" data-aos="fade-up">
+    <div class="pic"><img src="../images/landing/nanda.jpeg" class="img-fluid" alt=""></div>
       <div class="member-info">
         <h4>Khoyrur Roykhan</h4>
         <span>Chief Executive Officer</span>
@@ -288,58 +288,39 @@ const LandingPage = {
           <a href=""><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
-      </div> 
+    </div> 
+  </div>
+
+  <h3 class="team-headings"> Contact </h3>
+  <div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-4">
+      <div class="info-box mb-4">
+        <i class="bx bx-map"></i>
+        <h3>Our Address</h3>
+        <p>Banjarmasin, Kalimantan Selatan, Indonesia</p>
+      </div>
     </div>
 
-    <h3 class="contact-headings"> contact </h3>
-    <div class="row">
-          <div class="col-lg-4 col-md-4">
-            <div class="info-box mb-4">
-              <i class="bx bx-map"></i>
-              <h3>Our Address</h3>
-              <p>Banjarmasin, Kalimantan Selatan, Indonesia</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-4">
-            <div class="info-box  mb-4">
-              <i class="bx bx-envelope"></i>
-              <h3>Email Us</h3>
-              <p>edukasifauna@gmail.com</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-4">
-            <div class="info-box  mb-4">
-              <i class="bx bx-phone-call"></i>
-              <h3>Call Us</h3>
-              <p>+62 895340751951</p>
-            </div>
-          </div>
+    <div class="col-lg-4 col-md-4">
+      <div class="info-box mb-4">
+        <i class="bx bx-envelope"></i>
+        <h3>Email Us</h3>
+        <p>edukasifauna@gmail.com</p>
+      </div>
     </div>
 
-    
-    
-
-
-
-
-
-
-
-
-
-
+    <div class="col-lg-4 col-md-4">
+      <div class="info-box mb-4">
+        <i class="bx bx-phone-call"></i>
+        <h3>Call Us</h3>
+        <p>+62 895340751951</p>
+      </div>
+    </div>
+  </div>
+</div>
 
     
-
-    
-
-
-
-
-
-  
           `;
   },
 

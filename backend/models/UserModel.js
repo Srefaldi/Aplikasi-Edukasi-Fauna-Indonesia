@@ -20,4 +20,8 @@ const UserModel = Database.define('user',{
     freezeTableName:true
 });
 
+(async () => {
+    await Database.sync();
+})();
+
 export default UserModel;

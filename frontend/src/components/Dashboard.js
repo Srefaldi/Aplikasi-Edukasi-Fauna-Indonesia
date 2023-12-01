@@ -57,7 +57,7 @@ const Dashboard = () => {
     }
  
     return (
-        <div className="container mt-5">
+        <div className="container" style={{marginTop: 100}}>
             <h1>Welcome Back: {name}</h1>
             <button onClick={getUsers} className='button is-info'>Get Users</button>
             <table className="table is-striped is-fullwidth">

@@ -1,0 +1,71 @@
+   
+  .app-bar {
+    padding: 8px 16px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 10px;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    color: black;
+    right: 0;
+    z-index: 98;
+  }
+   
+  .app-bar .app-bar__menu {
+    display: flex;
+    align-items: center;
+  }
+   
+  .app-bar .app-bar__menu button {
+    background-color: white;
+    border: none;
+    font-size: 18px;
+    padding: 8px;
+    color: black;
+    cursor: pointer;
+  }
+   
+  .app-bar .app-bar__brand {
+    display: flex;
+    align-items: center;
+  }
+   
+  .app-bar .app-bar__brand a {
+    color: black;
+    text-transform: uppercase;
+    font-size: 22px;
+    user-select: none;
+    text-decoration: none;
+  }
+   
+  .app-bar .app-bar__navigation {
+    position: absolute;
+    top: 50px;
+    left: -180px;
+    width: 150px;
+    transition: all 0.3s;
+    padding: 8px;
+    color: white;
+    background-color: transparent; 
+    overflow: hidden;
+  }
+   
+  .app-bar .app-bar__navigation.open {
+    left: 0;
+  }
+   
+  .app-bar .app-bar__navigation ul li a {
+    display: grid;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 8px;
+    list-style-type: none;
+    font-size: medium;
+    color: black;
+    margin-bottom: 5px;
+    width: 100%;
+    z-index: 98;
+  }
+  

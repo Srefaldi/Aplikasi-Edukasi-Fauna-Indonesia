@@ -9,7 +9,7 @@ const DetailPage = {
             throw new Error('Failed to fetch data');
           }
           const faunaData = await response.json();
-          console.log(faunaData); // Tambahkan log untuk memeriksa hasil fetch
+          console.log(faunaData); 
           return faunaData.faunaData;
         } catch (error) {
           console.error('Error fetching fauna data:', error);

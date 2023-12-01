@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/appbar/appbar.css';
 import '../styles/responsive/responsive.css';
 import '../styles/landing-page/landing.css';
+import '../styles/kuis/style.css';
 import '../styles/main.css';
 import './components/cust-footer';
 import App from './views/app-bar';

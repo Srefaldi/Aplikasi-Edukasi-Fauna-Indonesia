@@ -1,0 +1,20 @@
+{
+    "DataLeaderboard": [
+      {
+        "name": "John Doe",
+        "score": 1000,
+        "time": "15s"
+      },
+      {
+        "name": "Alice Smith",
+        "score": 950,
+        "time": "13s"
+      },
+      {
+        "name": "Robert Johnson",
+        "score": 900,
+        "time": "120s"
+      }
+    ]
+  }
+  

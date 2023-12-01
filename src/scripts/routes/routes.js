@@ -6,6 +6,8 @@ import LoginPage from '../views/pages/login';
 import RegisterPage from '../views/pages/register';
 import HomeAdmin from '../views/pages/home-admin';
 import DetailPage from '../views/pages/detail';
+import PlayQuiz from '../views/pages/play-quiz';
+import Leaderboard from '../views/pages/leaderboard';
 
 const routes = {
   '/': LandingPage,
@@ -15,7 +17,9 @@ const routes = {
   '/login': LoginPage,
   '/register': RegisterPage,
   '/home-admin': HomeAdmin,
-  '/detail/:id' : DetailPage
+  '/detail/:id' : DetailPage,
+  '/play': PlayQuiz,
+  '/leaderboard' : Leaderboard
 };
 
 

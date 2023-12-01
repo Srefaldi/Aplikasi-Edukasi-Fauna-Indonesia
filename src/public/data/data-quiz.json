@@ -1,0 +1,45 @@
+{
+    "DataQuiz": [
+      {
+        "question": "Apa ibu kota Indonesia?",
+        "options": {
+          "a": "Jakarta",
+          "b": "Surabaya",
+          "c": "Bandung",
+          "d": "Semarang"
+        },
+        "correctAnswer": "a"
+      },
+      {
+        "question": "Siapakah presiden pertama Indonesia?",
+        "options": {
+          "a": "Soekarno",
+          "b": "Soeharto",
+          "c": "Jokowi",
+          "d": "Megawati"
+        },
+        "correctAnswer": "a"
+      },
+      {
+        "question": "Apa nama sungai terpanjang di dunia?",
+        "options": {
+          "a": "Nile",
+          "b": "Amazon",
+          "c": "Mississippi",
+          "d": "Yangtze"
+        },
+        "correctAnswer": "a"
+      },
+      {
+        "question": "Berapa jumlah provinsi di Indonesia?",
+        "options": {
+          "a": "32",
+          "b": "33",
+          "c": "34",
+          "d": "35"
+        },
+        "correctAnswer": "b"
+      }
+    ]
+  }
+  

@@ -1,0 +1,124 @@
+/* src/components/admin/styles/AdminLTE.css */
+body {
+    margin: 0;
+    font-family: 'Arial, sans-serif';
+    display: flex;
+  }
+  
+  .admin-layout {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #112546;
+    color: #d2d6de;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+  
+  li a {
+    color: #d2d6de;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+  }
+  
+  li a:hover {
+    background-color: #4b545f;
+  }
+  
+  .main-content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 300px;
+  }
+  
+  .app-bar {
+    background-color: #343a40;
+    color: #d2d6de;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .app-bar .brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-bar .brand img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .app-bar .brand h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .app-bar .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .app-bar .user-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .app-bar .user-info p {
+    margin: 0;
+  }
+  
+  /* Style for HomePage */
+  .homepage {
+    text-align: center;
+  }
+  
+  .homepage h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .homepage hr {
+    width: 50px;
+    border: 2px solid #343a40;
+    margin: 20px auto;
+  }
+  
+  .homepage p {
+    font-size: 18px;
+    color: #555;
+  }
+  

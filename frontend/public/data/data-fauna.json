@@ -1,0 +1,49 @@
+{
+"faunaData" :[
+    {
+      "foto": "/home/jenis/Mamalia.jpg",
+      "nama": "Orangutan",
+      "jenis": "Mamalia",
+      "pulau": "Kalimantan",
+      "habitat": "Hutan Hujan Tropis",
+      "populasi": "Kritis (sekitar 104,700 individu)",
+      "deskripsi": "Orangutan adalah satwa endemik yang ditemukan di hutan hujan Kalimantan. Mereka hidup secara arboreal dan memiliki tingkat kecerdasan yang tinggi. Orangutan adalah primata besar dengan bulu berwarna coklat kemerahan dan lengan yang panjang."
+    },
+    {
+      "foto": "/home/jenis/Mamalia.jpg",
+      "nama": "Komodo",
+      "jenis": "Reptil",
+      "pulau": "Nusa Tenggara",
+      "habitat": "Pulau Komodo, Pulau Rinca, Flores, Gili Motang, Gili Dasami",
+      "populasi": "Vulnerable (kurang dari 6,000 individu)",
+      "deskripsi": "Komodo adalah kadal raksasa yang hanya dapat ditemukan di beberapa pulau di Indonesia. Mereka memiliki ukuran tubuh yang besar, dapat tumbuh hingga 3 meter atau lebih, dan merupakan hewan karnivora dengan racun yang mematikan."
+    },
+    {
+      "foto": "/home/jenis/Mamalia.jpg",
+      "nama": "Cendrawasih",
+      "jenis": "Burung",
+      "pulau": "Papua",
+      "habitat": "Hutan Tropis dan Pegunungan",
+      "populasi": "Beragam (populasi yang stabil)",
+      "deskripsi": "Cendrawasih adalah burung berwarna cerah yang unik dikenal karena bulu ekornya yang panjang dan indah. Mereka memiliki beragam jenis dan dapat ditemukan di hutan Papua. Cendrawasih sering dianggap sebagai lambang keindahan dan keunikan di alam."
+    },
+    {
+      "foto": "/home/jenis/Mamalia.jpg",
+      "nama": "Kuskus",
+      "jenis": "Marsupialia",
+      "pulau": "Sulawesi",
+      "habitat": "Hutan dan Pegunungan",
+      "populasi": "Beragam (populasi yang stabil)",
+      "deskripsi": "Kuskus adalah marsupialia endemik di Sulawesi. Mereka memiliki ekor panjang, bulu lembut, dan hidup di pepohonan. Kuskus adalah hewan nokturnal yang terkenal dengan mata bulat dan besar."
+    },
+    {
+      "foto": "/home/jenis/Mamalia.jpg",
+      "nama": "Kakatua",
+      "jenis": "Burung",
+      "pulau": "Nusa Tenggara",
+      "habitat": "Hutan, Pegunungan, dan Pantai",
+      "populasi": "Beragam (populasi yang stabil)",
+      "deskripsi": "Kakatua adalah burung yang cerdas dan dapat ditemukan di berbagai habitat di Nusa Tenggara. Mereka dikenal dengan paruh kuat dan dapat meniru suara manusia serta bunyi-bunyian lainnya."
+    }
+  ]
+}

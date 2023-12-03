@@ -57,7 +57,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-jawa" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={jawa} className="bd-placeholder-img card-img-top" alt="Pulau Jawa"style={{width: '100%', height: '230px' }}/>
+                    <img src={jawa} className="bd-placeholder-img card-img-top" alt="Pulau Jawa" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Jawa</div>
                   </div>
                 </a>

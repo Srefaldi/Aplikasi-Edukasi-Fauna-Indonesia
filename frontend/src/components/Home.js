@@ -57,7 +57,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-jawa" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={jawa} className="bd-placeholder-img card-img-top" alt="Pulau Jawa" width="100%" height="230px" />
+                    <img src={jawa} className="bd-placeholder-img card-img-top" alt="Pulau Jawa"style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Jawa</div>
                   </div>
                 </a>
@@ -67,7 +67,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-kalimantan" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={kalimantan} className="bd-placeholder-img card-img-top" alt="Pulau Kalimantan" width="100%" height="230px" />
+                    <img src={kalimantan} className="bd-placeholder-img card-img-top" alt="Pulau Kalimantan" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Kalimantan</div>
                   </div>
                 </a>
@@ -77,7 +77,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-papua" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={papua} className="bd-placeholder-img card-img-top" alt="Pulau Papua" width="100%" height="230px" />
+                    <img src={papua} className="bd-placeholder-img card-img-top" alt="Pulau Papua" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Papua</div>
                   </div>
                 </a>
@@ -87,7 +87,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-sulawesi" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={sulawesi} className="bd-placeholder-img card-img-top" alt="Pulau Sulawesi" width="100%" height="230px" />
+                    <img src={sulawesi} className="bd-placeholder-img card-img-top" alt="Pulau Sulawesi" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Sulawesi</div>
                   </div>
                 </a>
@@ -97,7 +97,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-sumatera" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={sumateri} className="bd-placeholder-img card-img-top" alt="Pulau Sumatera" width="100%" height="230px" />
+                    <img src={sumateri} className="bd-placeholder-img card-img-top" alt="Pulau Sumatera" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Sumatera</div>
                   </div>
                 </a>
@@ -107,7 +107,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-komodo" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={komodo} className="bd-placeholder-img card-img-top" alt="Pulau Komodo" width="100%" height="230px" />
+                    <img src={komodo} className="bd-placeholder-img card-img-top" alt="Pulau Komodo" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Komodo</div>
                   </div>
                 </a>
@@ -131,7 +131,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-mamalia" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={mamalia} className="bd-placeholder-img card-img-top" alt="Jenis Mamalia" width="100%" height="230px" />
+                    <img src={mamalia} className="bd-placeholder-img card-img-top" alt="Jenis Mamalia" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Mamalia</div>
                   </div>
                 </a>
@@ -141,7 +141,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-reptil" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={reptil} className="bd-placeholder-img card-img-top" alt="Jenis Reptil" width="100%" height="230px" />
+                    <img src={reptil} className="bd-placeholder-img card-img-top" alt="Jenis Reptil" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Reptil</div>
                   </div>
                 </a>
@@ -151,7 +151,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-burung" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={burung} className="bd-placeholder-img card-img-top" alt="Jenis Burung" width="100%" height="230px" />
+                    <img src={burung} className="bd-placeholder-img card-img-top" alt="Jenis Burung" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Burung</div>
                   </div>
                 </a>
@@ -161,7 +161,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-ampibi" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={ampibi} className="bd-placeholder-img card-img-top" alt="Jenis Ampibi" width="100%" height="230px" />
+                    <img src={ampibi} className="bd-placeholder-img card-img-top" alt="Jenis Ampibi" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Ampibi</div>
                   </div>
                 </a>
@@ -171,7 +171,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-ikan" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={ikan} className="bd-placeholder-img card-img-top" alt="Jenis Ikan" width="100%" height="230px" />
+                    <img src={ikan} className="bd-placeholder-img card-img-top" alt="Jenis Ikan" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Ikan</div>
                   </div>
                 </a>
@@ -181,7 +181,7 @@ const HomePage = () => {
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-seranggas" style={{ textDecoration: 'none' }}>
                   <div style={{ position: 'relative' }}>
-                    <img src={serangga} className="bd-placeholder-img card-img-top" alt="Jenis Serangga" width="100%" height="230px" />
+                    <img src={serangga} className="bd-placeholder-img card-img-top" alt="Jenis Serangga" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Serangga</div>
                   </div>
                 </a>

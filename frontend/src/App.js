@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar.js";
 import Dashboard from "./components/Dashboard.js";
 import LandingPage from "./components/Landing-page.js";
 import HomePage from "./components/Home.js";
+import KategoriPage from "./components/Kategori.js";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route exact path="/register" element={<Register/>}/>
       <Route exact path="/dashboard" element={<><Navbar/><Dashboard/></>}/>
       <Route exact path="/home" element={<><Navbar/><HomePage/></>}/>
+      <Route exact path="/kategori" element={<><Navbar/><KategoriPage/></>}/>
       </Routes>
     </BrowserRouter>
   );

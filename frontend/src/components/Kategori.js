@@ -38,7 +38,60 @@ const KategoriPage = () => {
       }
     };
 
+    const initSubmenuPulau = () => {
+      const submenuPulau = document.querySelector('.submenu-pulau');
+
+      submenuPulau.addEventListener('mouseenter', function () {
+        const dropdownMenu = this.querySelector('.dropdown-menu');
+        const rect = this.getBoundingClientRect();
+        dropdownMenu.classList.add('show', 'position-absolute');
+        dropdownMenu.style.left = '100%';
+        dropdownMenu.style.top = '0';
+      });
+
+      submenuPulau.addEventListener('mouseleave', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+      });
+    };
+
+    const initSubmenuJenisFauna = () => {
+      const submenuJenisFauna = document.querySelector('.submenu-jenis-fauna');
+
+      submenuJenisFauna.addEventListener('mouseenter', function () {
+        const dropdownMenu = this.querySelector('.dropdown-menu');
+        const rect = this.getBoundingClientRect();
+        dropdownMenu.classList.add('show', 'position-absolute');
+        dropdownMenu.style.left = '100%';
+        dropdownMenu.style.top = '35px';
+      });
+
+      submenuJenisFauna.addEventListener('mouseleave', function () {
+        this.querySelector('.dropdown-menu').classList.remove('show');
+      });
+    };
+
     initDropdown();
+    initSubmenuPulau();
+    initSubmenuJenisFauna();
+
+    return () => {
+      const dropdownToggle = document.getElementById('dropdownMenuButton');
+      if (dropdownToggle) {
+        dropdownToggle.removeEventListener('click', initDropdown);
+      }
+
+      const submenuPulau = document.querySelector('.submenu-pulau');
+      if (submenuPulau) {
+        submenuPulau.removeEventListener('mouseenter', initSubmenuPulau);
+        submenuPulau.removeEventListener('mouseleave', initSubmenuPulau);
+      }
+
+      const submenuJenisFauna = document.querySelector('.submenu-jenis-fauna');
+      if (submenuJenisFauna) {
+        submenuJenisFauna.removeEventListener('mouseenter', initSubmenuJenisFauna);
+        submenuJenisFauna.removeEventListener('mouseleave', initSubmenuJenisFauna);
+      }
+    };
   }, []);
 
   const handleReadMore = (itemId) => {
@@ -55,26 +108,26 @@ const KategoriPage = () => {
           </div>
         </div>
       </div>
-
       {/* Hewan Section */}
       <div className="container w-100 mt-5">
         {/* Dropdown Menu */}
         <div className="dropdown">
           <button className="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: '#112546', color: 'white', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px' }}>
-            <img src={search} alt="Search" width="32" height="32" className="rounded-circle" style={{ marginRight: '8px' }}/>Semua Kategori</button>
+            <img src={search} alt="Search" width="32" height="32" className="rounded-circle" style={{ marginRight: '8px' }}/>Semua Kategori
+          </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             {/* Pulau */}
-            <li className="dropdown-submenu">
+            <li className="submenu-pulau dropdown-submenu">
               <a className="dropdown-item dropdown-toggle">Pulau</a>
               <ul className="dropdown-menu">
+                <li><a className="dropdown-item">Jawa</a></li>
                 <li><a className="dropdown-item">Kalimantan</a></li>
                 <li><a className="dropdown-item">Sumatera</a></li>
-                <li><a className="dropdown-item">Jawa</a></li>
-                <li><a className="dropdown-item"></a></li>
+                <li><a className="dropdown-item">Pulau lainnya</a></li>
               </ul>
             </li>
             {/* Jenis Fauna */}
-            <li className="dropdown-submenu">
+            <li className="submenu-jenis-fauna dropdown-submenu">
               <a className="dropdown-item dropdown-toggle">Jenis Fauna</a>
               <ul className="dropdown-menu">
                 <li><a className="dropdown-item">Semua</a></li>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import MainContent from './MainContent';
+import './styles/Admin.css';
 
 const AdminLayout = () => {
   return (

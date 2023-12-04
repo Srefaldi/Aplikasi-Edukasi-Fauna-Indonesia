@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/Admin.css';
 
 const AddFaunaContainer = () => {
   const [namaFauna, setNamaFauna] = useState('');

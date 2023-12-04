@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles/Admin.css';
 
 const HomePage = () => {
   return (

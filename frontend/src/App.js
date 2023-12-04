@@ -8,6 +8,7 @@ import HomePage from "./components/Home.js";
 import KategoriPage from "./components/Kategori.js";
 import Quiz from "./components/Quiz.js";
 import Footer from "./components/Footer.js";
+import AdminLayout from "./components/admin/AdminLayout.js";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route exact path="/home" element={<><Navbar/><HomePage/><Footer/></>}/>
       <Route exact path="/kategori" element={<><Navbar/><KategoriPage/><Footer/></>}/>
       <Route exact path="/quiz" element={<><Navbar/><Quiz/><Footer/></>}/>
+      <Route exact path="/admin" element={<AdminLayout/>}/>
       </Routes>
     </BrowserRouter>
   );

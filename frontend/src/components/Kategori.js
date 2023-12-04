@@ -43,7 +43,7 @@ const KategoriPage = () => {
 
       submenuPulau.addEventListener('mouseenter', function () {
         const dropdownMenu = this.querySelector('.dropdown-menu');
-        const rect = this.getBoundingClientRect();
+        // const rect = this.getBoundingClientRect();
         dropdownMenu.classList.add('show', 'position-absolute');
         dropdownMenu.style.left = '100%';
         dropdownMenu.style.top = '0';
@@ -59,7 +59,7 @@ const KategoriPage = () => {
 
       submenuJenisFauna.addEventListener('mouseenter', function () {
         const dropdownMenu = this.querySelector('.dropdown-menu');
-        const rect = this.getBoundingClientRect();
+        // const rect = this.getBoundingClientRect();
         dropdownMenu.classList.add('show', 'position-absolute');
         dropdownMenu.style.left = '100%';
         dropdownMenu.style.top = '35px';

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './styles/Admin.css';
 
 const FaunaList = () => {
   const [faunaList, setFaunaList] = useState([]);

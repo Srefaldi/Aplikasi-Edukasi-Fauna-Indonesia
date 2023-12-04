@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard.js";
 import LandingPage from "./components/Landing-page.js";
 import HomePage from "./components/Home.js";
 import KategoriPage from "./components/Kategori.js";
+import Quiz from "./components/Quiz.js";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route exact path="/dashboard" element={<><Navbar/><Dashboard/></>}/>
       <Route exact path="/home" element={<><Navbar/><HomePage/></>}/>
       <Route exact path="/kategori" element={<><Navbar/><KategoriPage/></>}/>
+      <Route exact path="/quiz" element={<><Navbar/><Quiz/></>}/>
       </Routes>
     </BrowserRouter>
   );

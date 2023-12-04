@@ -36,7 +36,7 @@ const LandingPage = () => {
                     Mari bersama-sama menjelajahi keajaiban alam dan memahami kehidupan fauna Indonesia yang menakjubkan.
                     </p>
                     <div className="action__btnss">
-                        <button classNameass="btn primary__btnn">Explore</button>
+                        <button className="btn primary__btnn">Explore</button>
                         <button className="btn secondary__btnn">See More</button>
                     </div>
                 </div> 

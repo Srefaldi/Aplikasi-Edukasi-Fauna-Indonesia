@@ -4,12 +4,14 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import Database from "./config/Database.js";
 import router from "./routes/index.js";
+import FaunaContentModel from "./models/FaunaContentModel.js";
 dotenv.config();
 const app = express();
 
 try {
     await Database.authenticate();
     console.log('Database Connected...');
+    await FaunaContentModel.sync();
 } catch (error) {;
     console.error(error);
 }

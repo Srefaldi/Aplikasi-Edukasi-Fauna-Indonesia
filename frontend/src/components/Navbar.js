@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../css/appbar/appbar.css';
 import '../css/appbar/responsive.css';
-
 const Navbar = () => {
   const navigate = useNavigate();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -22,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="app-bar">
+    <header className="app-barr">
       <div className="app-bar__menu">
         <button id="hamburgerButton" onClick={toggleDrawer}>
           ☰

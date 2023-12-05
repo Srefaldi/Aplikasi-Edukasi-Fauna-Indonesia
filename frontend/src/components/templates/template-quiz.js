@@ -38,7 +38,7 @@ const TemplateQuiz = ({ quizData }) => {
   const { question, options } = quizData[currentQuestionIndex];
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 mb-5">
       <div className="d-flex justify-content-center row">
         <div className="col-md-10 col-lg-10">
           <div className="border">
@@ -62,7 +62,7 @@ const TemplateQuiz = ({ quizData }) => {
                       checked={selectedAnswer === key}
                       onChange={handleOptionChange}
                     />
-                    <span>{options[key]}</span>
+                    <span style={{ color: 'black' }}>{options[key]}</span>
                   </label>
                 </div>
               ))}

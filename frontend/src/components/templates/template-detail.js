@@ -13,6 +13,7 @@ const createFaunaDetailTemplate = (fauna) => {
   } = fauna;
 
   return (
+    
     <div className="container my-5">
       <div className="row">
         <div className="col-lg-12 mt-4">

@@ -51,3 +51,50 @@ export const getFaunaById = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
+export const editFaunaById = async (req, res) => {
+    try {
+        const { faunaId } = req.params;
+
+        const fauna = await FaunaContentModel.findByPk(faunaId);
+
+        if (!fauna) {
+            return res.status(404).json({ error: 'Fauna not found' });
+        }
+
+        const { name, kategori_1, kategori_2, description, desc_habitat, desc_populasi } = req.body;
+        await fauna.update({
+            name: name,
+            kategori_1: kategori_1,
+            kategori_2: kategori_2,
+            description: description,
+            desc_habitat: desc_habitat,
+            desc_populasi: desc_populasi,
+        });
+
+        res.status(200).json({ msg: `Berhasil Mengedit ${fauna.name}` });
+    } catch (error) {
+        console.error('Error editing fauna:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+export const deleteFaunaById = async (req, res) => {
+    try {
+        const { faunaId } = req.params;
+
+        const fauna = await FaunaContentModel.findByPk(faunaId);
+
+        if (!fauna) {
+            return res.status(404).json({ error: 'Fauna not found' });
+        }
+
+        await fauna.destroy();
+
+        res.status(200).json({ msg: `Berhasil Menghapus ${fauna.name}` });
+    } catch (error) {
+        console.error('Error deleting fauna:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+

@@ -3,10 +3,13 @@ import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 import search from '../css/icon/search.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const KategoriPage = () => {
   const [faunaData, setFaunaData] = useState([]);
+  const navigate = useNavigate(); 
   const [error, setError] = useState(null);
+  const { itemName } = useParams(); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,7 +29,9 @@ const KategoriPage = () => {
   }, []);
 
   const truncatedDescription = (description) => description.substring(0, 50);
-
+  const handleReadMore = (itemName) => {
+    navigate(`/detail/${itemName}`); 
+  };
   useEffect(() => {
     const initDropdown = () => {
       const dropdownToggle = document.getElementById('dropdownMenuButton');
@@ -94,10 +99,6 @@ const KategoriPage = () => {
     };
   }, []);
 
-  const handleReadMore = (itemId) => {
-    window.location.hash = `/detail/${itemId}`;
-  };
-
   return (
     <div>
       {/* Hero Section */}
@@ -109,7 +110,7 @@ const KategoriPage = () => {
         </div>
       </div>
       {/* Hewan Section */}
-      <div className="container w-100 mt-5">
+      <div className="container mt-5">
         {/* Dropdown Menu */}
         <div className="dropdown">
           <button className="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: '#112546', color: 'white', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px' }}>
@@ -141,21 +142,19 @@ const KategoriPage = () => {
             </li>
           </ul>
         </div>
-
+  
         {/* Fauna Items */}
-        <div className="row mb-5 mt-4">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-4 mb-5">
           {error ? (<p>{error}</p>) : (
             faunaData.map((item) => (
-              <div className="col-md-3" key={item.nama}>
-                <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                  <div className="col-auto">
-                    <img className="bd-placeholder-img w-100" src={item.foto} alt={item.nama}/>
-                  </div>
-                  <div className="col p-4 d-flex flex-column position-static">
+              <div className="col" key={item.nama}>
+                <div className="card h-100">
+                  <img src={item.foto} className="card-img-top" alt={item.nama} />
+                <div className="card-body">
                     <strong className="d-inline-block mb-2 text-primary">{item.jenis}</strong>
-                    <h3 className="mb-0">{item.nama}</h3>
+                    <h5 className="card-title" style={{ color: 'black' }}>{item.nama}</h5>
                     <div className="mb-1 text-muted">{item.pulau}</div>
-                    <p className="mb-auto">{truncatedDescription(item.deskripsi)}...</p>
+                    <p className="card-text" style={{ color: 'black' }}>{truncatedDescription(item.deskripsi)}...</p>
                     <a href={`/detail/${item.nama}`} className="stretched-link" style={{ textDecoration: 'none' }} onClick={() => handleReadMore(item.nama)}>Baca Selengkapnya</a>
                   </div>
                 </div>
@@ -166,6 +165,7 @@ const KategoriPage = () => {
       </div>
     </div>
   )
+  
 }
 
 export default KategoriPage;

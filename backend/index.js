@@ -6,6 +6,7 @@ import Database from "./config/Database.js";
 import router from "./routes/index.js";
 import FaunaContentModel from "./models/FaunaContentModel.js";
 import QuizModel from "./models/QuizModel.js";
+import UserModel from "./models/UserModel.js";
 dotenv.config();
 const app = express();
 
@@ -14,6 +15,7 @@ try {
     console.log('Database Connected...');
     await FaunaContentModel.sync();
     await QuizModel.sync();
+    await UserModel.sync();
 } catch (error) {;
     console.error(error);
 }

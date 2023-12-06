@@ -7,6 +7,12 @@ const FaunaContentModel = Database.define('fauna-content',{
     name:{
         type: DataTypes.STRING
     },
+    image_name:{
+        type: DataTypes.STRING
+    },
+    image_url:{
+        type: DataTypes.STRING
+    },
     kategori_1:{
         type: DataTypes.STRING
     },

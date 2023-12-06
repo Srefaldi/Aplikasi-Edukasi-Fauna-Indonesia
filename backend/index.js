@@ -6,6 +6,8 @@ import Database from "./config/Database.js";
 import router from "./routes/index.js";
 import FaunaContentModel from "./models/FaunaContentModel.js";
 import QuizModel from "./models/QuizModel.js";
+import FileUpload from "express-fileupload";
+
 dotenv.config();
 const app = express();
 
@@ -14,13 +16,16 @@ try {
     console.log('Database Connected...');
     await FaunaContentModel.sync();
     await QuizModel.sync();
-} catch (error) {;
+} catch (error) {
     console.error(error);
 }
 
-app.use(cors({ credentials:true, origin:'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 app.use(cookieParser());
 app.use(express.json());
+app.use(FileUpload());
+
+app.use(express.static("public"));
 app.use(router);
 
-app.listen(5000, ()=> console.log('Server running at port 5000'));
+app.listen(5000, () => console.log('Server running at port 5000'));

@@ -54,18 +54,14 @@ export const getFaunaById = async (req, res) => {
 
 export const editFaunaById = async (req, res) => {
     try {
-        // Assuming the ID is passed as a parameter in the request
         const { faunaId } = req.params;
 
-        // Find the fauna record by ID
         const fauna = await FaunaContentModel.findByPk(faunaId);
 
-        // Check if the fauna record is found
         if (!fauna) {
             return res.status(404).json({ error: 'Fauna not found' });
         }
 
-        // Update the fauna record with the new data
         const { name, kategori_1, kategori_2, description, desc_habitat, desc_populasi } = req.body;
         await fauna.update({
             name: name,
@@ -76,10 +72,29 @@ export const editFaunaById = async (req, res) => {
             desc_populasi: desc_populasi,
         });
 
-        // Respond with the updated fauna record
         res.status(200).json({ msg: `Berhasil Mengedit ${fauna.name}` });
     } catch (error) {
         console.error('Error editing fauna:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
+export const deleteFaunaById = async (req, res) => {
+    try {
+        const { faunaId } = req.params;
+
+        const fauna = await FaunaContentModel.findByPk(faunaId);
+
+        if (!fauna) {
+            return res.status(404).json({ error: 'Fauna not found' });
+        }
+
+        await fauna.destroy();
+
+        res.status(200).json({ msg: `Berhasil Menghapus ${fauna.name}` });
+    } catch (error) {
+        console.error('Error deleting fauna:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+

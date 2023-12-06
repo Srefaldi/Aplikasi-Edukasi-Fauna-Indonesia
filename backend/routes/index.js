@@ -3,6 +3,7 @@ import { getUsers, Register, Login, Logout } from "../controllers/Users.js";
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/RefreshToken.js";
 import { AddFauna } from "../controllers/FaunaContents.js";
+import { AddQuiz } from "../controllers/QuizController.js";
  
 const router = express.Router();
  
@@ -14,5 +15,6 @@ router.delete('/logout', Logout);
 
 
 router.post('/add-fauna', AddFauna);
+router.post('/add-quiz', AddQuiz);
  
 export default router;

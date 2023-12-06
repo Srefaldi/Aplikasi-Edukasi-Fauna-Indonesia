@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import createFaunaDetailTemplate from './templates/template-detail';
 import { useParams } from 'react-router-dom';
+import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 
 const DetailPage = () => {
   const { itemName } = useParams();
@@ -36,7 +37,9 @@ const DetailPage = () => {
       setFaunaDetail(faunaDetailTemplate);
     }
   }, [faunaData, itemName]);
-
+  const imgContainer = {
+    width: '100vw',
+};
   return (
     <div>
       {faunaDetail}

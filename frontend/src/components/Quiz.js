@@ -10,7 +10,9 @@ const Quiz = () => {
   const handlePlayNow = () => {
     navigate('/play-quiz'); 
   };
-
+  const handleLeaderboard = () => {
+    navigate('/leaderboard'); // Mengarahkan ke halaman leaderboard saat tombol diklik
+  };
   const imgContainer = {
         width: '100vw',
     };
@@ -53,7 +55,7 @@ const Quiz = () => {
                                 <div className="col-md-8">
                                     <h2>Leaderboard</h2>
                                     <p style={{ color: 'black' }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                    <a href="/leaderboard" className="btn btn-outline-secondary mb-4" type="button">Lihat Peringkat Anda</a>
+                                    <a href="/leaderboard" className="btn btn-outline-secondary mb-4" type="button" onClick={handleLeaderboard}>Lihat Peringkat Anda</a>
                                 </div>
                                 <div className="col-md-4">
                                     <img src={hero} className="img-fluid" alt="Img 2" />

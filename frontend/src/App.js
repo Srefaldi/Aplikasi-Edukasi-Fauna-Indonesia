@@ -16,6 +16,7 @@ import HomeAdmin from "./components/admin/HomeAdmin.js";
 import FaunaList from "./components/admin/FaunaList.js";
 import DetailPage from "./components/detail.js"; 
 import PlayQuiz from "./components/Play-quiz.js"; 
+import Leaderboard from "./components/leaderboard.js";
 
 function App() {
   return (
@@ -29,8 +30,9 @@ function App() {
         <Route exact path="/quiz" element={<><Navbar/><Quiz/><Footer/></>}/>
         <Route exact path="/home-admin" element={<><Navbar/><HomeAdmin/></>}/>
         <Route exact path="/fauna-list" element={<><Navbar/><FaunaList/></>}/>
-        <Route path="/detail/:itemName" element={<><Navbar/><DetailPage/></>}/>
-        <Route path="/play-quiz" element={<><Navbar/><PlayQuiz/></>}/>
+        <Route path="/detail/:itemName" element={<><Navbar/><DetailPage/><Footer/></>}/>
+        <Route path="/play-quiz" element={<><Navbar/><PlayQuiz/><Footer/></>}/>
+        <Route exact path="/leaderboard" element={<><Navbar /><Leaderboard /><Footer /></>} />
       </Routes>
     </BrowserRouter>
   );

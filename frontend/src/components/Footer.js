@@ -3,15 +3,16 @@ import React from 'react';
 const Footer = () => {
 
     const styles = {
-        host: {
-          display: 'block',
-          backgroundColor: '#112546',
-          color: '#fff',
-          textAlign: 'center',
-          padding: '20px',
-          margin: '0 auto',
-          fontSize: '0.8em',
-        },
+      host: {
+        display: 'block',
+        backgroundColor: '#112546',
+        color: '#fff',
+        textAlign: 'center',
+        padding: '20px',
+        margin: '0 auto',
+        fontSize: '0.8em',
+        width: '100vw', // Menambahkan properti width: '100vw' di sini
+      },
         footer: {
           display: 'flex',
           flexDirection: 'row',

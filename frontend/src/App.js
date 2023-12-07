@@ -13,7 +13,7 @@ import KategoriPage from "./components/Kategori.js";
 import Quiz from "./components/Quiz.js";
 import Footer from "./components/Footer.js";
 import HomeAdmin from "./components/admin/HomeAdmin.js";
-import FaunaList from "./components/admin/FaunaList.js";
+import SetFauna from "./components/admin/SetFauna.js";
 import DetailPage from "./components/detail.js"; 
 import PlayQuiz from "./components/Play-quiz.js"; 
 import Leaderboard from "./components/leaderboard.js";
@@ -30,7 +30,7 @@ function App() {
         <Route exact path="/kategori" element={<><Navbar/><KategoriPage/><Footer/></>}/>
         <Route exact path="/quiz" element={<><Navbar/><Quiz/><Footer/></>}/>
         <Route exact path="/home-admin" element={<><Navbar/><HomeAdmin/></>}/>
-        <Route exact path="/fauna-list" element={<><Navbar/><FaunaList/></>}/>
+        <Route exact path="/set-fauna" element={<><Navbar/><SetFauna/></>}/>
         <Route path="/detail/:itemName" element={<><Navbar/><DetailPage/><Footer/></>}/>
         <Route path="/selection-quiz" element={<><Navbar/><QuizSelection/><Footer/></>}/>
         <Route path="/play-quiz" element={<><Navbar/><PlayQuiz/><Footer/></>}/>

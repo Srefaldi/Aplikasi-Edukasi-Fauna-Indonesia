@@ -1,56 +1,62 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { jwtDecode } from "jwt-decode";
+import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import './styles/Admin.css';
 
-const FaunaList = () => {
-  const [faunaList, setFaunaList] = useState([]);
-
+const SetFauna = () => {
   const [token, setToken] = useState('');
   const [expire, setExpire] = useState('');
   const navigate = useNavigate();
+  const [faunaListItem, setFaunaList] = useState([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/get-allfauna');
+      setFaunaList(response.data);
+    } catch (error) {
+      if (error.response) {
+        console.log(error);
+      }
+    }
+  };
 
   const refreshToken = async () => {
     try {
-        const response = await axios.get('http://localhost:5000/token');
-        setToken(response.data.accessToken);
-        const decoded = jwtDecode(response.data.accessToken);
-        setExpire(decoded.exp);
+      const response = await axios.get('http://localhost:5000/token');
+      setToken(response.data.accessToken);
+      const decoded = jwtDecode(response.data.accessToken);
+      setExpire(decoded.exp);
     } catch (error) {
-        if (error.response) {
-            navigate("/login");
-        }
+      if (error.response) {
+        navigate('/login');
+      }
     }
-  }
+  };
 
   const axiosJWT = axios.create();
 
-  axiosJWT.interceptors.request.use(async (config) => {
-    const currentDate = new Date();
-    if (expire * 1000 < currentDate.getTime()) {
+  axiosJWT.interceptors.request.use(
+    async (config) => {
+      const currentDate = new Date();
+      if (expire * 1000 < currentDate.getTime()) {
         const response = await axios.get('http://localhost:5000/token');
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decoded = jwtDecode(response.data.accessToken);
 
         setExpire(decoded.exp);
-    }
-    return config;
-  }, (error) => {
+      }
+      return config;
+    },
+    (error) => {
       return Promise.reject(error);
-  });  
+    }
+  );
 
   useEffect(() => {
     refreshToken();
-
-    const fakeFaunaData = [
-      { id: 1, jenis: 'Harimau', deskripsi: 'Sebuah harimau yang kuat', imageUrl: 'harimau.jpg' },
-      { id: 2, jenis: 'Gajah', deskripsi: 'Seekor gajah yang besar', imageUrl: 'gajah.jpg' },
-      { id: 3, jenis: 'Kucing', deskripsi: 'Kucing disebut juga kucing domestik atau kucing rumah adalah sejenis mamalia karnivora dari keluarga Felidae. Kata "kucing" biasanya merujuk kepada "kucing" yang telah dijinakkan, tetapi bisa juga bisa merujuk kepada "kucing besar" seperti singa dan harimau yang juga termasuk jenis kucing. ', imageUrl: 'kucing.jpg' },
-    ];
-
-    setFaunaList(fakeFaunaData);
+    fetchData();
   }, []);
 
   const styles = {
@@ -92,25 +98,22 @@ const FaunaList = () => {
     },
     table: {
       width: '100%',
-      backgroundColor: '#fff',
-      overflow: 'hidden',
-      boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)',
-      padding: '20px',
       borderCollapse: 'collapse',
+      marginTop: '20px',
+      boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)',
+      overflow: 'hidden',
     },
     th: {
       backgroundColor: '#04AA6D',
       color: 'white',
-      padding: '20px',
-      whiteSpace: 'nowrap',
+      padding: '15px',
       textAlign: 'left',
-      border: '1px solid #ddd',
+      borderBottom: '1px solid #ddd',
     },
     td: {
-      padding: '20px',
+      padding: '15px',
       borderBottom: '1px solid #ddd',
       textAlign: 'left',
-      border: '1px solid #ddd',
     },
     actionButtonsCell: {
       textAlign: 'center',
@@ -136,42 +139,44 @@ const FaunaList = () => {
 
   return (
     <div style={styles.container}>
-      <h1>Data Fauna</h1>
-      <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
       <div style={styles.header}>
         <div style={styles.addButton}>Tambah Fauna</div>
         <div style={styles.actionButtons}>
           <div style={styles.printButton}>Cetak</div>
         </div>
       </div>
-      <input
-        type="text"
-        placeholder="Cari Fauna..."
-        style={styles.searchInput}
-      />
+      <input type="text" placeholder="Cari Fauna..." style={styles.searchInput} />
       <table style={styles.table}>
         <thead>
           <tr style={styles.th}>
             <th>No</th>
-            <th>Gambar Fauna</th>
-            <th>Jenis Fauna</th>
+            <th>Gambar</th>
+            <th>Nama</th>
             <th>Deskripsi</th>
+            <th>kategori 1</th>
+            <th>kategori 2</th>
+            <th>Deskripsi Habitat</th>
+            <th>Deskripsi populasi</th>
             <th style={styles.actionButtonsCell}>Aksi</th>
           </tr>
         </thead>
         <tbody>
-          {faunaList.map((fauna, index) => (
+          {faunaListItem.map((fauna, index) => (
             <tr key={index} style={styles.td}>
               <td>{index + 1}</td>
               <td>
                 <img
-                  src={fauna.imageUrl}
-                  alt={`Gambar ${fauna.jenis}`}
+                  src={fauna.image_url}
+                  alt={`Gambar ${fauna.name}`}
                   style={{ width: '50px', height: '50px', objectFit: 'cover' }}
                 />
               </td>
-              <td>{fauna.jenis}</td>
-              <td>{fauna.deskripsi}</td>
+              <td>{fauna.name}</td>
+              <td>{fauna.description}</td>
+              <td>{fauna.kategori_1}</td>
+              <td>{fauna.kategori_2}</td>
+              <td>{fauna.desc_habitat}</td>
+              <td>{fauna.desc_populasi}</td>
               <td style={styles.actionButtonsCell}>
                 <div style={styles.editButton}>Edit</div>
                 <div style={styles.deleteButton}>Hapus</div>
@@ -184,4 +189,4 @@ const FaunaList = () => {
   );
 };
 
-export default FaunaList;
+export default SetFauna;

@@ -128,7 +128,7 @@
   .headings {
     text-align: center;
     font-size: 2rem;
-    color: white;
+    color: #444444;
     padding: 1rem;
     margin: 2rem 0;
     background: rgba(17, 37, 70, 0.05);
@@ -246,7 +246,7 @@
 .team-headings {
   text-align: center;
   font-size: 2rem;
-  color: white;
+  color: #444444;
   padding: 1rem;
   margin: 2rem 0;
   background: rgba(17, 37, 70, 0.05);
@@ -304,7 +304,7 @@
 .contact-headings {
   text-align: center;
   font-size: 2rem;
-  color: white;
+  color: #444444;
   padding: 1rem;
   margin: 2rem 0;
   background: rgba(17, 37, 70, 0.05);
@@ -350,24 +350,20 @@
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-.stars i {
-  color: #FFD700;
-  font-size: 1rem;
-  margin-right: 5px;
-}
 
 h5 {
   font-size: 1.2rem;
-  margin-bottom: 5px;
-  color: white;
+  margin-bottom: 10px;
+  color: #444444;
 }
 
 p {
   font-size: 0.8rem;
   line-height: 1.6;
-  color: white;
+  color: #444444;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -403,15 +399,20 @@ p {
   color: #777;
 }
 
+.container-form {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+}
+
 /* review form */
-.form-review {
+.container-form .form-review {
   border: 3px solid #ddd;
   padding: 12px;
   border-radius: 5px;
-  width: 100%;
+  width: 50%;
   overflow: hidden;
   box-sizing: border-box;
-  margin: 0 auto;
   grid-column: span 3; 
 }
 
@@ -423,7 +424,7 @@ p {
 .form-review h5 {
   font-size: 1rem;
   margin-bottom: 5px;
-  color: white;
+  color: #444444;
 }
 
 .form-review input[type="text"],
@@ -496,7 +497,7 @@ p {
 
 .grid-item a {
   text-decoration: none;
-  color: white;
+  color: #444444;
   font-weight: bold;
   display: block;
   margin-top: 10px;
@@ -517,6 +518,7 @@ p {
   cursor: pointer;
   left: 30px;
   justify-content: left;
+  margin-top: 10px;
    
 }
 

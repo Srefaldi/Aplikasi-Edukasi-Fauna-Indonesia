@@ -8,6 +8,7 @@ import FaunaContentModel from "./models/FaunaContentModel.js";
 import QuizModel from "./models/QuizModel.js";
 import FileUpload from "express-fileupload";
 import UserModel from "./models/UserModel.js";
+import ReviewerModel from "./models/ReviewerModel.js";
 
 dotenv.config();
 const app = express();
@@ -18,6 +19,7 @@ try {
     await FaunaContentModel.sync();
     await QuizModel.sync();
     await UserModel.sync();
+    await ReviewerModel.sync();
 } catch (error) {
     console.error(error);
 }

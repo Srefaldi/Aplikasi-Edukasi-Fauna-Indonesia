@@ -18,6 +18,7 @@ import DetailPage from "./components/detail.js";
 import PlayQuiz from "./components/Play-quiz.js"; 
 import Leaderboard from "./components/leaderboard.js";
 import QuizSelection from "./components/Selection-quiz.js";
+import InputNameQuiz from "./components/Before-quiz.js";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/selection-quiz" element={<><Navbar/><QuizSelection/><Footer/></>}/>
         <Route path="/play-quiz" element={<><Navbar/><PlayQuiz/><Footer/></>}/>
         <Route exact path="/leaderboard" element={<><Navbar /><Leaderboard /><Footer /></>} />
+        <Route exact path="/input-name-quiz" element={<><Navbar /><InputNameQuiz /><Footer /></>} />
       </Routes>
     </BrowserRouter>
   );

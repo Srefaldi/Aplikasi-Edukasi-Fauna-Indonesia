@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYoutube, faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 const Footer = () => {
 
     const styles = {
@@ -11,7 +12,7 @@ const Footer = () => {
         padding: '20px',
         margin: '0 auto',
         fontSize: '0.8em',
-        width: '100vw', // Menambahkan properti width: '100vw' di sini
+        width: '100vw',
       },
         footer: {
           display: 'flex',
@@ -47,6 +48,7 @@ const Footer = () => {
         },
         socialMediaIcons: {
           display: 'flex',
+          color: 'white',
         },
         socialMediaIconsA: {
           color: 'white',
@@ -77,60 +79,55 @@ const Footer = () => {
         },
         a: {
           color: 'white',
+          textDecoration: 'none', 
         },
-      };
+        iconStyle: {
+          marginLeft: '10px', // Jarak kiri ikon
+          marginRight: '10px', // Jarak kanan ikon
+        },
+      };  
 
   return (
     <div style={styles.host}>
       <div style={styles.footer}>
-        <div style={styles.footerSection}>
-          <h1>EduFauna</h1>
+        <div  style={styles.footerSection}>
+          <h1 className='mb-3'>EduFauna</h1>
           <ul>
-            <li>Hubungi Kami</li>
-            <p>edukasifauna@gmail.com</p>
+            <li className='mb-2'>Hubungi Kami</li>
+            <p style={{ color: 'white' }}>edukasifauna@gmail.com</p>
             <a href="/login" style={styles.a}>
               Masuk Sebagai Admin
             </a>
-            <li>
-              <div style={styles.socialMediaIcons}>
-                <a href="/" style={styles.socialMediaIconsA}>
-                  <i className="fab fa-youtube" style={styles.socialMediaIconsI}></i>
-                </a>
-                <a href="/" style={styles.socialMediaIconsA}>
-                  <i className="fab fa-instagram" style={styles.socialMediaIconsI}></i>
-                </a>
-                <a href="/" style={styles.socialMediaIconsA}>
-                  <i className="fab fa-facebook" style={styles.socialMediaIconsI}></i>
-                </a>
-                <a href="/" style={styles.socialMediaIconsA}>
-                  <i className="fab fa-twitter" style={styles.socialMediaIconsI}></i>
-                </a>
-              </div>
-            </li>
+            <li className='mt-2'>
+                <FontAwesomeIcon icon={faYoutube} style={styles.iconStyle} />
+                <FontAwesomeIcon icon={faInstagram} style={styles.iconStyle} />
+                <FontAwesomeIcon icon={faFacebook} style={styles.iconStyle} />
+                <FontAwesomeIcon icon={faTwitter} style={styles.iconStyle} />
+              </li>
           </ul>
         </div>
 
         <div style={styles.footerSection}>
           <h2 style={styles.h2}>Jenis Fauna</h2>
           <div className="fauna-types">
-            <p>Mamalia</p>
-            <p>Reptil</p>
-            <p>Burung</p>
-            <p>Amfibi</p>
-            <p>Ikan</p>
+            <p style={{ color: 'white' }}>Mamalia</p>
+            <p style={{ color: 'white' }}>Reptil</p>
+            <p style={{ color: 'white' }}>Burung</p>
+            <p style={{ color: 'white' }}>Amfibi</p>
+            <p style={{ color: 'white' }}>Ikan</p>
           </div>
         </div>
 
         <div style={styles.footerSection}>
           <h2 style={styles.h2}>Fauna Game</h2>
           <div style={styles.faunaGame}>
-            <p>Mengenal Fauna dengan cara yang lebih menyenangkan.</p>
+            <p style={{ color: 'white' }}>Mengenal Fauna dengan cara yang lebih menyenangkan.</p>
             <button style={styles.faunaGameButton}>Play Now</button>
           </div>
         </div>
 
         <div style={styles.copyright}>
-          <p>@2023 - Edukasi Fauna</p>
+          <p style={{ color: 'white' }}>@2023 - Edukasi Fauna</p>
         </div>
       </div>
     </div>

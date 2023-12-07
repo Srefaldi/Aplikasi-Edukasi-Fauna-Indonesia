@@ -6,15 +6,14 @@ import bg from '../css/landing-page/img/bg.jpg';
 import quizz from '../css/landing-page/img/quizz.png';
 import nanda from '../css/landing-page/img/nanda.jpeg';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+
 
 const LandingPage = () => {
   return (
     
     <div>
-        <script src="https://kit.fontawesome.com/d7da709801.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-rnyr88LlR9QfGdTzL3ZYOvKnN4HhDlXZe7R9h1UjmHjIdp2zgBfPnFls3++Fw4ar" crossorigin="anonymous"></link>
-
         <div className="container-fluid px-0"> 
             <div className="row mx-0"> 
             <div className="col-lg-12 px-0"> 
@@ -61,8 +60,8 @@ const LandingPage = () => {
             </div>
         </div>
 
-        <h1 class="headings"> <span>our</span> service </h1>
-  <div class="icons-container">
+      <h1 class="headings"> <span>our</span> service </h1>
+      <div class="icons-container">
       <div class="icons-item">
         <img src={quizz} alt=""/>
         <div class="icons-info">
@@ -120,118 +119,122 @@ const LandingPage = () => {
       </div>
     </div>
 
-    <h3 class="team-headings"> <span>users</span> review </h3>
-    <div className='review-container'>
-    <div class="review-box">
-        <h5>John Doe</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
+    <h3 className="team-headings"> <span>users</span> review </h3>
+      <div className="review-container">
+        <div className="review-box">
+          <h5>John Doe</h5>
+          <div className="stars">
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
           </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.</p>
-        <span class="fas fa-quote-right"></span>
-      </div>
-    </div>
-    <div className='review-container'>
-    <div class="review-box">
-        <h5>John Doe</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.</p>
-        <span class="fas fa-quote-right"></span>
-      </div>
-    </div>
-    <div className='review-container'>
-    <div class="review-box">
-        <h5>John Doe</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.</p>
-        <span class="fas fa-quote-right"></span>
-      </div>
-    </div>
-    <div className='review-container'>
-    <div class="review-box">
-        <h5>John Doe</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.</p>
-        <span class="fas fa-quote-right"></span>
-      </div>
-    </div>
-    <div className='review-container'>
-    <div class="review-box">
-        <h5>John Doe</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.</p>
-        <span class="fas fa-quote-right"></span>
-      </div>
-    </div>
-    <div className='review-container'>
-    <div class="review-box">
-        <h5>John Doe</h5>
-          <div class="stars">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-          </div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.</p>
-        <span class="fas fa-quote-right"></span>
-      </div>
-
-      <div className='from-review'>
-        <form action='/' method='post' id='reviewForm'>
-        <h5>Your Name</h5>
-        <input type='text' name='name' required></input>
-        <h5>Your Rating</h5>
-        <div className='stars'>
-            <input type="radio" id='star1' name='rating' value={1} required/>
-            <label for="star1" class="fas fa-star"></label>
-
-            <input type="radio" id='star2' name='rating' value={2} required/>
-            <label for="star1" class="fas fa-star"></label>
-
-            <input type="radio" id='star3' name='rating' value={3} required/>
-            <label for="star1" class="fas fa-star"></label>
-
-            <input type="radio" id='star4' name='rating' value={4} required/>
-            <label for="star1" class="fas fa-star"></label>
-
-            <input type="radio" id='star5' name='rating' value={5} required/>
-            <label for="star1" class="fas fa-star"></label>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
+          </p>
+          <span className="fas fa-quote-right"></span>
         </div>
-        <h5>Your Review</h5>
+        <div className="review-box">
+          <h5>John Doe</h5>
+          <div className="stars">
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
+          </p>
+          <span className="fas fa-quote-right"></span>
+        </div>
+        <div className="review-box">
+          <h5>John Doe</h5>
+          <div className="stars">
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
+          </p>
+          <span className="fas fa-quote-right"></span>
+        </div>
+        <div className="review-box">
+          <h5>John Doe</h5>
+          <div className="stars">
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
+          </p>
+          <span className="fas fa-quote-right"></span>
+        </div>
+        <div className="review-box">
+          <h5>John Doe</h5>
+          <div className="stars">
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
+          </p>
+          <span className="fas fa-quote-right"></span>
+        </div>
+        <div className="review-box">
+          <h5>John Doe</h5>
+          <div className="stars">
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          <FontAwesomeIcon icon={faStar} />
+          </div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
+          </p>
+          <span className="fas fa-quote-right"></span>
+        </div>
+      </div>
+
+      <div className='container-form'>
+      <div className="form-review">
+        <form action="#" method="post" id="reviewForm">
+          <h5>Your Name</h5>
+          <input type="text" name="name" required />
+          <h5>Your Rating</h5>
+          <div className="stars">
+            <input type="radio" id="star1" name="rating" value="1" required />
+            <label htmlFor="star1"><FontAwesomeIcon icon={faStar} /></label>
+
+            <input type="radio" id="star2" name="rating" value="2" required />
+            <label htmlFor="star2"><FontAwesomeIcon icon={faStar} /></label>
+
+            <input type="radio" id="star3" name="rating" value="3" required />
+            <label htmlFor="star3"><FontAwesomeIcon icon={faStar} /></label>
+
+            <input type="radio" id="star4" name="rating" value="4" required />
+            <label htmlFor="star4"><FontAwesomeIcon icon={faStar} /></label>
+
+            <input type="radio" id="star5" name="rating" value="5" required />
+            <label htmlFor="star5"><FontAwesomeIcon icon={faStar} /></label>
+          </div>
+          <h5>Your Review</h5>
           <textarea name="message" rows="4" required></textarea>
           <button type="submit">Submit Review</button>
         </form>
       </div>
-    </div>
+      </div>
 
     <h3 class="team-headings"> <span>our</span> team </h3>
     <div className='team-container'>

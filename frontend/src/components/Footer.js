@@ -28,6 +28,9 @@ const Footer = () => {
           textAlign: 'left',
           marginTop: '30px',
         },
+        p: {
+          color: 'white',
+        },
         h2: {
           fontSize: '1.2em',
           paddingBottom: '5px',
@@ -64,6 +67,7 @@ const Footer = () => {
           border: 'none',
           borderRadius: '10px',
           cursor: 'pointer',
+          marginTop: '15px'
         },
         copyright: {
           width: '100%',

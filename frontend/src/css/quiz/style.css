@@ -49,3 +49,72 @@ label.radio {
     color: aquamarine;
   }
   
+  .App {
+    text-align: center;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  .App-header {
+    background-color: #282c34;
+    padding: 20px;
+    color: white;
+  }
+  
+  input {
+    padding: 8px;
+    margin: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+/* selection quiz */
+
+.quiz-selection-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.quiz-selection-container h1 {
+  margin-bottom: 20px; 
+  margin-top: 30px;
+  text-align: center;
+  font-size: 28px;
+}
+
+
+.quiz-selection-content {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.quiz-info {
+  margin-bottom: 15px;
+}
+
+.quiz-link {
+  text-decoration: none;
+  color: #3498db;
+  font-weight: bold;
+}
+
+.quiz-link:hover {
+  text-decoration: none;
+}
+
+.quiz-selection-content p {
+  color: #112546;
+}

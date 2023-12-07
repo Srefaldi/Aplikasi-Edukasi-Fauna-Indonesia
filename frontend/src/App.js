@@ -17,6 +17,7 @@ import FaunaList from "./components/admin/FaunaList.js";
 import DetailPage from "./components/detail.js"; 
 import PlayQuiz from "./components/Play-quiz.js"; 
 import Leaderboard from "./components/leaderboard.js";
+import QuizSelection from "./components/Selection-quiz.js";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route exact path="/home-admin" element={<><Navbar/><HomeAdmin/></>}/>
         <Route exact path="/fauna-list" element={<><Navbar/><FaunaList/></>}/>
         <Route path="/detail/:itemName" element={<><Navbar/><DetailPage/><Footer/></>}/>
+        <Route path="/selection-quiz" element={<><Navbar/><QuizSelection/><Footer/></>}/>
         <Route path="/play-quiz" element={<><Navbar/><PlayQuiz/><Footer/></>}/>
         <Route exact path="/leaderboard" element={<><Navbar /><Leaderboard /><Footer /></>} />
       </Routes>

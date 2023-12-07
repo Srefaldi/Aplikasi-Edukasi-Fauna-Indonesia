@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import TemplateQuiz from './templates/template-quiz';
 import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
+
 const PlayQuiz = () => {
   const [quizData, setQuizData] = useState([]);
   const imgContainer = {

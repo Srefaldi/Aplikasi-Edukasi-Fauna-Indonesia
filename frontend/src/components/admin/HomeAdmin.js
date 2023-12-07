@@ -60,7 +60,7 @@ const HomeAdmin = () => {
     const handleSetFaunaContentClick = () => {
         // Add logic here to handle 'Set Fauna Content' button click
         // For now, let's navigate to '/list-fauna'
-        navigate('/fauna-list');
+        navigate('/set-fauna');
       };
  
     return (

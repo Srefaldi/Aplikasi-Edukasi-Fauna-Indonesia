@@ -20,6 +20,7 @@ const SetFauna = () => {
     // Add other form fields here
   });
   const [imageFile, setImageFile] = useState(null);
+  const [editId, setEditId] = useState(null);
 
   const openModal = () => {
     console.log('Opening modal');
@@ -39,6 +40,22 @@ const SetFauna = () => {
       // Reset other form fields here
     });
     setImageFile(null);
+  };
+
+  const openEditModal = (id) => {
+    const faunaToEdit = faunaListItem.find((fauna) => fauna.id === id);
+
+    setEditId(id);
+    setFormData({
+      name: faunaToEdit.name,
+      kategori_1: faunaToEdit.kategori_1,
+      kategori_2: faunaToEdit.kategori_2,
+      description: faunaToEdit.description,
+      desc_habitat: faunaToEdit.desc_habitat,
+      desc_populasi: faunaToEdit.desc_populasi,
+    });
+
+    setIsModalOpen(true);
   };
 
   const handleInputChange = (e) => {
@@ -75,6 +92,34 @@ const SetFauna = () => {
     }
   };
 
+  const handleEditFauna = async () => {
+    try {
+      const formDataWithImage = new FormData();
+      formDataWithImage.append('file', imageFile);
+      formDataWithImage.append('name', formData.name);
+      formDataWithImage.append('kategori_1', formData.kategori_1);
+      formDataWithImage.append('kategori_2', formData.kategori_2);
+      formDataWithImage.append('description', formData.description);
+      formDataWithImage.append('desc_habitat', formData.desc_habitat);
+      formDataWithImage.append('desc_populasi', formData.desc_populasi);
+
+      await axios.put(`http://localhost:5000/edit-fauna/${editId}`, formDataWithImage);
+
+      fetchData();
+      closeModal();
+    } catch (error) {
+      console.error('Error editing fauna:', error);
+    }
+  };
+
+  const handleDeleteFauna = async (id) => {
+    try {
+      await axios.delete(`http://localhost:5000/delete-fauna/${id}`);
+      fetchData();
+    } catch (error) {
+      console.error('Error deleting fauna:', error);
+    }
+  };
 
   const fetchData = async () => {
     try {
@@ -262,8 +307,8 @@ const SetFauna = () => {
               <label>Gambar:</label>
               <input type="file" onChange={handleFileChange} />
               {/* Add more input fields as needed */}
-              <button type="submit" onClick={handleAddFauna}>
-                Simpan
+              <button type="submit" onClick={editId ? handleEditFauna : handleAddFauna}>
+                {editId ? 'Simpan Edit' : 'Simpan'}
               </button>
             </form>
           </div>
@@ -303,8 +348,12 @@ const SetFauna = () => {
               <td>{fauna.desc_habitat}</td>
               <td>{fauna.desc_populasi}</td>
               <td style={styles.actionButtonsCell}>
-                <div style={styles.editButton}>Edit</div>
-                <div style={styles.deleteButton}>Hapus</div>
+                <div style={styles.editButton} onClick={() => openEditModal(fauna.id)}>
+                  Edit
+                </div>
+                <div style={styles.deleteButton} onClick={() => handleDeleteFauna(fauna.id)}>
+                  Hapus
+                </div>
               </td>
             </tr>
           ))}

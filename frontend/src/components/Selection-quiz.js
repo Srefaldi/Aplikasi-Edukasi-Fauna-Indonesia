@@ -1,10 +1,16 @@
 import React from 'react';
 import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 import '../css/quiz/style.css';
+import { useNavigate } from 'react-router-dom';
 
 const QuizSelection = ({ onSelectQuiz }) => {
   const handleQuizSelection = (quizNumber) => {
     onSelectQuiz(quizNumber);
+  };
+  const navigate = useNavigate();
+
+  const handleInputName = () => {
+    navigate('/input-name-quiz');
   };
 
   return (
@@ -25,12 +31,9 @@ const QuizSelection = ({ onSelectQuiz }) => {
               <div className="quiz-selection-content">
                 <div className="quiz-info">
                   <a
-                    href="#"
+                    href="/input-name-quiz" 
                     className="quiz-link"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleQuizSelection(quizNumber);
-                    }}
+                    onClick={handleInputName}
                   >
                     Quiz {quizNumber}
                   </a>

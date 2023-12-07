@@ -9,6 +9,72 @@ const SetFauna = () => {
   const [expire, setExpire] = useState('');
   const navigate = useNavigate();
   const [faunaListItem, setFaunaList] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    kategori_1: '',
+    kategori_2: '',
+    description: '',
+    desc_habitat: '',
+    desc_populasi: '',
+    // Add other form fields here
+  });
+  const [imageFile, setImageFile] = useState(null);
+
+  const openModal = () => {
+    console.log('Opening modal');
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    // Reset form data when the modal is closed
+    setFormData({
+      name: '',
+      kategori_1: '',
+      kategori_2: '',
+      description: '',
+      desc_habitat: '',
+      desc_populasi: '',
+      // Reset other form fields here
+    });
+    setImageFile(null);
+  };
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleFileChange = (e) => {
+    setImageFile(e.target.files[0]);
+  };
+
+  const handleAddFauna = async () => {
+    try {
+      const formDataWithImage = new FormData();
+      formDataWithImage.append('file', imageFile);
+      formDataWithImage.append('name', formData.name);
+      formDataWithImage.append('kategori_1', formData.kategori_1);
+      formDataWithImage.append('kategori_2', formData.kategori_2);
+      formDataWithImage.append('description', formData.description);
+      formDataWithImage.append('desc_habitat', formData.desc_habitat);
+      formDataWithImage.append('desc_populasi', formData.desc_populasi);
+
+      // Send the new fauna data to the server
+      await axios.post('http://localhost:5000/add-fauna', formDataWithImage);
+      
+      // After adding the fauna, you may want to refetch the data:
+      fetchData();
+      // Close the modal
+      closeModal();
+    } catch (error) {
+      console.error('Error adding fauna:', error);
+    }
+  };
+
 
   const fetchData = async () => {
     try {
@@ -76,6 +142,7 @@ const SetFauna = () => {
       padding: '10px 20px',
       borderRadius: '5px',
       cursor: 'pointer',
+      marginTop: '100px',
     },
     actionButtons: {
       display: 'flex',
@@ -135,16 +202,74 @@ const SetFauna = () => {
       borderRadius: '5px',
       cursor: 'pointer',
     },
+    
+    
   };
 
   return (
     <div style={styles.container}>
-      <div style={styles.header}>
-        <div style={styles.addButton}>Tambah Fauna</div>
-        <div style={styles.actionButtons}>
-          <div style={styles.printButton}>Cetak</div>
-        </div>
+      <div style={styles.addButton} onClick={openModal}>
+        Tambah Fauna
       </div>
+
+      {/* Modal for adding new fauna */}
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
+            <form onSubmit={(e) => e.preventDefault()}>
+              <label>Nama Fauna:</label>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+              />
+              <label>Kategori 1:</label>
+              <input
+                type="text"
+                name="kategori_1"
+                value={formData.kategori_1}
+                onChange={handleInputChange}
+              />
+              <label>Kategori 2:</label>
+              <input
+                type="text"
+                name="kategori_2"
+                value={formData.kategori_2}
+                onChange={handleInputChange}
+              />
+              <label>Deskripsi:</label>
+              <textarea
+                name="description"
+                value={formData.description}
+                onChange={handleInputChange}
+              />
+              <label>Deskripsi Habitat:</label>
+              <textarea
+                name="desc_habitat"
+                value={formData.desc_habitat}
+                onChange={handleInputChange}
+              />
+              <label>Deskripsi Populasi:</label>
+              <textarea
+                name="desc_populasi"
+                value={formData.desc_populasi}
+                onChange={handleInputChange}
+              />
+              <label>Gambar:</label>
+              <input type="file" onChange={handleFileChange} />
+              {/* Add more input fields as needed */}
+              <button type="submit" onClick={handleAddFauna}>
+                Simpan
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <input type="text" placeholder="Cari Fauna..." style={styles.searchInput} />
       <table style={styles.table}>
         <thead>

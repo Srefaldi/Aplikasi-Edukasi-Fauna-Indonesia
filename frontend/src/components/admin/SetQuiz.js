@@ -235,10 +235,16 @@ const SetQuizContainer = () => {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.addButton} onClick={openModal}>
+    <div className='setfauna-container'>
+      <h1>Data Quiz</h1>
+      <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
+      <div className='header'>
+      <div className='addButton' onClick={openModal}>
         Tambah Quiz
       </div>
+      </div>
+      <input type="text" placeholder="Cari Quiz..." className="searchInput" />
+
 
       {/* Modal for adding/editing quiz */}
       <div style={styles.modal}>
@@ -303,16 +309,16 @@ const SetQuizContainer = () => {
       </div>
 
       {/* Quiz list rendering */}
-      <table style={styles.quizList}>
+      <table className='table'>
         <thead>
-          <tr style={styles.th}>
+          <tr className='th'>
             <th>Soal</th>
             <th>Opsi A</th>
             <th>Opsi B</th>
             <th>Opsi C</th>
             <th>Opsi D</th>
             <th>Jawaban Benar</th>
-            <th>Actions</th>
+            <th className='actionButtonsCell'>Actions</th>
           </tr>
         </thead>
         <tbody>

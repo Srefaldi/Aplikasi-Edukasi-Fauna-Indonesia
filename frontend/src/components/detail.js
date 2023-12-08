@@ -12,12 +12,12 @@ const DetailPage = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/get-fauna/${itemName}`);
-        const foundFaunaDetail = response.data; // Assuming the API response returns the detail of the fauna
+        const foundFaunaDetail = response.data;
 
         if (!foundFaunaDetail) {
           setFaunaDetail('<p>Detail not found</p>');
         } else {
-          setFaunaData(foundFaunaDetail); // Set the fauna data obtained from the API response
+          setFaunaData(foundFaunaDetail); 
           const faunaDetailTemplate = createFaunaDetailTemplate(foundFaunaDetail);
           setFaunaDetail(faunaDetailTemplate);
         }

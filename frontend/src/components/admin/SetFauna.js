@@ -3,6 +3,7 @@ import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import './styles/Admin.css';
+import Sidebar from './Sidebar';
 
 const SetFauna = () => {
   const [token, setToken] = useState('');
@@ -170,197 +171,155 @@ const SetFauna = () => {
     fetchData();
   }, []);
 
-  const styles = {
-    container: {
-      marginTop: '20px',
-      fontFamily: 'Arial, sans-serif',
-    },
-    header: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      marginBottom: '20px',
-    },
-    addButton: {
-      backgroundColor: '#3498db',
-      color: 'white',
-      padding: '10px 20px',
-      borderRadius: '5px',
-      cursor: 'pointer',
-      marginTop: '100px',
-    },
-    actionButtons: {
-      display: 'flex',
-      alignItems: 'center',
-    },
-    printButton: {
-      backgroundColor: '#2ecc71',
-      color: 'white',
-      padding: '10px',
-      marginLeft: '10px',
-      borderRadius: '5px',
-      cursor: 'pointer',
-    },
-    searchInput: {
-      padding: '10px',
-      border: '1px solid #ddd',
-      borderRadius: '5px',
-      marginRight: '10px',
-      marginBottom: '20px',
-    },
-    table: {
-      width: '100%',
-      borderCollapse: 'collapse',
-      marginTop: '20px',
-      boxShadow: '0 0 20px rgba(0, 0, 0, 0.1)',
-      overflow: 'hidden',
-    },
-    th: {
-      backgroundColor: '#04AA6D',
-      color: 'white',
-      padding: '15px',
-      textAlign: 'left',
-      borderBottom: '1px solid #ddd',
-    },
-    td: {
-      padding: '15px',
-      borderBottom: '1px solid #ddd',
-      textAlign: 'left',
-    },
-    actionButtonsCell: {
-      textAlign: 'center',
-      display: 'flex',
-      justifyContent: 'center',
-      gap: '5px',
-    },
-    editButton: {
-      backgroundColor: '#3498db',
-      color: 'white',
-      padding: '8px',
-      borderRadius: '5px',
-      cursor: 'pointer',
-    },
-    deleteButton: {
-      backgroundColor: '#e74c3c',
-      color: 'white',
-      padding: '8px',
-      borderRadius: '5px',
-      cursor: 'pointer',
-    },
-    
-    
-  };
-
   return (
-    <div style={styles.container}>
-      <div style={styles.addButton} onClick={openModal}>
-        Tambah Fauna
-      </div>
+    <>
+      <Sidebar />
 
-      {/* Modal for adding new fauna */}
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>
-              &times;
-            </span>
-            <form onSubmit={(e) => e.preventDefault()}>
-              <label>Nama Fauna:</label>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleInputChange}
-              />
-              <label>Kategori 1:</label>
-              <input
-                type="text"
-                name="kategori_1"
-                value={formData.kategori_1}
-                onChange={handleInputChange}
-              />
-              <label>Kategori 2:</label>
-              <input
-                type="text"
-                name="kategori_2"
-                value={formData.kategori_2}
-                onChange={handleInputChange}
-              />
-              <label>Deskripsi:</label>
-              <textarea
-                name="description"
-                value={formData.description}
-                onChange={handleInputChange}
-              />
-              <label>Deskripsi Habitat:</label>
-              <textarea
-                name="desc_habitat"
-                value={formData.desc_habitat}
-                onChange={handleInputChange}
-              />
-              <label>Deskripsi Populasi:</label>
-              <textarea
-                name="desc_populasi"
-                value={formData.desc_populasi}
-                onChange={handleInputChange}
-              />
-              <label>Gambar:</label>
-              <input type="file" onChange={handleFileChange} />
-              {/* Add more input fields as needed */}
-              <button type="submit" onClick={editId ? handleEditFauna : handleAddFauna}>
-                {editId ? 'Simpan Edit' : 'Simpan'}
-              </button>
-            </form>
+      <div className="setfauna-container">
+        <h1>Data Fauna</h1>
+        <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
+        <div className="header">
+          <div className="addButton" onClick={openModal}>Tambah Fauna</div>
+          <div className="actionButtons">
+            <div className="printButton">Cetak</div>
           </div>
         </div>
-      )}
+        <input type="text" placeholder="Cari Fauna..." className="searchInput" />
 
-      <input type="text" placeholder="Cari Fauna..." style={styles.searchInput} />
-      <table style={styles.table}>
-        <thead>
-          <tr style={styles.th}>
-            <th>No</th>
-            <th>Gambar</th>
-            <th>Nama</th>
-            <th>Deskripsi</th>
-            <th>kategori 1</th>
-            <th>kategori 2</th>
-            <th>Deskripsi Habitat</th>
-            <th>Deskripsi populasi</th>
-            <th style={styles.actionButtonsCell}>Aksi</th>
-          </tr>
-        </thead>
-        <tbody>
-          {faunaListItem.map((fauna, index) => (
-            <tr key={index} style={styles.td}>
-              <td>{index + 1}</td>
-              <td>
-                <img
-                  src={fauna.image_url}
-                  alt={`Gambar ${fauna.name}`}
-                  style={{ width: '50px', height: '50px', objectFit: 'cover' }}
+        {/* Modal for adding new fauna */}
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modal-content">
+              <span className="close" onClick={closeModal}>
+                &times;
+              </span>
+              <form onSubmit={(e) => e.preventDefault()}>
+                <label>Nama Fauna:</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
                 />
-              </td>
-              <td>{fauna.name}</td>
-              <td>{fauna.description}</td>
-              <td>{fauna.kategori_1}</td>
-              <td>{fauna.kategori_2}</td>
-              <td>{fauna.desc_habitat}</td>
-              <td>{fauna.desc_populasi}</td>
-              <td style={styles.actionButtonsCell}>
-                <div style={styles.editButton} onClick={() => openEditModal(fauna.id)}>
-                  Edit
-                </div>
-                <div style={styles.deleteButton} onClick={() => handleDeleteFauna(fauna.id)}>
-                  Hapus
-                </div>
-              </td>
+                <label>Kategori 1:</label>
+                <input
+                  type="text"
+                  name="kategori_1"
+                  value={formData.kategori_1}
+                  onChange={handleInputChange}
+                />
+                <label>Kategori 2:</label>
+                <input
+                  type="text"
+                  name="kategori_2"
+                  value={formData.kategori_2}
+                  onChange={handleInputChange}
+                />
+                <label>Deskripsi:</label>
+                <textarea
+                  name="description"
+                  value={formData.description}
+                  onChange={handleInputChange}
+                />
+                <label>Deskripsi Habitat:</label>
+                <textarea
+                  name="desc_habitat"
+                  value={formData.desc_habitat}
+                  onChange={handleInputChange}
+                />
+                <label>Deskripsi Populasi:</label>
+                <textarea
+                  name="desc_populasi"
+                  value={formData.desc_populasi}
+                  onChange={handleInputChange}
+                />
+                <label>Gambar:</label>
+                <input type="file" onChange={handleFileChange} />
+                {/* Add more input fields as needed */}
+                <button className='btn-modal' type="submit" onClick={editId ? handleEditFauna : handleAddFauna}>
+                  {editId ? 'Simpan Edit' : 'Simpan'}
+                </button>
+              </form>
+            </div>
+          </div>
+        )}
+
+        <table className="table">
+          <thead>
+            <tr className="th">
+              <th>No</th>
+              <th>Gambar</th>
+              <th>Nama</th>
+              <th>Deskripsi</th>
+              <th>kategori 1</th>
+              <th>kategori 2</th>
+              <th>Deskripsi Habitat</th>
+              <th>Deskripsi populasi</th>
+              <th className="actionButtonsCell">Aksi</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {faunaListItem.map((fauna, index) => (
+              <tr key={index} className="td">
+                <td>{index + 1}</td>
+                <td>
+                  <img
+                    src={fauna.image_url}
+                    alt={`Gambar ${fauna.name}`}
+                    style={{ width: '50px', height: '50px', objectFit: 'cover' }}
+                  />
+                </td>
+                <td>{fauna.name}</td>
+                <td>{fauna.description}</td>
+                <td>{fauna.kategori_1}</td>
+                <td>{fauna.kategori_2}</td>
+                <td>{fauna.desc_habitat}</td>
+                <td>{fauna.desc_populasi}</td>
+                <td className="actionButtonsCell">
+                  <div className="editButton" onClick={() => openEditModal(fauna.id)}>
+                    Edit
+                  </div>
+                  <div className="deleteButton" onClick={() => handleDeleteFauna(fauna.id)}>
+                    Hapus
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 };
 
 export default SetFauna;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

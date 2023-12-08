@@ -21,8 +21,8 @@ const Sidebar = () => {
         <li><Link to="/home-admin">Beranda</Link></li>
         <li><Link to="/set-fauna">Set Fauna Content</Link></li>
         <li><Link to="/set-quiz">Set Quiz</Link></li>
-        <li><Link to="/#">Set Review Content</Link></li>
-        <li><Link to="/leaderboard-admin">Leaderboard</Link></li>
+        <li><Link to="/set-review">Set Review Content</Link></li>
+        <li><Link to="/leaderboard-admin">Leaderbard</Link></li>
         <li><Link to="/profil">Profil</Link></li>
         <li><Link to="/keluar" onClick={Logout}>Keluar</Link></li>
       </ul>

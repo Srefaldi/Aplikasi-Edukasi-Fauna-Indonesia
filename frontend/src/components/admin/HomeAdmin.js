@@ -58,13 +58,14 @@ const HomeAdmin = () => {
       },
     });
     setUsers(response.data);
+    console.log(users);
   };
 
-  const handleSetFaunaContentClick = () => {
-    // Add logic here to handle 'Set Fauna Content' button click
-    // For now, let's navigate to '/set-fauna'
-    navigate('/set-fauna');
-  };
+  // const handleSetFaunaContentClick = () => {
+  //   // Add logic here to handle 'Set Fauna Content' button click
+  //   // For now, let's navigate to '/set-fauna'
+  //   navigate('/set-fauna');
+  // };
 
   return (
     <div className="admin-layout">

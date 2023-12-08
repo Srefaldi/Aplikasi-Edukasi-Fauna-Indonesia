@@ -11,12 +11,12 @@ const SetQuizContainer = () => {
   const [quizList, setQuizList] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
-    soal: '',
-    opsiA: '',
-    opsiB: '',
-    opsiC: '',
-    opsiD: '',
-    jawabanBenar: '',
+    question: '',
+    option_1: '',
+    option_2: '',
+    option_3: '',
+    option_4: '',
+    answer: '',
   });
   const [editId, setEditId] = useState(null);
 
@@ -31,12 +31,12 @@ const SetQuizContainer = () => {
 
   const resetFormAndEditId = () => {
     setFormData({
-      soal: '',
-      opsiA: '',
-      opsiB: '',
-      opsiC: '',
-      opsiD: '',
-      jawabanBenar: '',
+      question: '',
+      option_1: '',
+      option_2: '',
+      option_3: '',
+      option_4: '',
+      answer: '',
     });
     setEditId(null);
   };
@@ -46,12 +46,12 @@ const SetQuizContainer = () => {
 
     setEditId(id);
     setFormData({
-      soal: quizToEdit.soal,
-      opsiA: quizToEdit.opsiA,
-      opsiB: quizToEdit.opsiB,
-      opsiC: quizToEdit.opsiC,
-      opsiD: quizToEdit.opsiD,
-      jawabanBenar: quizToEdit.jawabanBenar,
+      question: quizToEdit.question,
+      option_1: quizToEdit.option_1,
+      option_2: quizToEdit.option_2,
+      option_3: quizToEdit.option_3,
+      option_4: quizToEdit.option_4,
+      answer: quizToEdit.answer,
     });
 
     setIsModalOpen(true);
@@ -257,48 +257,48 @@ const SetQuizContainer = () => {
               type="text"
               placeholder="Soal"
               style={styles.input}
-              name="soal"
-              value={formData.soal}
+              name="question"
+              value={formData.question}
               onChange={handleInputChange}
             />
             <input
               type="text"
               placeholder="Opsi A"
               style={styles.input}
-              name="opsiA"
-              value={formData.opsiA}
+              name="option_1"
+              value={formData.option_1}
               onChange={handleInputChange}
             />
             <input
               type="text"
               placeholder="Opsi B"
               style={styles.input}
-              name="opsiB"
-              value={formData.opsiB}
+              name="option_2"
+              value={formData.option_2}
               onChange={handleInputChange}
             />
             <input
               type="text"
               placeholder="Opsi C"
               style={styles.input}
-              name="opsiC"
-              value={formData.opsiC}
+              name="option_3"
+              value={formData.option_3}
               onChange={handleInputChange}
             />
             <input
               type="text"
               placeholder="Opsi D"
               style={styles.input}
-              name="opsiD"
-              value={formData.opsiD}
+              name="option_4"
+              value={formData.option_4}
               onChange={handleInputChange}
             />
             <input
               type="text"
               placeholder="Jawaban Benar"
               style={styles.input}
-              name="jawabanBenar"
-              value={formData.jawabanBenar}
+              name="answer"
+              value={formData.answer}
               onChange={handleInputChange}
             />
             <button type="submit" style={styles.button} onClick={handleSaveQuiz}>
@@ -324,12 +324,12 @@ const SetQuizContainer = () => {
         <tbody>
           {quizList.map((quiz) => (
             <tr key={quiz.id} style={styles.td}>
-              <td>{quiz.soal}</td>
-              <td>{quiz.opsiA}</td>
-              <td>{quiz.opsiB}</td>
-              <td>{quiz.opsiC}</td>
-              <td>{quiz.opsiD}</td>
-              <td>{quiz.jawabanBenar}</td>
+              <td>{quiz.question}</td>
+              <td>{quiz.option_1}</td>
+              <td>{quiz.option_2}</td>
+              <td>{quiz.option_3}</td>
+              <td>{quiz.option_4}</td>
+              <td>{quiz.answer}</td>
               <td style={styles.actionButtonsCell}>
                 <div style={styles.editButton} onClick={() => openEditModal(quiz.id)}>
                   Edit

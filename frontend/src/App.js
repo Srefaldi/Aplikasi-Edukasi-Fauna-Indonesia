@@ -21,7 +21,9 @@ import QuizSelection from "./components/Selection-quiz.js";
 import NavAdmin from "./components/admin/NavAdmin.js";
 import SideBar from "./components/admin/Sidebar.js";
 import InputName from "./components/Before-quiz.js";
+import SetReview from "./components/admin/SetReview.js";
 import LeaderboardAdmin from "./components/admin/Leaderboard.js";
+
 function App() {
   return (
     <BrowserRouter>
@@ -45,9 +47,10 @@ function App() {
         <Route exact path="/home-admin" element={<><NavAdmin/><HomeAdmin/></>}/>
         <Route exact path="/set-fauna" element={<><NavAdmin/><SetFauna/></>}/>
         <Route exact path="/set-quiz" element={<><NavAdmin/><SideBar/><SetQuiz/></>}/>
-        <Route path="/home-admin" element={<><NavAdmin /><SideBar/><HomeAdmin /></>} />
-        <Route path="/set-fauna" element={<><NavAdmin /><SideBar/><SetFauna /></>} />
+        <Route exact path="/set-review" element={<><NavAdmin /><SideBar/><SetReview /></>} />
         <Route path="/leaderboard-admin" element={<><NavAdmin /><SideBar/><LeaderboardAdmin /></>} />
+
+        
       </Routes>
     </BrowserRouter>
   );

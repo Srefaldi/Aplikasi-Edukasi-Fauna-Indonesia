@@ -1,48 +1,48 @@
 import React, { useState, useEffect } from 'react';
 import createFaunaDetailTemplate from './templates/template-detail';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
-
 const DetailPage = () => {
   const { itemName } = useParams();
-  const [faunaData, setFaunaData] = useState([]);
+  const [faunaDetail, setFaunaDetail] = useState(null);
+  const [faunaData, setFaunaData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/data/data-fauna.json'); 
-        if (!response.ok) {
-          throw new Error('Network response was not ok.');
+        const response = await axios.get(`http://localhost:5000/get-fauna/${itemName}`);
+        const foundFaunaDetail = response.data; // Assuming the API response returns the detail of the fauna
+
+        if (!foundFaunaDetail) {
+          setFaunaDetail('<p>Detail not found</p>');
+        } else {
+          setFaunaData(foundFaunaDetail); // Set the fauna data obtained from the API response
+          const faunaDetailTemplate = createFaunaDetailTemplate(foundFaunaDetail);
+          setFaunaDetail(faunaDetailTemplate);
         }
-        const data = await response.json();
-        setFaunaData(data.faunaData);
       } catch (error) {
         console.error('There was a problem fetching the data:', error);
       }
     };
     fetchData();
-  }, []);
-
-  const [faunaDetail, setFaunaDetail] = useState(null);
-
-  useEffect(() => {
-    const foundFaunaDetail = faunaData.find(
-      (item) => item.nama.toLowerCase() === itemName.toLowerCase()
-    );
-
-    if (!foundFaunaDetail) {
-      setFaunaDetail('<p>Detail not found</p>');
-    } else {
-      const faunaDetailTemplate = createFaunaDetailTemplate(foundFaunaDetail);
-      setFaunaDetail(faunaDetailTemplate);
-    }
-  }, [faunaData, itemName]);
+  }, [itemName]);
   const imgContainer = {
     width: '100vw',
-};
-  return (
-    <div>
-      {faunaDetail}
+  };
+
+  return ( 
+  <div> 
+
+      <div className="container-fluid px-0">
+        <div className="row mx-0">
+          <div className="col-lg-12 px-0">
+            <img id="homeImage" className="img-fluid" src={hero} alt="Foto Home" style={imgContainer} />
+          </div>
+        </div>
+      </div>
+
+    {faunaDetail}
     </div>
   );
 };

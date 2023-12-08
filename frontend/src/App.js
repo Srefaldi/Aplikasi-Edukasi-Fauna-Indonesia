@@ -19,26 +19,32 @@ import PlayQuiz from "./components/Play-quiz.js";
 import Leaderboard from "./components/leaderboard.js";
 import QuizSelection from "./components/Selection-quiz.js";
 import NavAdmin from "./components/admin/NavAdmin.js";
+import SideBar from "./components/admin/Sidebar.js"
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        
+        {/* User Routes */}
         <Route exact path="/" element={<><Navbar/><LandingPage/><Footer/></>}/>
-        <Route exact path="/login" element={<><Navbar/><Login/><Footer/></>}/>
-        <Route exact path="/register" element={<><Navbar/><Register/><Footer/></>}/>
         <Route exact path="/home" element={<><Navbar/><HomePage/><Footer/></>}/>
         <Route exact path="/kategori" element={<><Navbar/><KategoriPage/><Footer/></>}/>
         <Route exact path="/quiz" element={<><Navbar/><Quiz/><Footer/></>}/>
-        <Route exact path="/home-admin" element={<><Navbar/><HomeAdmin/></>}/>
-        <Route exact path="/set-fauna" element={<><Navbar/><SetFauna/></>}/>
-        <Route exact path="/set-quiz" element={<><Navbar/><SetQuiz/></>}/>
-        <Route path="/home-admin" element={<><NavAdmin /><HomeAdmin /></>} />
-        <Route path="/set-fauna" element={<><NavAdmin /><SetFauna /></>} />
         <Route path="/detail/:itemName" element={<><Navbar/><DetailPage/><Footer/></>}/>
         <Route path="/selection-quiz" element={<><Navbar/><QuizSelection/><Footer/></>}/>
         <Route path="/play-quiz" element={<><Navbar/><PlayQuiz/><Footer/></>}/>
         <Route exact path="/leaderboard" element={<><Navbar /><Leaderboard /><Footer /></>} />
+        
+        {/* Admin Route */}
+        <Route exact path="/login" element={<><Login/><Footer/></>}/>
+        <Route exact path="/register" element={<><Register/><Footer/></>}/>
+        <Route exact path="/home-admin" element={<><NavAdmin/><HomeAdmin/></>}/>
+        <Route exact path="/set-fauna" element={<><NavAdmin/><SetFauna/></>}/>
+        <Route exact path="/set-quiz" element={<><NavAdmin/><SideBar/><SetQuiz/></>}/>
+        <Route path="/home-admin" element={<><NavAdmin /><SideBar/><HomeAdmin /></>} />
+        <Route path="/set-fauna" element={<><NavAdmin /><SideBar/><SetFauna /></>} />
+        
       </Routes>
     </BrowserRouter>
   );

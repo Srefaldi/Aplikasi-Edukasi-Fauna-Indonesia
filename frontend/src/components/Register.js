@@ -28,7 +28,7 @@ const Register = () => {
     }
 
     return (
-        <section className="hero has-background-grey-light is-fullheight is-fullwidth mt-5">
+        <section className="hero has-background-grey-light is-fullheight is-fullwidth">
             <div className="hero-body mt-5">
                 <div className="container is-widescreen mt-5">
                     <div className="columns is-centered">

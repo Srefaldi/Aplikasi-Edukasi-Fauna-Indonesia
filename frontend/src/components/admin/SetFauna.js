@@ -170,7 +170,7 @@ const SetFauna = () => {
     refreshToken();
     fetchData();
   }, []);
-
+  const truncatedDescription = (description) => description.substring(0, 50);
   return (
     <>
       <Sidebar />
@@ -270,7 +270,7 @@ const SetFauna = () => {
                   />
                 </td>
                 <td>{fauna.name}</td>
-                <td>{fauna.description}</td>
+                <td>{truncatedDescription(fauna.description)}...</td>
                 <td>{fauna.kategori_1}</td>
                 <td>{fauna.kategori_2}</td>
                 <td>{fauna.desc_habitat}</td>

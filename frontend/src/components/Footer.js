@@ -94,7 +94,7 @@ const Footer = () => {
           <h1 className='mb-3'>EduFauna</h1>
           <ul>
             <li className='mb-2'>Hubungi Kami</li>
-            <p style={{ color: 'white' }}>edukasifauna@gmail.com</p>
+            <p className='mb-2' style={{ color: 'white' }}>edukasifauna@gmail.com</p>
             <a href="/login" style={styles.a}>
               Masuk Sebagai Admin
             </a>

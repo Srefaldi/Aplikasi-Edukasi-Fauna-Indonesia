@@ -4,22 +4,19 @@ import search from '../css/icon/search.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const KategoriPage = () => {
   const [faunaData, setFaunaData] = useState([]);
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const [error, setError] = useState(null);
-  const { itemName } = useParams(); 
+  const { itemName } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('/data/data-fauna.json');
-        if (!response.ok) {
-          throw new Error('Network response was not ok.');
-        }
-        const data = await response.json();
-        setFaunaData(data.faunaData);
+        const response = await axios.get('http://localhost:5000/get-allfauna');
+        setFaunaData(response.data);
       } catch (error) {
         console.error('There was a problem fetching the data:', error);
         setError('There was a problem fetching the data.');
@@ -27,10 +24,9 @@ const KategoriPage = () => {
     };
     fetchData();
   }, []);
-
-  const truncatedDescription = (description) => description.substring(0, 50);
-  const handleReadMore = (itemName) => {
-    navigate(`/detail/${itemName}`); 
+ const truncatedDescription = (description) => description.substring(0, 50);
+  const handleReadMore = (id) => {
+    navigate(`/detail/${id}`);
   };
   useEffect(() => {
     const initDropdown = () => {
@@ -143,29 +139,31 @@ const KategoriPage = () => {
           </ul>
         </div>
   
-        {/* Fauna Items */}
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-4 mb-5">
-          {error ? (<p>{error}</p>) : (
-            faunaData.map((item) => (
-              <div className="col" key={item.nama}>
-                <div className="card h-100">
-                  <img src={item.foto} className="card-img-top" alt={item.nama} />
+        <div className="container">
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-4 mb-5">
+        {error ? (
+          <p>{error}</p>
+        ) : (
+          faunaData.map((item) => (
+            <div className="col" key={item.id}>
+              <div className="card h-100">
+                <img src={item.image_url} className="card-img-top" alt={item.name} />
                 <div className="card-body">
-                    <strong className="d-inline-block mb-2 text-primary">{item.jenis}</strong>
-                    <h5 className="card-title" style={{ color: 'black' }}>{item.nama}</h5>
-                    <div className="mb-1 text-muted">{item.pulau}</div>
-                    <p className="card-text" style={{ color: 'black' }}>{truncatedDescription(item.deskripsi)}...</p>
-                    <a href={`/detail/${item.nama}`} className="stretched-link" style={{ textDecoration: 'none' }} onClick={() => handleReadMore(item.nama)}>Baca Selengkapnya</a>
-                  </div>
+                  <strong className="d-inline-block mb-2 text-primary">{item.kategori_1}</strong>
+                  <h5 className="card-title" style={{ color: 'black' }}>{item.name}</h5>
+                  <div className="mb-1 text-muted">{item.kategori_2}</div>
+                  <p className="card-text" style={{ color: 'black' }}>{truncatedDescription(item.description)}...</p>
+                  <a href={`/detail/${item.id}`} className="stretched-link" style={{ textDecoration: 'none' }} onClick={() => handleReadMore(item.id)}>Baca Selengkapnya</a>
                 </div>
               </div>
-            ))
-          )}
+            </div>
+          ))
+        )}
         </div>
       </div>
     </div>
-  )
-  
-}
+  </div>
+  );
+};
 
 export default KategoriPage;

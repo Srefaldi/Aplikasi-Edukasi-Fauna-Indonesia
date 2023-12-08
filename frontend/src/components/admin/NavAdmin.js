@@ -17,7 +17,7 @@ const NavAdmin = () => {
   return (
     <div className="nav-admin"> 
       <div className="left-content">
-        <div className="logo">Admin Site</div>
+        <h1 className='logo mt-5'>Admin Site</h1>
       </div>
       <div className="right-content">
         <Link to="/home-admin" className="nav-link">Home Admin</Link>

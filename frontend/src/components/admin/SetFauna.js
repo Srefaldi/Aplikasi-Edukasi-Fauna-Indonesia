@@ -41,6 +41,7 @@ const SetFauna = () => {
       // Reset other form fields here
     });
     setImageFile(null);
+    setEditId(null);
   };
 
   const openEditModal = (id) => {

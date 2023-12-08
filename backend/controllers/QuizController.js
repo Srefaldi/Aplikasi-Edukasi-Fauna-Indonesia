@@ -2,15 +2,15 @@ import QuizModel from "../models/QuizModel.js";
 
 export const addQuiz = async (req, res) => {
     try {
-        const { question, optionA, optionB, optionC, optionD, correctAnswer } = req.body;
+        const { question, option_1, option_2, option_3, option_4, answer } = req.body;
 
         const newQuiz = await QuizModel.create({
             question: question,
-            optionA: optionA,
-            optionB: optionB,
-            optionC: optionC,
-            optionD: optionD,
-            correctAnswer: correctAnswer,
+            option_1: option_1,
+            option_2: option_2,
+            option_3: option_3,
+            option_4: option_4,
+            answer: answer,
         });
 
         res.status(201).json(newQuiz);
@@ -58,14 +58,14 @@ export const editQuizById = async (req, res) => {
             return res.status(404).json({ error: 'Quiz not found' });
         }
 
-        const { question, optionA, optionB, optionC, optionD, correctAnswer } = req.body;
+        const { question, option_1, option_2, option_3, option_4, answer } = req.body;
         await quiz.update({
             question: question,
-            optionA: optionA,
-            optionB: optionB,
-            optionC: optionC,
-            optionD: optionD,
-            correctAnswer: correctAnswer,
+            option_1: option_1,
+            option_2: option_2,
+            option_3: option_3,
+            option_4: option_4,
+            answer: answer,
         });
 
         res.status(200).json({ msg: `Berhasil Mengedit pertanyaan: ${quiz.question}` });

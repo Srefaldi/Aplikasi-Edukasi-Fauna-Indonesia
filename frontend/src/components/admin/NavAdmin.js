@@ -1,11 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import './styles/Admin.css';
+import axios from 'axios';
 
 const NavAdmin = () => {
-  const handleLogout = () => {
-    // Implement logout logic here
-    // Redirect user to the login page or perform any necessary actions
+  const navigate = useNavigate();
+  const Logout = async () => {
+    try {
+      await axios.delete('http://localhost:5000/logout');
+      navigate('/');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -15,7 +21,7 @@ const NavAdmin = () => {
       </div>
       <div className="right-content">
         <Link to="/home-admin" className="nav-link">Home Admin</Link>
-        <div className="logout-button" onClick={handleLogout}>Logout</div>
+        <div className="logout-button" onClick={Logout}>Logout</div>
       </div>
     </div>
   );

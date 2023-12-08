@@ -62,6 +62,10 @@ const HomeAdmin = () => {
         // For now, let's navigate to '/list-fauna'
         navigate('/set-fauna');
       };
+
+    const handleSetQuizClick = () => {
+        navigate('/set-quiz');
+    };
  
     return (
         <div className="admin-layout" style={{marginTop: 100}}>
@@ -91,10 +95,7 @@ const HomeAdmin = () => {
                             padding: '15px',
                             fontSize: '18px',
                         }}
-                        onClick={() => {
-                            // Handle 'Set Quiz' button click
-                            console.log('Set Quiz button clicked');
-                        }}
+                        onClick={handleSetQuizClick}
                         >
                         Set Quiz
                         </button>

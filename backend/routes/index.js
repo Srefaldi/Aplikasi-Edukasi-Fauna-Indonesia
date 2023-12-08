@@ -3,7 +3,7 @@ import { getUsers, Register, Login, Logout } from "../controllers/Users.js";
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/RefreshToken.js";
 import { AddFauna, deleteFaunaById, editFaunaById, getAllfauna, getFaunaById } from "../controllers/FaunaContents.js";
-import { AddQuiz } from "../controllers/QuizController.js";
+import { addQuiz, deleteQuizById, editQuizById, getAllQuizzes, getQuizById } from "../controllers/QuizController.js";
 import { addReview, deleteReviewById, getAllReviews, getReviewById, updateReviewById } from "../controllers/Reviewer.js";
  
 const router = express.Router();
@@ -22,7 +22,11 @@ router.put('/edit-fauna/:faunaId', editFaunaById);
 router.delete('/delete-fauna/:faunaId', deleteFaunaById);
 
 // Quiz
-router.post('/add-quiz', AddQuiz);
+router.post('/add-quiz', addQuiz);
+router.get('/get-allquizzes', getAllQuizzes);
+router.get('/get-quiz/:quizId', getQuizById);
+router.put('/edit-quiz/:quizId', editQuizById);
+router.delete('/delete-quiz/:quizId', deleteQuizById);
 
 // Reviewer
 router.post('/add-review', addReview);

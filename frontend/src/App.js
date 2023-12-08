@@ -19,7 +19,8 @@ import PlayQuiz from "./components/Play-quiz.js";
 import Leaderboard from "./components/leaderboard.js";
 import QuizSelection from "./components/Selection-quiz.js";
 import NavAdmin from "./components/admin/NavAdmin.js";
-import SideBar from "./components/admin/Sidebar.js"
+import SideBar from "./components/admin/Sidebar.js";
+import InputName from "./components/Before-quiz.js";
 
 function App() {
   return (
@@ -33,9 +34,11 @@ function App() {
         <Route exact path="/quiz" element={<><Navbar/><Quiz/><Footer/></>}/>
         <Route path="/detail/:itemName" element={<><Navbar/><DetailPage/><Footer/></>}/>
         <Route path="/selection-quiz" element={<><Navbar/><QuizSelection/><Footer/></>}/>
+        <Route exact path="/input-name-quiz" element={<><Navbar /><InputName /><Footer /></>} />
+
         <Route path="/play-quiz" element={<><Navbar/><PlayQuiz/><Footer/></>}/>
         <Route exact path="/leaderboard" element={<><Navbar /><Leaderboard /><Footer /></>} />
-        
+
         {/* Admin Route */}
         <Route exact path="/login" element={<><Login/><Footer/></>}/>
         <Route exact path="/register" element={<><Register/><Footer/></>}/>

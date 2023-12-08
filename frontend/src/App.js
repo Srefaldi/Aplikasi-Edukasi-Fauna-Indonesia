@@ -1,4 +1,3 @@
-
 import {
   BrowserRouter,
   Route,
@@ -19,7 +18,7 @@ import DetailPage from "./components/detail.js";
 import PlayQuiz from "./components/Play-quiz.js"; 
 import Leaderboard from "./components/leaderboard.js";
 import QuizSelection from "./components/Selection-quiz.js";
-import InputNameQuiz from "./components/Before-quiz.js";
+import NavAdmin from "./components/admin/NavAdmin.js";
 
 function App() {
   return (
@@ -31,14 +30,18 @@ function App() {
         <Route exact path="/home" element={<><Navbar/><HomePage/><Footer/></>}/>
         <Route exact path="/kategori" element={<><Navbar/><KategoriPage/><Footer/></>}/>
         <Route exact path="/quiz" element={<><Navbar/><Quiz/><Footer/></>}/>
+<<<<<<< HEAD
         <Route exact path="/home-admin" element={<><Navbar/><HomeAdmin/></>}/>
         <Route exact path="/set-fauna" element={<><Navbar/><SetFauna/></>}/>
         <Route exact path="/set-quiz" element={<><Navbar/><SetQuiz/></>}/>
+=======
+        <Route path="/home-admin" element={<><NavAdmin /><HomeAdmin /></>} />
+        <Route path="/set-fauna" element={<><NavAdmin /><SetFauna /></>} />
+>>>>>>> 697bb70ea51a126429795385f1e0c2082be02e68
         <Route path="/detail/:itemName" element={<><Navbar/><DetailPage/><Footer/></>}/>
         <Route path="/selection-quiz" element={<><Navbar/><QuizSelection/><Footer/></>}/>
         <Route path="/play-quiz" element={<><Navbar/><PlayQuiz/><Footer/></>}/>
         <Route exact path="/leaderboard" element={<><Navbar /><Leaderboard /><Footer /></>} />
-        <Route exact path="/input-name-quiz" element={<><Navbar /><InputNameQuiz /><Footer /></>} />
       </Routes>
     </BrowserRouter>
   );

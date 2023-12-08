@@ -11,7 +11,7 @@ const TemplateQuiz = ({ quizData }) => {
     }
 
     const userAnswer = selectedAnswer;
-    const correctAnswer = quizData[currentQuestionIndex].correctAnswer;
+    const correctAnswer = (quizData[currentQuestionIndex] && quizData[currentQuestionIndex].answer) || '';
 
     if (userAnswer === correctAnswer) {
       alert('Jawaban Anda benar!');
@@ -35,7 +35,15 @@ const TemplateQuiz = ({ quizData }) => {
     setSelectedAnswer(event.target.value);
   };
 
-  const { question, options } = quizData[currentQuestionIndex];
+  const { question, option_1, option_2, option_3, option_4 } = quizData[currentQuestionIndex] || {
+    question: '',
+    option_1: '',
+    option_2: '',
+    option_3: '',
+    option_4: '',
+  };
+
+  const options = [option_1, option_2, option_3, option_4].filter(Boolean);
 
   return (
     <div className="container mt-5 mb-5">
@@ -52,26 +60,34 @@ const TemplateQuiz = ({ quizData }) => {
               <div className="d-flex flex-row align-items-center question-title" style={{ marginBottom: '15px' }}>
                 <h5 className="mt-1 ml-2">{question}</h5>
               </div>
-              {Object.keys(options).map((key, index) => (
-                <div className="ans ml-2" style={{ marginBottom: '10px' }} key={index}>
-                  <label className="radio">
-                    <input
-                      type="radio"
-                      name="answer"
-                      value={key}
-                      checked={selectedAnswer === key}
-                      onChange={handleOptionChange}
-                    />
-                    <span style={{ color: 'black' }}>{options[key]}</span>
-                  </label>
-                </div>
-              ))}
+              {options.length > 0 ? (
+                options.map((option, index) => (
+                  <div className="ans ml-2" style={{ marginBottom: '10px' }} key={index}>
+                    <label className="radio">
+                      <input
+                        type="radio"
+                        name="answer"
+                        value={option}
+                        checked={selectedAnswer === option}
+                        onChange={handleOptionChange}
+                      />
+                      <span style={{ color: 'black' }}>{option}</span>
+                    </label>
+                  </div>
+                ))
+              ) : (
+                <p>No options available</p>
+              )}
             </div>
             <div className="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
               <button className="btn btn-primary d-flex align-items-center btn-danger" type="button">
                 <i className="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Previous
               </button>
-              <button className="btn btn-primary border-success align-items-center btn-success" type="button" onClick={handleCheckAnswer}>
+              <button
+                className="btn btn-primary border-success align-items-center btn-success"
+                type="button"
+                onClick={handleCheckAnswer}
+              >
                 Next<i className="fa fa-angle-right ml-2"></i>
               </button>
             </div>

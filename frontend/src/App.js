@@ -21,7 +21,7 @@ import QuizSelection from "./components/Selection-quiz.js";
 import NavAdmin from "./components/admin/NavAdmin.js";
 import SideBar from "./components/admin/Sidebar.js";
 import InputName from "./components/Before-quiz.js";
-
+import LeaderboardAdmin from "./components/admin/Leaderboard.js";
 function App() {
   return (
     <BrowserRouter>
@@ -47,7 +47,7 @@ function App() {
         <Route exact path="/set-quiz" element={<><NavAdmin/><SideBar/><SetQuiz/></>}/>
         <Route path="/home-admin" element={<><NavAdmin /><SideBar/><HomeAdmin /></>} />
         <Route path="/set-fauna" element={<><NavAdmin /><SideBar/><SetFauna /></>} />
-        
+        <Route path="/leaderboard-admin" element={<><NavAdmin /><SideBar/><LeaderboardAdmin /></>} />
       </Routes>
     </BrowserRouter>
   );

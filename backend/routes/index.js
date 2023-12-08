@@ -5,9 +5,10 @@ import { refreshToken } from "../controllers/RefreshToken.js";
 import { AddFauna, deleteFaunaById, editFaunaById, getAllfauna, getFaunaById } from "../controllers/FaunaContents.js";
 import { addQuiz, deleteQuizById, editQuizById, getAllQuizzes, getQuizById } from "../controllers/QuizController.js";
 import { addReview, deleteReviewById, getAllReviews, getReviewById, updateReviewById } from "../controllers/Reviewer.js";
- 
+import { getAllLeaderboard, editLeaderboardById, deleteLeaderboardById } from "../controllers/LeaderboardController.js"; 
+
 const router = express.Router();
- 
+
 router.get('/users', verifyToken, getUsers);
 router.post('/users', Register);
 router.post('/login', Login);
@@ -35,5 +36,9 @@ router.get('/get-review/:reviewId', getReviewById);
 router.put('/edit-review/:reviewId', updateReviewById);
 router.delete('/delete-review/:reviewId', deleteReviewById);
 
- 
+// Leaderboard
+router.get('/get-allleaderboard', getAllLeaderboard); 
+router.put('/edit-leaderboard/:leaderboardId', editLeaderboardById); 
+router.delete('/delete-leaderboard/:leaderboardId', deleteLeaderboardById);
+
 export default router;

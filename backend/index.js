@@ -9,6 +9,7 @@ import QuizModel from "./models/QuizModel.js";
 import FileUpload from "express-fileupload";
 import UserModel from "./models/UserModel.js";
 import ReviewerModel from "./models/ReviewerModel.js";
+import LeaderboardModel from "./models/LeaderboardModel.js";
 
 dotenv.config();
 const app = express();
@@ -20,6 +21,7 @@ try {
     await QuizModel.sync();
     await UserModel.sync();
     await ReviewerModel.sync();
+    await LeaderboardModel.sync();
 } catch (error) {
     console.error(error);
 }

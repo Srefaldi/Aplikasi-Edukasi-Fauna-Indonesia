@@ -3,8 +3,15 @@ import React from 'react';
 import '../css/landing-page/landing.css';
 import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 import bg from '../css/landing-page/img/bg.jpg';
-import quizz from '../css/landing-page/img/quizz.png';
+import quiz from '../css/landing-page/img/quiz.png';
+import materi from '../css/landing-page/img/materi.png'
+import winner from '../css/landing-page/img/winner.png'
 import nanda from '../css/landing-page/img/nanda.jpeg';
+import faunaa from '../css/landing-page/img/faunaa.jpg';
+import fauna1 from '../css/landing-page/img/fauna1.png';
+import fauna2 from '../css/landing-page/img/fauna2.jpg';
+import fauna3 from '../css/landing-page/img/fauna3.jpg';
+import fauna4 from '../css/landing-page/img/fauna4.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -14,13 +21,7 @@ const LandingPage = () => {
   return (
     
     <div>
-        <div className="container-fluid px-0"> 
-            <div className="row mx-0"> 
-            <div className="col-lg-12 px-0"> 
-                <img id="homeImage" className="img-fluid w-100" src={hero} alt="Foto Home"/>
-            </div>
-            </div>
-        </div>
+        <h1 class="headings"> <span>Aplikasi Edukasi</span> Fauna Indonesia </h1>
         <div className="containerr mb-5">
             <div className="container__leftt">
                 <div className="left__contentt">
@@ -42,7 +43,7 @@ const LandingPage = () => {
             </div>
         </div>
 
-        <h1 className="headings"> <span>about</span> us </h1>
+        <h1 className="headings"> <span>About</span> Us </h1>
         <div className="row-landing">
             <div className="img-container">
                 <img src={bg} alt=''/>
@@ -50,76 +51,53 @@ const LandingPage = () => {
             </div>
             <div className="about-content">
                 <h3>Why Choose Us</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Amet vitae sapiente exercitationem tenetur. 
-                Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. 
-                Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, 
-                veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. 
-                Reprehenderit deserunt nesciunt vero provident.</p>
-                <a href="/" className="btn-learn">Learn More</a>
+                <p>Aplikasi Edukasi Fauna Indonesia unggul karena menyajikan informasi komprehensif mengenai keanekaragaman fauna 
+                  Indonesia dengan pendekatan belajar yang interaktif. Melalui gambar dan fitur interaktif, pengguna dapat menjelajahi dunia 
+                  satwa Indonesia secara mendalam. Aplikasi ini terus diperbarui dan menjadi sumber rujukan yang relevan, 
+                  menjadikannya pilihan sempurna bagi para pecinta pengetahuan.</p>
             </div>
         </div>
 
-      <h1 class="headings"> <span>our</span> service </h1>
+      <h1 class="headings"> <span>Our</span> Service </h1>
       <div class="icons-container">
       <div class="icons-item">
-        <img src={quizz} alt=""/>
+        <img src={materi} alt=""/>
         <div class="icons-info">
           <h3>Materi</h3>
-          <span>edukasi indonesia</span>
+          <span>Edukasi Fauna indonesia</span>
         </div>
       </div>
       <div class="icons-item">
-        <img src={quizz} alt=""/>
-        <div class="icons-info">
-          <h3>Pemantauan</h3>
-          <span>edukasi indonesia</span>
-        </div>
-      </div>
-      <div class="icons-item">
-        <img src={quizz} alt=""/>
-        <div class="icons-info">
-          <h3>Game</h3>
-          <span>edukasi indonesia</span>
-        </div>
-      </div>
-      <div class="icons-item">
-        <img src={quizz} alt=""/>
+        <img src={quiz} alt=""/>
         <div class="icons-info">
           <h3>Quiz</h3>
-          <span>edukasi indonesia</span>
+          <span>Edukasi Fauna indonesia</span>
+        </div>
+      </div>
+      <div class="icons-item">
+        <img src={winner} alt=""/>
+        <div class="icons-info">
+          <h3>Leaderboard</h3>
+          <span>Edukasi Fauna indonesia</span>
         </div>
       </div>
     </div>
 
-    <h3 class="team-headings"> <span>latest</span> news </h3>
-    <div class="grid-container">
-      {/* <!-- Item 1 --> */}
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/150" alt="Placeholder img"/>
-        <a href="/">Judul 1</a>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.</p>
-        <button class="read-more-btn">Read More</button>
+    <h1 class="headings"> <span>Fauna</span> Indonesia </h1>
+    <div class="foto-container">
+      <div class="box1">
+        <img src={faunaa} alt=""/>
       </div>
-
-      {/* <!-- Item 2 --> */}
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/150" alt="Placeholder img"/>
-        <a href="/">Judul 2</a>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.</p>
-        <button class="read-more-btn">Read More</button>
+      <div class="box2">
+        <img src={fauna1} alt="" />
+        <img src={fauna2} alt="" />
+        <img src={fauna3} alt="" />
+        <img src={fauna4} alt="" />
       </div>
-
-      {/* <!-- Item 3 --> */}
-      <div class="grid-item">
-        <img src="https://via.placeholder.com/150" alt="Placeholder img"/>
-        <a href="/">Judul 3</a>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.</p>
-        <button class="read-more-btn">Read More</button>
-      </div>
+     
     </div>
 
-    <h3 className="team-headings"> <span>users</span> review </h3>
+    <h3 className="team-headings"> <span>Users</span> Review </h3>
       <div className="review-container">
         <div className="review-box">
           <h5>John Doe</h5>
@@ -236,41 +214,13 @@ const LandingPage = () => {
       </div>
       </div>
 
-    <h3 class="team-headings"> <span>our</span> team </h3>
+    <h3 class="team-headings"> <span>Our</span> Team </h3>
     <div className='team-container'>
     <div class="member" data-aos="fade-up">
     <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Khoyrur Roykhan</h4>
-        <span>Chief Executive Officer</span>
-        <div class="social">
-          <a href="/"><i class="bi bi-twitter"></i></a>
-          <a href="/"><i class="bi bi-facebook"></i></a>
-          <a href="/"><i class="bi bi-instagram"></i></a>
-          <a href="/"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-      </div>
-
-      <div class="member" data-aos="fade-up">
-      <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
-      <div class="member-info">
-        <h4>Sopia Refaldi</h4>
-        <span>Chief Executive Officer</span>
-        <div class="social">
-          <a href="/"><i class="bi bi-twitter"></i></a>
-          <a href="/"><i class="bi bi-facebook"></i></a>
-          <a href="/"><i class="bi bi-instagram"></i></a>
-          <a href="/"><i class="bi bi-linkedin"></i></a>
-        </div>
-      </div>
-      </div>
-
-      <div class="member" data-aos="fade-up">
-      <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
-      <div class="member-info">
-        <h4>Marzaq Syihab</h4>
-        <span>Chief Executive Officer</span>
+        <span>Project Manager and Backend</span>
         <div class="social">
           <a href="/"><i class="bi bi-twitter"></i></a>
           <a href="/"><i class="bi bi-facebook"></i></a>
@@ -284,7 +234,35 @@ const LandingPage = () => {
       <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Alda Amorita Azza</h4>
-        <span>Chief Executive Officer</span>
+        <span>Backend</span>
+        <div class="social">
+          <a href="/"><i class="bi bi-twitter"></i></a>
+          <a href="/"><i class="bi bi-facebook"></i></a>
+          <a href="/"><i class="bi bi-instagram"></i></a>
+          <a href="/"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="member" data-aos="fade-up">
+      <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
+      <div class="member-info">
+        <h4>Sopia Refaldi</h4>
+        <span>Frontend</span>
+        <div class="social">
+          <a href="/"><i class="bi bi-twitter"></i></a>
+          <a href="/"><i class="bi bi-facebook"></i></a>
+          <a href="/"><i class="bi bi-instagram"></i></a>
+          <a href="/"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="member" data-aos="fade-up">
+      <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
+      <div class="member-info">
+        <h4>Marzaq Syihab</h4>
+        <span>Frontend</span>
         <div class="social">
           <a href="/"><i class="bi bi-twitter"></i></a>
           <a href="/"><i class="bi bi-facebook"></i></a>
@@ -298,7 +276,7 @@ const LandingPage = () => {
       <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Difana Nanda PZ</h4>
-        <span>Chief Executive Officer</span>
+        <span>Frontend</span>
         <div class="social">
           <a href="/"><i class="bi bi-twitter"></i></a>
           <a href="/"><i class="bi bi-facebook"></i></a>
@@ -309,8 +287,8 @@ const LandingPage = () => {
       </div>
     </div>
 
+
     <h3 class="team-headings"> Contact </h3>
-    <div className='container'>
         <div className='row'>
             <div class="col-lg-4 col-md-4">
                 <div class="info-box mb-4">
@@ -336,9 +314,8 @@ const LandingPage = () => {
                 </div>
             </div>
         </div>
-    </div>
-    
-    </div>
+      </div>
+  
   )
 }
 

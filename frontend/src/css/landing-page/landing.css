@@ -127,7 +127,7 @@
 /* about section */
   .headings {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #444444;
     padding: 1rem;
     margin: 2rem 0;
@@ -143,7 +143,7 @@
     align-items: center;
     gap: 2rem;
     grid-template-columns: auto auto;
-    padding: 2rem 0;
+    padding: 2rem 2rem;
     padding-bottom: 3rem;
     position: relative;
   }
@@ -173,39 +173,32 @@
     text-align: center;
     mix-blend-mode: screen;
   }
-  
-  .row-landing .about-content h3,
+
   .row-landing .about-content p {
-    width: 100%;
+    overflow: hidden; /* Hindari overflow yang dapat memotong teks */
   }
+  
+
   
   .row-landing .about-content h4 {
     color: #112546;
   }
   
   .row-landing .about-content p {
-    font-size: 18px;
+    font-size: 16px;
     color: #999;
     padding: 0.5rem 0;
     padding-top: 1rem;
+    text-align: justify;
   }
   
-  .btn-learn {
-    background-color: #29ADB2;
-    color: white;
-    padding: 10px 50px; 
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    margin-top: 30px;
-  }
+  
 
 /* icon section */
 .icons-container {
   background: rgba(17, 37, 70, 0.05);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Menggunakan auto-fit untuk menyesuaikan jumlah kolom dan minmax untuk mengatur lebar minimum dan maksimum */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
   gap: 1.5rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
@@ -215,16 +208,26 @@
   background: #fff;
   border: 1rem solid rgba(17, 37, 70, 0.05);
   padding: 2rem;
+  display: flex;
   align-items: center;
+  text-align: center; 
+}
+
+.icons-container .icons-item:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
 }
 
 .icons-container .icons-item img {
-  max-width: 100%; /* Mengatur gambar agar tidak melebihi lebar kontennya */
   height: 80px;
   margin-right: 2rem;
 }
 
-/* Menambahkan media query untuk perubahan gaya pada layar berukuran kecil */
+.icons-container .icons-item .icons-info{
+  text-align: center;
+  
+}
+
 @media (max-width: 600px) {
   .icons-container {
     grid-template-columns: 1fr; /* Satu kolom pada layar berukuran kecil */
@@ -245,7 +248,7 @@
 
 .team-headings {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #444444;
   padding: 1rem;
   margin: 2rem 0;
@@ -267,8 +270,14 @@
   position: relative;
 }
 
+.member:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
 .member .pic {
   overflow: hidden;
+  
 }
 
 .member-info {
@@ -303,7 +312,7 @@
 /* Contact Section */
 .contact-headings {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #444444;
   padding: 1rem;
   margin: 2rem 0;
@@ -538,4 +547,76 @@ p {
   .grid-container {
     grid-template-columns: 1fr;
   }
+}
+
+/* foto section */
+
+.foto-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 20px;
+}
+
+.box1 img {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
+}
+
+.box1 {
+  position: relative;
+  overflow: hidden;
+  background-color: #f0f0f0; 
+  padding: 20px;
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box1 h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.box1:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.box1 {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.box2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px; 
+  padding: 20px; 
+  background-color: #f0f0f0; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.box2 img {
+  width: 100%;
+  height: 200px;
+  border-radius: 10px; 
+}
+
+.box2 p {
+  text-align: center;
+  margin: 10px 0;
+  color: #333;
+}
+
+.box2:hover {
+  transform: scale(1.05); 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+.box2 {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }

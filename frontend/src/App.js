@@ -23,6 +23,7 @@ import SideBar from "./components/admin/Sidebar.js";
 import InputName from "./components/Before-quiz.js";
 import SetReview from "./components/admin/SetReview.js";
 import LeaderboardAdmin from "./components/admin/Leaderboard.js";
+import Slider from "./components/Slider.js";
 
 function App() {
   return (
@@ -30,10 +31,10 @@ function App() {
       <Routes>
         
         {/* User Routes */}
-        <Route exact path="/" element={<><Navbar/><LandingPage/><Footer/></>}/>
+        <Route exact path="/" element={<><Navbar/><Slider/><LandingPage/><Footer/></>}/>
         <Route exact path="/home" element={<><Navbar/><HomePage/><Footer/></>}/>
-        <Route exact path="/kategori" element={<><Navbar/><KategoriPage/><Footer/></>}/>
-        <Route exact path="/quiz" element={<><Navbar/><Quiz/><Footer/></>}/>
+        <Route exact path="/kategori" element={<><Navbar/><Slider/><KategoriPage/><Footer/></>}/>
+        <Route exact path="/quiz" element={<><Navbar/><Slider/><Quiz/><Footer/></>}/>
         <Route path="/detail/:itemName" element={<><Navbar/><DetailPage/><Footer/></>}/>
         <Route path="/selection-quiz" element={<><Navbar/><QuizSelection/><Footer/></>}/>
         <Route exact path="/input-name-quiz" element={<><Navbar /><InputName /><Footer /></>} />

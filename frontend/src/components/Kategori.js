@@ -97,14 +97,6 @@ const KategoriPage = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <div className="container-fluid px-0 overflow-hidden">
-        <div className="row mx-0">
-          <div className="col-lg-12 px-0">
-            <img id="homeImage" className="img-fluid w-100" src={hero} alt="Foto Home"/>
-          </div>
-        </div>
-      </div>
       {/* Hewan Section */}
       <div className="container mt-5">
         {/* Dropdown Menu */}

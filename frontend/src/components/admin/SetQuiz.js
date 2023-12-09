@@ -17,6 +17,7 @@ const SetQuizContainer = () => {
     option_3: '',
     option_4: '',
     answer: '',
+    paket: '',
   });
   const [editId, setEditId] = useState(null);
 
@@ -37,6 +38,7 @@ const SetQuizContainer = () => {
       option_3: '',
       option_4: '',
       answer: '',
+      paket: '',
     });
     setEditId(null);
   };
@@ -52,6 +54,7 @@ const SetQuizContainer = () => {
       option_3: quizToEdit.option_3,
       option_4: quizToEdit.option_4,
       answer: quizToEdit.answer,
+      paket: quizToEdit.paket,
     });
 
     setIsModalOpen(true);
@@ -301,6 +304,14 @@ const SetQuizContainer = () => {
               value={formData.answer}
               onChange={handleInputChange}
             />
+            <input
+              type="text"
+              placeholder="Paket"
+              style={styles.input}
+              name="paket"
+              value={formData.paket}
+              onChange={handleInputChange}
+            />
             <button type="submit" style={styles.button} onClick={handleSaveQuiz}>
               {editId ? 'Simpan Edit' : 'Simpan'}
             </button>
@@ -318,6 +329,7 @@ const SetQuizContainer = () => {
             <th>Opsi C</th>
             <th>Opsi D</th>
             <th>Jawaban Benar</th>
+            <th>Paket</th>
             <th className='actionButtonsCell'>Actions</th>
           </tr>
         </thead>
@@ -330,6 +342,7 @@ const SetQuizContainer = () => {
               <td>{quiz.option_3}</td>
               <td>{quiz.option_4}</td>
               <td>{quiz.answer}</td>
+              <td>{quiz.paket}</td>
               <td style={styles.actionButtonsCell}>
                 <div style={styles.editButton} onClick={() => openEditModal(quiz.id)}>
                   Edit

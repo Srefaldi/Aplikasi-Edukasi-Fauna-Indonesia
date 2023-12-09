@@ -28,6 +28,10 @@ const QuizModel = Database.define('quiz-model', {
     type: DataTypes.STRING(250),
     allowNull: false,
   },
+  paket: {
+    type: DataTypes.STRING(50), // Adjust the data type and length accordingly
+    allowNull: false,
+  },
 }, {
   freezeTableName: true,
 });

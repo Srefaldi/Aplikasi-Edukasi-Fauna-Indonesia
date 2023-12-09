@@ -27,16 +27,12 @@ const HomePage = () => {
           <div className="col-lg-12 px-0">
             <img id="homeImage" className="img-fluid" src={hero} alt="Foto Home" style={{ width: '100vw' }} />
             <h1 className="fw-bold mt-5 px-4 text-dark">Keindahan Pesona Fauna Indonesia</h1>
-            <p className="lead px-5 text-dark">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet
-              vitae sapiente exercitationem tenetur. Cumque porro tempora,
-              repudiandae neque adipisci magnam laborum reprehenderit. Beatae
-              ratione voluptatibus soluta repellat voluptate nam recusandae
-              nihil quae ipsam, voluptas aperiam dolorem esse eligendi
-              consequuntur, veritatis, similique totam et aliquam fugit
-              repudiandae laboriosam? Nostrum libero dolorum tenetur odit
-              dignissimos, consectetur asperiores accusantium. Reprehenderit
-              deserunt nesciunt vero provident.
+            <p className="lead px-5 text-dark" style={{ textAlign: 'justify' }}>
+            Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
+            Setiap sudut tanah air ini menyimpan pesona fauna yang menakjubkan, menghadirkan kecantikan tak terhingga. 
+            Aplikasi Edukasi Fauna Indonesia unggul dalam menyajikan informasi komprehensif mengenai keanekaragaman fauna Indonesia. 
+            Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
+            Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. 
             </p>
           </div>
         </div>
@@ -52,7 +48,7 @@ const HomePage = () => {
               <h1 style={{ fontWeight: 'bold', color: 'black', marginTop: '10px', marginBottom: '0' }}>PULAU</h1>
             </div>
           </div>
-          <div className="row row-cols-1 row-cols-md-6 g-3">
+          <div className="row row-cols-1 row-cols-md-5 g-3">
             <div className="col">
               <div className="card shadow-sm" style={{ position: 'relative' }}>
                 <a href="/link-menuju-halaman-jawa" style={{ textDecoration: 'none' }}>
@@ -99,16 +95,6 @@ const HomePage = () => {
                   <div style={{ position: 'relative' }}>
                     <img src={sumateri} className="bd-placeholder-img card-img-top" alt="Pulau Sumatera" style={{width: '100%', height: '230px' }}/>
                     <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Sumatera</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-komodo" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={komodo} className="bd-placeholder-img card-img-top" alt="Pulau Komodo" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Komodo</div>
                   </div>
                 </a>
               </div>

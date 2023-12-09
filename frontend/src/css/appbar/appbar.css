@@ -19,11 +19,11 @@
   }
    
   .app-barr .app-bar__menu button {
-    background-color: white;
+    background-color: #112546;
     border: none;
     font-size: 18px;
     padding: 8px;
-    color: black;
+    color: white;
     cursor: pointer;
   }
    
@@ -48,7 +48,7 @@
     transition: all 0.3s;
     padding: 8px;
     color: white;
-    background-color: transparent; 
+    background-color: #112546; 
     overflow: hidden;
   }
    

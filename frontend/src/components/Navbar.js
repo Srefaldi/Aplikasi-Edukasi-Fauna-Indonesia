@@ -34,8 +34,7 @@ const Navbar = () => {
       </div>
       <nav
         id="navigationDrawer"
-        className={`app-bar__navigation ${isDrawerOpen ? 'open' : ''}`}
-      >
+        className={`app-bar__navigation ${isDrawerOpen ? 'open' : ''}`}>
         <ul>
           <li>
             <a href="/home">HOME</a>
@@ -45,9 +44,6 @@ const Navbar = () => {
           </li>
           <li>
             <a href="/quiz">QUIZ</a>
-          </li>
-          <li>
-            <button onClick={Logout}>LOGOUT</button>
           </li>
         </ul>
       </nav>

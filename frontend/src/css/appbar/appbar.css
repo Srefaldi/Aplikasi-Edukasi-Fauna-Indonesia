@@ -1,7 +1,7 @@
    
   .app-barr {
     padding: 8px 16px;
-    background-color: white;
+    background-color: #112546;
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 10px;
@@ -33,7 +33,7 @@
   }
    
   .app-barr .app-bar__brand a {
-    color: black;
+    color: white;
     text-transform: uppercase;
     font-size: 22px;
     user-select: none;
@@ -63,9 +63,15 @@
     padding: 8px;
     list-style-type: none;
     font-size: medium;
-    color: black;
+    color: white;
     margin-bottom: 5px;
     width: 100%;
     z-index: 98;
+  }
+  
+  .app-barr .app-bar__navigation ul li a:hover {
+    background-color: white;
+    color: #000000; 
+    transition: background-color 0.3s, color 0.3s; 
   }
   

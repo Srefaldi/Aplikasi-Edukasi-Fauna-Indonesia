@@ -1,6 +1,7 @@
 import LeaderboardModel from "../models/LeaderboardModel.js";
 
 export const getAllLeaderboard = async (req, res) => {
+    // update
     try {
         const topScores = await LeaderboardModel.findAll({
             attributes: ['id', 'nama', 'score'],

@@ -26,3 +26,4 @@ const LeaderboardModel = Database.define('leaderboard', {
 })();
 
 export default LeaderboardModel;
+// Update

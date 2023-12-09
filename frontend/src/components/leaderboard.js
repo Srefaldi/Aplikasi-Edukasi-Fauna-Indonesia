@@ -24,7 +24,7 @@ const Leaderboard = () => {
     if (!Array.isArray(data)) {
       return null; 
     }
-
+// Updtae
     return data.map((leader, index) => (
       <tr key={index}>
         <th scope="row">{index + 1}</th>
@@ -46,7 +46,7 @@ const Leaderboard = () => {
       </div>
       {/* Leaderboard Section */}
       <div className="container mt-5 mb-5">
-        <h2>Top Scores</h2>
+        <h1>Leaderboard</h1>
         <div className="table-responsive">
           <table className="table table-striped">
             <thead>

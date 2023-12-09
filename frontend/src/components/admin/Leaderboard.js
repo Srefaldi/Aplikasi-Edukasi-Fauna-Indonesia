@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './styles/Admin.css'; 
 import Sidebar from './Sidebar';
-
+// Update
 const Leaderboard = () => {
   const [leaderboardList, setLeaderboardList] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);

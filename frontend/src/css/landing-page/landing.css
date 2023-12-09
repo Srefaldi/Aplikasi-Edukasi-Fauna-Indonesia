@@ -458,12 +458,15 @@ p {
   color: #ddd; 
   cursor: pointer;
 }
-
-.form-review .stars input:checked ~ label,
-.form-review .stars label:hover {
-  color: #FFD700; 
+.form-review .stars input:checked ~ label {
+  color: #FFD700;
 }
 
+.form-review .stars label:hover,
+.form-review .stars input:checked ~ label:hover,
+.form-review .stars input:checked + label:hover ~ label {
+  color: #ddd;
+}
 #star1:checked ~ #star1-label,
 #star2:checked ~ #star2-label,
 #star3:checked ~ #star3-label,

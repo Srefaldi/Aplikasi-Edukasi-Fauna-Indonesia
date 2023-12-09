@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../css/landing-page/landing.css';
-import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 import bg from '../css/landing-page/img/bg.jpg';
 import quiz from '../css/landing-page/img/quiz.png';
 import materi from '../css/landing-page/img/materi.png'
@@ -13,11 +12,18 @@ import fauna2 from '../css/landing-page/img/fauna2.jpg';
 import fauna3 from '../css/landing-page/img/fauna3.jpg';
 import fauna4 from '../css/landing-page/img/fauna4.jpg';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
+
+import UserReviews from './UserReview'; 
+import AddReviewForm from './FormReview'; 
 
 
 const LandingPage = () => {
+  const [triggerFetch, setTriggerFetch] = useState(false);
+
+  const fetchReviews = () => {
+    setTriggerFetch(!triggerFetch);
+  };
+
   return (
     
     <div>
@@ -97,122 +103,20 @@ const LandingPage = () => {
      
     </div>
 
-    <h3 className="team-headings"> <span>Users</span> Review </h3>
-      <div className="review-container">
-        <div className="review-box">
-          <h5>John Doe</h5>
-          <div className="stars">
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
-          </p>
-          <span className="fas fa-quote-right"></span>
-        </div>
-        <div className="review-box">
-          <h5>John Doe</h5>
-          <div className="stars">
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
-          </p>
-          <span className="fas fa-quote-right"></span>
-        </div>
-        <div className="review-box">
-          <h5>John Doe</h5>
-          <div className="stars">
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
-          </p>
-          <span className="fas fa-quote-right"></span>
-        </div>
-        <div className="review-box">
-          <h5>John Doe</h5>
-          <div className="stars">
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
-          </p>
-          <span className="fas fa-quote-right"></span>
-        </div>
-        <div className="review-box">
-          <h5>John Doe</h5>
-          <div className="stars">
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
-          </p>
-          <span className="fas fa-quote-right"></span>
-        </div>
-        <div className="review-box">
-          <h5>John Doe</h5>
-          <div className="stars">
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          <FontAwesomeIcon icon={faStar} />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet vitae sapiente exercitationem tenetur. Cumque porro tempora, repudiandae neque adipisci magnam laborum reprehenderit. Beatae ratione voluptatibus soluta repellat voluptate nam recusandae nihil quae ipsam, voluptas aperiam dolorem esse eligendi consequuntur, veritatis, similique totam et aliquam fugit repudiandae laboriosam? Nostrum libero dolorum tenetur odit dignissimos, consectetur asperiores accusantium. Reprehenderit deserunt nesciunt vero provident.
-          </p>
-          <span className="fas fa-quote-right"></span>
-        </div>
-      </div>
 
-      <div className='container-form'>
-      <div className="form-review">
-        <form action="#" method="post" id="reviewForm">
-          <h5>Your Name</h5>
-          <input type="text" name="name" required />
-          <h5>Your Rating</h5>
-          <div className="stars">
-            <input type="radio" id="star1" name="rating" value="1" required />
-            <label htmlFor="star1"><FontAwesomeIcon icon={faStar} /></label>
+    {/* User Review */}
 
-            <input type="radio" id="star2" name="rating" value="2" required />
-            <label htmlFor="star2"><FontAwesomeIcon icon={faStar} /></label>
+    
+      <UserReviews triggerFetch={triggerFetch} />
+    
+      {/* Review  */}
+      
+      <AddReviewForm fetchReviews={fetchReviews} />
 
-            <input type="radio" id="star3" name="rating" value="3" required />
-            <label htmlFor="star3"><FontAwesomeIcon icon={faStar} /></label>
 
-            <input type="radio" id="star4" name="rating" value="4" required />
-            <label htmlFor="star4"><FontAwesomeIcon icon={faStar} /></label>
 
-            <input type="radio" id="star5" name="rating" value="5" required />
-            <label htmlFor="star5"><FontAwesomeIcon icon={faStar} /></label>
-          </div>
-          <h5>Your Review</h5>
-          <textarea name="message" rows="4" required></textarea>
-          <button type="submit">Submit Review</button>
-        </form>
-      </div>
-      </div>
+
+    {/* Team  */}
 
     <h3 class="team-headings"> <span>Our</span> Team </h3>
     <div className='team-container'>

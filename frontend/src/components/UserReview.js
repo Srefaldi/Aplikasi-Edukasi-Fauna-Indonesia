@@ -64,7 +64,6 @@ const UserReviews = () => {
         width: 100%; 
         overflow: hidden;
         box-sizing: border-box;
-        background-color: grey; 
       }
       
       .stars {

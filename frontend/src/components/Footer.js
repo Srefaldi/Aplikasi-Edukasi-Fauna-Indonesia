@@ -33,9 +33,9 @@ const Footer = () => {
           <div className="footer-item">
             <h4>Fitur</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Kategori</a></li>
-              <li><a href="#">Quiz</a></li>
+              <li><a href="/home">Home</a></li>
+              <li><a href="/kategori">Kategori</a></li>
+              <li><a href="/quiz">Quiz</a></li>
             </ul>
           </div>
           <div className="footer-item">

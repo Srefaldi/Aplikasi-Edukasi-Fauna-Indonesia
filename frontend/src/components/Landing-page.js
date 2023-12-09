@@ -105,20 +105,17 @@ const LandingPage = () => {
 
 
     {/* User Review */}
-
+    <UserReviews triggerFetch={triggerFetch} />
     
-      <UserReviews triggerFetch={triggerFetch} />
-    
-      {/* Review  */}
-      
-      <AddReviewForm fetchReviews={fetchReviews} />
+    {/* Review  */}
+    <AddReviewForm fetchReviews={fetchReviews} />
 
 
 
 
     {/* Team  */}
 
-    <h3 class="team-headings"> <span>Our</span> Team </h3>
+    <h3 class="team-headings" id="Team"> <span>Our</span> Team </h3>
     <div className='team-container'>
     <div class="member" data-aos="fade-up">
     <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>

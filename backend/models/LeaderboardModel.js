@@ -9,10 +9,6 @@ const LeaderboardModel = Database.define('leaderboard', {
         primaryKey: true,
         autoIncrement: true
     },
-    rank: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-    },
     nama: {
         type: DataTypes.STRING,
         allowNull: false

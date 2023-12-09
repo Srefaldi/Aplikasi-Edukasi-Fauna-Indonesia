@@ -2,16 +2,23 @@ import LeaderboardModel from "../models/LeaderboardModel.js";
 
 export const getAllLeaderboard = async (req, res) => {
     try {
-        const allScores = await LeaderboardModel.findAll({
-            attributes: ['id','rank', 'nama', 'score'] 
+        const topScores = await LeaderboardModel.findAll({
+            attributes: ['id', 'nama', 'score'],
+            order: [['score', 'DESC']], 
+            limit: 10 
         });
 
-        res.status(200).json(allScores);
+
+        const leaderboardData = [...topScores];
+
+        res.status(200).json(leaderboardData);
     } catch (error) {
         console.error('Error getting leaderboard:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
+
 
 export const editLeaderboardById = async (req, res) => {
     try {

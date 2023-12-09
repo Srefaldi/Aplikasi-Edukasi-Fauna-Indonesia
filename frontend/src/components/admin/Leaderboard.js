@@ -34,6 +34,8 @@ const Leaderboard = () => {
       console.error('Error fetching leaderboard data:', error);
     }
   };
+  
+  
 
   const handleAddLeaderboard = async () => {
     try {
@@ -117,36 +119,48 @@ const Leaderboard = () => {
             </tr>
           </thead>
           <tbody>
-            {leaderboardList.map((leaderboard, index) => (
-              <tr key={index} className="td">
-                <td>{index + 1}</td>
-                <td>{leaderboard.nama}</td>
-                <td>{leaderboard.score}</td>
-                <td className="actionButtonsCell">
-                  <div className="editButton" onClick={() => {
-                      openModal();
-                      setEditId(leaderboard.id);
-                      setFormData({
-                        nama: leaderboard.nama,
-                        score: leaderboard.score,
-                      });
-                    }}>
-                    Edit
-                  </div>
-                  <div className="deleteButton" onClick={() => {
-                    if (leaderboard.id !== undefined) {
-                        handleDeleteLeaderboard(leaderboard.id);
-                    } else {
-                        console.error('ID tidak valid:', leaderboard.id);
-                    }
-                    }}>
-                    Hapus
+            {Array.isArray(leaderboardList) && leaderboardList.length > 0 ? (
+              leaderboardList.map((leaderboard, index) => (
+                <tr key={index} className="td">
+                  <td>{index + 1}</td>
+                  <td>{leaderboard.nama}</td>
+                  <td>{leaderboard.score}</td>
+                  <td className="actionButtonsCell">
+                    <div
+                      className="editButton"
+                      onClick={() => {
+                        openModal();
+                        setEditId(leaderboard.id);
+                        setFormData({
+                          nama: leaderboard.nama,
+                          score: leaderboard.score,
+                        });
+                      }}
+                    >
+                      Edit
                     </div>
-
-                </td>
+                    <div
+                      className="deleteButton"
+                      onClick={() => {
+                        if (leaderboard.id !== undefined) {
+                          handleDeleteLeaderboard(leaderboard.id);
+                        } else {
+                          console.error('ID tidak valid:', leaderboard.id);
+                        }
+                      }}
+                    >
+                      Hapus
+                    </div>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="4">Leaderboard data is not available</td>
               </tr>
-            ))}
+            )}
           </tbody>
+
         </table>
       </div>
     </>

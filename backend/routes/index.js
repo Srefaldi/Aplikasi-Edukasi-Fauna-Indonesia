@@ -1,4 +1,5 @@
 import express from "express";
+import QuizModel from "../models/QuizModel.js";
 import { getUsers, Register, Login, Logout } from "../controllers/Users.js";
 import { verifyToken } from "../middleware/VerifyToken.js";
 import { refreshToken } from "../controllers/RefreshToken.js";
@@ -26,6 +27,22 @@ router.delete('/delete-fauna/:faunaId', deleteFaunaById);
 router.post('/add-quiz', addQuiz);
 router.get('/get-allquizzes', getAllQuizzes);
 router.get('/get-quiz/:quizId', getQuizById);
+router.get('/get-quizzes-by-package/:package', async (req, res) => {
+    try {
+      const { package: selectedPackage } = req.params;
+  
+      const quizzesByPackage = await QuizModel.findAll({
+        where: {
+          paket: selectedPackage,
+        },
+      });
+  
+      res.status(200).json(quizzesByPackage);
+    } catch (error) {
+      console.error('Error getting quizzes by package:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
 router.put('/edit-quiz/:quizId', editQuizById);
 router.delete('/delete-quiz/:quizId', deleteQuizById);
 

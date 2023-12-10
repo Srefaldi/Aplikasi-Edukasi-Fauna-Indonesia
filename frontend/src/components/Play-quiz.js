@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import TemplateQuiz from './templates/template-quiz';
 import axios from 'axios';
 import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 
 const PlayQuiz = () => {
   const [quizData, setQuizData] = useState([]);
+  const { package: selectedPackage } = useParams();
 
   useEffect(() => {
     const fetchQuizData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/get-allquizzes');
+        const response = await axios.get(`http://localhost:5000/get-quizzes-by-package/${selectedPackage}`);
         setQuizData(response.data);
       } catch (error) {
         console.error('Error fetching quiz data:', error);
@@ -17,7 +19,7 @@ const PlayQuiz = () => {
     };
 
     fetchQuizData();
-  }, []);
+  }, [selectedPackage]);
 
   return (
     <div>
@@ -28,7 +30,6 @@ const PlayQuiz = () => {
           </div>
         </div>
       </div>
-
 
       {/* Pastikan struktur data yang diterima dari API sesuai */}
       {quizData.length > 0 ? (

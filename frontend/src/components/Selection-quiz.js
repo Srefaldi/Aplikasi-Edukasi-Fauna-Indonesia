@@ -4,14 +4,15 @@ import '../css/quiz/style.css';
 import { useNavigate } from 'react-router-dom';
 
 const QuizSelection = ({ onSelectQuiz }) => {
-  const handleQuizSelection = (quizNumber) => {
-    onSelectQuiz(quizNumber);
+  const handleQuizSelection = (selectedPackage) => {
+    onSelectQuiz(selectedPackage);
   };
-  const navigate = useNavigate();
 
-  const handleInputName = () => {
-    navigate('/input-name-quiz');
+  const handleInputName = (selectedPackage) => {
+    navigate(`/input-name-quiz/${selectedPackage}`);
   };
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -24,22 +25,22 @@ const QuizSelection = ({ onSelectQuiz }) => {
       </div>
 
       <div className="quiz-selection-container">
-        <h1>Pilih Quiz Terlebih Dahulu</h1>
+        <h1>Pilih Paket Kuis Terlebih Dahulu</h1>
         <div className="row">
-          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((quizNumber) => (
-            <div key={quizNumber} className="col-md-4 mt-3">
+          {['A', 'B', 'C', 'D', 'E'].map((packageLetter) => (
+            <div key={packageLetter} className="col-md-4 mt-3">
               <div className="quiz-selection-content">
                 <div className="quiz-info">
                   <a
-                    href="/input-name-quiz" 
+                    href={`/input-name-quiz/${packageLetter}`}
                     className="quiz-link"
-                    onClick={handleInputName}
+                    onClick={() => handleInputName(packageLetter)}
                   >
-                    Quiz {quizNumber}
+                    Paket {packageLetter}
                   </a>
                 </div>
                 <p>
-                  Penjelasan kuis {quizNumber}: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Penjelasan paket {packageLetter}: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
             </div>

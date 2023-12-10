@@ -29,7 +29,7 @@ const QuizModel = Database.define('quiz-model', {
     allowNull: false,
   },
   paket: {
-    type: DataTypes.STRING(50), // Adjust the data type and length accordingly
+    type: DataTypes.STRING(1),
     allowNull: false,
   },
 }, {

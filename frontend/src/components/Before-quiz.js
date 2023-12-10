@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 import { right } from '@popperjs/core';
 
 const BeforeQuiz = ({ onStartQuiz }) => {
   const [nama, setNama] = useState('');
+  const { package: selectedPackage } = useParams();
   const navigate = useNavigate();
 
   const handleInputChange = (e) => {
@@ -12,7 +13,7 @@ const BeforeQuiz = ({ onStartQuiz }) => {
   };
 
   const handleStartQuiz = () => {
-    navigate('/play-quiz'); 
+    navigate(`/play-quiz/${selectedPackage}`);
   };
 
   const imgContainer = {
@@ -44,6 +45,8 @@ const BeforeQuiz = ({ onStartQuiz }) => {
                   <h2>Masukkan Nama Anda untuk Memulai Quiz</h2>
                   <input
                     type="text"
+                    id="nama"
+                    name="nama"
                     className="form-control mt-3 mb-3"
                     placeholder="Masukkan Nama Anda"
                     value={nama}

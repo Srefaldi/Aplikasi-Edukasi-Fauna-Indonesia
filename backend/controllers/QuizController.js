@@ -59,7 +59,7 @@ export const editQuizById = async (req, res) => {
             return res.status(404).json({ error: 'Quiz not found' });
         }
 
-        const { question, option_1, option_2, option_3, option_4, answer, paketa } = req.body;
+        const { question, option_1, option_2, option_3, option_4, answer, paket } = req.body;
         await quiz.update({
             question: question,
             option_1: option_1,

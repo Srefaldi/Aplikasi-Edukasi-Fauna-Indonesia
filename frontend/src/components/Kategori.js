@@ -11,6 +11,9 @@ const KategoriPage = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
   const { itemName } = useParams();
+  const [filteredFauna, setFilteredFauna] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedSubCategory, setSelectedSubCategory] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,6 +27,22 @@ const KategoriPage = () => {
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (selectedCategory || selectedSubCategory) {
+      const filteredData = faunaData.filter(item => {
+        return (
+          (!selectedCategory || item.kategori_1 === selectedCategory) &&
+          (!selectedSubCategory || item.kategori_2 === selectedSubCategory)
+        );
+      });
+      setFilteredFauna(filteredData);
+    } else {
+      // If no category selected, show all fauna
+      setFilteredFauna(faunaData);
+    }
+  }, [selectedCategory, selectedSubCategory, faunaData]);
+
  const truncatedDescription = (description) => description.substring(0, 50);
   const handleReadMore = (id) => {
     navigate(`/detail/${id}`);
@@ -41,34 +60,46 @@ const KategoriPage = () => {
 
     const initSubmenuPulau = () => {
       const submenuPulau = document.querySelector('.submenu-pulau');
-
-      submenuPulau.addEventListener('mouseenter', function () {
-        const dropdownMenu = this.querySelector('.dropdown-menu');
-        // const rect = this.getBoundingClientRect();
-        dropdownMenu.classList.add('show', 'position-absolute');
-        dropdownMenu.style.left = '100%';
-        dropdownMenu.style.top = '0';
-      });
-
-      submenuPulau.addEventListener('mouseleave', function () {
-        this.querySelector('.dropdown-menu').classList.remove('show');
-      });
+    
+      if (submenuPulau) {
+        submenuPulau.addEventListener('mouseenter', function () {
+          const dropdownMenu = this.querySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.classList.add('show', 'position-absolute');
+            dropdownMenu.style.left = '100%';
+            dropdownMenu.style.top = '0';
+          }
+        });
+    
+        submenuPulau.addEventListener('mouseleave', function () {
+          const dropdownMenu = this.querySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.classList.remove('show');
+          }
+        });
+      }
     };
 
     const initSubmenuJenisFauna = () => {
       const submenuJenisFauna = document.querySelector('.submenu-jenis-fauna');
-
-      submenuJenisFauna.addEventListener('mouseenter', function () {
-        const dropdownMenu = this.querySelector('.dropdown-menu');
-        // const rect = this.getBoundingClientRect();
-        dropdownMenu.classList.add('show', 'position-absolute');
-        dropdownMenu.style.left = '100%';
-        dropdownMenu.style.top = '35px';
-      });
-
-      submenuJenisFauna.addEventListener('mouseleave', function () {
-        this.querySelector('.dropdown-menu').classList.remove('show');
-      });
+    
+      if (submenuJenisFauna) {
+        submenuJenisFauna.addEventListener('mouseenter', function () {
+          const dropdownMenu = this.querySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.classList.add('show', 'position-absolute');
+            dropdownMenu.style.left = '100%';
+            dropdownMenu.style.top = '35px';
+          }
+        });
+    
+        submenuJenisFauna.addEventListener('mouseleave', function () {
+          const dropdownMenu = this.querySelector('.dropdown-menu');
+          if (dropdownMenu) {
+            dropdownMenu.classList.remove('show');
+          }
+        });
+      }
     };
 
     initDropdown();
@@ -101,60 +132,70 @@ const KategoriPage = () => {
       <div className="container mt-5">
         {/* Dropdown Menu */}
         <div className="dropdown">
-          <button className="btn btn-primary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style={{ backgroundColor: '#112546', color: 'white', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px' }}>
-            <img src={search} alt="Search" width="32" height="32" className="rounded-circle" style={{ marginRight: '8px' }}/>Semua Kategori
+          <button
+            className="btn btn-primary dropdown-toggle"
+            id="dropdownMenuButton"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style={{ backgroundColor: '#112546', color: 'white', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px' }}
+          >
+            <img src={search} alt="Search" width="32" height="32" className="rounded-circle" style={{ marginRight: '8px' }} />
+            {selectedSubCategory ? selectedSubCategory : (selectedCategory ? selectedCategory : 'Semua Kategori')}
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <p className="dropdown-item" onClick={() => { setSelectedCategory(null); setSelectedSubCategory(null); }}>Semua</p>
             {/* Pulau */}
             <li className="submenu-pulau dropdown-submenu">
-              <a className="dropdown-item dropdown-toggle">Pulau</a>
+              <p className="dropdown-item dropdown-toggle">Pulau</p>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item">Jawa</a></li>
-                <li><a className="dropdown-item">Kalimantan</a></li>
-                <li><a className="dropdown-item">Sumatera</a></li>
-                <li><a className="dropdown-item">Pulau lainnya</a></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Jawa'); setSelectedSubCategory(null); }}>Jawa</p></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Kalimantan'); setSelectedSubCategory(null); }}>Kalimantan</p></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Sumatera'); setSelectedSubCategory(null); }}>Sumatera</p></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Sulawesi'); setSelectedSubCategory(null); }}>Sulawesi</p></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Papua'); setSelectedSubCategory(null); }}>Papua</p></li>
               </ul>
             </li>
             {/* Jenis Fauna */}
+            
             <li className="submenu-jenis-fauna dropdown-submenu">
-              <a className="dropdown-item dropdown-toggle">Jenis Fauna</a>
+              <p className="dropdown-item dropdown-toggle">Jenis Fauna</p>
               <ul className="dropdown-menu">
-                <li><a className="dropdown-item">Semua</a></li>
-                <li><a className="dropdown-item">Mamalia</a></li>
-                <li><a className="dropdown-item">Reptil</a></li>
-                <li><a className="dropdown-item">Burung</a></li>
-                <li><a className="dropdown-item">Ampibi</a></li>
-                <li><a className="dropdown-item">Ikan</a></li>
-                <li><a className="dropdown-item">Serangga</a></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Mamalia'); setSelectedCategory(null) }}>Mamalia</p></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Reptil'); setSelectedCategory(null) }}>Reptil</p></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Burung'); setSelectedCategory(null) }}>Burung</p></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Ampibi'); setSelectedCategory(null) }}>Ampibi</p></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Ikan'); setSelectedCategory(null) }}>Ikan</p></li>
+                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Serangga'); setSelectedCategory(null) }}>Serangga</p></li>
               </ul>
             </li>
           </ul>
+          
         </div>
   
         <div className="container">
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-4 mb-5">
-        {error ? (
-          <p>{error}</p>
-        ) : (
-          faunaData.map((item) => (
-            <div className="col" key={item.id}>
-              <div className="card h-100">
-                <img src={item.image_url} className="card-img-top" alt={item.name} />
-                <div className="card-body">
-                  <strong className="d-inline-block mb-2 text-primary">{item.kategori_1}</strong>
-                  <h5 className="card-title" style={{ color: 'black' }}>{item.name}</h5>
-                  <div className="mb-1 text-muted">{item.kategori_2}</div>
-                  <p className="card-text" style={{ color: 'black' }}>{truncatedDescription(item.description)}...</p>
-                  <a href={`/detail/${item.id}`} className="stretched-link" style={{ textDecoration: 'none' }} onClick={() => handleReadMore(item.id)}>Baca Selengkapnya</a>
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-4 mb-5">
+            {error ? (
+              <p>{error}</p>
+            ) : (
+              filteredFauna.map((item) => (
+                <div className="col" key={item.id}>
+                  <div className="card h-100">
+                    <img src={item.image_url} className="card-img-top" alt={item.name} />
+                    <div className="card-body">
+                      <strong className="d-inline-block mb-2 text-primary">{item.kategori_1}</strong>
+                      <h5 className="card-title" style={{ color: 'black' }}>{item.name}</h5>
+                      <div className="mb-1 text-muted">{item.kategori_2}</div>
+                      <p className="card-text" style={{ color: 'black' }}>{truncatedDescription(item.description)}...</p>
+                      <a href={`/detail/${item.id}`} className="stretched-link" style={{ textDecoration: 'none' }} onClick={() => handleReadMore(item.id)}>Baca Selengkapnya</a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))
-        )}
+              ))
+            )}
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 };
 

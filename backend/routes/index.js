@@ -42,7 +42,7 @@ router.get('/get-quizzes-by-package/:package', async (req, res) => {
       console.error('Error getting quizzes by package:', error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
-  });
+});
 router.put('/edit-quiz/:quizId', editQuizById);
 router.delete('/delete-quiz/:quizId', deleteQuizById);
 

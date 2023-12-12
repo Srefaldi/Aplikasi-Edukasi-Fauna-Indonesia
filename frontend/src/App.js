@@ -44,7 +44,7 @@ function App() {
         {/* Admin Route */}
         <Route exact path="/login" element={<><Login/><Footer/></>}/>
         <Route exact path="/register" element={<><Register/><Footer/></>}/>
-        <Route exact path="/home-admin" element={<><NavAdmin/><HomeAdmin/></>}/>
+        <Route exact path="/home-admin" element={<><NavAdmin/><SideBar/><HomeAdmin/></>}/>
         <Route exact path="/set-fauna" element={<><NavAdmin/><SetFauna/></>}/>
         <Route exact path="/set-quiz" element={<><NavAdmin/><SideBar/><SetQuiz/></>}/>
         <Route exact path="/set-review" element={<><NavAdmin /><SideBar/><SetReview /></>} />

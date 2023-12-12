@@ -1,0 +1,97 @@
+/* Gaya CSS untuk Sidebar */
+
+/* Default */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #333;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  /* Tampilan menu saat aktif */
+  .sidebar.active {
+    left: 0;
+  }
+  
+  /* Styling untuk tombol hamburger */
+  .menu-toggle {
+    display: block;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Styling untuk overlay saat menu aktif */
+  .menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+  }
+  
+  /* Tampilan overlay saat menu aktif */
+  .menu-overlay.active {
+    display: block;
+  }
+  
+  /* Styling untuk daftar menu */
+  .menu {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  /* Tampilan daftar menu saat aktif */
+  .menu.active {
+    left: 0;
+  }
+  
+  /* Styling untuk daftar menu ul */
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  /* Styling untuk daftar menu li */
+  .menu ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Styling untuk tautan menu */
+  .menu ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    display: block;
+  }
+  
+  /* Tampilan responsif */
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .menu {
+      width: 100%;
+      left: -100%;
+    }
+  
+    .menu.active {
+      left: 0;
+    }
+  }
+  

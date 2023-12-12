@@ -69,7 +69,6 @@ const HomeAdmin = () => {
 
   return (
     <div className="admin-layout">
-      <Sidebar />
       <div className="main-content">
         <div className="content">
           <h1>Beranda</h1>

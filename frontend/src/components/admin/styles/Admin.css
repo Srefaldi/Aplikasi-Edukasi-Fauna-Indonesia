@@ -34,20 +34,16 @@ body {
   position: fixed;
   height: 100%;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Untuk menengahkan secara horizontal */
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.menu li {
+  text-align: center;
 }
 
-li {
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-li a {
+.menu li a {
   color: #d2d6de;
   text-decoration: none;
   display: block;
@@ -56,10 +52,19 @@ li a {
   transition: background-color 0.3s;
 }
 
-li a:hover {
+.menu li a:hover {
   background-color: white;
 }
-
+.menu-toggle {
+  /* Sembunyikan tombol hamburger secara default */
+  display: block;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 20px; /* Atur margin agar terpisah dari daftar menu */
+}
 /* Media queries for responsiveness on small screens */
 @media (max-width: 767px) {
   .sidebar {
@@ -68,7 +73,19 @@ li a:hover {
     position: relative;
     
   }
+  .menu {
+    display: none; /* Sembunyikan daftar menu di tampilan kecil */
+  }
 
+  .menu-toggle {
+    display: block; /* Tampilkan tombol hamburger di tampilan kecil */
+    /* Gaya lain untuk tombol hamburger */
+  }
+
+  .menu.active {
+    display: block; /* Tampilkan daftar menu saat tombol hamburger ditekan */
+    /* Gaya lain untuk daftar menu */
+  }
   .main-content {
     left: 0;
     padding: 20px;
@@ -86,10 +103,25 @@ li a:hover {
     top: 0;
     z-index: 1000; 
   }
+  
 }
 
 
 @media (min-width: 768px) {
+   .menu-toggle {
+    display: none;
+  }
+
+  /* Menampilkan daftar menu pada layar desktop */
+  .menu {
+    display: block;
+    /* Atur properti lainnya sesuai kebutuhan */
+  }
+
+  /* Mengatur lebar sidebar pada layar desktop */
+  .sidebar {
+    width: 230px; /* Ubah lebar sidebar sesuai kebutuhan */
+  }
   .main-content {
     margin-left: 230px;
     padding: 50px;
@@ -260,7 +292,7 @@ margin-bottom: 20px;
 
 /* Set Fauna Styles */
 .setfauna-container {
-  margin-left: 220px;
+  margin-left: 250px;
   margin-top: 30px;
   width: 100%;
 }
@@ -349,3 +381,4 @@ margin-bottom: 20px;
   border-radius: 5px;
   cursor: pointer;
 }
+

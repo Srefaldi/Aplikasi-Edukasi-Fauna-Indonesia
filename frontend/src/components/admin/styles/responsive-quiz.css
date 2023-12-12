@@ -2,7 +2,7 @@
 @media (max-width: 767px) {
     .setfauna-container {
         left: 0;
-        margin-left: 0; 
+        margin-left: 20px; 
         margin-right:100px ; 
         width: 100%;
         max-width: 800px;

@@ -20,36 +20,24 @@ const NavAdmin = () => {
     zIndex: '1000',
   };
 
+  const centerText = {
+    textAlign: 'center', // Untuk membuat teks berada di tengah secara horizontal
+    width: '100%', // Menetapkan lebar agar fleksibel
+    display: 'flex', // Menggunakan flexbox
+    justifyContent: 'center', // Menengahkan secara horizontal
+    alignItems: 'center', // Menengahkan secara vertikal
+    height: '100%', // Menetapkan tinggi agar fleksibel
+  };
+
+  const logoStyle = {
+    margin: '0', // Menghilangkan margin
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark" style={navbarStyle}>
-      <div className="container">
+    <nav className="navbarr navbar-expand-lg navbar-dark" style={navbarStyle}>
+      <div className="text">
         <div className="navbar-brand mr-auto">
-          <h1 className="logo mt-2">Admin Site</h1>
-        </div>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link className="nav-link" to="/home-admin">
-                Home Admin
-              </Link>
-            </li>
-            <li className="nav-item">
-              <div className="nav-link logout-button" onClick={Logout}>
-                Logout
-              </div>
-            </li>
-          </ul>
+          <h1 className="logo mt-3" style={{...centerText, ...logoStyle}}>Admin Site</h1>
         </div>
       </div>
     </nav>

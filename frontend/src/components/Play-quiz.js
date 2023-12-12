@@ -21,6 +21,7 @@ const PlayQuiz = () => {
     fetchQuizData();
   }, [selectedPackage]);
 
+
   return (
     <div>
       <div className="container-fluid px-0">

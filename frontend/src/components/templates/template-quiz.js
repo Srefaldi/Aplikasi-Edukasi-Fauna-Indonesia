@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TemplateQuiz = ({ quizData }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const [score, setScore] = useState(0);
+  const navigate = useNavigate();
 
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) {
@@ -14,11 +17,13 @@ const TemplateQuiz = ({ quizData }) => {
     const correctAnswer = (quizData[currentQuestionIndex] && quizData[currentQuestionIndex].answer) || '';
 
     if (userAnswer === correctAnswer) {
+      // Perbarui skor jika jawabannya benar
+      setScore(score + 1);
       alert('Jawaban Anda benar!');
     } else {
       alert('Maaf, jawaban Anda salah.');
     }
-
+    console.log(score);
     setSelectedAnswer(null);
     goToNextQuestion();
   };
@@ -27,8 +32,16 @@ const TemplateQuiz = ({ quizData }) => {
     if (currentQuestionIndex < quizData.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      alert('Ini adalah pertanyaan terakhir!');
+      finishQuiz();
     }
+  };
+
+  const finishQuiz = () => {
+    const totalQuestions = quizData.length;
+    const percentageScore = (score / totalQuestions) * 100;
+    alert(`Selamat! Anda telah menyelesaikan kuis.\nSkor Anda: ${percentageScore.toFixed(2)}%`);
+    // Navigate to the "/quiz" page when all questions are answered
+    navigate('/quiz');
   };
 
   const handleOptionChange = (event) => {

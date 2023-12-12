@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 import search from '../css/icon/search.png';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import '../css/kategori/kategori.css';
 
 const KategoriPage = () => {
   const [faunaData, setFaunaData] = useState([]);
@@ -43,7 +43,7 @@ const KategoriPage = () => {
     }
   }, [selectedCategory, selectedSubCategory, faunaData]);
 
- const truncatedDescription = (description) => description.substring(0, 50);
+ const truncatedDescription = (description) => description.substring(0, 150);
   const handleReadMore = (id) => {
     navigate(`/detail/${id}`);
   };
@@ -127,18 +127,23 @@ const KategoriPage = () => {
   }, []);
 
   return (
-    <div>
-      {/* Hewan Section */}
-      <div className="container mt-5">
-        {/* Dropdown Menu */}
-        <div className="dropdown">
-          <button
-            className="btn btn-primary dropdown-toggle"
-            id="dropdownMenuButton"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            style={{ backgroundColor: '#112546', color: 'white', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px' }}
-          >
+    <div className='mt-5'>
+      <div className="welcome-text">
+        <h2>Selamat Datang di Halaman Kategori Fauna!</h2>
+        <p>Temukan berbagai jenis fauna dari berbagai pulau dan jenis di Indonesia.</p>
+        <p>Pilih kategori fauna berdasarkan pulau atau jenisnya menggunakan dropdown di atas.</p>
+        <p>Nikmati penjelajahan Anda!</p>
+      </div>
+
+
+      <div className="dropdown-container">
+      <button
+          className="btn btn-primary dropdown-toggle"
+          id="dropdownMenuButton"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+          style={{ backgroundColor: '#112546', color: 'white', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px' }}
+      >
             <img src={search} alt="Search" width="32" height="32" className="rounded-circle" style={{ marginRight: '8px' }} />
             {selectedSubCategory ? selectedSubCategory : (selectedCategory ? selectedCategory : 'Semua Kategori')}
           </button>
@@ -168,32 +173,29 @@ const KategoriPage = () => {
                 <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Serangga'); setSelectedCategory(null) }}>Serangga</p></li>
               </ul>
             </li>
-          </ul>
-          
+          </ul>  
         </div>
-  
-        <div className="container">
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mt-4 mb-5">
-            {error ? (
-              <p>{error}</p>
-            ) : (
-              filteredFauna.map((item) => (
-                <div className="col" key={item.id}>
-                  <div className="card h-100">
-                    <img src={item.image_url} className="card-img-top" alt={item.name} />
-                    <div className="card-body">
-                      <strong className="d-inline-block mb-2 text-primary">{item.kategori_1}</strong>
-                      <h5 className="card-title" style={{ color: 'black' }}>{item.name}</h5>
-                      <div className="mb-1 text-muted">{item.kategori_2}</div>
-                      <p className="card-text" style={{ color: 'black' }}>{truncatedDescription(item.description)}...</p>
-                      <a href={`/detail/${item.id}`} className="stretched-link" style={{ textDecoration: 'none' }} onClick={() => handleReadMore(item.id)}>Baca Selengkapnya</a>
-                    </div>
-                  </div>
+
+
+      <div className="kategori-content">
+        {error ? (
+          <p>{error}</p>
+        ) : (
+          <>
+            {filteredFauna.map((item) => (
+              <div className='fauna-item' key={item.id}>
+                <div className='fauna-item-header'>
+                  <img src={item.image_url} className="fauna-item-image" alt={item.name} loading="lazy" />
                 </div>
-              ))
-            )}
-          </div>
-        </div>
+                <div className='fauna-item-content'>
+                  <p className='fauna-title'><a href={`/detail/${item.id}`}>{item.name} | {item.kategori_1}</a></p>
+                  <h5>{item.kategori_2}</h5>
+                  <p>{truncatedDescription(item.description)}...</p>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
       </div>
     </div>
   );

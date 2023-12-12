@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import createFaunaDetailTemplate from './templates/template-detail';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
+
 const DetailPage = () => {
   const { itemName } = useParams();
   const [faunaDetail, setFaunaDetail] = useState(null);
@@ -34,13 +34,6 @@ const DetailPage = () => {
   return ( 
   <div> 
 
-      <div className="container-fluid px-0">
-        <div className="row mx-0">
-          <div className="col-lg-12 px-0">
-            <img id="homeImage" className="img-fluid" src={hero} alt="Foto Home" style={imgContainer} />
-          </div>
-        </div>
-      </div>
 
     {faunaDetail}
     </div>

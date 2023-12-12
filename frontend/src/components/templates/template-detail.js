@@ -1,4 +1,5 @@
 import React from 'react';
+import backgroundImage from './bg.jpg';
 
 const createFaunaDetailTemplate = (fauna) => {
   const {
@@ -13,39 +14,121 @@ const createFaunaDetailTemplate = (fauna) => {
   } = fauna;
 
   return (
+    <div>
     
-    <div className="fauna-detail">
-      <h2 className="fauna__name">{name}</h2>
-      <img className="fauna__image" src={image_url} alt={image_name} />
-      <div className="fauna__info">
-        <h3>Information</h3>
-        <h4>Nama</h4>
-        <p>{name}</p>
-        <h4>Jenis</h4>
-        <p>{kategori_1}</p>
-        <h4>Pulau</h4>
-        <p>{kategori_2}</p>
-        <h4>Habitat</h4>
-        <p>{desc_habitat}</p>
-        <h4>Populasi</h4>
-        <p>{desc_populasi}</p>
+      <div className="breadcrumbs d-flex align-items-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
+        <div className="container position-relative d-flex flex-column align-items-center">
+          <h2>Detail Fauna</h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="/kategori">Kategori</a></li>
+          </ol>
+        </div>
       </div>
-      <div className="fauna__description">
-        <h3>Description</h3>
-        <p>{description}</p>
+
+      <div className="welcome-text">
+        <h2>Selamat Datang di Halaman Detail Fauna!</h2>
+        <p>Temukan informasi lengkap mengenai fauna yang menarik di Indonesia.</p>
+        <p>Jelajahi detail spesies, habitat, dan informasi menarik lainnya.</p>
+        <p>Selamat menikmati penjelajahan Anda!</p>
+      </div>
+
+      <div className="fauna-detail">
+        <h2 className="fauna__name">{name}</h2>
+        <img className="fauna__image" src={image_url} alt={image_name} />
+        <div className="fauna__info">
+          <h3>Information</h3>
+          <h4>Nama</h4>
+          <p>{name}</p>
+          <h4>Jenis</h4>
+          <p>{kategori_1}</p>
+          <h4>Pulau</h4>
+          <p>{kategori_2}</p>
+          <h4>Habitat</h4>
+          <p>{desc_habitat}</p>
+          <h4>Populasi</h4>
+          <p>{desc_populasi}</p>
+        </div>
+        <div className="fauna__description">
+          <h3>Description</h3>
+          <p>{description}</p>
+        </div>
       </div>
     </div>
   );
 };
 
-export default createFaunaDetailTemplate;
-
 const styles = `
+
+  .breadcrumbs {
+    background-size: cover;
+    background-position: center;
+    color: #112546;
+    padding: 50px 0;
+    margin-top: 50px;
+  }
+
+  .breadcrumbs .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .breadcrumbs h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .breadcrumbs ol {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .breadcrumbs li {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+
+  .breadcrumbs li:last-child {
+    margin-right: 0;
+  }
+
+  .breadcrumbs a {
+    color: #112546;
+    text-decoration: none;
+  }
+
+  .breadcrumbs a:hover {
+    backgroun-color: white;
+    text-decoration: none;
+  }
+
+  .welcome-text {
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+  }
+
+  .welcome-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0B2447;
+    margin-bottom: 10px;
+  }
+
+  .welcome-text p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
   .fauna-detail {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 20px;
   }
 
@@ -106,3 +189,5 @@ const styles = `
 const styleElement = document.createElement('style');
 styleElement.innerHTML = styles;
 document.head.appendChild(styleElement);
+
+export default createFaunaDetailTemplate;

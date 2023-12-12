@@ -176,7 +176,7 @@ const SetFauna = () => {
   return (
     <>
       <Sidebar />
-      <div className="setfauna-container mt-5">
+      <div className="setfauna-container mt-5 content">
   <h1 className="left">Data Fauna</h1>
   <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
   <div className="d-flex justify-content-between align-items-center mb-3">

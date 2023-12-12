@@ -241,8 +241,8 @@
     };
 
     return (
-      <div className="setfauna-container mt-5">
-      <h1 className="left">Data QUiz</h1>
+      <div className="setfauna-container mt-5 content">
+      <h1 className="left">Data Quiz</h1>
       <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
       <div className="d-flex justify-content-between align-items-center mb-3">
       <div className="d-flex flex-column">

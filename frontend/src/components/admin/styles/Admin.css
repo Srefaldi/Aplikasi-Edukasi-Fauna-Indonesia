@@ -70,8 +70,8 @@ li a:hover {
   }
 
   .main-content {
-    margin-left: 0;
-    padding: 50px;
+    left: 0;
+    padding: 20px;
   }
 
   .logo {

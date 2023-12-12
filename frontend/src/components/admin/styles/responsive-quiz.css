@@ -1,7 +1,6 @@
 /* SetQuizResponsive.css */
 @media (max-width: 767px) {
     .setfauna-container {
-        padding: 15px;
         left: 0;
         margin-left: 0; 
         margin-right:100px ; 

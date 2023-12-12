@@ -151,7 +151,7 @@ const SetReview = () => {
 
   return (
     <>
-      <div className="setfauna-container">
+      <div className="setfauna-container content">
         <h1>Data Reviewer</h1>
         <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
         <input type="text" placeholder="Cari Data..." className="searchInput" />

@@ -78,7 +78,7 @@ const Leaderboard = () => {
     <>
 
 
-      <div className="setfauna-container">
+      <div className="setfauna-container content">
         <h1>Leaderboard</h1>
         <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
 

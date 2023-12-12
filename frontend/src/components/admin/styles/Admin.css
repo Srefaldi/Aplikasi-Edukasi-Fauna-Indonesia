@@ -1,146 +1,219 @@
-  body {
-      font-family: 'Arial, sans-serif';
-    }
-  
+/* Reset CSS */
+body {
+  font-family: 'Arial, sans-serif';
+  margin: 0;
+  padding: 0;
+}
+/* CSS */
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+
+.mb-2 {
+  margin-bottom: 5.5rem;
+}
+
+
+.form-control {
+  margin-right: 16.7rem; 
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+  width: 210px;
+  background-color: #112546;
+  color: #d2d6de;
+  padding: 20px;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+li a {
+  color: #d2d6de;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+li a:hover {
+  background-color: white;
+}
+
+/* Media queries for responsiveness on small screens */
+@media (max-width: 767px) {
   .sidebar {
-    width: 210px;
-    background-color: #112546;
-    color: #d2d6de;
-    padding: 20px;
-    position: fixed;
-    height: 100vw;
-    overflow-y: auto;
+    width: 100%;
+    height: auto;
+    position: relative;
+    
   }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  li {
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  li a {
-    color: #d2d6de;
-    text-decoration: none;
-    display: block;
-    padding: 10px;
-    border-radius: 3px;
-    transition: background-color 0.3s;
-  }
-  
-  li a:hover {
-    background-color: white;
-  }
-  
+
   .main-content {
-    flex: 1;
-    padding: 20px;
-    margin-left: 230px;
+    margin-left: 0;
+    padding: 50px;
   }
-   
-  
-  /* Style for HomePage */
-  .homepage {
+
+  .logo {
     text-align: center;
   }
-  
-  .homepage h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-  
-  .homepage hr {
-    width: 50px;
-    border: 2px solid #343a40;
-    margin: 20px auto;
-  }
-  
-  .homepage p {
-    font-size: 18px;
-    color: #555;
-  }
-  
 
-  .modal {
-    display: block !important;
-    position: fixed;
-    margin-top: 50px;
-    left: 0;
+  .nav-admin {
+    justify-content: center;
+  }
+  .navbar {
+    position: sticky;
     top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1000; 
   }
-  
-  .modal-content {
-    background-color: #fefefe;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+}
+
+
+@media (min-width: 768px) {
+  .main-content {
+    margin-left: 230px;
+    padding: 50px;
   }
-  
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+
+  .logo {
+    font-size: 20px;
     font-weight: bold;
-    cursor: pointer;
+    margin-left: 0;
   }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  .nav-admin {
+    position: sticky;
+    z-index: 1000; 
   }
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+  }
+}
 
-  /* Form Styling */
-  form {
-    display: flex;
-    flex-direction: column;
-  }
+/* Styles for Homepage */
+.homepage {
+  text-align: center;
+}
 
-  label {
-    margin-top: 10px;
-  }
+.homepage h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
 
-  input,
-  textarea {
-    margin-bottom: 10px;
-    padding: 8px;
-  }
+.homepage hr {
+  width: 50px;
+  border: 2px solid #343a40;
+  margin: 20px auto;
+}
 
-  /* Button Styling */
-  .btn-modal {
-    background-color: #4caf50;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    border-radius: 10px;
-  }
+.homepage p {
+  font-size: 18px;
+  color: #555;
+}
 
-  .btn-modal:hover {
-    background-color: #45a049;
-  }
+/* Modal Styles */
+.modal {
+  display: block !important;
+  position: fixed;
+  margin-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
- /* NAVBAR */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  margin-bottom: 10px;
+  padding: 8px;
+}
+.cari {
+  margin-right: 0; 
+  width: 20%; 
+margin-bottom: 20px;
+}
+
+.form-control {
+  padding: 10px;
+  right: 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px; 
+}
+/* Button Styling */
+.btn-modal {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.btn-modal:hover {
+  background-color: #45a049;
+}
+
+/* Navbar Styles */
+/* Navbar Styles */
 .nav-admin {
   position: sticky;
-  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -149,133 +222,130 @@
   background-color: #112546;
   width: 100%;
 }
-
-  
-  .left-content {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 20px;
-    font-weight: bold;
-    margin-right: 20px;
-    margin-left: 25px;
-  }
-  
-  .right-content {
-    display: flex;
-    align-items: center;
-  }
-
-  .nav-link {
-    color: white;
-    text-decoration: none;
-    margin-right: 30px; 
-  }
-  
-  .logout-button {
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; 
+}
 
 
-  /* Set Fauna */
+.left-content {
+  display: flex;
+  align-items: center;
+}
 
-  .setfauna-container{
-    margin-top: 30px;
-    margin-left: 230px;
-    width: 100%;
-    
-  }
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
 
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
+.right-content {
+  display: flex;
+  align-items: center;
+}
 
-  .addButton {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
+}
 
-  .actionButtons {
-    display: flex;
-    align-items: center;
-  }
-  
-  .printButton {
-    background-color: #2ecc71;
-    color: white;
-    padding: 10px;
-    margin-left: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .searchInput {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-  }
+.logout-button {
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  .setfauna-container .table {
-    width: 80%;
-    background-color: #fff;
-    overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    border-collapse: collapse;
-  }
-  
-  .th {
-    background-color: #04AA6D;
-    color: white;
-    padding: 20px;
-    white-space: nowrap;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-  
-  .td {
-    padding: 20px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
+/* Set Fauna Styles */
+.setfauna-container {
+  margin-left: 220px;
+  margin-top: 30px;
+  width: 100%;
+}
 
-  .actionButtonsCell {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    gap: 5px;
-  }
-  
-  .editButton {
-    background-color: #3498db;
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .deleteButton {
-    background-color: #e74c3c;
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
-  
+.addButton {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+}
+
+.printButton {
+  background-color: #2ecc71;
+  color: white;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.searchInput {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.setfauna-container .table {
+  width: 83%;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-collapse: collapse;
+}
+
+.th {
+  background-color: #04AA6D;
+  color: white;
+  padding: 20px;
+  white-space: nowrap;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.td {
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.actionButtonsCell {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.editButton {
+  background-color: #3498db;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.deleteButton {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}

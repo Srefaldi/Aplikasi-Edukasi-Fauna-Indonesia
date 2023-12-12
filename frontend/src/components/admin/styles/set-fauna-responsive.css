@@ -1,0 +1,102 @@
+@media (min-width: 768px) {
+  .btn-primary {
+    width: 30%;
+    margin-bottom: 10px;
+  }
+  .cetak {
+    width: 20%;
+    margin-bottom: 10px;
+  }
+
+}
+@media (max-width: 767px) {
+  .open{
+   left: 25%; 
+  }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    
+      .modal-content {
+        background-color: #fefefe;
+        margin: 20% auto;
+        margin-right: 20px;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+    
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+    
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .setfauna-container {
+        padding: 15px;
+        left: 0;
+        margin-left: 0; 
+        margin-right:100px ; 
+        width: 100%;
+        max-width: 800px;
+      }
+    
+      .table {
+        width: 100%;
+        overflow-x: auto;
+        margin-left: auto; 
+        margin-right: auto; 
+        max-width: 100%; 
+      }
+    .bg-primary.text-white {
+      display: none; 
+    }
+  
+    .table tbody tr {
+      display: block;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+    }
+  
+    .table tbody td {
+      display: block;
+      text-align: left;
+      width: 100%;
+    }
+  
+    .form-control {
+      width: 50%;
+      margin-left: 20px;
+      margin-top: 15px;
+    }
+    
+    .btn-primary {
+      width: 30%;
+      margin-bottom: 10px;
+    }
+    .cetak-fauna {
+      width: 20%;
+      margin-bottom: 10px;
+    }
+    .cari {
+      margin-left: 20px;
+      width: 30%;
+    }
+  }
+  

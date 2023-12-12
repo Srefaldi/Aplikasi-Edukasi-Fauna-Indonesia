@@ -3,6 +3,7 @@ import axios from 'axios';
 import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import './styles/Admin.css';
+import './styles/set-fauna-responsive.css';
 import Sidebar from './Sidebar';
 
 const SetFauna = () => {
@@ -175,22 +176,29 @@ const SetFauna = () => {
   return (
     <>
       <Sidebar />
+      <div className="setfauna-container mt-5">
+  <h1 className="left">Data Fauna</h1>
+  <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
+  <div className="d-flex justify-content-between align-items-center mb-3">
+  <div className="d-flex flex-column">
+    <div className="btn btn-primary mb-2" onClick={openModal}>
+      Tambah Fauna
+    </div>
+    {/* <div className="btn btn-success mb-2 cetak-fauna">Cetak</div> */}
+    <div className="d-flex flex-column">
+    <input type="text" placeholder="Cari Fauna..." className="form-control" />    <div className="btn btn-primary cari">Cari</div>
+  </div>
+  </div>
+  
+</div>
 
-      <div className="setfauna-container">
-        <h1>Data Fauna</h1>
-        <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
-        <div className="header">
-          <div className="addButton" onClick={openModal}>Tambah Fauna</div>
-          <div className="actionButtons">
-            <div className="printButton">Cetak</div>
-          </div>
-        </div>
-        <input type="text" placeholder="Cari Fauna..." className="searchInput" />
 
+
+        
         {/* Modal for adding new fauna */}
         {isModalOpen && (
           <div className="modal">
-            <div className="modal-content">
+           <div className="modal-content open" style={{ marginTop: '35px', width: '50%' }}>
               <span className="close" onClick={closeModal}>
                 &times;
               </span>
@@ -247,7 +255,7 @@ const SetFauna = () => {
 
         <table className="table">
           <thead>
-            <tr className="th">
+            <tr className="bg-primary text-white">
               <th>No</th>
               <th>Gambar</th>
               <th>Nama</th>
@@ -256,12 +264,12 @@ const SetFauna = () => {
               <th>kategori 2</th>
               <th>Deskripsi Habitat</th>
               <th>Deskripsi populasi</th>
-              <th className="actionButtonsCell">Aksi</th>
+              <th className="text-center">Aksi</th>
             </tr>
           </thead>
           <tbody>
             {faunaListItem.map((fauna, index) => (
-              <tr key={index} className="td">
+              <tr key={index}>
                 <td>{index + 1}</td>
                 <td>
                   <img
@@ -276,11 +284,11 @@ const SetFauna = () => {
                 <td>{fauna.kategori_2}</td>
                 <td>{fauna.desc_habitat}</td>
                 <td>{fauna.desc_populasi}</td>
-                <td className="actionButtonsCell">
-                  <div className="editButton" onClick={() => openEditModal(fauna.id)}>
+                <td className="text-center">
+                  <div className="btn btn-info mr-3" onClick={() => openEditModal(fauna.id)}>
                     Edit
                   </div>
-                  <div className="deleteButton" onClick={() => handleDeleteFauna(fauna.id)}>
+                  <div className="btn btn-danger" onClick={() => handleDeleteFauna(fauna.id)}>
                     Hapus
                   </div>
                 </td>
@@ -294,33 +302,3 @@ const SetFauna = () => {
 };
 
 export default SetFauna;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

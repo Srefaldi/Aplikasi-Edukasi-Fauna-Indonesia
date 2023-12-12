@@ -76,7 +76,7 @@ const Leaderboard = () => {
 
   return (
     <>
-      <Sidebar />
+
 
       <div className="setfauna-container">
         <h1>Leaderboard</h1>
@@ -111,11 +111,11 @@ const Leaderboard = () => {
 
         <table className="table">
           <thead>
-            <tr className="th">
+            <tr className="bg-primary text-white">
               <th>No</th>
               <th>Nama</th>
               <th>Score</th>
-              <th className="actionButtonsCell">Aksi</th>
+              <th className="text-center">Aksi</th>
             </tr>
           </thead>
           <tbody>

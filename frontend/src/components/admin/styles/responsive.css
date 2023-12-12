@@ -1,0 +1,46 @@
+
+@media (max-width: 767px) {
+  .setfauna-container {
+    padding: 15px; 
+    margin-left: 0;
+  }
+
+  .setfauna-container .table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .th {
+    display: none;
+  }
+
+  .td {
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .actionButtonsCell {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .addButton,
+  .printButton {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+ 
+  .searchInputWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchInput {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+}

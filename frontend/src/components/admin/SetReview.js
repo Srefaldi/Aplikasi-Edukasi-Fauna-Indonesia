@@ -151,8 +151,6 @@ const SetReview = () => {
 
   return (
     <>
-      <Sidebar />
-
       <div className="setfauna-container">
         <h1>Data Reviewer</h1>
         <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
@@ -198,12 +196,12 @@ const SetReview = () => {
 
         <table className="table">
           <thead>
-            <tr className="th">
+            <tr className="bg-primary text-white">
               <th>No</th>
               <th>Nama</th>
               <th>Rating</th>
               <th>Review</th>
-              <th className="actionButtonsCell">Aksi</th>
+              <th className="text-center">Aksi</th>
             </tr>
           </thead>
           <tbody>

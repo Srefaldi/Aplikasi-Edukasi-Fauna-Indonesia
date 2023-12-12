@@ -4,7 +4,9 @@
     gap: 20px;
     padding: 20px;
   }
-  
+  .dropdown-menu {
+    transform: translateY(-30px); 
+  }
   .fauna-item {
     border: 1px solid #ddd;
     border-radius: 8px;

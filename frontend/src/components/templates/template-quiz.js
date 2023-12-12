@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const TemplateQuiz = ({ quizData }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
+  const [correctAnswers, setCorrectAnswers] = useState(Array(quizData.length).fill(false));
+  const [lastQuestionReached, setLastQuestionReached] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log('Skor Sementara:', score);
+  }, [score]);
 
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) {
@@ -16,32 +22,38 @@ const TemplateQuiz = ({ quizData }) => {
     const userAnswer = selectedAnswer;
     const correctAnswer = (quizData[currentQuestionIndex] && quizData[currentQuestionIndex].answer) || '';
 
+    const updatedCorrectAnswers = [...correctAnswers];
+    updatedCorrectAnswers[currentQuestionIndex] = userAnswer === correctAnswer;
+
+    setCorrectAnswers(updatedCorrectAnswers);
+
     if (userAnswer === correctAnswer) {
-      // Perbarui skor jika jawabannya benar
       setScore(score + 1);
       alert('Jawaban Anda benar!');
     } else {
-      alert('Maaf, jawaban Anda salah.');
+      alert('Jawaban Anda salah.');
     }
-    console.log(score);
-    setSelectedAnswer(null);
-    goToNextQuestion();
-  };
 
-  const goToNextQuestion = () => {
-    if (currentQuestionIndex < quizData.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    setSelectedAnswer(null);
+
+    const nextQuestionIndex = currentQuestionIndex + 1;
+
+    if (nextQuestionIndex < quizData.length) {
+      setCurrentQuestionIndex(nextQuestionIndex);
     } else {
-      finishQuiz();
+      setLastQuestionReached(true);
+      alert('Anda telah menjawab semua soal.');
     }
   };
 
   const finishQuiz = () => {
     const totalQuestions = quizData.length;
-    const percentageScore = (score / totalQuestions) * 100;
+    const totalCorrect = correctAnswers.filter((answer) => answer).length;
+
+    const percentageScore = (totalCorrect / totalQuestions) * 100;
+    console.log(`Total Jawaban Benar: ${totalCorrect}`);
     alert(`Selamat! Anda telah menyelesaikan kuis.\nSkor Anda: ${percentageScore.toFixed(2)}%`);
-    // Navigate to the "/quiz" page when all questions are answered
-    navigate('/quiz');
+    navigate('/quiz'); 
   };
 
   const handleOptionChange = (event) => {
@@ -93,16 +105,32 @@ const TemplateQuiz = ({ quizData }) => {
               )}
             </div>
             <div className="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
-              <button className="btn btn-primary d-flex align-items-center btn-danger" type="button">
+              <button
+                className="btn btn-primary d-flex align-items-center btn-danger"
+                type="button"
+                onClick={() => {
+                  setCurrentQuestionIndex(currentQuestionIndex > 0 ? currentQuestionIndex - 1 : 0);
+                }}
+              >
                 <i className="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Previous
               </button>
-              <button
-                className="btn btn-primary border-success align-items-center btn-success"
-                type="button"
-                onClick={handleCheckAnswer}
-              >
-                Next<i className="fa fa-angle-right ml-2"></i>
-              </button>
+              {lastQuestionReached ? (
+                <button
+                  className="btn btn-primary border-success align-items-center btn-success"
+                  type="button"
+                  onClick={finishQuiz}
+                >
+                  Selesai
+                </button>
+              ) : (
+                <button
+                  className="btn btn-primary border-success align-items-center btn-success"
+                  type="button"
+                  onClick={handleCheckAnswer}
+                >
+                  Next<i className="fa fa-angle-right ml-2"></i>
+                </button>
+              )}
             </div>
           </div>
         </div>

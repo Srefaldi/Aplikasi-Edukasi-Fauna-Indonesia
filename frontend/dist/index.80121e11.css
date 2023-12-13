@@ -14995,6 +14995,31 @@ input, textarea {
   }
 }
 
+.welcome-text {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.welcome-text h2 {
+  color: #0b2447;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.welcome-text p {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+@media (width <= 767px) {
+  .quiz-selection-container {
+    padding: 0 15px;
+  }
+}
+
 .slides {
   width: 100%;
   margin-top: 50px;

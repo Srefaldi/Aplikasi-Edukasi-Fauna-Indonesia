@@ -32,7 +32,6 @@ const PlayQuiz = () => {
         </div>
       </div>
 
-      {/* Pastikan struktur data yang diterima dari API sesuai */}
       {quizData.length > 0 ? (
         <TemplateQuiz quizData={quizData} />
       ) : (

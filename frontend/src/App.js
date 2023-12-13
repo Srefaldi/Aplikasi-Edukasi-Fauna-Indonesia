@@ -24,6 +24,7 @@ import InputName from "./components/Before-quiz.js";
 import SetReview from "./components/admin/SetReview.js";
 import LeaderboardAdmin from "./components/admin/Leaderboard.js";
 import Slider from "./components/Slider.js";
+import ResultQuiz from "./components/Result-quiz.js";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/selection-quiz" element={<><Navbar/><QuizSelection/><Footer/></>}/>
         <Route path="/input-name-quiz/:package" element={<><Navbar /><InputName /><Footer /></>} />
         <Route path="/play-quiz/:package" element={<><Navbar/><PlayQuiz/><Footer/></>}/>
+        <Route path="/result-quiz" element={<><Navbar/><Slider /><ResultQuiz/><Footer/></>}/>
         <Route exact path="/leaderboard" element={<><Navbar /><Leaderboard /><Footer /></>} />
 
         {/* Admin Route */}

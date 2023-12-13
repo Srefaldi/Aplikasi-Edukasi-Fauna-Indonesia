@@ -5,7 +5,7 @@ const TemplateQuiz = ({ quizData }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [score, setScore] = useState(0);
-  const [correctAnswers, setCorrectAnswers] = useState(Array(quizData.length).fill(false));
+  const [totalCorrectAnswers, setTotalCorrectAnswers] = useState(0);
   const [lastQuestionReached, setLastQuestionReached] = useState(false);
   const navigate = useNavigate();
 
@@ -15,23 +15,21 @@ const TemplateQuiz = ({ quizData }) => {
 
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) {
-      alert('Pilih jawaban terlebih dahulu');
+      // Hapus alert
       return;
     }
 
     const userAnswer = selectedAnswer;
     const correctAnswer = (quizData[currentQuestionIndex] && quizData[currentQuestionIndex].answer) || '';
 
-    const updatedCorrectAnswers = [...correctAnswers];
-    updatedCorrectAnswers[currentQuestionIndex] = userAnswer === correctAnswer;
-
-    setCorrectAnswers(updatedCorrectAnswers);
+    const updatedTotalCorrectAnswers = totalCorrectAnswers + (userAnswer === correctAnswer ? 1 : 0);
+    setTotalCorrectAnswers(updatedTotalCorrectAnswers);
 
     if (userAnswer === correctAnswer) {
       setScore(score + 1);
-      alert('Jawaban Anda benar!');
+      // Hapus alert
     } else {
-      alert('Jawaban Anda salah.');
+      // Hapus alert
     }
 
     setSelectedAnswer(null);
@@ -42,18 +40,21 @@ const TemplateQuiz = ({ quizData }) => {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
       setLastQuestionReached(true);
-      alert('Anda telah menjawab semua soal.');
+      // Hapus alert
     }
   };
 
   const finishQuiz = () => {
     const totalQuestions = quizData.length;
-    const totalCorrect = correctAnswers.filter((answer) => answer).length;
-
-    const percentageScore = (totalCorrect / totalQuestions) * 100;
-    console.log(`Total Jawaban Benar: ${totalCorrect}`);
-    alert(`Selamat! Anda telah menyelesaikan kuis.\nSkor Anda: ${percentageScore.toFixed(2)}%`);
-    navigate('/quiz'); 
+    const percentageScore = (totalCorrectAnswers / totalQuestions) * 100;
+    console.log(`Total Jawaban Benar: ${totalCorrectAnswers}`);
+    // Hapus alert
+    navigate('/result-quiz', {
+      state: {
+        totalCorrectAnswers,
+        percentageScore,
+      },
+    });
   };
 
   const handleOptionChange = (event) => {
@@ -108,9 +109,7 @@ const TemplateQuiz = ({ quizData }) => {
               <button
                 className="btn btn-primary d-flex align-items-center btn-danger"
                 type="button"
-                onClick={() => {
-                  setCurrentQuestionIndex(currentQuestionIndex > 0 ? currentQuestionIndex - 1 : 0);
-                }}
+                onClick={() => setCurrentQuestionIndex((prevIndex) => Math.max(prevIndex - 1, 0))}
               >
                 <i className="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Previous
               </button>

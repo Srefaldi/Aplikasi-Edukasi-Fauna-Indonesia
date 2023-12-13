@@ -1,0 +1,42 @@
+.result-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #3498db; /* Warna garis tepi - Biru muda */
+  border-radius: 10px; /* Sudut pembulatan tepi */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+  background-color: #ecf0f1; /* Warna latar belakang - Abu-abu muda */
+  text-align: center;
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-content p {
+  font-size: 18px;
+}
+
+.result-container h2 {
+  font-size: 22px;
+  color: #3498db; /* Warna judul - Biru muda */
+}
+
+.icon-container {
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.icon {
+  font-size: 2em; /* Sesuaikan ukuran font ikon */
+  transform: scale(5); /* Sesuaikan faktor pembesaran */
+}
+
+.passed-icon {
+  color: #00cc00; /* Hijau */
+}
+
+.failed-icon {
+  color: #cc0000; /* Merah */
+}

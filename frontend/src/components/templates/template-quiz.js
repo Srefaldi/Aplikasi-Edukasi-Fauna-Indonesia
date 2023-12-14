@@ -9,7 +9,7 @@ const TemplateQuiz = ({ quizData }) => {
   const [lastQuestionReached, setLastQuestionReached] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const { state: { nama } } = location;
+  const { state: { nama, selectedPackage } } = location;
 
   useEffect(() => {
     console.log('Skor Sementara:', score);
@@ -51,12 +51,14 @@ const TemplateQuiz = ({ quizData }) => {
     const totalQuestions = quizData.length;
     const percentageScore = (totalCorrectAnswers / totalQuestions) * 100;
     console.log(`Total Jawaban Benar: ${totalCorrectAnswers}`);
+    console.log(selectedPackage);
     // Hapus alert
     navigate('/result-quiz', {
       state: {
         totalCorrectAnswers,
         percentageScore,
         nama,
+        selectedPackage,
       },
     });
   };

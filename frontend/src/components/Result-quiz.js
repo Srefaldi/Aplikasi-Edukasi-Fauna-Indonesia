@@ -16,6 +16,9 @@ const ResultQuiz = () => {
   const formattedPercentageScore = percentageScore.toFixed(2);
   const isPassed = percentageScore >= 60;
 
+  // Access selectedPackage directly from the location object
+  const selectedPackage = location?.state?.selectedPackage || '';
+
   return (
     <div className="result-container">
       <h2>Hasil Quiz</h2>
@@ -28,6 +31,7 @@ const ResultQuiz = () => {
           )}
         </div>
         <p>{nama}</p>
+        <p>Anda Telah Menyelesaikan Kuis {selectedPackage}</p>
         <p>Skor Anda: {formattedPercentageScore}</p>
         <p>Total Jawaban Benar: {totalCorrectAnswers}</p>
         <p>Status Kelulusan: {isPassed ? 'Lulus' : 'Tidak Lulus'}</p>
@@ -37,3 +41,4 @@ const ResultQuiz = () => {
 };
 
 export default ResultQuiz;
+

@@ -13,7 +13,7 @@ const BeforeQuiz = ({ onStartQuiz }) => {
   };
 
   const handleStartQuiz = () => {
-    navigate(`/play-quiz/${selectedPackage}`, { state: { nama } });
+    navigate(`/play-quiz/${selectedPackage}`, { state: { nama, selectedPackage } });
   };
 
   const imgContainer = {

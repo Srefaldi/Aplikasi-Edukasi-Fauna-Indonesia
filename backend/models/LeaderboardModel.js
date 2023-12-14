@@ -8,6 +8,10 @@ const LeaderboardModel = Database.define('leaderboard', {
         type: DataTypes.STRING,
         allowNull: false
     },
+    paket: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     score: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -21,4 +25,3 @@ const LeaderboardModel = Database.define('leaderboard', {
 })();
 
 export default LeaderboardModel;
-// Update

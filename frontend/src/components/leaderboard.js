@@ -3,10 +3,15 @@ import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 
 const Leaderboard = () => {
   const [topScores, setTopScores] = useState([]);
+  const [filterByPackage, setFilterByPackage] = useState('');
 
   const fetchLeaderboardData = async () => {
     try {
-      const response = await fetch('http://localhost:5000/get-allleaderboard');
+      const url = filterByPackage
+        ? `http://localhost:5000/get-leaderboard-by-package/${filterByPackage}`
+        : 'http://localhost:5000/get-allleaderboard';
+
+      const response = await fetch(url);
       const data = await response.json();
       setTopScores(data);
     } catch (error) {
@@ -14,17 +19,12 @@ const Leaderboard = () => {
       setTopScores([]);
     }
   };
-  
-
-  useEffect(() => {
-    fetchLeaderboardData();
-  }, []);
 
   const renderLeaderboardRows = (data) => {
     if (!Array.isArray(data)) {
-      return null; 
+      return null;
     }
-// Updtae
+
     return data.map((leader, index) => (
       <tr key={index}>
         <th scope="row">{index + 1}</th>
@@ -34,6 +34,14 @@ const Leaderboard = () => {
       </tr>
     ));
   };
+
+  const handlePackageFilterChange = (e) => {
+    setFilterByPackage(e.target.value);
+  };
+
+  useEffect(() => {
+    fetchLeaderboardData();
+  }, [filterByPackage]);
 
   return (
     <div>
@@ -48,6 +56,24 @@ const Leaderboard = () => {
       {/* Leaderboard Section */}
       <div className="container mt-5 mb-5">
         <h1>Leaderboard</h1>
+
+        {/* Dropdown to select the package */}
+        <div className="filter-container">
+          <label>Filter by Package:</label>
+          <select
+            value={filterByPackage}
+            onChange={handlePackageFilterChange}
+          >
+            <option value="">All</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+
         <div className="table-responsive">
           <table className="table table-striped">
             <thead>
@@ -62,21 +88,6 @@ const Leaderboard = () => {
           </table>
         </div>
       </div>
-      {/* <div className="container mt-5 mb-5">
-        <h2>Lowest Scores</h2>
-        <div className="table-responsive">
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Score</th>
-              </tr>
-            </thead>
-            <tbody>{renderLeaderboardRows(lowestScores)}</tbody>
-          </table>
-        </div>
-      </div> */}
     </div>
   );
 };

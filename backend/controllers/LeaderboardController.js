@@ -77,3 +77,22 @@ export const addLeaderboard = async (req, res) => {
         res.status(500).json({ error: 'Internal Server Error' });
     }
 };
+
+export const getLeaderboardByPackage = async (req, res) => {
+    try {
+        const { package: selectedPackage } = req.params;
+
+        const leaderboardByPackage = await LeaderboardModel.findAll({
+            where: {
+                paket: selectedPackage,
+            },
+            order: [['score', 'DESC']],
+            limit: 10,
+        });
+
+        res.status(200).json(leaderboardByPackage);
+    } catch (error) {
+        console.error('Error getting leaderboard by package:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};

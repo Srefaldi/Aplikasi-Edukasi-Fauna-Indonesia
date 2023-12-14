@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './styles/Admin.css'; 
+import './styles/Admin.css';
 import Sidebar from './Sidebar';
-// Update
+
 const Leaderboard = () => {
   const [leaderboardList, setLeaderboardList] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [formData, setFormData] = useState({
     nama: '',
+    paket: '',
     score: '',
   });
+  const [selectedPackage, setSelectedPackage] = useState('');
   const [editId, setEditId] = useState(null);
+
+  const [filterByPackage, setFilterByPackage] = useState('');
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -20,11 +24,12 @@ const Leaderboard = () => {
     setIsModalOpen(false);
     setFormData({
       nama: '',
+      paket: '',
       score: '',
     });
+    setSelectedPackage('');
     setEditId(null);
   };
-
 
   const fetchData = async () => {
     try {
@@ -34,12 +39,14 @@ const Leaderboard = () => {
       console.error('Error fetching leaderboard data:', error);
     }
   };
-  
-  
 
   const handleAddLeaderboard = async () => {
     try {
-      await axios.post('http://localhost:5000/add-leaderboard', formData);
+      await axios.post('http://localhost:5000/add-leaderboard', {
+        nama: formData.nama,
+        paket: selectedPackage,
+        score: formData.score,
+      });
       fetchData();
       closeModal();
     } catch (error) {
@@ -49,17 +56,17 @@ const Leaderboard = () => {
 
   const handleEditLeaderboard = async () => {
     try {
-      console.log('Edit ID:', editId);
-      console.log('Form Data:', formData);
-  
-      await axios.put(`http://localhost:5000/edit-leaderboard/${editId}`, formData);
+      await axios.put(`http://localhost:5000/edit-leaderboard/${editId}`, {
+        nama: formData.nama,
+        paket: selectedPackage,
+        score: formData.score,
+      });
       fetchData();
       closeModal();
     } catch (error) {
       console.error('Error editing leaderboard entry:', error);
     }
   };
-  
 
   const handleDeleteLeaderboard = async (id) => {
     try {
@@ -70,16 +77,37 @@ const Leaderboard = () => {
     }
   };
 
+  // Handler untuk memperbarui nilai filterByPackage saat memilih paket
+  const handlePackageFilterChange = (e) => {
+    setFilterByPackage(e.target.value);
+  };
+
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [filterByPackage]);
 
   return (
     <>
-
-
       <div className="setfauna-container content">
         <h1>Leaderboard</h1>
+
+        {/* Tambahkan dropdown untuk memilih paket */}
+        <div className="filter-container">
+          <label>Filter by Package:</label>
+          <select
+            value={filterByPackage}
+            onChange={handlePackageFilterChange}
+          >
+            <option value="">All</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+
         <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
 
         {isModalOpen && (
@@ -95,12 +123,18 @@ const Leaderboard = () => {
                   onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
                 />
                 <label>Paket:</label>
-                <input
-                  type="text"
+                <select
                   name="paket"
-                  value={formData.paket}
-                  onChange={(e) => setFormData({ ...formData, paket: e.target.value })}
-                />
+                  value={selectedPackage}
+                  onChange={(e) => setSelectedPackage(e.target.value)}
+                >
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E</option>
+                  <option value="F">F</option>
+                </select>
                 <label>Score:</label>
                 <input
                   type="number"
@@ -128,48 +162,52 @@ const Leaderboard = () => {
           </thead>
           <tbody>
             {Array.isArray(leaderboardList) && leaderboardList.length > 0 ? (
-              leaderboardList.map((leaderboard, index) => (
-                <tr key={index} className="td">
-                  <td>{index + 1}</td>
-                  <td>{leaderboard.nama}</td>
-                  <td>{leaderboard.paket}</td>
-                  <td>{leaderboard.score}</td>
-                  <td className="actionButtonsCell">
-                    <div
-                      className="editButton"
-                      onClick={() => {
-                        openModal();
-                        setEditId(leaderboard.id);
-                        setFormData({
-                          nama: leaderboard.nama,
-                          score: leaderboard.score,
-                        });
-                      }}
-                    >
-                      Edit
-                    </div>
-                    <div
-                      className="deleteButton"
-                      onClick={() => {
-                        if (leaderboard.id !== undefined) {
-                          handleDeleteLeaderboard(leaderboard.id);
-                        } else {
-                          console.error('ID tidak valid:', leaderboard.id);
-                        }
-                      }}
-                    >
-                      Hapus
-                    </div>
-                  </td>
-                </tr>
-              ))
+              leaderboardList
+                .filter((leaderboard) =>
+                  filterByPackage ? leaderboard.paket === filterByPackage : true
+                )
+                .map((leaderboard, index) => (
+                  <tr key={index} className="td">
+                    <td>{index + 1}</td>
+                    <td>{leaderboard.nama}</td>
+                    <td>{leaderboard.paket}</td>
+                    <td>{leaderboard.score}</td>
+                    <td className="actionButtonsCell">
+                      <div
+                        className="editButton"
+                        onClick={() => {
+                          openModal();
+                          setEditId(leaderboard.id);
+                          setFormData({
+                            nama: leaderboard.nama,
+                            score: leaderboard.score,
+                          });
+                          setSelectedPackage(leaderboard.paket);
+                        }}
+                      >
+                        Edit
+                      </div>
+                      <div
+                        className="deleteButton"
+                        onClick={() => {
+                          if (leaderboard.id !== undefined) {
+                            handleDeleteLeaderboard(leaderboard.id);
+                          } else {
+                            console.error('ID tidak valid:', leaderboard.id);
+                          }
+                        }}
+                      >
+                        Hapus
+                      </div>
+                    </td>
+                  </tr>
+                ))
             ) : (
               <tr>
                 <td colSpan="4">Leaderboard data is not available</td>
               </tr>
             )}
           </tbody>
-
         </table>
       </div>
     </>

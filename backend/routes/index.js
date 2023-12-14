@@ -6,7 +6,7 @@ import { refreshToken } from "../controllers/RefreshToken.js";
 import { AddFauna, deleteFaunaById, editFaunaById, getAllfauna, getFaunaById } from "../controllers/FaunaContents.js";
 import { addQuiz, deleteQuizById, editQuizById, getAllQuizzes, getQuizById } from "../controllers/QuizController.js";
 import { addReview, deleteReviewById, getAllReviews, getReviewById, updateReviewById } from "../controllers/Reviewer.js";
-import { getAllLeaderboard, editLeaderboardById, deleteLeaderboardById, addLeaderboard } from "../controllers/LeaderboardController.js"; 
+import { getAllLeaderboard, editLeaderboardById, deleteLeaderboardById, addLeaderboard, getLeaderboardByPackage } from "../controllers/LeaderboardController.js"; 
 
 const router = express.Router();
 
@@ -56,6 +56,7 @@ router.delete('/delete-review/:reviewId', deleteReviewById);
 // Leaderboard
 router.post('/add-leaderboard', addLeaderboard); 
 router.get('/get-allleaderboard', getAllLeaderboard); 
+router.get('/get-leaderboard-by-package/:package', getLeaderboardByPackage); // New endpoint for filtering by package
 router.put('/edit-leaderboard/:leaderboardId', editLeaderboardById); 
 router.delete('/delete-leaderboard/:leaderboardId', deleteLeaderboardById);
 

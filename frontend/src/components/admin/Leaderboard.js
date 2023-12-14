@@ -94,6 +94,13 @@ const Leaderboard = () => {
                   value={formData.nama}
                   onChange={(e) => setFormData({ ...formData, nama: e.target.value })}
                 />
+                <label>Paket:</label>
+                <input
+                  type="text"
+                  name="paket"
+                  value={formData.paket}
+                  onChange={(e) => setFormData({ ...formData, paket: e.target.value })}
+                />
                 <label>Score:</label>
                 <input
                   type="number"
@@ -101,7 +108,7 @@ const Leaderboard = () => {
                   value={formData.score}
                   onChange={(e) => setFormData({ ...formData, score: e.target.value })}
                 />
-                <button className='btn-modal' type="submit" onClick={editId ? handleEditLeaderboard : handleAddLeaderboard}>
+                <button className='btn-modal mt-3' type="submit" onClick={editId ? handleEditLeaderboard : handleAddLeaderboard}>
                   {editId ? 'Simpan Edit' : 'Tambah'}
                 </button>
               </form>
@@ -114,6 +121,7 @@ const Leaderboard = () => {
             <tr className="bg-primary text-white">
               <th>No</th>
               <th>Nama</th>
+              <th>Paket</th>
               <th>Score</th>
               <th className="text-center">Aksi</th>
             </tr>
@@ -124,6 +132,7 @@ const Leaderboard = () => {
                 <tr key={index} className="td">
                   <td>{index + 1}</td>
                   <td>{leaderboard.nama}</td>
+                  <td>{leaderboard.paket}</td>
                   <td>{leaderboard.score}</td>
                   <td className="actionButtonsCell">
                     <div

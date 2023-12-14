@@ -29,6 +29,7 @@ const Leaderboard = () => {
       <tr key={index}>
         <th scope="row">{index + 1}</th>
         <td>{leader.nama}</td>
+        <td>{leader.paket}</td>
         <td>{leader.score}</td>
       </tr>
     ));
@@ -53,6 +54,7 @@ const Leaderboard = () => {
               <tr>
                 <th scope="col">Rank</th>
                 <th scope="col">Nama</th>
+                <th scope="col">Paket</th>
                 <th scope="col">Score</th>
               </tr>
             </thead>

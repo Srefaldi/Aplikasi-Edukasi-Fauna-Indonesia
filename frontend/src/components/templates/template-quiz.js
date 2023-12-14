@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const TemplateQuiz = ({ quizData }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -8,6 +8,8 @@ const TemplateQuiz = ({ quizData }) => {
   const [totalCorrectAnswers, setTotalCorrectAnswers] = useState(0);
   const [lastQuestionReached, setLastQuestionReached] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const { state: { nama } } = location;
 
   useEffect(() => {
     console.log('Skor Sementara:', score);
@@ -42,6 +44,7 @@ const TemplateQuiz = ({ quizData }) => {
       setLastQuestionReached(true);
       // Hapus alert
     }
+    console.log('Nama:', nama, 'Skor Sementara:', score);
   };
 
   const finishQuiz = () => {
@@ -53,6 +56,7 @@ const TemplateQuiz = ({ quizData }) => {
       state: {
         totalCorrectAnswers,
         percentageScore,
+        nama,
       },
     });
   };

@@ -12,7 +12,7 @@ const ResultQuiz = () => {
     return null;
   }
 
-  const { totalCorrectAnswers, percentageScore } = state;
+  const { totalCorrectAnswers, percentageScore, nama } = state;
   const formattedPercentageScore = percentageScore.toFixed(2);
   const isPassed = percentageScore >= 60;
 
@@ -27,6 +27,7 @@ const ResultQuiz = () => {
             <FontAwesomeIcon icon={faTimes} className="icon failed-icon" />
           )}
         </div>
+        <p>{nama}</p>
         <p>Skor Anda: {formattedPercentageScore}</p>
         <p>Total Jawaban Benar: {totalCorrectAnswers}</p>
         <p>Status Kelulusan: {isPassed ? 'Lulus' : 'Tidak Lulus'}</p>

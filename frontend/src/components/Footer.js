@@ -10,11 +10,11 @@ const Footer = () => {
           <div className="footer-item">
             <h4>Edukasi Fauna Indonesia</h4>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Our Service</a></li>
-              <li><a href="#">User Review</a></li>
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="#AboutUs">About Us</a></li>
+              <li><a href="#OurService">Our Service</a></li>
+              <li><a href="#UserReviews">User Review</a></li>
+              <li><a href="#Team">Our Team</a></li>
+              <li><a href="#Contact">Contact</a></li>
               <li><a href="/login">Admin</a></li>
 
             </ul>

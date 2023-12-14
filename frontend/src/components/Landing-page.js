@@ -49,7 +49,7 @@ const LandingPage = () => {
             </div>
         </div>
 
-        <h1 className="headings"> <span>About</span> Us </h1>
+        <h1 className="headings" id="AboutUs"> <span>About</span> Us </h1>
         <div className="row-landing">
             <div className="img-container">
                 <img src={bg} alt=''/>
@@ -64,7 +64,7 @@ const LandingPage = () => {
             </div>
         </div>
 
-      <h1 class="headings"> <span>Our</span> Service </h1>
+      <h1 class="headings" id="OurService"> <span>Our</span> Service </h1>
       <div class="icons-container">
       <div class="icons-item">
         <img src={materi} alt=""/>
@@ -89,7 +89,7 @@ const LandingPage = () => {
       </div>
     </div>
 
-    <h1 class="headings"> <span>Fauna</span> Indonesia </h1>
+    <h1 class="headings" id="FaunaIndonesia"> <span>Fauna</span> Indonesia </h1>
     <div class="foto-container">
       <div class="box1">
         <img src={faunaa} alt=""/>
@@ -103,12 +103,13 @@ const LandingPage = () => {
      
     </div>
 
-
+    <div id="UserReviews">
     {/* User Review */}
-    <UserReviews triggerFetch={triggerFetch} />
+    <UserReviews triggerFetch={triggerFetch}/>
     
     {/* Review  */}
     <AddReviewForm fetchReviews={fetchReviews} />
+    </div>
 
 
 
@@ -189,7 +190,7 @@ const LandingPage = () => {
     </div>
 
 
-    <h3 class="team-headings"> Contact </h3>
+    <h3 class="team-headings" id="Contact"> Contact </h3>
         <div className='row'>
             <div class="col-lg-4 col-md-4">
                 <div class="info-box mb-4">

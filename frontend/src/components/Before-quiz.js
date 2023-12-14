@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 import { right } from '@popperjs/core';
+import '../css/quiz/before-quiz.css';
+import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 
 const BeforeQuiz = ({ onStartQuiz }) => {
   const [nama, setNama] = useState('');
@@ -27,6 +28,7 @@ const BeforeQuiz = ({ onStartQuiz }) => {
 
   return (
     <div>
+
       <div className="container-fluid px-0">
         <div className="row mx-0">
           <div className="col-lg-12 px-0">
@@ -34,39 +36,29 @@ const BeforeQuiz = ({ onStartQuiz }) => {
           </div>
         </div>
       </div>
+    
 
       {/* Input Name Quiz */}
-      <div className="container py-4">
-        <div className="row align-items-md-stretch">
-          <div className="col-md-6 mt-5">
-            <div className="h-100 p-5 border rounded-3">
-              <div className="row">
-                <div className="col-md-12">
-                  <h2>Masukkan Nama Anda untuk Memulai Quiz</h2>
-                  <input
-                    type="text"
-                    id="nama"
-                    name="nama"
-                    className="form-control mt-3 mb-3"
-                    placeholder="Masukkan Nama Anda"
-                    value={nama}
-                    onChange={handleInputChange}
-                  />
-                  <p style={{ color: 'black' }}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                  </p>
-                  <button className="btn btn-outline-secondary mt-3" type="button" onClick={handleStartQuiz}>
-                    Mulai Kuis
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-md-6 mt-5 mr-md-4">
-            <img src={hero} alt="Foto Samping" style={imgStyle} />
-          </div>
-        </div>
+      <div className='input-quiz-container'>
+      <div className='input-container'>
+        <h1>Masukkan Nama Anda untuk Memulai Quiz</h1>
+        <p>
+          Sebelum memulai petualangan pengetahuan melalui kuis yang menarik ini, kami ingin mengenal Anda lebih baik. 
+          Mohon masukkan nama Anda di bawah ini dan mulailah perjalanan belajar Anda!
+          </p>
+        <input  className="input-quiz"
+            type="text"
+            id="nama"
+            name="nama"
+            placeholder="Masukkan Nama Anda"
+            value={nama}
+            onChange={handleInputChange}
+        /> 
+        <button className="btn-start-quiz" type="button" onClick={handleStartQuiz}>Mulai Kuis</button>
+
       </div>
+      </div>
+     
     </div>
   );
 };

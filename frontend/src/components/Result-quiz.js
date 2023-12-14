@@ -63,12 +63,12 @@ const ResultQuiz = () => {
             <FontAwesomeIcon icon={faTimes} className="icon failed-icon" />
           )}
         </div>
-        <p>{nama}</p>
+        <h2>{nama}</h2>
         <p>Anda Telah Menyelesaikan Kuis {selectedPackage}</p>
         <p>Skor Anda: {formattedPercentageScore}</p>
         <p>Total Jawaban Benar: {totalCorrectAnswers}</p>
         <p>Status Kelulusan: {isPassed ? 'Lulus' : 'Tidak Lulus'}</p>
-        <button onClick={addLeaderboardEntry}>Selesai</button>
+        <button className='btn-add-leaderboard' onClick={addLeaderboardEntry}>Selesai</button>
       </div>
     </div>
   );

@@ -1,12 +1,11 @@
 import React from "react";
 
-import hero from '../css/home/komodo.png';
+import hero from '../css/home/hero2.jpg';
 import jawa from '../css/home/pulau/jawa.jpg';
 import kalimantan from '../css/home/pulau/kalimantan.jpg';
 import papua from '../css/home/pulau/papua.jpg';
 import sulawesi from '../css/home/pulau/sulawesi.jpg';
 import sumateri from '../css/home/pulau/sumateri.jpg';
-import komodo from '../css/home/pulau/komodo.jpg';
 import mamalia from '../css/home/jenis/Mamalia.jpg';
 import reptil from '../css/home/jenis/reptil.jpg';
 import burung from '../css/home/jenis/Burung.jpg';
@@ -14,191 +13,175 @@ import ampibi from '../css/home/jenis/ampibi.jpg';
 import ikan from '../css/home/jenis/ikan.jpg';
 import serangga from '../css/home/jenis/serangga.jpg';
 import bg from '../css/home/olga.jpeg';
+import hero1 from '../css/home/fauna2.jpg';
+import '../css/home/home.css';
 
 const HomePage = () => {
   return (
     <div>
-      <script src="https://kit.fontawesome.com/d7da709801.js" crossOrigin="anonymous"></script>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-rnyr88LlR9QfGdTzL3ZYOvKnN4HhDlXZe7R9h1UjmHjIdp2zgBfPnFls3++Fw4ar" crossOrigin="anonymous"></link>
+    
 
-      <div className="container-fluid px-0">
-        <div className="row h-75 mx-0">
-          <img id="homeImage" className="img-fluid w-100 object-fit-cover d-inline-block px-0" src={hero} alt="Foto Home" />
-        </div>
-        <div className="col-lg-12 py-lg-4">
-          <h1 className="fw-bold mt-6 px-5 text-dark">Keindahan Pesona Fauna Indonesia</h1>
-          <p className="lead mb-6 pb-20 px-5 text-dark" style={{ textAlign: 'justify' }}>
-          Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
-          Setiap sudut tanah air ini menyimpan pesona fauna yang menakjubkan, menghadirkan kecantikan tak terhingga. 
-          Aplikasi Edukasi Fauna Indonesia unggul dalam menyajikan informasi komprehensif mengenai keanekaragaman fauna Indonesia. 
-          Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
-          Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. 
-          </p>
-        </div>
-        
+      {/* HERO SECTION */}
+      <div className="container-home">
+        <img className="homeImage" src={hero1} alt="Foto Home"/>
+          <div className="container1">
+            
+          </div>
+          <div className="container2">
+            <div className="item big">
+              <p>Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
+              Setiap sudut tanah air ini menyimpan pesona fauna yang menakjubkan, menghadirkan kecantikan tak terhingga. 
+              Aplikasi Edukasi Fauna Indonesia unggul dalam menyajikan informasi komprehensif mengenai keanekaragaman fauna Indonesia. 
+              Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
+              Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. </p>
+            </div>
+            <div className="item small">
+              <img src={hero} alt="Foto Home" />
+            </div>
+            <div className="item small">
+              <img src={hero} alt="Foto Home" />
+            </div>
+            
+
+          </div>
       </div>
 
-      {/* Pulau Section */}
-
-      <div className="album py-4 bg-light">
-        <div className="container">
-          <div className="row">
-            <div className="col text-left mb-5">
-              <h5 className="mt-6" style={{ fontWeight: 'bold', color: '#5FBDFF', marginBottom: '5px' }}>JELAJAHI BERBAGAI JENIS FAUNA</h5>
-              <h1 style={{ fontWeight: 'bold', color: 'black', marginTop: '10px', marginBottom: '0' }}>PULAU</h1>
-            </div>
-          </div>
-          <div className="row row-cols-1 row-cols-md-5 g-3">
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-jawa" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={jawa} className="bd-placeholder-img card-img-top" alt="Pulau Jawa" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Jawa</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-kalimantan" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={kalimantan} className="bd-placeholder-img card-img-top" alt="Pulau Kalimantan" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Kalimantan</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-papua" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={papua} className="bd-placeholder-img card-img-top" alt="Pulau Papua" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Papua</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-sulawesi" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={sulawesi} className="bd-placeholder-img card-img-top" alt="Pulau Sulawesi" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Sulawesi</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-sumatera" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={sumateri} className="bd-placeholder-img card-img-top" alt="Pulau Sumatera" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Sumatera</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+      {/* INTRO SECTION */}
+      <div className="intro-home">
+        <h1>Keindahan Pesona Fauna Indonesia</h1>
+        <p>Keindahan Pesona Fauna Indonesia terpancar melalui keanekaragaman fauna yang memukau, yang tersebar di pulau-pulau seperti Jawa, 
+          Kalimantan, Papua, Sulawesi, dan Sumatera. Setiap sudut tanah air ini menyimpan pesona fauna yang unik, menciptakan kecantikan alam 
+          yang memikat dan menginspirasi. Aplikasi Edukasi Fauna Indonesia menjadi panduan interaktif yang membawa pengguna dalam perjalanan 
+          mendalam, menjelajahi kehidupan satwa yang beragam dan melibatkan mereka dalam upaya pelestarian kekayaan alam Indonesia.</p>
       </div>
 
-      {/* Jenis Section */}
+      {/* PULAU SECTION */}
+      <div className="container-pulau-utama">
+        <div className="pulau-container">
+          <div className="fauna-item1">
+            <h1>KALIMANTAN</h1>
+            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
+          </div>
+          <div className="fauna-item2">
+            <p>
+            Kalimantan, yang merupakan bagian dari Indonesia, adalah pulau terbesar ketiga di dunia dan menjadi rumah bagi keanekaragaman hayati 
+            yang luar biasa. Keindahan fauna Kalimantan mencakup beragam spesies unik, yang hidup di hutan hujan tropis yang lebat dan ekosistem 
+            air tawar yang luas.
+            </p>
+          </div> 
+        </div>
 
-      <div className="album pt-5 pb-5 bg-light">
-        <div className="container pb-5">
-          <div className="row">
-            <div className="col text-left mb-5">
-              <h1 style={{ fontWeight: 'bold', color: 'black', marginTop: '10px', marginBottom: '0' }}>JENIS</h1>
-            </div>
+        <div className="pulau-container">
+          <div className="fauna-item2">
+            <p>
+            Pulau Jawa, sebagai bagian integral dari kekayaan alam Indonesia, menyajikan pesona fauna yang memukau. Keanekaragaman hayati 
+            di pulau ini mencakup spesies-spesies endemik yang unik, menyesuaikan diri dengan berbagai ekosistem, mulai dari hutan 
+            pegunungan hingga pesisir pantai. Fauna Jawa tidak hanya menjadi bagian penting dari ekosistem global, tetapi juga 
+            memberikan kontribusi besar terhadap keindahan alam dan keberlanjutan lingkungan.
+            </p>
+          </div> 
+          <div className="fauna-item1">
+            <h1>JAWA</h1>
+            <img className="pulau-img" src={jawa} alt="Foto Home" />
           </div>
-          <div className="row row-cols-1 row-cols-md-6 g-3">
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-mamalia" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={mamalia} className="bd-placeholder-img card-img-top" alt="Jenis Mamalia" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Mamalia</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-reptil" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={reptil} className="bd-placeholder-img card-img-top" alt="Jenis Reptil" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Reptil</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-burung" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={burung} className="bd-placeholder-img card-img-top" alt="Jenis Burung" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Burung</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-ampibi" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={ampibi} className="bd-placeholder-img card-img-top" alt="Jenis Ampibi" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Ampibi</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-ikan" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={ikan} className="bd-placeholder-img card-img-top" alt="Jenis Ikan" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Ikan</div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div className="col">
-              <div className="card shadow-sm" style={{ position: 'relative' }}>
-                <a href="/link-menuju-halaman-seranggas" style={{ textDecoration: 'none' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={serangga} className="bd-placeholder-img card-img-top" alt="Jenis Serangga" style={{width: '100%', height: '230px' }}/>
-                    <div style={{ position: 'absolute', top: '90%', left: '50%', transform: 'translate(-50%, -50%)', color: 'white', fontWeight: 'bold', fontSize: '18px' }}>Serangga</div>
-                  </div>
-                </a>
-              </div>
-            </div>
+        </div>
+
+        <div className="pulau-container">
+          <div className="fauna-item1">
+            <h1>SULAWESI</h1>
+            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
           </div>
+          <div className="fauna-item2">
+            <p>
+            Sulawesi, pulau yang kaya akan keindahan alam dan keanekaragaman hayati, menjadi rumah bagi fauna yang unik dan menarik. 
+            Hutan-hutan yang lebat di Sulawesi menyimpan beragam spesies mamalia, burung, reptil, dan serangga yang tidak hanya menawan 
+            tetapi juga mendukung ekosistem yang seimbang. Dari tarsius yang kecil dan langka hingga burung maleo yang langka dan 
+            terancam punah, Sulawesi menawarkan pengalaman eksplorasi fauna yang tak terlupakan. Melalui keunikan dan kecantikan 
+            fauna Sulawesi, pulau ini menjadi destinasi yang mengagumkan bagi para pecinta alam dan peneliti biologi.
+            </p>
+          </div> 
+        </div>
+
+        <div className="pulau-container">
+          <div className="fauna-item2">
+            <p>
+            Sumatera, pulau yang memukau di Indonesia, menyajikan keindahan alam dan keberagaman fauna yang luar biasa. 
+            Hutan-hutan tropis Sumatera menjadi rumah bagi berbagai spesies fauna, termasuk harimau Sumatera yang langka, 
+            gajah Sumatera, orangutan, dan banyak lagi. Pulau ini menawarkan pengalaman eksplorasi alam yang menakjubkan, 
+            dengan lanskapnya yang beragam mulai dari pegunungan yang hijau hingga pantai yang indah. Fauna Sumatera tidak 
+            hanya menciptakan keindahan visual, tetapi juga menjadi bagian integral dari ekosistem pulau ini. Keberagaman 
+            hayati yang luar biasa di Sumatera menjadikannya destinasi yang menarik bagi para penggemar alam.
+            </p>
+          </div> 
+          <div className="fauna-item1">
+            <h1>SUMATERA</h1>
+            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
+          </div>
+        </div>
+
+        <div className="pulau-container">
+          <div className="fauna-item1">
+            <h1>PAPUA</h1>
+            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
+          </div>
+          <div className="fauna-item2">
+            <p>
+            Papua, pulau yang memikat di ujung timur Indonesia, menyimpan pesona alam dan keanekaragaman fauna yang menakjubkan. 
+            Hutan hujan Papua yang luas dan pegunungan yang megah menjadi rumah bagi berbagai spesies unik, termasuk kasuari, burung Cendrawasih 
+            yang eksotis, dan satwa endemik lainnya. Fauna Papua tidak hanya mencerminkan kekayaan alam pulau ini, tetapi juga menjadi warisan 
+            budaya yang penting bagi masyarakat setempat. Keindahan dan keunikan fauna Papua menciptakan pengalaman eksplorasi alam yang 
+            tak terlupakan bagi para pengunjung, sementara upaya pelestarian terus dilakukan untuk mempertahankan kelestarian hayati pulau ini.
+            </p>
+          </div> 
         </div>
       </div>
 
-      {/* Fauna Game Section */}
+      {/* JENIS SECTION */}
+      <div className="header-jenis">
+        <h1>JENIS FAUNA</h1>
+        <p>
+        Indonesia, sebagai negara kepulauan yang luas dan kaya akan keberagaman alam, mempersembahkan panggung spektakuler bagi beragam 
+        fauna yang mendiami setiap sudutnya. Keberagaman ini terwujud dalam kategori-kategori utama, seperti mamalia, reptil, amfibi, ikan, 
+        burung, dan serangga, masing-masing menampilkan pesona dan keunikan tersendiri.</p>
+        <hr></hr>
+      </div>
+      
+      <div className="jenis-container">
+        <div className="jenis1">
+          <img src={kalimantan} alt="Foto Home" />
+          <p>MAMALIA</p>
+        </div>
+        <div className="jenis1">
+          <img src={kalimantan} alt="Foto Home" />
+          <p>REPTIL</p>
+        </div>
+        <div className="jenis1">
+          <img src={kalimantan} alt="Foto Home" />
+          <p>AMFIBI</p>
+        </div>
+        <div className="jenis1">
+          <img src={kalimantan} alt="Foto Home" />
+          <p>IKAN</p>
+        </div>
+        <div className="jenis1">
+          <img src={kalimantan} alt="Foto Home" />
+          <p>BURUNG</p>
+        </div>
+        <div className="jenis1">
+          <img src={kalimantan} alt="Foto Home" />
+          <p>SERANGGA</p>
+        </div>
+        <div class="nav-left" onclick="prevSlide()">❮</div>
+        <div class="nav-right" onclick="nextSlide()">❯</div>
+      </div>
 
-      <div className="album pt-5 pb-5 mt-4">
-        <div className="container">
-          <div className="row">
-            <div className="col text-left mb-1">
-              <h5 style={{ fontWeight: 'bold', color: '#5FBDFF', marginBottom: '5px' }}>FAUNA GAME</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="container pb-5">
-        <div className="mb-5 bg-image" style={{ backgroundImage: `url(${bg})`, borderRadius: '15px', padding: '20px', height: '350px', backgroundSize: 'cover' }}>
-          <div className="row">
-            <div className="col-lg-12 text-left mt-5 mb-5">
-              <h2 style={{ color: 'white', fontWeight: 'bold', marginTop: '30px', paddingLeft: '20px' }}>Mengenal fauna dengan cara yang lebih menyenangkan </h2>
-              <a href="/link-ke-halaman-play-now" className="btn mt-3 d-inline-block" style={{ borderRadius: '15px', backgroundColor: '#29ADB2', color: 'white', padding: '8px 20px', fontWeight: 'bold', marginLeft: '20px' }}>Play now</a>
-            </div>
-          </div>
-        </div>
-      </div>
+
+      
+      
+
+
+
+
     </div>
   );
 };

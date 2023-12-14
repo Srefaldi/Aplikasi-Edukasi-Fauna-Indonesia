@@ -23,19 +23,20 @@ const HomePage = () => {
       <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0/css/all.css" integrity="sha384-rnyr88LlR9QfGdTzL3ZYOvKnN4HhDlXZe7R9h1UjmHjIdp2zgBfPnFls3++Fw4ar" crossOrigin="anonymous"></link>
 
       <div className="container-fluid px-0">
-        <div className="row mx-0">
-          <div className="col-lg-12 px-0">
-            <img id="homeImage" className="img-fluid" src={hero} alt="Foto Home" style={{ width: '100vw' }} />
-            <h1 className="fw-bold mt-5 px-4 text-dark">Keindahan Pesona Fauna Indonesia</h1>
-            <p className="lead px-5 text-dark" style={{ textAlign: 'justify' }}>
-            Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
-            Setiap sudut tanah air ini menyimpan pesona fauna yang menakjubkan, menghadirkan kecantikan tak terhingga. 
-            Aplikasi Edukasi Fauna Indonesia unggul dalam menyajikan informasi komprehensif mengenai keanekaragaman fauna Indonesia. 
-            Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
-            Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. 
-            </p>
-          </div>
+        <div className="row h-75 mx-0">
+          <img id="homeImage" className="img-fluid w-100 object-fit-cover d-inline-block px-0" src={hero} alt="Foto Home" />
         </div>
+        <div className="col-lg-12 py-lg-4">
+          <h1 className="fw-bold mt-6 px-5 text-dark">Keindahan Pesona Fauna Indonesia</h1>
+          <p className="lead mb-6 pb-20 px-5 text-dark" style={{ textAlign: 'justify' }}>
+          Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
+          Setiap sudut tanah air ini menyimpan pesona fauna yang menakjubkan, menghadirkan kecantikan tak terhingga. 
+          Aplikasi Edukasi Fauna Indonesia unggul dalam menyajikan informasi komprehensif mengenai keanekaragaman fauna Indonesia. 
+          Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
+          Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. 
+          </p>
+        </div>
+        
       </div>
 
       {/* Pulau Section */}
@@ -44,7 +45,7 @@ const HomePage = () => {
         <div className="container">
           <div className="row">
             <div className="col text-left mb-5">
-              <h5 style={{ fontWeight: 'bold', color: '#5FBDFF', marginBottom: '5px' }}>JELAJAHI BERBAGAI JENIS FAUNA</h5>
+              <h5 className="mt-6" style={{ fontWeight: 'bold', color: '#5FBDFF', marginBottom: '5px' }}>JELAJAHI BERBAGAI JENIS FAUNA</h5>
               <h1 style={{ fontWeight: 'bold', color: 'black', marginTop: '10px', marginBottom: '0' }}>PULAU</h1>
             </div>
           </div>
@@ -105,8 +106,8 @@ const HomePage = () => {
 
       {/* Jenis Section */}
 
-      <div className="album py-5 bg-light">
-        <div className="container">
+      <div className="album pt-5 pb-5 bg-light">
+        <div className="container pb-5">
           <div className="row">
             <div className="col text-left mb-5">
               <h1 style={{ fontWeight: 'bold', color: 'black', marginTop: '10px', marginBottom: '0' }}>JENIS</h1>
@@ -179,20 +180,22 @@ const HomePage = () => {
 
       {/* Fauna Game Section */}
 
-      <div className="album py-1 mt-5">
+      <div className="album pt-5 pb-5 mt-4">
         <div className="container">
           <div className="row">
-            <div className="col text-left mb-5">
+            <div className="col text-left mb-1">
               <h5 style={{ fontWeight: 'bold', color: '#5FBDFF', marginBottom: '5px' }}>FAUNA GAME</h5>
             </div>
           </div>
         </div>
       </div>
-      <div className="container mb-5 bg-image" style={{ backgroundImage: `url(${bg})`, borderRadius: '15px', padding: '20px', height: '350px', backgroundSize: 'cover' }}>
-        <div className="row">
-          <div className="col-lg-12 text-left mt-5 mb-5">
-            <h2 style={{ color: 'white', fontWeight: 'bold', marginTop: '30px', paddingLeft: '20px' }}>Mengenal fauna dengan cara yang lebih menyenangkan </h2>
-            <a href="/link-ke-halaman-play-now" className="btn mt-3 d-inline-block" style={{ borderRadius: '15px', backgroundColor: '#29ADB2', color: 'white', padding: '8px 20px', fontWeight: 'bold', marginLeft: '20px' }}>Play now</a>
+      <div className="container pb-5">
+        <div className="mb-5 bg-image" style={{ backgroundImage: `url(${bg})`, borderRadius: '15px', padding: '20px', height: '350px', backgroundSize: 'cover' }}>
+          <div className="row">
+            <div className="col-lg-12 text-left mt-5 mb-5">
+              <h2 style={{ color: 'white', fontWeight: 'bold', marginTop: '30px', paddingLeft: '20px' }}>Mengenal fauna dengan cara yang lebih menyenangkan </h2>
+              <a href="/link-ke-halaman-play-now" className="btn mt-3 d-inline-block" style={{ borderRadius: '15px', backgroundColor: '#29ADB2', color: 'white', padding: '8px 20px', fontWeight: 'bold', marginLeft: '20px' }}>Play now</a>
+            </div>
           </div>
         </div>
       </div>

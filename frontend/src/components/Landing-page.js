@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../css/landing-page/responsive.css';
 import '../css/landing-page/landing.css';
 import bg from '../css/landing-page/img/bg.jpg';
 import quiz from '../css/landing-page/img/quiz.png';
@@ -95,6 +95,8 @@ const LandingPage = () => {
       <div class="box1">
         <img src={faunaa} alt=""/>
       </div>
+      </div>
+      <div class="foto-container2">
       <div class="box2">
         <img src={fauna1} alt="" />
         <img src={fauna2} alt="" />

@@ -96,8 +96,11 @@
   
     .containerr {
       flex-direction: column;
+      height: auto;
     }
-  
+    .action__btnss button{
+      color: white;
+    }
     .container__leftt {
       min-height: 700px;
     }
@@ -230,23 +233,24 @@
 
 @media (max-width: 600px) {
   .icons-container {
-    grid-template-columns: 1fr; /* Satu kolom pada layar berukuran kecil */
+    grid-template-columns: 1fr; 
   }
 
   .icons-container .icons-item {
-    text-align: center; /* Pusatkan teks pada layar berukuran kecil */
+    text-align: center; 
   }
 
   .icons-container .icons-item img {
-    margin-right: 0; /* Menghilangkan margin kanan pada gambar */
-    margin-bottom: 1rem; /* Menambahkan margin bawah antara gambar dan teks */
+    margin-right: 0; 
+    margin-bottom: 1rem; 
   }
 }
 
+/* Team section */
 
-/* team section */
-
-.team-headings {
+/* Konten umum */
+.team-headings,
+.contact-headings {
   text-align: center;
   font-size: 1.5rem;
   color: #444444;
@@ -255,13 +259,14 @@
   background: rgba(17, 37, 70, 0.05);
 }
 
-.team-container {
+.team-container,
+.contact-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 16px;
   text-align: center;
-  padding: 2rem 25px; 
-  padding-bottom: 3rem
+  padding: 2rem 25px;
+  padding-bottom: 3rem;
 }
 
 .member {
@@ -271,13 +276,12 @@
 }
 
 .member:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .member .pic {
   overflow: hidden;
-  
 }
 
 .member-info {
@@ -310,24 +314,6 @@
 }
 
 /* Contact Section */
-.contact-headings {
-  text-align: center;
-  font-size: 1.5rem;
-  color: #444444;
-  padding: 1rem;
-  margin: 2rem 0;
-  background: rgba(17, 37, 70, 0.05);
-}
-
-.contact-container {
-  background: rgba(17, 37, 70, 0.05);
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 1.5rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
 .info-box {
   color: #444444;
   background: #fff;
@@ -335,6 +321,45 @@
   box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
   padding: 20px 0 30px 0;
 }
+
+@media screen and (max-width: 768px) {
+  .team-container,
+  .contact-container {
+    grid-template-columns: 1fr;
+    padding: 2rem 10px;
+  }
+
+  .member {
+    margin-bottom: 100px;
+  }
+
+  .member-info {
+    top: 100%;
+    max-height: 100%;
+}
+
+  .member:hover .member-info {
+    max-height: 100%;
+  }
+}
+
+
+@media screen and (min-width: 769px) {
+  .team-container,
+  .contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .member {
+    margin-bottom: 100px;
+    flex: 0 0 calc(20% - 32px);
+  }
+}
+
+
+
 
 /* review section */
 .review-container {
@@ -538,14 +563,13 @@ p {
   background-color: green;
 }
 
-/* Media query untuk layar berukuran kecil */
 @media screen and (max-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Media query untuk layar sangat kecil, misalnya ponsel */
+
 @media screen and (max-width: 480px) {
   .grid-container {
     grid-template-columns: 1fr;
@@ -556,8 +580,19 @@ p {
 
 .foto-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 30px;
+  width: 100%;
+  padding: 20px;
+}
+
+.foto-container2 {
+  display: flex;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
   padding: 20px;
 }
 

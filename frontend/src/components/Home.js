@@ -1,29 +1,47 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import '../css/home/home.css'; // Pastikan file CSS Anda telah diimpor dengan benar
 
+// Import gambar
 import hero from '../css/home/hero2.jpg';
 import jawa from '../css/home/pulau/jawa.jpg';
-import kalimantan from '../css/home/pulau/kalimantan.jpg';
-import papua from '../css/home/pulau/papua.jpg';
-import sulawesi from '../css/home/pulau/sulawesi.jpg';
-import sumateri from '../css/home/pulau/sumateri.jpg';
+import hero1 from '../css/home/fauna2.jpg';
 import mamalia from '../css/home/jenis/Mamalia.jpg';
 import reptil from '../css/home/jenis/reptil.jpg';
 import burung from '../css/home/jenis/Burung.jpg';
 import ampibi from '../css/home/jenis/ampibi.jpg';
 import ikan from '../css/home/jenis/ikan.jpg';
 import serangga from '../css/home/jenis/serangga.jpg';
-import bg from '../css/home/olga.jpeg';
-import hero1 from '../css/home/fauna2.jpg';
-import '../css/home/home.css';
+import kalimantan from '../css/home/pulau/kalimantan.jpg';
+
+const faunaImages = [mamalia, reptil, burung, ampibi, ikan, serangga];
+const faunaNames = ['Mamalia', 'Reptil', 'Burung', 'Amfibi', 'Ikan', 'Serangga'];
 
 const HomePage = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === faunaImages.length - 3 ? 0 : prevSlide + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === 0 ? faunaImages.length - 3 : prevSlide - 1));
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentSlide]);
+
   return (
     <div>
     
-
+   
       {/* HERO SECTION */}
+      <img className="homeImage" src={hero1} alt="Foto Home"/>
       <div className="container-home">
-        <img className="homeImage" src={hero1} alt="Foto Home"/>
           <div className="container1">
             
           </div>
@@ -140,48 +158,28 @@ const HomePage = () => {
       <div className="header-jenis">
         <h1>JENIS FAUNA</h1>
         <p>
-        Indonesia, sebagai negara kepulauan yang luas dan kaya akan keberagaman alam, mempersembahkan panggung spektakuler bagi beragam 
-        fauna yang mendiami setiap sudutnya. Keberagaman ini terwujud dalam kategori-kategori utama, seperti mamalia, reptil, amfibi, ikan, 
-        burung, dan serangga, masing-masing menampilkan pesona dan keunikan tersendiri.</p>
+          Indonesia, sebagai negara kepulauan yang luas dan kaya akan keberagaman alam, mempersembahkan panggung spektakuler bagi beragam
+          fauna yang mendiami setiap sudutnya. Keberagaman ini terwujud dalam kategori-kategori utama, seperti mamalia, reptil, amfibi, ikan,
+          burung, dan serangga, masing-masing menampilkan pesona dan keunikan tersendiri.
+        </p>
         <hr></hr>
       </div>
-      
-      <div className="jenis-container">
-        <div className="jenis1">
-          <img src={kalimantan} alt="Foto Home" />
-          <p>MAMALIA</p>
+
+     <div className="jenis-container mb-5">
+        <div className="nav-left" onClick={prevSlide}>
+          ❮
         </div>
-        <div className="jenis1">
-          <img src={kalimantan} alt="Foto Home" />
-          <p>REPTIL</p>
+
+        {faunaImages.slice(currentSlide, currentSlide + 3).map((image, index) => (
+          <div key={index} className="jenis1">
+            <img src={image} alt={`Foto ${index + 1}`} />
+            <p>{faunaNames[currentSlide + index]}</p>
+          </div>
+        ))}
+        <div className="nav-right" onClick={nextSlide}>
+          ❯
         </div>
-        <div className="jenis1">
-          <img src={kalimantan} alt="Foto Home" />
-          <p>AMFIBI</p>
-        </div>
-        <div className="jenis1">
-          <img src={kalimantan} alt="Foto Home" />
-          <p>IKAN</p>
-        </div>
-        <div className="jenis1">
-          <img src={kalimantan} alt="Foto Home" />
-          <p>BURUNG</p>
-        </div>
-        <div className="jenis1">
-          <img src={kalimantan} alt="Foto Home" />
-          <p>SERANGGA</p>
-        </div>
-        <div class="nav-left" onclick="prevSlide()">❮</div>
-        <div class="nav-right" onclick="nextSlide()">❯</div>
       </div>
-
-
-      
-      
-
-
-
-
     </div>
   );
 };

@@ -18,6 +18,7 @@ import AddReviewForm from './FormReview';
 
 
 const LandingPage = () => {
+  console.log('MyComponent is loaded!');
   const [triggerFetch, setTriggerFetch] = useState(false);
 
   const fetchReviews = () => {

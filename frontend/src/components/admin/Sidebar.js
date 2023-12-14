@@ -10,7 +10,7 @@ const Sidebar = () => {
   const Logout = async () => {
     try {
       await axios.delete('http://localhost:5000/logout');
-      navigate('/');
+      navigate('/login');
     } catch (error) {
       console.log(error);
     }
@@ -31,8 +31,7 @@ const Sidebar = () => {
         <li><Link to="/set-quiz">Set Quiz</Link></li>
         <li><Link to="/set-review">Set Review Content</Link></li>
         <li><Link to="/leaderboard-admin">Leaderbard</Link></li>
-        <li><Link to="/profil">Profil</Link></li>
-        <li><Link to="/keluar" onClick={Logout}>Keluar</Link></li>
+        <li><Link to="/logout" onClick={Logout}>Keluar</Link></li>
       </ul>
     </div>
   );

@@ -4,12 +4,11 @@ import Database from "../config/Database.js";
 const { DataTypes } = Sequelize;
 
 const LeaderboardModel = Database.define('leaderboard', {
-    id: {
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
     nama: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
+    paket: {
         type: DataTypes.STRING,
         allowNull: false
     },
@@ -26,4 +25,3 @@ const LeaderboardModel = Database.define('leaderboard', {
 })();
 
 export default LeaderboardModel;
-// Update

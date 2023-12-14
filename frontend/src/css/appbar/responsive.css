@@ -3,6 +3,18 @@
       grid-template-columns: 1fr auto;
       padding: 8px 32px;
     }
+
+    .logo-app {
+      max-width: 100px; 
+      max-height: 50px; 
+      margin-right: 5px;
+    }
+
+    .logo-app-login {
+      max-width: auto; 
+      max-height: 150px; 
+      margin-right: 5px;
+    }
    
     .app-barr .app-bar__brand a {
       font-size: 1.5em;

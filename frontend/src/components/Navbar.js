@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import '../css/appbar/appbar.css';
 import '../css/appbar/responsive.css';
+import logoApp from '../css/appbar/logo-app.png';
+
 const Navbar = () => {
   const navigate = useNavigate();
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
@@ -29,7 +31,8 @@ const Navbar = () => {
       </div>
       <div className="app-bar__brand">
         <a href="/" className="no-underline">
-          Edu Fauna / Logo
+        <img src={logoApp} alt="Edu Fauna Logo" className="logo-app" />
+          EDFA ID
         </a>
       </div>
       <nav

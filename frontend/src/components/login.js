@@ -37,28 +37,25 @@ const Login = () => {
 
     const handleRegister = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/compare-password', {
-                enteredPassword: regPassword,
-            });
-    
-            if (response.data.isPasswordValid) {
-                // Redirect or perform further actions on successful registration
-                navigate("/register");
-            } else {
-                setMsg('Invalid registration password.');
-                hideRegisterPopup();
-            }
+          const response = await axios.post('http://localhost:5000/compare-password', {
+            enteredPassword: regPassword,
+          });
+      
+          if (response.data.isPasswordValid) {
+            localStorage.setItem('loggedIn', true);
+            // Redirect ke /register hanya jika kata sandi valid
+            navigate("/register");
+          } else {
+            setMsg('Invalid registration password.');
+            hideRegisterPopup();
+          }
         } catch (error) {
-            console.error('Error registering:', error);
-            if (error.response) {
-                setMsg(error.response.data.error);
-            }
+          console.error('Error registering:', error);
+          if (error.response) {
+            setMsg(error.response.data.error);
+          }
         }
     };
-    
-    
-    
-    
 
     return (
         <section className="hero has-background-grey-light is-fullheight is-fullwidth">

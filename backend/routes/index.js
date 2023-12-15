@@ -41,11 +41,30 @@ router.post('/compare-password', async (req, res) => {
     // Bandingkan kata sandi yang dimasukkan dengan kata sandi terenkripsi yang tersimpan
     const isPasswordValid = await bcrypt.compare(enteredPassword, storedPasswordHash);
 
-    res.json({ success: true, isPasswordValid });
+    if (isPasswordValid) {
+      // Set cookie untuk menyimpan status sesi
+      res.cookie('loggedIn', true);
+      res.json({ success: true, isPasswordValid });
+    } else {
+      res.json({ success: false, isPasswordValid });
+    }
   } catch (error) {
     console.error('Kesalahan membandingkan kata sandi:', error);
     res.status(500).json({ success: false, error: 'Kesalahan Internal Server', details: error.message });
   }
+});
+
+router.get('/register', (req, res) => {
+  // Periksa apakah pengguna telah masuk atau belum
+  const loggedIn = req.cookies.loggedIn === 'true'; // Sesuaikan ini dengan metode yang Anda gunakan
+
+  if (!loggedIn) {
+    // Jika pengguna belum masuk, arahkan kembali ke halaman login
+    return res.redirect('/login');
+  }
+
+  // Jika pengguna telah masuk, tampilkan halaman register
+  res.render('register'); // Sesuaikan ini dengan metode yang Anda gunakan
 });
 
 

@@ -50,6 +50,10 @@
   }
   @media (max-width: 767px) {
     .flex-md-row {
-      height: auto; /* Atur tinggi menjadi otomatis */
+      height: auto;
     }
+    .app-bar__brand .logo-app{
+      max-width: 80px;
+    }
+    
   }

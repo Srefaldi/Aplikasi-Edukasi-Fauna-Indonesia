@@ -39,15 +39,16 @@ const KategoriPage = () => {
       });
       setFilteredFauna(filteredData);
     } else {
-      // If no category selected, show all fauna
       setFilteredFauna(faunaData);
     }
   }, [selectedCategory, selectedSubCategory, faunaData]);
 
- const truncatedDescription = (description) => description.substring(0, 150);
+  const truncatedDescription = (description) => description.substring(0, 150);
+
   const handleReadMore = (id) => {
     navigate(`/detail/${id}`);
   };
+
   useEffect(() => {
     const initDropdown = () => {
       const dropdownToggle = document.getElementById('dropdownMenuButton');
@@ -61,7 +62,7 @@ const KategoriPage = () => {
 
     const initSubmenuPulau = () => {
       const submenuPulau = document.querySelector('.submenu-pulau');
-    
+
       if (submenuPulau) {
         submenuPulau.addEventListener('mouseenter', function () {
           const dropdownMenu = this.querySelector('.dropdown-menu');
@@ -71,7 +72,7 @@ const KategoriPage = () => {
             dropdownMenu.style.top = '0';
           }
         });
-    
+
         submenuPulau.addEventListener('mouseleave', function () {
           const dropdownMenu = this.querySelector('.dropdown-menu');
           if (dropdownMenu) {
@@ -83,7 +84,7 @@ const KategoriPage = () => {
 
     const initSubmenuJenisFauna = () => {
       const submenuJenisFauna = document.querySelector('.submenu-jenis-fauna');
-    
+
       if (submenuJenisFauna) {
         submenuJenisFauna.addEventListener('mouseenter', function () {
           const dropdownMenu = this.querySelector('.dropdown-menu');
@@ -93,7 +94,7 @@ const KategoriPage = () => {
             dropdownMenu.style.top = '35px';
           }
         });
-    
+
         submenuJenisFauna.addEventListener('mouseleave', function () {
           const dropdownMenu = this.querySelector('.dropdown-menu');
           if (dropdownMenu) {
@@ -147,57 +148,66 @@ const KategoriPage = () => {
         <p>Nikmati penjelajahan Anda!</p>
       </div>
 
-      <input
-        type="text"
-        placeholder="Cari Fauna..."
-        className="form-control"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-      <div className="btn btn-primary cari" onClick={fetchData}>
-        Cari
-      </div>
-
       <div className="dropdown-container">
-      <button
+        <button
           className="btn btn-primary dropdown-toggle"
           id="dropdownMenuButton"
           data-bs-toggle="dropdown"
           aria-expanded="false"
           style={{ backgroundColor: '#112546', color: 'white', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px' }}
-      >
-            <img src={search} alt="Search" width="32" height="32" className="rounded-circle" style={{ marginRight: '8px' }} />
-            {selectedSubCategory ? selectedSubCategory : (selectedCategory ? selectedCategory : 'Semua Kategori')}
-          </button>
-          <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        >
+          <img src={search} alt="Search" width="32" height="32" className="rounded-circle" style={{ marginRight: '8px' }} />
+          {selectedSubCategory ? selectedSubCategory : (selectedCategory ? selectedCategory : 'Semua Kategori')}
+        </button>
+        <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <p className="dropdown-item" onClick={() => { setSelectedCategory(null); setSelectedSubCategory(null); }}>Semua</p>
-            {/* Pulau */}
-            <li className="submenu-pulau dropdown-submenu">
-              <p className="dropdown-item dropdown-toggle">Pulau</p>
-              <ul className="dropdown-menu">
-                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Jawa'); setSelectedSubCategory(null); }}>Jawa</p></li>
-                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Kalimantan'); setSelectedSubCategory(null); }}>Kalimantan</p></li>
-                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Sumatera'); setSelectedSubCategory(null); }}>Sumatera</p></li>
-                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Sulawesi'); setSelectedSubCategory(null); }}>Sulawesi</p></li>
-                <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Papua'); setSelectedSubCategory(null); }}>Papua</p></li>
-              </ul>
-            </li>
-            {/* Jenis Fauna */}
-            
-            <li className="submenu-jenis-fauna dropdown-submenu">
-              <p className="dropdown-item dropdown-toggle">Jenis Fauna</p>
-              <ul className="dropdown-menu">
-                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Mamalia'); setSelectedCategory(null) }}>Mamalia</p></li>
-                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Reptil'); setSelectedCategory(null) }}>Reptil</p></li>
-                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Burung'); setSelectedCategory(null) }}>Burung</p></li>
-                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Ampibi'); setSelectedCategory(null) }}>Ampibi</p></li>
-                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Ikan'); setSelectedCategory(null) }}>Ikan</p></li>
-                <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Serangga'); setSelectedCategory(null) }}>Serangga</p></li>
-              </ul>
-            </li>
-          </ul>  
-        </div>
+          {/* Pulau */}
+          <li className="submenu-pulau dropdown-submenu">
+            <p className="dropdown-item dropdown-toggle">Pulau</p>
+            <ul className="dropdown-menu">
+              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Jawa'); setSelectedSubCategory(null); }}>Jawa</p></li>
+              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Kalimantan'); setSelectedSubCategory(null); }}>Kalimantan</p></li>
+              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Sumatera'); setSelectedSubCategory(null); }}>Sumatera</p></li>
+              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Sulawesi'); setSelectedSubCategory(null); }}>Sulawesi</p></li>
+              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Papua'); setSelectedSubCategory(null); }}>Papua</p></li>
+            </ul>
+          </li>
+          {/* Jenis Fauna */}
+          <li className="submenu-jenis-fauna dropdown-submenu">
+            <p className="dropdown-item dropdown-toggle">Jenis Fauna</p>
+            <ul className="dropdown-menu">
+              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Mamalia'); setSelectedCategory(null) }}>Mamalia</p></li>
+              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Reptil'); setSelectedCategory(null) }}>Reptil</p></li>
+              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Burung'); setSelectedCategory(null) }}>Burung</p></li>
+              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Ampibi'); setSelectedCategory(null) }}>Ampibi</p></li>
+              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Ikan'); setSelectedCategory(null) }}>Ikan</p></li>
+              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Serangga'); setSelectedCategory(null) }}>Serangga</p></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
 
+      <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginRight: '20px', marginBottom: '40px' }}>
+        <input
+          type="text"
+          placeholder="Cari Fauna..."
+          className="form-control"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{ width: '400px', marginRight: '10px' }}
+        />
+        <div
+          className="btn btn-primary cari"
+          onClick={fetchData}
+          style={{
+            width: '200px',
+            backgroundColor: '#112546',
+            color: 'white',
+          }}
+        >
+          Cari
+        </div>
+      </div>
 
       <div className="kategori-content">
         {error ? (

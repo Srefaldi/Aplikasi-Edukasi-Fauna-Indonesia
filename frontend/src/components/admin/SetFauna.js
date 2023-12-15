@@ -205,7 +205,7 @@ const SetFauna = () => {
         {/* Modal for adding new fauna */}
         {isModalOpen && (
           <div className="modal">
-           <div className="modal-content open" style={{ marginTop: '35px', width: '50%' }}>
+           <div className="modal-content open" style={{ width: '50%' }}>
               <span className="close" onClick={closeModal}>
                 &times;
               </span>

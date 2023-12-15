@@ -24,13 +24,6 @@ const PlayQuiz = () => {
 
   return (
     <div>
-      <div className="container-fluid px-0">
-        <div className="row mx-0">
-          <div className="col-lg-12 px-0">
-            <img id="homeImage" className="img-fluid" src={hero} alt="Foto Home" />
-          </div>
-        </div>
-      </div>
 
       {quizData.length > 0 ? (
         <TemplateQuiz quizData={quizData} />

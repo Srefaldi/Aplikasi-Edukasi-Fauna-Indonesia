@@ -8,6 +8,8 @@ import { addQuiz, deleteQuizById, editQuizById, getAllQuizzes, getQuizById } fro
 import { addReview, deleteReviewById, getAllReviews, getReviewById, updateReviewById } from "../controllers/Reviewer.js";
 import { getAllLeaderboard, editLeaderboardById, deleteLeaderboardById, addLeaderboard, getLeaderboardByPackage } from "../controllers/LeaderboardController.js"; 
 import { addPassAdmin, getPassAdmin } from "../controllers/PassAdminController.js";
+import PassAdmin from "../models/PassAdminModel.js";
+import bcrypt from "bcrypt";
 
 const router = express.Router();
 
@@ -21,6 +23,32 @@ router.delete('/logout', Logout);
 
 router.post('/add-pass-admin-edfaid', addPassAdmin);
 router.get('/get-pass-admin-edfaid', getPassAdmin);
+router.post('/compare-password', async (req, res) => {
+  try {
+    const { enteredPassword } = req.body;
+
+    // Ambil kata sandi terenkripsi dari database
+    const passAdminData = await PassAdmin.findOne({
+      attributes: ['password'],
+    });
+
+    if (!passAdminData) {
+      return res.status(404).json({ success: false, error: 'Data kata sandi tidak ditemukan' });
+    }
+
+    const storedPasswordHash = passAdminData.password;
+
+    // Bandingkan kata sandi yang dimasukkan dengan kata sandi terenkripsi yang tersimpan
+    const isPasswordValid = await bcrypt.compare(enteredPassword, storedPasswordHash);
+
+    res.json({ success: true, isPasswordValid });
+  } catch (error) {
+    console.error('Kesalahan membandingkan kata sandi:', error);
+    res.status(500).json({ success: false, error: 'Kesalahan Internal Server', details: error.message });
+  }
+});
+
+
 
 // Fauna
 router.post('/add-fauna', AddFauna);

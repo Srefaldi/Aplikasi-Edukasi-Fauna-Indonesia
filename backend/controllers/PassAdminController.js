@@ -22,10 +22,10 @@ export const addPassAdmin = async (req, res) => {
 export const getPassAdmin = async (req, res) => {
     try {
         const passAdminData = await PassAdmin.findAll({
-            attributes: ['id','password', 'createdAt', 'updatedAt'],
+            attributes: ['id', 'password', 'createdAt', 'updatedAt'],
         });
 
-        res.status(200).json({msg: "Password Berhasil diambil"});
+        res.status(200).json({ passAdminData }); // Send the actual data in the response
     } catch (error) {
         console.error("Error getting password admin:", error);
         res.status(500).json({ error: "Internal Server Error" });

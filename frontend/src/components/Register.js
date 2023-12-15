@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import logoApp from '../css/appbar/logo-app.png';
@@ -11,6 +11,16 @@ const Register = () => {
     const [confPassword, setConfPassword] = useState('');
     const [msg, setMsg] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        // Cek status sesi ketika komponen dimuat
+        const loggedIn = localStorage.getItem('loggedIn');
+
+        if (!loggedIn) {
+            // Jika belum masuk, arahkan kembali ke halaman login
+            navigate("/login");
+        }
+    }, [navigate]);
 
     const handleRegister = async (e) => {
         e.preventDefault();

@@ -49,16 +49,12 @@ const Login = () => {
                 hideRegisterPopup();
             }
         } catch (error) {
-            console.error('Error registering:', error);
-            if (error.response) {
-                setMsg(error.response.data.error);
-            }
+          console.error('Error registering:', error);
+          if (error.response) {
+            setMsg(error.response.data.error);
+          }
         }
     };
-    
-    
-    
-    
 
     return (
 <div style={{ backgroundColor: '#f3f3f3' }}>

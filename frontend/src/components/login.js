@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import logoApp from '../css/appbar/logo-app.png';
-
+import '../../src/components/admin/styles/responsive-login.css'
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -42,7 +42,7 @@ const Login = () => {
             });
     
             if (response.data.isPasswordValid) {
-                // Redirect or perform further actions on successful registration
+               
                 navigate("/register");
             } else {
                 setMsg('Invalid registration password.');
@@ -61,9 +61,9 @@ const Login = () => {
     
 
     return (
-        <section className="hero has-background-grey-light is-fullheight is-fullwidth">
-            <div className="hero-body mt-5">
-                <div className="container is-widescreen mt-5">
+<div style={{ backgroundColor: '#f3f3f3' }}>
+            <div className="hero-body">
+                <div className="container is-widescreen">
                     <div className="columns is-centered">
                         <div className="column is-4-desktop">
                             <form onSubmit={Auth} className="box">
@@ -78,31 +78,32 @@ const Login = () => {
                                 <p className="has-text-centered">{msg}</p>
                                 <div className="form-group mb-3">
                                     <label htmlFor="form2Example1">Email address</label>
-                                    <input type="email" id="form2Example1" className="form-control" value={email} onChange={(e) => setEmail(e.target.value)} />
+                                    <input type="email" id="form2Example1" className="form-control1" value={email} onChange={(e) => setEmail(e.target.value)} />
                                 </div>
                                 <div className="form-group mb-3">
                                     <label htmlFor="form2Example2">Password</label>
-                                    <input type="password" id="form2Example2" className="form-control" value={password} onChange={(e) => setPassword(e.target.value)} />
+                                    <input type="password" id="form2Example2" className="form-control1" value={password} onChange={(e) => setPassword(e.target.value)} />
                                 </div>
                                 <hr className='mb-1' />
                                 <div className="text-center">
                                     <button type="submit" className="btn btn-primary mb-4" style={{ width: '200px', backgroundColor: '#112546' }}>Sign in</button>
                                     <p>
                                         Not an admin?{' '}
-                                        <button onClick={showRegisterPopup} type="button" className="link-button">
-                                            Register
-                                        </button>
+                                        <a href="#register" className="link-button" onClick={showRegisterPopup} style={{ color: '#112546' }}>
+                                            Register Here
+                                        </a>
+
                                     </p>
                                 </div>
                             </form>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            {showRegPopup && (
-                <div className="modal">
-                    <div className="modal-content">
+               
+                    </div>
+          
+                    {showRegPopup && (
+                    <div className="modal" style={{ backgroundColor: 'rgba(0, 0, 0, 0)', }}>
+                    <div className="modal-content" style={{ marginTop: '100px' }}>
                         <span className="close" onClick={hideRegisterPopup}>&times;</span>
                         <form>
                             <label>Password Registrasi:</label>
@@ -116,7 +117,9 @@ const Login = () => {
                     </div>
                 </div>
             )}
-        </section>
+
+</div>
+</div>
     );
 };
 

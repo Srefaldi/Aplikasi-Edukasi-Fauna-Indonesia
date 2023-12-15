@@ -10,11 +10,11 @@ const Footer = () => {
           <div className="footer-item">
             <h4>Edukasi Fauna Indonesia</h4>
             <ul>
-              <li><a href="#AboutUs">About Us</a></li>
-              <li><a href="#OurService">Our Service</a></li>
-              <li><a href="#UserReviews">User Review</a></li>
-              <li><a href="#Team">Our Team</a></li>
-              <li><a href="#Contact">Contact</a></li>
+              <li><a href="/#AboutUs">About Us</a></li>
+              <li><a href="/#OurService">Our Service</a></li>
+              <li><a href="/#UserReviews">User Review</a></li>
+              <li><a href="/#Team">Our Team</a></li>
+              <li><a href="/#Contact">Contact</a></li>
               <li><a href="/login">Admin</a></li>
 
             </ul>
@@ -22,12 +22,12 @@ const Footer = () => {
           <div className="footer-item">
             <h4>Alternatif Link</h4>
             <ul>
-              <li><a href="#">Mamalia</a></li>
-              <li><a href="#">Reptil</a></li>
-              <li><a href="#">Amfibi</a></li>
-              <li><a href="#">Ikan</a></li>
-              <li><a href="#">Burung</a></li>
-              <li><a href="#">Serangga</a></li>
+              <li><a href="/kategori">Mamalia</a></li>
+              <li><a href="/kategori">Reptil</a></li>
+              <li><a href="/kategori">Amfibi</a></li>
+              <li><a href="/kategori">Ikan</a></li>
+              <li><a href="/kategori">Burung</a></li>
+              <li><a href="/kategori">Serangga</a></li>
             </ul>
           </div>
           <div className="footer-item">
@@ -44,7 +44,6 @@ const Footer = () => {
               <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
               <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
               <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-              <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
             </div>
           </div>
         </div>

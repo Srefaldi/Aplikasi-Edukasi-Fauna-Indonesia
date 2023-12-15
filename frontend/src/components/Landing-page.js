@@ -36,16 +36,12 @@ const LandingPage = () => {
             </div>
             <div className="container__rightt">
                 <div className="right__contentt">
-                    <h1>EduFauna</h1>
+                    <h1>EDFA ID</h1>
                     <h4>Aplikasi Edukasi Fauna Indonesia</h4>
                     <p>
                     Selamat datang di Aplikasi Edukasi Fauna Indonesia! Temukan keindahan dan keragaman satwa Indonesia melalui perjalanan edukatif. 
                     Mari bersama-sama menjelajahi keajaiban alam dan memahami kehidupan fauna Indonesia yang menakjubkan.
                     </p>
-                    <div className="action__btnss">
-                        <button className="btn primary__btnn">Explore</button>
-                        <button className="btn secondary__btnn">See More</button>
-                    </div>
                 </div> 
             </div>
         </div>

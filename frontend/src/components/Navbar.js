@@ -32,7 +32,7 @@ const Navbar = () => {
       <div className="app-bar__brand">
         <a href="/" className="no-underline">
         <img src={logoApp} alt="Edu Fauna Logo" className="logo-app" />
-          Edu Fauna / Logo
+          Edukasi Fauna
         </a>
       </div>
       <nav

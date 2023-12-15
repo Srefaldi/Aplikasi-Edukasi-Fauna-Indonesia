@@ -36,7 +36,7 @@ const Login = () => {
                                 </div>
                                 <div className="has-text-centered mb-4">
                                     <img src={logoApp} alt="Edu Fauna Logo" className="logo-app-login" />
-                                    <h2 className='h4'>Edukasi Fauna</h2>
+                                    <h2 className='h4'>EDFA ID</h2>
                                 </div>
                                 <hr className="mb-1" />
                                 <p className="has-text-centered">{msg}</p>

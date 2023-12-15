@@ -39,7 +39,7 @@ const Register = () => {
                         </div>
                         <div className="text-center mb-4">
                             <img src={logoApp} alt="Edu Fauna Logo" className="logo-app-login" />
-                            <h2 className="h4">Edukasi Fauna</h2>
+                            <h2 className="h4">EDFA ID</h2>
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Name</label>

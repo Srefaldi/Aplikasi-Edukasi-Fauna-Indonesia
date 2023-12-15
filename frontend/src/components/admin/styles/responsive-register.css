@@ -1,0 +1,46 @@
+
+.bg-light {
+    background-color: #f3f3f3;
+  }
+  
+.logo-app-login {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; 
+  }
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  
+  .logo-app-login {
+    width: 100px;
+    height: auto;
+  }
+  
+  .form-control1 {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .hero {
+      height: auto;
+      padding-top: 50px;
+    }
+  
+    .col-12 {
+      padding: 0 15px;
+    }
+  
+    .logo-app-login {
+      width: 80px;
+    }
+  }
+  

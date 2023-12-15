@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import logoApp from '../css/appbar/logo-app.png';
 
 const Register = () => {
     const [name, setName] = useState('');
@@ -37,7 +38,7 @@ const Register = () => {
                             <h1 className="h2">REGISTER</h1>
                         </div>
                         <div className="text-center mb-4">
-                            <p>Logo Edu Fauna</p>
+                            <img src={logoApp} alt="Edu Fauna Logo" className="logo-app-login" />
                             <h2 className="h4">Edukasi Fauna</h2>
                         </div>
                         <div className="mb-3">
@@ -45,22 +46,22 @@ const Register = () => {
                             <input type="text" className="form-control" placeholder="Name"
                                 value={name} onChange={(e) => setName(e.target.value)} />
                         </div>
-                        <div className="mb-3">
+                        <div className="mb-2">
                             <label className="form-label">Email</label>
                             <input type="text" className="form-control" placeholder="Email"
                                 value={email} onChange={(e) => setEmail(e.target.value)} />
                         </div>
-                        <div className="mb-3">
+                        <div className="mb-2">
                             <label className="form-label">Password</label>
                             <input type="password" className="form-control" placeholder="******"
                                 value={password} onChange={(e) => setPassword(e.target.value)} />
                         </div>
-                        <div className="mb-3">
+                        <div className="mb-4">
                             <label className="form-label">Confirm Password</label>
                             <input type="password" className="form-control" placeholder="******"
                                 value={confPassword} onChange={(e) => setConfPassword(e.target.value)} />
                         </div>
-                        <div className="text-center">
+                        <div className="text-center mb-3">
                             <button className="btn btn-primary mb-3" style={{ width: '200px', backgroundColor: '#112546' }}>Register</button>
                             <p>Already have an account? <a href="/login">Login</a></p>
                         </div>

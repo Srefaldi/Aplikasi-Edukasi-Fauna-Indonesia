@@ -3,3 +3,4 @@ node_modules
 desain-ui
 .parcel-cache
 dist
+build

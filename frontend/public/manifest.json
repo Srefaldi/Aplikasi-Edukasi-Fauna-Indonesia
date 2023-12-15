@@ -1,60 +1,32 @@
 {
-  "id": "edufauna",
-  "start_url": "./index.html",
-  "name": "Edukasi Fauna Indonesia",
-  "short_name": "EduFauna",
-  "description": "Edu Fauna",
-  "display": "standalone",
-  "background_color": "#FFFFFF",
-  "theme_color": "#D84315",
-  "icons": [
-    {
-      "src": "./icons/icon-72x72.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./icons/icon-96x96.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./icons/icon-128x128.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./icons/icon-144x144.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./icons/icon-152x152.png",
-      "sizes": "152x152",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./icons/icon-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./icons/icon-384x384.png",
-      "sizes": "384x384",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    }
-  ]
+    "theme_color": "#FFFFFF",
+    "background_color": "#112546",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "./index.html",
+    "name": "Edukasi Fauna",
+    "short_name": "EduFauna",
+    "description": "Ini adalah Capstone Project Dari Grup C523-PS042 \u2013 Sopia Refaldi  \u2013 Difana Nanda Pridhasila Zein  \u2013 Khoyrur Roykhan  \u2013 Marzaq Syihab  \u2013 Alda Amorita Azza",
+    "icons": [
+        {
+            "src": "./icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "./icons/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "./icons/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "./icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
 }

@@ -37,9 +37,9 @@ function App() {
         <Route exact path="/kategori" element={<><Navbar/><Slider/><KategoriPage/><Footer/></>}/>
         <Route exact path="/quiz" element={<><Navbar/><Slider/><Quiz/><Footer/></>}/>
         <Route path="/detail/:itemName" element={<><Navbar/><DetailPage/><Footer/></>}/>
-        <Route path="/selection-quiz" element={<><Navbar/><QuizSelection/><Footer/></>}/>
-        <Route path="/input-name-quiz/:package" element={<><Navbar /><InputName /><Footer /></>} />
-        <Route path="/play-quiz/:package" element={<><Navbar/><PlayQuiz/><Footer/></>}/>
+        <Route path="/selection-quiz" element={<><Navbar/><Slider /><QuizSelection/><Footer/></>}/>
+        <Route path="/input-name-quiz/:package" element={<><Navbar /><Slider /><InputName /><Footer /></>} />
+        <Route path="/play-quiz/:package" element={<><Navbar/><Slider /><PlayQuiz/><Footer/></>}/>
         <Route path="/result-quiz" element={<><Navbar/><Slider /><ResultQuiz/><Footer/></>}/>
         <Route exact path="/leaderboard" element={<><Navbar /><Leaderboard /><Footer /></>} />
 

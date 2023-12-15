@@ -1,58 +1,52 @@
-import React, { useState, useEffect } from 'react';
-import '../css/slider/slider.css';
-import faunaa from '../css/landing-page/img/faunaa.jpg';
-import fauna1 from '../css/landing-page/img/fauna1.png';
-import fauna3 from '../css/landing-page/img/fauna3.jpg';
-import fauna4 from '../css/landing-page/img/fauna4.jpg';
+import React from 'react';
+import slide1 from '../../public/slider/slide1.jpg';
+import slide2 from '../../public/slider/slide2.jpg';
+import slide3 from '../../public/slider/slide3.jpg';
 
-function ResponsiveSlideshow() {
-  const [slideIndex, setSlideIndex] = useState(0);
+function Slider() {
+  const imageStyle = {
+    height: '600px',
+    objectFit: 'cover', 
+  };
 
-  useEffect(() => {
-    showSlides(slideIndex);
-  }, [slideIndex]);
-
-  function plusSlides(n) {
-    setSlideIndex((prevIndex) => (prevIndex + n + 5) % 5);
-  }
-
-  function showSlides(index) {
-    const slides = document.getElementsByClassName("slide");
-    if (index >= slides.length) {
-      setSlideIndex(0);
-    }
-    if (index < 0) {
-      setSlideIndex(slides.length - 1);
-    }
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = i === index ? "block" : "none";
-    }
-  }
+  const carouselStyle = {
+    marginTop: '50px',
+  };
 
   return (
-    <div>
-      {/* Your slides */}
-      <div className="slides">
-        <div className="slide">
-        <img src={faunaa} alt=''/>
+    <div id="myCarousel" className="carousel slide mb-6" data-bs-ride="carousel" style={carouselStyle}>
+      <div className="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div className="carousel-inner">
+        <div className="carousel-item active">
+          <img src={slide1} className="d-block w-100 img-fluid" alt="Slide 1" style={imageStyle} loading="lazy" />
+          <div className="container">
+          </div>
         </div>
-        <div className="slide">
-        <img src={fauna1} alt=''/>
+        <div className="carousel-item">
+          <img src={slide2} className="d-block w-100 img-fluid" alt="Slide 2" style={imageStyle} loading="lazy" />
+          <div className="container">
+          </div>
         </div>
-        <div className="slide">
-        <img src={fauna3} alt=''/>
-        </div>
-        <div className="slide">
-        <img src={fauna4} alt=''/>
-        </div>
-
-        <div className="navigation">
-          <a className="prev" onClick={() => plusSlides(-1)}>&#10094;</a>
-          <a className="next" onClick={() => plusSlides(1)}>&#10095;</a>
+        <div className="carousel-item">
+          <img src={slide3} className="d-block w-100 img-fluid" alt="Slide 3" style={imageStyle} loading="lazy" />
+          <div className="container">
+          </div>
         </div>
       </div>
+      <button className="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button className="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+        <span className="visually-hidden">Next</span>
+      </button>
     </div>
   );
 }
 
-export default ResponsiveSlideshow;
+export default Slider;

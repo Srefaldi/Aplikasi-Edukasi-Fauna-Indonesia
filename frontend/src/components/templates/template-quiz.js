@@ -17,42 +17,39 @@ const TemplateQuiz = ({ quizData }) => {
 
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) {
-      // Hapus alert
+      alert('Pilih jawaban sebelum melanjutkan!');
       return;
     }
-
+  
     const userAnswer = selectedAnswer;
     const correctAnswer = (quizData[currentQuestionIndex] && quizData[currentQuestionIndex].answer) || '';
-
-    const updatedTotalCorrectAnswers = totalCorrectAnswers + (userAnswer === correctAnswer ? 1 : 0);
-    setTotalCorrectAnswers(updatedTotalCorrectAnswers);
-
-    if (userAnswer === correctAnswer) {
-      setScore(score + 1);
-      // Hapus alert
-    } else {
-      // Hapus alert
+  
+    if (userAnswer !== null && correctAnswer !== null) {
+      const updatedTotalCorrectAnswers = totalCorrectAnswers + (userAnswer === correctAnswer ? 1 : 0);
+      setTotalCorrectAnswers(updatedTotalCorrectAnswers);
+  
+      if (userAnswer === correctAnswer) {
+        setScore(score + 1);
+      }
     }
-
+  
     setSelectedAnswer(null);
-
+  
     const nextQuestionIndex = currentQuestionIndex + 1;
-
+  
     if (nextQuestionIndex < quizData.length) {
       setCurrentQuestionIndex(nextQuestionIndex);
     } else {
       setLastQuestionReached(true);
-      // Hapus alert
     }
     console.log('Nama:', nama, 'Skor Sementara:', score);
   };
-
+  
   const finishQuiz = () => {
     const totalQuestions = quizData.length;
     const percentageScore = (totalCorrectAnswers / totalQuestions) * 100;
     console.log(`Total Jawaban Benar: ${totalCorrectAnswers}`);
     console.log(selectedPackage);
-    // Hapus alert
     navigate('/result-quiz', {
       state: {
         totalCorrectAnswers,
@@ -94,14 +91,15 @@ const TemplateQuiz = ({ quizData }) => {
               </div>
               {options.length > 0 ? (
                 options.map((option, index) => (
-                  <div className="ans ml-2" style={{ marginBottom: '10px' }} key={index}>
-                    <label className="radio">
+                  <div className="ans ml-2" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }} key={index}>
+                    <label className="radio" style={{ display: 'flex', alignItems: 'center' }}>
                       <input
                         type="radio"
                         name="answer"
                         value={option}
                         checked={selectedAnswer === option}
                         onChange={handleOptionChange}
+                        style={{ marginRight: '6px' }}
                       />
                       <span style={{ color: 'black' }}>{option}</span>
                     </label>
@@ -113,11 +111,11 @@ const TemplateQuiz = ({ quizData }) => {
             </div>
             <div className="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
               <button
-                className="btn btn-primary d-flex align-items-center btn-danger"
+                className="btn btn-primary align-items-center btn-danger"
                 type="button"
                 onClick={() => setCurrentQuestionIndex((prevIndex) => Math.max(prevIndex - 1, 0))}
               >
-                <i className="fa fa-angle-left mt-1 mr-1"></i>&nbsp;Previous
+                <i className="fa fa-angle-left mt-1 mr-1" style={{ textAlign: 'center' }}></i>&nbsp;Previous
               </button>
               {lastQuestionReached ? (
                 <button

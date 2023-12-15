@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { right } from '@popperjs/core';
 import '../css/quiz/before-quiz.css';
-import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 
 const BeforeQuiz = ({ onStartQuiz }) => {
   const [nama, setNama] = useState('');
@@ -28,14 +27,6 @@ const BeforeQuiz = ({ onStartQuiz }) => {
 
   return (
     <div>
-
-      <div className="container-fluid px-0">
-        <div className="row mx-0">
-          <div className="col-lg-12 px-0">
-            <img id="homeImage" className="img-fluid" src={hero} alt="Foto Home" style={imgContainer} />
-          </div>
-        </div>
-      </div>
     
 
       {/* Input Name Quiz */}

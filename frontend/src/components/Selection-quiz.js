@@ -1,7 +1,6 @@
 import React from 'react';
 import '../css/selection-quiz/style.css'; 
 import { useNavigate } from 'react-router-dom';
-import hero from '../css/landing-page/img/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
 import kategori1 from '../../public/selection/paketA.jpg';
 import kategori2 from '../../public/selection/paketB.jpg';
 import kategori3 from '../../public/selection/paketC.jpg';
@@ -36,14 +35,7 @@ const QuizSelection = ({ onSelectQuiz }) => {
 
   return (
     <div>
-      <div className="container-fluid px-0">
-        <div className="row mx-0">
-          <div className="col-lg-12 px-0">
-            <img id="homeImage" className="img-fluid" src={hero} alt="Foto Home" />
-          </div>
-        </div>
-      </div>
-
+    
       <div className="welcome-text">
         <h2>Selamat Datang di Halaman Selection Quiz!</h2>
         <p>

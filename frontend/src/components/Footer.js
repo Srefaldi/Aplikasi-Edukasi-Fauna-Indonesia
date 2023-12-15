@@ -41,9 +41,9 @@ const Footer = () => {
           <div className="footer-item">
             <h4>follow us</h4>
             <div className="social-links">
-              <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-              <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-              <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
+              <a href="https://www.facebook.com/profile.php?id=61554381522504&mibextid=ZbWKwL"><FontAwesomeIcon icon={faFacebookF} /></a>
+              <a href="https://twitter.com/edfa_id"><FontAwesomeIcon icon={faTwitter} /></a>
+              <a href="https://www.instagram.com/edfa_id"><FontAwesomeIcon icon={faInstagram} /></a>
             </div>
           </div>
         </div>

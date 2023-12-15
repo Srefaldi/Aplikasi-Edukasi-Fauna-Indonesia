@@ -14,6 +14,7 @@ const KategoriPage = () => {
   const [filteredFauna, setFilteredFauna] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSubCategory, setSelectedSubCategory] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -126,6 +127,17 @@ const KategoriPage = () => {
     };
   }, []);
 
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5000/get-allfauna?search=${searchTerm}`);
+      setFaunaData(response.data);
+    } catch (error) {
+      if (error.response) {
+        console.log(error);
+      }
+    }
+  };
+
   return (
     <div className='mt-5'>
       <div className="welcome-text">
@@ -135,6 +147,16 @@ const KategoriPage = () => {
         <p>Nikmati penjelajahan Anda!</p>
       </div>
 
+      <input
+        type="text"
+        placeholder="Cari Fauna..."
+        className="form-control"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <div className="btn btn-primary cari" onClick={fetchData}>
+        Cari
+      </div>
 
       <div className="dropdown-container">
       <button

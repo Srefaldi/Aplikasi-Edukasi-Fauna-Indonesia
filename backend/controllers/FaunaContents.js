@@ -53,6 +53,7 @@ export const getAllfauna = async (req, res) => {
           [Op.or]: [
             { name: { [Op.like]: `%${search}%` } },
             { kategori_1: { [Op.like]: `%${search}%` } },
+            { kategori_2: { [Op.like]: `%${search}%` } },
             // Add more fields as needed
           ],
         };

@@ -22,17 +22,17 @@ function Slider() {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img src={slide1} className="d-block w-100 img-fluid" alt="Slide 1" style={imageStyle} loading="lazy" />
+          <img data-src={slide1} className="lazyload d-block w-100 img-fluid" alt="Slide 1" style={imageStyle} loading="lazy" />
           <div className="container">
           </div>
         </div>
         <div className="carousel-item">
-          <img src={slide2} className="d-block w-100 img-fluid" alt="Slide 2" style={imageStyle} loading="lazy" />
+          <img data-src={slide2} className="lazyload d-block w-100 img-fluid" alt="Slide 2" style={imageStyle} loading="lazy" />
           <div className="container">
           </div>
         </div>
         <div className="carousel-item">
-          <img src={slide3} className="d-block w-100 img-fluid" alt="Slide 3" style={imageStyle} loading="lazy" />
+          <img data-src={slide3} className="lazyload d-block w-100 img-fluid" alt="Slide 3" style={imageStyle} loading="lazy" />
           <div className="container">
           </div>
         </div>

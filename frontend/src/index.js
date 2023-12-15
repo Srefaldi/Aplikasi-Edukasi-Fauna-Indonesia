@@ -4,6 +4,8 @@ import App from './App';
 import 'bulma/css/bulma.css';
 import axios from 'axios';
 import swDev from './swDev';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 axios.defaults.withCredentials = true;
 

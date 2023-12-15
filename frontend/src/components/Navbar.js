@@ -31,7 +31,7 @@ const Navbar = () => {
       </div>
       <div className="app-bar__brand">
         <a href="/" className="no-underline">
-        <img src={logoApp} alt="Edu Fauna Logo" className="logo-app" />
+        <img data-src={logoApp} alt="Edu Fauna Logo" className="lazyload logo-app" />
           EDFA ID
         </a>
       </div>

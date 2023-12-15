@@ -35,7 +35,7 @@ const createFaunaDetailTemplate = (fauna) => {
 
       <div className="fauna-detail">
         <h2 className="fauna__name">{name}</h2>
-        <img className="fauna__image" src={image_url} alt={image_name} />
+        <img className="lazyload fauna__image" data-src={image_url} alt={image_name} />
         <div className="fauna__info">
           <h3>Information</h3>
           <h4>Nama</h4>

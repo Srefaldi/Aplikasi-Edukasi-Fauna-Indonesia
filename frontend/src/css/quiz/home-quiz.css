@@ -2,12 +2,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 70px;
+    
 
 }
 
 .item-1 p{
     text-align: justify; 
     font-size: 15px;
+
 }
 
 .item-1 h1 {

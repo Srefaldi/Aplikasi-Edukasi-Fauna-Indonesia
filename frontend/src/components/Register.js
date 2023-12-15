@@ -38,7 +38,7 @@ const Register = () => {
                             <h1 className="h2">REGISTER</h1>
                         </div>
                         <div className="text-center mb-4">
-                            <img src={logoApp} alt="Edu Fauna Logo" className="logo-app-login" />
+                            <img data-src={logoApp} alt="Edu Fauna Logo" className="lazyload logo-app-login" />
                             <h2 className="h4">EDFA ID</h2>
                         </div>
                         <div className="mb-3">

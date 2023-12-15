@@ -49,7 +49,7 @@ const LandingPage = () => {
         <h1 className="headings" id="AboutUs"> <span>About</span> Us </h1>
         <div className="row-landing">
             <div className="img-container">
-                <img src={bg} alt=''/>
+                <img className='lazyload' data-src={bg} alt=''/>
                 <h4>Best Education Website</h4>
             </div>
             <div className="about-content">
@@ -64,21 +64,21 @@ const LandingPage = () => {
       <h1 class="headings" id="OurService"> <span>Our</span> Service </h1>
       <div class="icons-container">
       <div class="icons-item">
-        <img src={materi} alt=""/>
+        <img className="lazyload" data-src={materi} alt=""/>
         <div class="icons-info">
           <h3>Materi</h3>
           <span>Edukasi Fauna indonesia</span>
         </div>
       </div>
       <div class="icons-item">
-        <img src={quiz} alt=""/>
+        <img className="lazyload" data-src={quiz} alt=""/>
         <div class="icons-info">
           <h3>Quiz</h3>
           <span>Edukasi Fauna indonesia</span>
         </div>
       </div>
       <div class="icons-item">
-        <img src={winner} alt=""/>
+        <img className="lazyload" data-src={winner} alt=""/>
         <div class="icons-info">
           <h3>Leaderboard</h3>
           <span>Edukasi Fauna indonesia</span>
@@ -89,15 +89,15 @@ const LandingPage = () => {
     <h1 class="headings" id="FaunaIndonesia"> <span>Fauna</span> Indonesia </h1>
     <div class="foto-container">
       <div class="box1">
-        <img src={faunaa} alt=""/>
+        <img className="lazyload" data-src={faunaa} alt=""/>
       </div>
       </div>
       <div class="foto-container2">
       <div class="box2">
-        <img src={fauna1} alt="" />
-        <img src={fauna2} alt="" />
-        <img src={fauna3} alt="" />
-        <img src={fauna4} alt="" />
+        <img className="lazyload" data-src={fauna1} alt="" />
+        <img className="lazyload" data-src={fauna2} alt="" />
+        <img className="lazyload" data-src={fauna3} alt="" />
+        <img className="lazyload" data-src={fauna4} alt="" />
       </div>
      
     </div>
@@ -118,7 +118,7 @@ const LandingPage = () => {
     <h3 class="team-headings" id="Team"> <span>Our</span> Team </h3>
     <div className='team-container'>
     <div class="member" data-aos="fade-up">
-    <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
+    <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Khoyrur Roykhan</h4>
         <span>Project Manager and Backend</span>
@@ -132,7 +132,7 @@ const LandingPage = () => {
       </div>
 
       <div class="member" data-aos="fade-up">
-      <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
+      <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Alda Amorita Azza</h4>
         <span>Backend</span>
@@ -146,7 +146,7 @@ const LandingPage = () => {
       </div>
 
       <div class="member" data-aos="fade-up">
-      <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
+      <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Sopia Refaldi</h4>
         <span>Frontend</span>
@@ -160,7 +160,7 @@ const LandingPage = () => {
       </div>
 
       <div class="member" data-aos="fade-up">
-      <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
+      <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Marzaq Syihab</h4>
         <span>Frontend</span>
@@ -174,7 +174,7 @@ const LandingPage = () => {
       </div>
 
       <div class="member" data-aos="fade-up">
-      <div class="pic"><img src={nanda} class="img-fluid" alt=""/></div>
+      <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Difana Nanda PZ</h4>
         <span>Frontend</span>

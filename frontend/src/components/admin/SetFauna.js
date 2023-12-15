@@ -280,7 +280,8 @@ const SetFauna = () => {
                 <td>{index + 1}</td>
                 <td>
                   <img
-                    src={fauna.image_url}
+                    className='lazyload'
+                    data-src={fauna.image_url}
                     alt={`Gambar ${fauna.name}`}
                     style={{ width: '50px', height: '50px', objectFit: 'cover' }}
                   />

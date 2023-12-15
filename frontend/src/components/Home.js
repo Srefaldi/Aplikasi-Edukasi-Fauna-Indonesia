@@ -40,7 +40,7 @@ const HomePage = () => {
     
    
       {/* HERO SECTION */}
-      <img className="homeImage" src={hero1} alt="Foto Home"/>
+      <img className="lazyload homeImage" data-src={hero1} alt="Foto Home"/>
       <div className="container-home">
           <div className="container1">
             
@@ -54,10 +54,10 @@ const HomePage = () => {
               Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. </p>
             </div>
             <div className="item small">
-              <img src={hero} alt="Foto Home" />
+              <img className="lazyload" data-src={hero} alt="Foto Home" />
             </div>
             <div className="item small">
-              <img src={hero} alt="Foto Home" />
+              <img className="lazyload" data-src={hero} alt="Foto Home" />
             </div>
             
 
@@ -78,7 +78,7 @@ const HomePage = () => {
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>KALIMANTAN</h1>
-            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
+            <img className="lazyload pulau-img" data-src={kalimantan} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -100,7 +100,7 @@ const HomePage = () => {
           </div> 
           <div className="fauna-item1">
             <h1>JAWA</h1>
-            <img className="pulau-img" src={jawa} alt="Foto Home" />
+            <img className="lazyload pulau-img" data-src={jawa} alt="Foto Home" />
           </div>
         </div>
 
@@ -133,14 +133,14 @@ const HomePage = () => {
           </div> 
           <div className="fauna-item1">
             <h1>SUMATERA</h1>
-            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
+            <img className="lazyload pulau-img" data-src={kalimantan} alt="Foto Home" />
           </div>
         </div>
 
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>PAPUA</h1>
-            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
+            <img className="lazyload pulau-img" data-src={kalimantan} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -172,7 +172,7 @@ const HomePage = () => {
 
         {faunaImages.slice(currentSlide, currentSlide + 3).map((image, index) => (
           <div key={index} className="jenis1">
-            <img src={image} alt={`Foto ${index + 1}`} />
+            <img className="lazyload" data-src={image} alt={`Foto ${index + 1}`} />
             <p>{faunaNames[currentSlide + index]}</p>
           </div>
         ))}

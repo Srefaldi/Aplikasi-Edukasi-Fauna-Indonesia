@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
-import '../css/home/home.css'; // Pastikan file CSS Anda telah diimpor dengan benar
-
-// Import gambar
-import hero from '../css/home/hero2.jpg';
-import jawa from '../css/home/pulau/jawa.jpg';
-import hero1 from '../css/home/fauna2.jpg';
-import mamalia from '../css/home/jenis/Mamalia.jpg';
-import reptil from '../css/home/jenis/reptil.jpg';
-import burung from '../css/home/jenis/Burung.jpg';
-import ampibi from '../css/home/jenis/ampibi.jpg';
-import ikan from '../css/home/jenis/ikan.jpg';
-import serangga from '../css/home/jenis/serangga.jpg';
-import kalimantan from '../css/home/pulau/kalimantan.jpg';
+import '../css/home/home.css'; 
+import hero from '../../public/home/hero.jpg';
+import hero2 from '../../public/home/burung.jpg';
+import hero3 from '../../public/home/monyet.jpg';
+import mamalia from '../../public/home/jenis/mamalia.jpg';
+import reptil from '../../public/home/jenis/reptil.jpg';
+import burung from '../../public/home/jenis/burung.jpg';
+import ampibi from '../../public/home/jenis/ampibi.jpg';
+import ikan from '../../public/home/jenis/ikan.jpg';
+import serangga from '../../public/home/jenis/serangga.jpg';
+import kalimantan from '../../public/home/pulau/kalimantan.jpg';
+import papua from '../../public/home/pulau/papua.jpg';
+import sulawesi from '../../public/home/pulau/sulawesi.jpg';
+import sumatera from '../../public/home/pulau/sumatera.jpg';
+import jawa from '../../public/home/pulau/jawa.jpg';
 
 const faunaImages = [mamalia, reptil, burung, ampibi, ikan, serangga];
 const faunaNames = ['Mamalia', 'Reptil', 'Burung', 'Amfibi', 'Ikan', 'Serangga'];
@@ -37,40 +39,32 @@ const HomePage = () => {
 
   return (
     <div>
-    
-   
       {/* HERO SECTION */}
-      <img className="lazyload homeImage" data-src={hero1} alt="Foto Home"/>
+      <img className="homeImage" src={hero} alt="Foto Home"/>
       <div className="container-home">
-          <div className="container1">
-            
+        <div className="container1">
+        </div>
+        {/* Section Kedua */}
+        <div className="container2">
+          <div className="item big">
+            <p>Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
+            Setiap sudut tanah air ini menyimpan pesona fauna yang menakjubkan, menghadirkan kecantikan tak terhingga. 
+            Aplikasi Edukasi Fauna Indonesia unggul dalam menyajikan informasi komprehensif mengenai keanekaragaman fauna Indonesia. 
+            Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
+            Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. </p>
           </div>
-          <div className="container2">
-            <div className="item big">
-              <p>Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
-              Setiap sudut tanah air ini menyimpan pesona fauna yang menakjubkan, menghadirkan kecantikan tak terhingga. 
-              Aplikasi Edukasi Fauna Indonesia unggul dalam menyajikan informasi komprehensif mengenai keanekaragaman fauna Indonesia. 
-              Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
-              Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. </p>
-            </div>
-            <div className="item small">
-              <img className="lazyload" data-src={hero} alt="Foto Home" />
-            </div>
-            <div className="item small">
-              <img className="lazyload" data-src={hero} alt="Foto Home" />
-            </div>
-            
-
+          <div className="item small">
+            <img src={hero2} alt="Foto Home" />
           </div>
+          <div className="item small">
+            <img src={hero3} alt="Foto Home" />
+          </div>
+        </div>
       </div>
 
       {/* INTRO SECTION */}
       <div className="intro-home">
         <h1>Keindahan Pesona Fauna Indonesia</h1>
-        <p>Keindahan Pesona Fauna Indonesia terpancar melalui keanekaragaman fauna yang memukau, yang tersebar di pulau-pulau seperti Jawa, 
-          Kalimantan, Papua, Sulawesi, dan Sumatera. Setiap sudut tanah air ini menyimpan pesona fauna yang unik, menciptakan kecantikan alam 
-          yang memikat dan menginspirasi. Aplikasi Edukasi Fauna Indonesia menjadi panduan interaktif yang membawa pengguna dalam perjalanan 
-          mendalam, menjelajahi kehidupan satwa yang beragam dan melibatkan mereka dalam upaya pelestarian kekayaan alam Indonesia.</p>
       </div>
 
       {/* PULAU SECTION */}
@@ -78,7 +72,7 @@ const HomePage = () => {
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>KALIMANTAN</h1>
-            <img className="lazyload pulau-img" data-src={kalimantan} alt="Foto Home" />
+            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -90,6 +84,10 @@ const HomePage = () => {
         </div>
 
         <div className="pulau-container">
+          <div className="fauna-item1">
+            <h1>JAWA</h1>
+            <img className="pulau-img" src={jawa} alt="Foto Home" />
+          </div>
           <div className="fauna-item2">
             <p>
             Pulau Jawa, sebagai bagian integral dari kekayaan alam Indonesia, menyajikan pesona fauna yang memukau. Keanekaragaman hayati 
@@ -98,16 +96,12 @@ const HomePage = () => {
             memberikan kontribusi besar terhadap keindahan alam dan keberlanjutan lingkungan.
             </p>
           </div> 
-          <div className="fauna-item1">
-            <h1>JAWA</h1>
-            <img className="lazyload pulau-img" data-src={jawa} alt="Foto Home" />
-          </div>
         </div>
 
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>SULAWESI</h1>
-            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
+            <img className="pulau-img" src={sulawesi} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -121,6 +115,10 @@ const HomePage = () => {
         </div>
 
         <div className="pulau-container">
+          <div className="fauna-item1">
+            <h1>SUMATERA</h1>
+            <img className="pulau-img" src={sumatera} alt="Foto Home" />
+          </div>
           <div className="fauna-item2">
             <p>
             Sumatera, pulau yang memukau di Indonesia, menyajikan keindahan alam dan keberagaman fauna yang luar biasa. 
@@ -131,16 +129,12 @@ const HomePage = () => {
             hayati yang luar biasa di Sumatera menjadikannya destinasi yang menarik bagi para penggemar alam.
             </p>
           </div> 
-          <div className="fauna-item1">
-            <h1>SUMATERA</h1>
-            <img className="lazyload pulau-img" data-src={kalimantan} alt="Foto Home" />
-          </div>
         </div>
 
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>PAPUA</h1>
-            <img className="lazyload pulau-img" data-src={kalimantan} alt="Foto Home" />
+            <img className="pulau-img" src={papua} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -156,26 +150,28 @@ const HomePage = () => {
 
       {/* JENIS SECTION */}
       <div className="header-jenis">
-        <h1>JENIS FAUNA</h1>
-        <p>
-          Indonesia, sebagai negara kepulauan yang luas dan kaya akan keberagaman alam, mempersembahkan panggung spektakuler bagi beragam
-          fauna yang mendiami setiap sudutnya. Keberagaman ini terwujud dalam kategori-kategori utama, seperti mamalia, reptil, amfibi, ikan,
-          burung, dan serangga, masing-masing menampilkan pesona dan keunikan tersendiri.
-        </p>
-        <hr></hr>
+        <h1>Keberagaman Jenis Fauna</h1>
       </div>
 
-     <div className="jenis-container mb-5">
+      <div className="jenis-container mb-5">
         <div className="nav-left" onClick={prevSlide}>
           ❮
         </div>
 
         {faunaImages.slice(currentSlide, currentSlide + 3).map((image, index) => (
-          <div key={index} className="jenis1">
-            <img className="lazyload" data-src={image} alt={`Foto ${index + 1}`} />
+          <div key={`fauna_${index}`} className="jenis1">
+
             <p>{faunaNames[currentSlide + index]}</p>
+            <img
+              src={image}
+              alt={`Foto ${index + 1}`}
+
+              style={{ width: '350px', height: '250px', objectFit: 'cover' }}
+            />
           </div>
         ))}
+
+
         <div className="nav-right" onClick={nextSlide}>
           ❯
         </div>

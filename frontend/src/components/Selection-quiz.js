@@ -16,13 +16,15 @@ const QuizSelection = ({ onSelectQuiz }) => {
   };
   
   const packageDescriptions = {
-    A: 'Anda akan menjawab pertanyaan-pertanyaan yang menguji pengetahuan Anda tentang spesies-spesies khas Kalimantan, habitatnya, serta fakta menarik yang membuatnya unik. Selamat menjawab dan selamat menikmati petualangan pengetahuan Anda!',
-    B: 'Membawa Anda dalam petualangan eksplorasi keanekaragaman hayati di Pulau Sulawesi. Temukan spesies-spesies langka yang hanya dapat ditemui di pulau ini, dan uji pengetahuan Anda melalui kuis yang menantang. Dengan fokus pada spesies unik Sulawesi, siapkan diri Anda untuk mengungkap keajaiban fauna yang memikat.',
-    C: 'Mengajak Anda menjelajahi habitat hutan Sumatera dan melihat bagaimana kehidupan fauna beradaptasi di lingkungan unik ini. Pelajari tentang spesies langka, ekosistem khas, dan tantang diri Anda dengan kuis yang mendalam. Temukan keindahan fauna Sumatera dan dukung pelestariannya.',
-    D: 'Memberikan kombinasi lengkap dari informasi spesies, habitat, dan fakta menarik tentang fauna di Pulau Jawa. Jelajahi keanekaragaman hayati yang luar biasa dan uji pengetahuan Anda melalui kuis yang mencakup berbagai aspek. Raih pemahaman menyeluruh tentang kehidupan fauna di Pulau Jawa.',
-    E: 'Mengajak Anda untuk memahami keunikan fauna di Pulau Papua. Jelajahi spesies endemik, terdengar melodi hutan hujan Papua, dan uji pengetahuan Anda melalui kuis yang menggugah rasa ingin tahu. Siapkan diri Anda untuk meresapi keanekaragaman luar biasa di salah satu destinasi biodiversitas tertinggi di dunia.',
-    F: 'Mengundang Anda untuk merayakan kesatuan keanekaragaman hayati di seluruh nusantara. Paket ini menggabungkan informasi tentang fauna dari berbagai pulau, membawa Anda ke dalam kekayaan alam Indonesia dengan spesies-spesies khas, habitatnya, dan fakta menarik yang mencerminkan keindahan ragam hayati.',
+    Kalimantan: 'Paket ini mengajak Anda untuk menjelajahi spesies-spesies khas Kalimantan, termasuk informasi tentang habitatnya, serta fakta-fakta menarik yang membuatnya unik. Dalam petualangan ini, Anda akan diperkenalkan dengan keragaman fauna Kalimantan.',
+    Sulawesi: 'Petualangan ini membawa Anda dalam eksplorasi keanekaragaman hayati di Pulau Sulawesi. Anda akan menemukan spesies-spesies langka yang hanya ada di pulau ini, serta menguji pengetahuan Anda melalui kuis yang menantang.',
+    Sumatera: 'Mengajak Anda untuk menjelajahi habitat hutan Sumatera dan melihat bagaimana kehidupan fauna beradaptasi di lingkungan unik ini. Di sini, Anda dapat mempelajari tentang spesies langka, ekosistem khas, dan tantangan pelestarian fauna Sumatera.',
+    Jawa: 'Paket ini memberikan informasi komprehensif tentang spesies, habitat, dan fakta menarik tentang fauna di Pulau Jawa. Anda dapat menjelajahi keanekaragaman hayati yang luar biasa dan menguji pemahaman Anda melalui kuis yang mencakup berbagai aspek.',
+    Papua: 'Mengajak Anda untuk memahami keunikan fauna di Pulau Papua, termasuk penjelajahan spesies endemik dan melodi hutan hujan Papua. Di sini, Anda akan menguji pengetahuan Anda melalui kuis yang menggugah rasa ingin tahu tentang biodiversitas tertinggi di dunia.',
+    Nusantara: 'Paket ini mengundang Anda untuk merayakan kesatuan keanekaragaman hayati di seluruh nusantara Indonesia. Ini menggabungkan informasi tentang fauna dari berbagai pulau, memperkenalkan spesies-spesies khas, habitatnya, dan fakta menarik yang mencerminkan keindahan Indonesia.'
   };
+  
+    
 
   const categoryImages = [
     kategori1,
@@ -45,32 +47,39 @@ const QuizSelection = ({ onSelectQuiz }) => {
         </p>
       </div>
 
-      <div className='selection-container'>
-        {['A', 'B', 'C', 'D', 'E', 'F'].map((packageLetter, index) => {
-          const imageURL = categoryImages[index]; 
+      <div className="selection-container">
+      {['Kalimantan', 'Sulawesi', 'Sumatera', 'Jawa', 'Papua', 'Nusantara'].map((packageLetter, index) => {
+        const imageURL = categoryImages[index];
 
-          return (
-            <div key={index} className='selection-card'>
-              <div className="cover-image" style={{ backgroundImage: `url(${imageURL})` }}></div>
-              <div className='card-content'>
-                <h2 className="card-headings">Paket {packageLetter}</h2>
-                <p className="card-desc">
-                  {packageDescriptions[packageLetter]}
-                </p>
-                <button 
-                  className="btn-card" 
-                  onClick={() => handleInputName(packageLetter)}
-                  onMouseOver={(e) => { e.target.style.backgroundColor = '#224a6f'; }}
-                  onMouseOut={(e) => { e.target.style.backgroundColor = '#112546'; }}
-                >
-                  Play Now
-                </button>
-                </div>             
-              
+        return (
+          <div key={index} className="selection-card">
+            <div className="cover-image-container">
+              <img
+                src={imageURL}
+                alt={`Paket ${packageLetter}`}
+                className="cover-image"
+              />
             </div>
-          );
-        })}
-      </div>
+            <div className="card-content">
+              <h2 className="card-headings">Pulau {packageLetter}</h2>
+              <p className="card-desc">{packageDescriptions[packageLetter]}</p>
+              <button
+                className="btn-card"
+                onClick={() => handleInputName(packageLetter)}
+                onMouseOver={(e) => {
+                  e.target.style.backgroundColor = '#224a6f';
+                }}
+                onMouseOut={(e) => {
+                  e.target.style.backgroundColor = '#112546';
+                }}
+              >
+                Play Now
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
     </div>
   );
 };

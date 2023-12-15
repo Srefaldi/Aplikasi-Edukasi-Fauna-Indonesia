@@ -17,33 +17,39 @@
   margin-bottom: 10px;
 }
 
-
 .selection-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); 
   gap: 20px;
   padding: 50px;
 }
 
 .selection-card {
+  display: flex;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cover-image-container {
+  width: 200px;
+  height: auto;
+  overflow: hidden;
 }
 
 .cover-image {
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
 }
 
 .card-content {
-  padding: 20px; 
+  flex: 1;
+  padding: 20px;
+  width: 100%;
+  text-align: justify;
 }
 
 .card-headings {
@@ -68,45 +74,53 @@
   text-align: justify;
 }
 
-
 /* Responsive */
 @media (max-width: 767px) {
-  .quiz-selection-container {
-    padding: 0 15px; 
+  .welcome-text,
+  .selection-container {
+    padding: 20px;
+    margin: 10px;
   }
-
+  .selection-card{
+  display: flex;
+  flex-direction: column;
+  }
   .selection-container {
     grid-template-columns: 1fr;
     gap: 15px;
-    padding: 30px; 
   }
 
   .cover-image {
-    width: 100%; 
+    width: 100%;
   }
 
   .card-content {
-    padding: 15px; 
+    padding: 15px;
   }
 
   .card-headings {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     margin-bottom: 10px;
     color: #333;
     font-weight: bold;
   }
 
   .btn-card {
-    margin-top: 15px;
+    margin-top: auto; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: block; 
+    text-align: center; 
+    background-color: #112546;
+    color: #fff;
+    border: none;
     padding: 10px 20px;
-    font-size: 10px; 
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
   }
 
   .card-desc {
-    font-size: 10px;
+    font-size: 14px;
   }
-
-
-
-  
 }

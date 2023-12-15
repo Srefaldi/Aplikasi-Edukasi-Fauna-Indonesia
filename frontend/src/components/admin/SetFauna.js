@@ -24,6 +24,8 @@ const SetFauna = () => {
   const [imageFile, setImageFile] = useState(null);
   const [editId, setEditId] = useState(null);
 
+  const [searchTerm, setSearchTerm] = useState('');
+
   const openModal = () => {
     console.log('Opening modal');
     setIsModalOpen(true);
@@ -126,7 +128,7 @@ const SetFauna = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/get-allfauna');
+      const response = await axios.get(`http://localhost:5000/get-allfauna?search=${searchTerm}`);
       setFaunaList(response.data);
     } catch (error) {
       if (error.response) {
@@ -186,15 +188,20 @@ const SetFauna = () => {
     </div>
     {/* <div className="btn btn-success mb-2 cetak-fauna">Cetak</div> */}
     <div className="d-flex flex-column">
-    <input type="text" placeholder="Cari Fauna..." className="form-control" />    <div className="btn btn-primary cari">Cari</div>
+    <input
+      type="text"
+      placeholder="Cari Fauna..."
+      className="form-control"
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+    />  
+    <div className="btn btn-primary cari" onClick={fetchData}>
+      Cari
+    </div>
   </div>
   </div>
   
-</div>
-
-
-
-        
+</div>  
         {/* Modal for adding new fauna */}
         {isModalOpen && (
           <div className="modal">

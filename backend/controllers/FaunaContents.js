@@ -1,4 +1,5 @@
 import FaunaContentModel from "../models/FaunaContentModel.js";
+import { Op } from 'sequelize';
 import path from "path";
 import fs from "fs";
 
@@ -42,14 +43,29 @@ export const AddFauna = async (req, res) => {
 
 export const getAllfauna = async (req, res) => {
     try {
-        const allFauna = await FaunaContentModel.findAll();
-
-        res.status(200).json(allFauna);
+      const { search } = req.query;
+      let whereCondition = {};
+  
+      // If there's a search term, add it to the query
+      if (search) {
+        whereCondition = {
+          // Adjust this based on your data model and how you want to perform the search
+          [Op.or]: [
+            { name: { [Op.like]: `%${search}%` } },
+            { kategori_1: { [Op.like]: `%${search}%` } },
+            // Add more fields as needed
+          ],
+        };
+      }
+  
+      const allFauna = await FaunaContentModel.findAll({ where: whereCondition });
+  
+      res.status(200).json(allFauna);
     } catch (error) {
-        console.error('Error getting fauna:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+      console.error('Error getting fauna:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
     }
-};
+  };
 
 export const getFaunaById = async (req, res) => {
     try {

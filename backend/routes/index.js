@@ -7,14 +7,20 @@ import { AddFauna, deleteFaunaById, editFaunaById, getAllfauna, getFaunaById } f
 import { addQuiz, deleteQuizById, editQuizById, getAllQuizzes, getQuizById } from "../controllers/QuizController.js";
 import { addReview, deleteReviewById, getAllReviews, getReviewById, updateReviewById } from "../controllers/Reviewer.js";
 import { getAllLeaderboard, editLeaderboardById, deleteLeaderboardById, addLeaderboard, getLeaderboardByPackage } from "../controllers/LeaderboardController.js"; 
+import { addPassAdmin, getPassAdmin } from "../controllers/PassAdminController.js";
 
 const router = express.Router();
 
+
+// Login
 router.get('/users', verifyToken, getUsers);
 router.post('/users', Register);
 router.post('/login', Login);
 router.get('/token', refreshToken);
 router.delete('/logout', Logout);
+
+router.post('/add-pass-admin-edfaid', addPassAdmin);
+router.get('/get-pass-admin-edfaid', getPassAdmin);
 
 // Fauna
 router.post('/add-fauna', AddFauna);

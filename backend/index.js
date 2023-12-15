@@ -10,6 +10,7 @@ import FileUpload from "express-fileupload";
 import UserModel from "./models/UserModel.js";
 import ReviewerModel from "./models/ReviewerModel.js";
 import LeaderboardModel from "./models/LeaderboardModel.js";
+import PassAdmin from "./models/PassAdminModel.js";
 
 dotenv.config();
 const app = express();
@@ -22,6 +23,7 @@ try {
     await UserModel.sync();
     await ReviewerModel.sync();
     await LeaderboardModel.sync();
+    await PassAdmin.sync();
 } catch (error) {
     console.error(error);
 }

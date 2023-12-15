@@ -156,7 +156,7 @@ const KategoriPage = () => {
           aria-expanded="false"
           style={{ backgroundColor: '#112546', color: 'white', fontSize: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px 16px' }}
         >
-          <img src={search} alt="Search" width="32" height="32" className="rounded-circle" style={{ marginRight: '8px' }} />
+          <img data-src={search} alt="Search" width="32" height="32" className="lazyload rounded-circle" style={{ marginRight: '8px' }} />
           {selectedSubCategory ? selectedSubCategory : (selectedCategory ? selectedCategory : 'Semua Kategori')}
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -217,7 +217,7 @@ const KategoriPage = () => {
             {filteredFauna.map((item) => (
               <div className='fauna-item' key={item.id}>
                 <div className='fauna-item-header'>
-                  <img src={item.image_url} className="fauna-item-image" alt={item.name} loading="lazy" />
+                  <img data-src={item.image_url} className="lazyload fauna-item-image" alt={item.name} loading="lazy" />
                 </div>
                 <div className='fauna-item-content'>
                   <p className='fauna-title'><a href={`/detail/${item.id}`}>{item.name} | {item.kategori_1}</a></p>

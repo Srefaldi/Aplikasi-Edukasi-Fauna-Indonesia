@@ -58,7 +58,8 @@ const Profil = () => {
 
       <div style={styles.profilContainer}>
         <img
-          src="nanda.jpeg" 
+        className='lazyload'
+          data-src="nanda.jpeg" 
           alt="Profil"
           style={styles.profilPicture}
         />

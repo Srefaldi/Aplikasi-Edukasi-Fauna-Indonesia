@@ -55,9 +55,9 @@ const QuizSelection = ({ onSelectQuiz }) => {
           <div key={index} className="selection-card">
             <div className="cover-image-container">
               <img
-                src={imageURL}
+                data-src={imageURL}
                 alt={`Paket ${packageLetter}`}
-                className="cover-image"
+                className="lazyload cover-image"
               />
             </div>
             <div className="card-content">

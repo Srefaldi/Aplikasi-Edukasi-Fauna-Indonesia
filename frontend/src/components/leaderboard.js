@@ -49,7 +49,7 @@ const Leaderboard = () => {
       <div className="container-fluid px-0 overflow-hidden">
         <div className="row mx-0">
           <div className="col-lg-12 px-0">
-            <img id="homeImage" className="img-fluid w-100" src={hero} alt="Foto Home" />
+            <img id="homeImage" className="lazyload img-fluid w-100" data-src={hero} alt="Foto Home" />
           </div>
         </div>
       </div>

@@ -42,9 +42,7 @@ const Quiz = () => {
         <div className='item-4'>
           <h1>Leaderboard Edukasi Fauna</h1>
           <p>
-            Selamat datang di halaman Leaderboard Edukasi Fauna! Saksikan peringkat tertinggi dari para penguasa pengetahuan fauna Indonesia. 
-            Leaderboard kami mencerminkan prestasi para penjelajah yang telah menguji dan mendalami pengetahuan mereka melalui kuis edukasi fauna. 
-            Jawab setiap pertanyaan dengan penuh semangat, dan lihatlah bagaimana Anda bersaing dengan yang terbaik.
+          Selamat datang di Leaderboard Edukasi Fauna! Lihat peringkat tertinggi pengetahuan fauna Indonesia. Prestasi para penjelajah tercermin dalam leaderboard, hasil dari pemahaman mendalam melalui kuis edukasi fauna. Jawab setiap pertanyaan dengan semangat, dan lihat bagaimana Anda bersaing dengan yang terbaik.
           </p>
           <button className="btn-leaderboard" type="button" onClick={handleLeaderboard}>Leaderboard</button>
         </div>

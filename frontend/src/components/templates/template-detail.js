@@ -51,8 +51,9 @@ const createFaunaDetailTemplate = (fauna) => {
         </div>
         <div className="fauna__description">
           <h3>Description</h3>
-          <p>{description}</p>
+          <p dangerouslySetInnerHTML={{ __html: description }}></p>
         </div>
+
       </div>
     </div>
   );

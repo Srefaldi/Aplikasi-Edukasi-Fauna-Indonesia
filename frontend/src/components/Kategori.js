@@ -43,7 +43,12 @@ const KategoriPage = () => {
     }
   }, [selectedCategory, selectedSubCategory, faunaData]);
 
-  const truncatedDescription = (description) => description.substring(0, 150);
+  const truncatedDescription = (description) => {
+    // Membersihkan tag HTML dengan regex
+    const cleanedDescription = description.replace(/<[^>]*>/g, ' ');
+    // Memotong teks setelah 50 karakter
+    return cleanedDescription.substring(0, 50);
+  };
 
   const handleReadMore = (id) => {
     navigate(`/detail/${id}`);
@@ -222,7 +227,7 @@ const KategoriPage = () => {
                 <div className='fauna-item-content'>
                   <p className='fauna-title'><a href={`/detail/${item.id}`}>{item.name} | {item.kategori_1}</a></p>
                   <h5>{item.kategori_2}</h5>
-                  <p>{truncatedDescription(item.description)}...</p>
+                  <p dangerouslySetInnerHTML={{ __html: truncatedDescription(item.description) + '...' }}></p>
                 </div>
               </div>
             ))}

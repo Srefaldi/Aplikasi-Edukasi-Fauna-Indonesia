@@ -6,6 +6,11 @@ import './styles/Admin.css';
 import './styles/set-fauna-responsive.css';
 import Sidebar from './Sidebar';
 
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
+
+
 const SetFauna = () => {
   const [token, setToken] = useState('');
   const [expire, setExpire] = useState('');
@@ -174,7 +179,15 @@ const SetFauna = () => {
     refreshToken();
     fetchData();
   }, []);
-  const truncatedDescription = (description) => description.substring(0, 50);
+
+const truncatedDescription = (description) => {
+  // Membersihkan tag HTML dengan regex
+  const cleanedDescription = description.replace(/<[^>]*>/g, ' ');
+  // Memotong teks setelah 50 karakter
+  return cleanedDescription.substring(0, 50);
+};
+
+  
   return (
     <>
       <Sidebar />
@@ -232,10 +245,16 @@ const SetFauna = () => {
                   onChange={handleInputChange}
                 />
                 <label>Deskripsi:</label>
-                <textarea
-                  name="description"
-                  value={formData.description}
-                  onChange={handleInputChange}
+                <CKEditor
+                  editor={ClassicEditor}
+                  data={formData.description}
+                  onChange={(event, editor) => {
+                      const data = editor.getData();
+                      setFormData({
+                        ...formData,
+                        description: data,
+                      });
+                  }}
                 />
                 <label>Deskripsi Habitat:</label>
                 <textarea
@@ -287,7 +306,7 @@ const SetFauna = () => {
                   />
                 </td>
                 <td>{fauna.name}</td>
-                <td>{truncatedDescription(fauna.description)}...</td>
+                <td dangerouslySetInnerHTML={{ __html: truncatedDescription(fauna.description) }}></td>
                 <td>{fauna.kategori_1}</td>
                 <td>{fauna.kategori_2}</td>
                 <td>{fauna.desc_habitat}</td>

@@ -366,7 +366,7 @@ font-size: 13px;
 
 .pic img {
   width: 100%; 
-  height: auto; 
+  height: 270px; 
 }
 
 @media (max-width: 768px) {

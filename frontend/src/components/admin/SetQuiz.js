@@ -249,22 +249,25 @@
       <div className="setfauna-container mt-5 content">
       <h1 className="left">Data Quiz</h1>
       <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
-      <div className="d-flex justify-content-between align-items-center mb-3">
+      <div className="d-flex align-items-center mb-3">
       <div className="d-flex flex-column">
       <div className="btn btn-primary mb-2 cetak" onClick={openModal}>
       Tambah Quiz
       </div>
       </div>
-      <label>Filter by Package:</label>
-      <select value={filterByPackage} onChange={(e) => setFilterByPackage(e.target.value)}>
-        <option value="">All</option>
-        <option value="Kalimantan">Kalimantan</option>
-        <option value="Sulawesi">Sulawesi</option>
-        <option value="Sumatera">Sumatera</option>
-        <option value="Jawa">Jawa</option>
-        <option value="Papua">Papua</option>
-        <option value="Nusantara">Nusantara</option>
-      </select>
+
+      <div>
+        <label>Filter by Package:</label>
+        <select value={filterByPackage} onChange={(e) => setFilterByPackage(e.target.value)}>
+          <option value="">All</option>
+          <option value="Kalimantan">Kalimantan</option>
+          <option value="Sulawesi">Sulawesi</option>
+          <option value="Sumatera">Sumatera</option>
+          <option value="Jawa">Jawa</option>
+          <option value="Papua">Papua</option>
+          <option value="Nusantara">Nusantara</option>
+        </select>
+      </div>
       
     </div>
 
@@ -325,7 +328,7 @@
                 onChange={handleInputChange}
               />
               <label>Paket:</label>
-              <div>
+              <div className="radio-group">
                 <label>
                   <input
                     type="radio"

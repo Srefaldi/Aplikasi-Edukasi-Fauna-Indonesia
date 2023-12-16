@@ -4,6 +4,7 @@ import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import './styles/Admin.css';
 import Sidebar from './Sidebar';
+import './styles/set-reviews.css';
 
 const SetReview = () => {
   const [token, setToken] = useState('');
@@ -17,20 +18,18 @@ const SetReview = () => {
     review: '',
   });
   const [editId, setEditId] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const openModal = () => {
-    console.log('Opening modal');
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    // Reset form data when the modal is closed
     setFormData({
-        name: '',
-        rating: '',
-        review: '',
-      // Reset other form fields here
+      name: '',
+      rating: '',
+      review: '',
     });
     setEditId(null);
   };
@@ -55,7 +54,6 @@ const SetReview = () => {
     });
   };
 
-
   const handleAddReview = async () => {
     try {
       const formDataReview = new FormData();
@@ -63,12 +61,9 @@ const SetReview = () => {
       formDataReview.append('rating', formData.rating);
       formDataReview.append('review', formData.review);
 
-
       await axios.post('http://localhost:5000/add-review', formDataReview);
-      
 
       fetchData();
-      // Close the modal
       closeModal();
     } catch (error) {
       console.error('Error adding review:', error);
@@ -77,10 +72,10 @@ const SetReview = () => {
 
   const handleEditReview = async () => {
     try {
-        const formDataReview = new FormData();
-        formDataReview.append('name', formData.name);
-        formDataReview.append('rating', formData.rating);
-        formDataReview.append('review', formData.review);
+      const formDataReview = new FormData();
+      formDataReview.append('name', formData.name);
+      formDataReview.append('rating', formData.rating);
+      formDataReview.append('review', formData.review);
 
       await axios.put(`http://localhost:5000/edit-review/${editId}`, formDataReview);
 
@@ -144,17 +139,43 @@ const SetReview = () => {
     }
   );
 
+  const handleSearch = () => {
+    const filteredData = reviewListItem.filter((review) =>
+      review.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setReviewList(filteredData);
+  };
+
+  const handleResetSearch = () => {
+    setSearchTerm('');
+    fetchData();
+  };
+
   useEffect(() => {
     refreshToken();
     fetchData();
-  }, []);
+  }, [searchTerm]);
 
   return (
     <>
       <div className="setfauna-container content">
         <h1>Data Reviewer</h1>
         <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
-        <input type="text" placeholder="Cari Data..." className="searchInput" />
+        <div>
+          <input
+            type="text"
+            placeholder="Cari Data..."
+            className="searchInput"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button className="btn-search" onClick={() => handleSearch()}>
+            Cari
+          </button>
+          <button className="btn-reset" onClick={() => handleResetSearch()}>
+            Reset
+          </button>
+        </div>
 
         {isModalOpen && (
           <div className="modal">
@@ -185,8 +206,11 @@ const SetReview = () => {
                   onChange={handleInputChange}
                 />
 
-                {/* Add more input fields as needed */}
-                <button className='btn-modal' type="submit" onClick={editId ? handleEditReview : handleAddReview}>
+                <button
+                  className="btn-modal"
+                  type="submit"
+                  onClick={editId ? handleEditReview : handleAddReview}
+                >
                   {editId ? 'Simpan Edit' : 'Simpan'}
                 </button>
               </form>
@@ -212,7 +236,10 @@ const SetReview = () => {
                 <td>{review.rating}</td>
                 <td>{review.review}</td>
                 <td className="actionButtonsCell">
-                  <div className="deleteButton" onClick={() => handleDeleteReview(review.id)}>
+                  <div
+                    className="deleteButton"
+                    onClick={() => handleDeleteReview(review.id)}
+                  >
                     Hapus
                   </div>
                 </td>
@@ -226,33 +253,3 @@ const SetReview = () => {
 };
 
 export default SetReview;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

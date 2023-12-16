@@ -30,7 +30,7 @@ const UserReviews = () => {
 
   return (
     <div>
-    <h3 className="team-headings"> <span>Users</span> Review </h3>
+    <h3 className="headings"> <span>Users</span> Review </h3>
     <div className="review-container mt-5">
       {reviews.map((review, index) => (
         <div className="review-box" key={index}>

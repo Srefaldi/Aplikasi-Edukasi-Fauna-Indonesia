@@ -44,14 +44,35 @@ const KategoriPage = () => {
   }, [selectedCategory, selectedSubCategory, faunaData]);
 
   const truncatedDescription = (description) => {
-    // Membersihkan tag HTML dengan regex
     const cleanedDescription = description.replace(/<[^>]*>/g, ' ');
-    // Memotong teks setelah 50 karakter
     return cleanedDescription.substring(0, 50);
   };
 
   const handleReadMore = (id) => {
     navigate(`/detail/${id}`);
+  };
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    setSelectedSubCategory(null);
+  };
+
+  const handleSubCategoryClick = (subCategory) => {
+    setSelectedSubCategory(subCategory);
+    setSelectedCategory(null);
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5000/get-allfauna?search=${searchTerm}`);
+      setFaunaData(response.data);
+      setSelectedCategory(null);
+      setSelectedSubCategory(null);
+    } catch (error) {
+      if (error.response) {
+        console.log(error);
+      }
+    }
   };
 
   useEffect(() => {
@@ -133,17 +154,6 @@ const KategoriPage = () => {
     };
   }, []);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(`http://localhost:5000/get-allfauna?search=${searchTerm}`);
-      setFaunaData(response.data);
-    } catch (error) {
-      if (error.response) {
-        console.log(error);
-      }
-    }
-  };
-
   return (
     <div className='mt-5'>
       <div className="welcome-text">
@@ -165,28 +175,28 @@ const KategoriPage = () => {
           {selectedSubCategory ? selectedSubCategory : (selectedCategory ? selectedCategory : 'Semua Kategori')}
         </button>
         <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <p className="dropdown-item" onClick={() => { setSelectedCategory(null); setSelectedSubCategory(null); }}>Semua</p>
+          <p className="dropdown-item" onClick={() => { handleCategoryClick(null); }}>Semua</p>
           {/* Pulau */}
           <li className="submenu-pulau dropdown-submenu">
             <p className="dropdown-item dropdown-toggle">Pulau</p>
             <ul className="dropdown-menu">
-              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Jawa'); setSelectedSubCategory(null); }}>Jawa</p></li>
-              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Kalimantan'); setSelectedSubCategory(null); }}>Kalimantan</p></li>
-              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Sumatera'); setSelectedSubCategory(null); }}>Sumatera</p></li>
-              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Sulawesi'); setSelectedSubCategory(null); }}>Sulawesi</p></li>
-              <li><p className="dropdown-item" onClick={() => { setSelectedCategory('Papua'); setSelectedSubCategory(null); }}>Papua</p></li>
+              <li><p className="dropdown-item" onClick={() => handleCategoryClick('Jawa')}>Jawa</p></li>
+              <li><p className="dropdown-item" onClick={() => handleCategoryClick('Kalimantan')}>Kalimantan</p></li>
+              <li><p className="dropdown-item" onClick={() => handleCategoryClick('Sumatera')}>Sumatera</p></li>
+              <li><p className="dropdown-item" onClick={() => handleCategoryClick('Sulawesi')}>Sulawesi</p></li>
+              <li><p className="dropdown-item" onClick={() => handleCategoryClick('Papua')}>Papua</p></li>
             </ul>
           </li>
           {/* Jenis Fauna */}
           <li className="submenu-jenis-fauna dropdown-submenu">
             <p className="dropdown-item dropdown-toggle">Jenis Fauna</p>
             <ul className="dropdown-menu">
-              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Mamalia'); setSelectedCategory(null) }}>Mamalia</p></li>
-              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Reptil'); setSelectedCategory(null) }}>Reptil</p></li>
-              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Burung'); setSelectedCategory(null) }}>Burung</p></li>
-              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Ampibi'); setSelectedCategory(null) }}>Ampibi</p></li>
-              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Ikan'); setSelectedCategory(null) }}>Ikan</p></li>
-              <li><p className="dropdown-item" onClick={() => { setSelectedSubCategory('Serangga'); setSelectedCategory(null) }}>Serangga</p></li>
+              <li><p className="dropdown-item" onClick={() => handleSubCategoryClick('Mamalia')}>Mamalia</p></li>
+              <li><p className="dropdown-item" onClick={() => handleSubCategoryClick('Reptil')}>Reptil</p></li>
+              <li><p className="dropdown-item" onClick={() => handleSubCategoryClick('Burung')}>Burung</p></li>
+              <li><p className="dropdown-item" onClick={() => handleSubCategoryClick('Ampibi')}>Ampibi</p></li>
+              <li><p className="dropdown-item" onClick={() => handleSubCategoryClick('Ikan')}>Ikan</p></li>
+              <li><p className="dropdown-item" onClick={() => handleSubCategoryClick('Serangga')}>Serangga</p></li>
             </ul>
           </li>
         </ul>

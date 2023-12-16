@@ -6,6 +6,8 @@ import axios from 'axios';
 import swDev from './swDev';
 import 'lazysizes';
 import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+import './index.css'
+
 
 axios.defaults.withCredentials = true;
 

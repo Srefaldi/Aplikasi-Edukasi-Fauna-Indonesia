@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import '../css/landing-page/responsive.css';
 import '../css/landing-page/landing.css';
-import bg from '../css/landing-page/img/bg.jpg';
-import quiz from '../css/landing-page/img/quiz.png';
-import materi from '../css/landing-page/img/materi.png'
-import winner from '../css/landing-page/img/winner.png'
-import nanda from '../css/landing-page/img/nanda.jpeg';
-import faunaa from '../css/landing-page/img/faunaa.jpg';
-import fauna1 from '../css/landing-page/img/fauna1.png';
-import fauna2 from '../css/landing-page/img/fauna2.jpg';
-import fauna3 from '../css/landing-page/img/fauna3.jpg';
-import fauna4 from '../css/landing-page/img/fauna4.jpg';
+import bg from '../../public/landing/bg.jpg';
+import backgroundImage from '../../public/landing/rajaampat.jpg';
+import quiz from '../../public/landing/quiz.png';
+import materi from '../../public/landing/materi.png'
+import winner from '../../public/landing/winner.png'
+import nanda from '../../public/landing/nanda.jpeg';
+import fauna1 from '../../public/landing/fauna1.png';
+import fauna4 from '../../public/landing/fauna4.jpg';
+
 
 
 import UserReviews from './UserReview'; 
@@ -30,7 +29,7 @@ const LandingPage = () => {
     <div>
         <h1 class="headings"> <span>Aplikasi Edukasi</span> Fauna Indonesia </h1>
         <div className="containerr mb-5">
-            <div className="container__leftt">
+        <div className="container__leftt" style={{ backgroundImage: `url(${backgroundImage})` }}>
                 <div className="left__contentt">
                 </div>
             </div>
@@ -89,17 +88,11 @@ const LandingPage = () => {
     <h1 class="headings" id="FaunaIndonesia"> <span>Fauna</span> Indonesia </h1>
     <div class="foto-container">
       <div class="box1">
-        <img className="lazyload" data-src={faunaa} alt=""/>
+        <img className="lazyload" data-src={fauna1} alt=""/>
       </div>
+      <div class="box1">
+        <img className="lazyload" data-src={fauna4} alt=""/>
       </div>
-      <div class="foto-container2">
-      <div class="box2">
-        <img className="lazyload" data-src={fauna1} alt="" />
-        <img className="lazyload" data-src={fauna2} alt="" />
-        <img className="lazyload" data-src={fauna3} alt="" />
-        <img className="lazyload" data-src={fauna4} alt="" />
-      </div>
-     
     </div>
 
     <div id="UserReviews">
@@ -115,7 +108,7 @@ const LandingPage = () => {
 
     {/* Team  */}
 
-    <h3 class="team-headings" id="Team"> <span>Our</span> Team </h3>
+    <h3 class="headings" id="Team"> <span>Our</span> Team </h3>
     <div className='team-container'>
     <div class="member" data-aos="fade-up">
     <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
@@ -189,7 +182,7 @@ const LandingPage = () => {
     </div>
 
 
-    <h3 class="team-headings" id="Contact"> Contact </h3>
+    <h3 class="headings" id="Contact"> Contact </h3>
         <div className='row'>
             <div class="col-lg-4 col-md-4">
                 <div class="info-box mb-4">

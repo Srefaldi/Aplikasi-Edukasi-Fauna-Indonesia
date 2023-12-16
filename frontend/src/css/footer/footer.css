@@ -23,16 +23,7 @@
   font-weight: 400;
 }
 
-.footer-item h4::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  background-color: white;
-  height: 2px;
-  box-sizing: border-box;
-  width: 50px;
-}
+
 
 .footer-item ul li a {
   font-weight: bold;
@@ -44,6 +35,7 @@
   display: block;
   transition: all 0.3s ease;
   cursor: pointer;
+  margin-bottom: 5px;
 }
 
 .footer-item .social-links a {

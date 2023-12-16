@@ -4,6 +4,7 @@
   import { useNavigate } from 'react-router-dom';
   import './styles/Admin.css';
   import './styles/responsive-quiz.css';
+  import { Ripple, initMDB } from 'mdb-ui-kit';
 
   const SetQuizContainer = () => {
     const [token, setToken] = useState('');
@@ -137,6 +138,7 @@
 
     useEffect(() => {
       fetchData();
+      initMDB({ Ripple });
       refreshToken();
     }, [filterByPackage]);
 
@@ -158,24 +160,22 @@
       modal: {
         display: isModalOpen ? 'block' : 'none',
         position: 'fixed',
-        zIndex: '1',  // Make sure the z-index is appropriate
+        zIndex: '1',
         left: '50%',
         top: '50%',
         transform: 'translate(-50%, -50%)',
-        width: '100%',
-        height: '100%',
-        overflow: 'auto',
+        width: '80%', // Menyesuaikan lebar modal agar responsif
+        maxHeight: '90%', // Batasi tinggi modal agar tidak terlalu panjang
+        overflowY: 'auto', // Tambahkan overflow untuk scroll jika konten terlalu panjang
         backgroundColor: 'rgba(0,0,0,0.4)',
-        padding: '130px',
-      },      
+        padding: '20px',
+        borderRadius: '5px',
+      },
       modalContent: {
         backgroundColor: '#fefefe',
         margin: 'auto',
         padding: '20px',
         borderRadius: '5px',
-        maxWidth: '600px',
-        marginTop: '35px',
-        left: '0',
       },
       close: {
         color: '#aaa',
@@ -246,16 +246,15 @@
     };
 
     return (
+      <div>
       <div className="setfauna-container mt-5 content">
-      <h1 className="left">Data Quiz</h1>
-      <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
-      <div className="d-flex align-items-center mb-3">
-      <div className="d-flex flex-column">
+  <h1 className="left">Data Quiz</h1>
+  <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
+  <div className="d-flex align-items-center mb-3">
+    <div className="d-flex flex-column">
       <div className="btn btn-primary1 mb-2 cetak" onClick={openModal}>
-      Tambah Quiz
+        Tambah Quiz
       </div>
-      </div>
-
       <div>
         <label>Filter by Package:</label>
         <select value={filterByPackage} onChange={(e) => setFilterByPackage(e.target.value)}>
@@ -268,8 +267,11 @@
           <option value="Nusantara">Nusantara</option>
         </select>
       </div>
-      
     </div>
+  </div>
+</div>
+
+    
 
 
         {/* Modal for adding/editing quiz */}
@@ -327,69 +329,93 @@
                 value={formData.answer}
                 onChange={handleInputChange}
               />
-              <label>Paket:</label>
-              <div className="radio-group">
-                <label>
-                  <input
-                    type="radio"
-                    name="paket"
-                    value="Kalimantan"
-                    checked={formData.paket === 'Kalimantan'}
-                    onChange={handleInputChange}
-                  />
-                  Kalimantan
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="paket"
-                    value="Sulawesi"
-                    checked={formData.paket === 'Sulawesi'}
-                    onChange={handleInputChange}
-                  />
-                  Sulawesi
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="paket"
-                    value="Sumatera"
-                    checked={formData.paket === 'Sumatera'}
-                    onChange={handleInputChange}
-                  />
-                  Sumatera
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="paket"
-                    value="Jawa"
-                    checked={formData.paket === 'Jawa'}
-                    onChange={handleInputChange}
-                  />
-                  Jawa
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="paket"
-                    value="Papua"
-                    checked={formData.paket === 'Papua'}
-                    onChange={handleInputChange}
-                  />
-                  Papua
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    name="paket"
-                    value="Nusantara"
-                    checked={formData.paket === 'Nusantara'}
-                    onChange={handleInputChange}
-                  />
-                  Nusantara
-                </label>
-              </div>
+              <label>Paket</label>
+             <div className="btn-group">
+              <input
+                type="radio"
+                className="btn-check"
+                name="paket"
+                id="paket-kalimantan"
+                autoComplete="off"
+                checked={formData.paket === 'Kalimantan'}
+                onChange={handleInputChange}
+                value="Kalimantan"
+              />
+              <label className="btn btn-secondary" htmlFor="paket-kalimantan" data-mdb-ripple-init>
+                Kalimantan
+              </label>
+
+              <input
+                type="radio"
+                className="btn-check"
+                name="paket"
+                id="paket-sulawesi"
+                autoComplete="off"
+                checked={formData.paket === 'Sulawesi'}
+                onChange={handleInputChange}
+                value="Sulawesi"
+              />
+              <label className="btn btn-secondary" htmlFor="paket-sulawesi" data-mdb-ripple-init>
+                Sulawesi
+              </label>
+
+              <input
+                type="radio"
+                className="btn-check"
+                name="paket"
+                id="paket-sumatera"
+                autoComplete="off"
+                checked={formData.paket === 'Sumatera'}
+                onChange={handleInputChange}
+                value="Sumatera"
+              />
+              <label className="btn btn-secondary" htmlFor="paket-sumatera" data-mdb-ripple-init>
+                Sumatera
+              </label>
+
+              <input
+                type="radio"
+                className="btn-check"
+                name="paket"
+                id="paket-jawa"
+                autoComplete="off"
+                checked={formData.paket === 'Jawa'}
+                onChange={handleInputChange}
+                value="Jawa"
+              />
+              <label className="btn btn-secondary" htmlFor="paket-jawa" data-mdb-ripple-init>
+                Jawa
+              </label>
+
+              <input
+                type="radio"
+                className="btn-check"
+                name="paket"
+                id="paket-papua"
+                autoComplete="off"
+                checked={formData.paket === 'Papua'}
+                onChange={handleInputChange}
+                value="Papua"
+              />
+              <label className="btn btn-secondary" htmlFor="paket-papua" data-mdb-ripple-init>
+                Papua
+              </label>
+
+              <input
+                type="radio"
+                className="btn-check"
+                name="paket"
+                id="paket-nusantara"
+                autoComplete="off"
+                checked={formData.paket === 'Nusantara'}
+                onChange={handleInputChange}
+                value="Nusantara"
+              />
+              <label className="btn btn-secondary" htmlFor="paket-nusantara" data-mdb-ripple-init>
+                Nusantara
+              </label>
+            </div>
+
               <button type="submit" style={styles.button} onClick={handleSaveQuiz}>
                 {editId ? 'Simpan Edit' : 'Simpan'}
               </button>

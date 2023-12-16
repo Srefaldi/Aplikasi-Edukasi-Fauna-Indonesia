@@ -5,7 +5,12 @@
         margin-left: 20px; 
         margin-right:100px ; 
         width: 100%;
-        max-width: 800px;
+        max-width: 1200px;
+      }
+      open {
+        left: 50%; 
+       
+        transform: translateX(-50%);
       }
     modal {
         display: none;
@@ -110,3 +115,26 @@
     margin-bottom: 10px;
   }
 }
+
+.btn-group {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+}
+
+.btn-check {
+  width: 100%; 
+}
+
+
+@media screen and (min-width: 768px) {
+  .btn-group {
+    flex-direction: row; 
+  }
+
+  .btn-check {
+    width: 50px; 
+  }
+}
+
+

@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../css/kategori/kategori.css';
+import '../css/kategori/responsive-kategori.css';
 
 const KategoriPage = () => {
   const [faunaData, setFaunaData] = useState([]);
@@ -159,7 +160,7 @@ const KategoriPage = () => {
       <div className="welcome-text">
         <h2>Selamat Datang di Halaman Kategori Fauna!</h2>
         <p>Temukan berbagai jenis fauna dari berbagai pulau dan jenis di Indonesia.</p>
-        <p>Pilih kategori fauna berdasarkan pulau atau jenisnya menggunakan dropdown di atas.</p>
+        <p>Pilih kategori fauna berdasarkan pulau atau jenisnya menggunakan dropdown di bawah.</p>
         <p>Nikmati penjelajahan Anda!</p>
       </div>
 
@@ -206,16 +207,22 @@ const KategoriPage = () => {
         <input
           type="text"
           placeholder="Cari Fauna..."
-          className="form-control"
+          className="form-control1"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          style={{ width: '400px', marginRight: '10px' }}
+          style={{ width: '100%',
+           marginRight: '20px',
+           marginLeft:'10px',
+              maxWidth:'400px' }}
         />
         <div
-          className="btn btn-primary cari"
+          className="btn btn-primary cari1"
           onClick={fetchData}
           style={{
-            width: '200px',
+            width: '100%',
+            height: '100%',
+            maxHeight: '200px',
+            maxWidth: '100px',
             backgroundColor: '#112546',
             color: 'white',
           }}

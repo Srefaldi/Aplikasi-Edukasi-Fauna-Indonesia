@@ -196,7 +196,7 @@ const truncatedDescription = (description) => {
   <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
   <div className="d-flex justify-content-between align-items-center mb-3">
   <div className="d-flex flex-column">
-    <div className="btn btn-primary mb-2" onClick={openModal}>
+    <div style={{ backgroundColor:  '#3498db'}}className="btn btn-primary2 mb-2" onClick={openModal}>
       Tambah Fauna
     </div>
     {/* <div className="btn btn-success mb-2 cetak-fauna">Cetak</div> */}
@@ -231,19 +231,121 @@ const truncatedDescription = (description) => {
                   onChange={handleInputChange}
                 />
                 <label>Kategori 1:</label>
-                <input
-                  type="text"
-                  name="kategori_1"
-                  value={formData.kategori_1}
-                  onChange={handleInputChange}
-                />
+                <div className="radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_1"
+                      value="Jawa"
+                      checked={formData.kategori_1 === 'Jawa'}
+                      onChange={handleInputChange}
+                    />
+                    Jawa
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_1"
+                      value="Kalimantan"
+                      checked={formData.kategori_1 === 'Kalimantan'}
+                      onChange={handleInputChange}
+                    />
+                    Kalimantan
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_1"
+                      value="Papua"
+                      checked={formData.kategori_1 === 'Papua'}
+                      onChange={handleInputChange}
+                    />
+                    Papua
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_1"
+                      value="Sumatera"
+                      checked={formData.kategori_1 === 'Sumatera'}
+                      onChange={handleInputChange}
+                    />
+                    Sumatera
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_1"
+                      value="Sulawesi"
+                      checked={formData.kategori_1 === 'Sulawesi'}
+                      onChange={handleInputChange}
+                    />
+                    Sulawesi
+                  </label>
+                </div>
                 <label>Kategori 2:</label>
-                <input
-                  type="text"
-                  name="kategori_2"
-                  value={formData.kategori_2}
-                  onChange={handleInputChange}
-                />
+                <div className="radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_2"
+                      value="Mamalia"
+                      checked={formData.kategori_2 === 'Mamalia'}
+                      onChange={handleInputChange}
+                    />
+                    Mamalia
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_2"
+                      value="Reptil"
+                      checked={formData.kategori_2 === 'Reptil'}
+                      onChange={handleInputChange}
+                    />
+                    Reptil
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_2"
+                      value="Burung"
+                      checked={formData.kategori_2 === 'Burung'}
+                      onChange={handleInputChange}
+                    />
+                    Burung
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_2"
+                      value="Ampibi"
+                      checked={formData.kategori_2 === 'Ampibi'}
+                      onChange={handleInputChange}
+                    />
+                    Ampibi
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_2"
+                      value="Ikan"
+                      checked={formData.kategori_2 === 'Ikan'}
+                      onChange={handleInputChange}
+                    />
+                    Ikan
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="kategori_2"
+                      value="Serangga"
+                      checked={formData.kategori_2 === 'Serangga'}
+                      onChange={handleInputChange}
+                    />
+                    Serangga
+                  </label>
+                </div>
                 <label>Deskripsi:</label>
                 <CKEditor
                   editor={ClassicEditor}

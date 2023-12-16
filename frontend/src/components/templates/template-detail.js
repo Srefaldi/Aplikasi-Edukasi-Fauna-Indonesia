@@ -26,12 +26,6 @@ const createFaunaDetailTemplate = (fauna) => {
         </div>
       </div>
 
-      <div className="welcome-text">
-        <h2>Selamat Datang di Halaman Detail Fauna!</h2>
-        <p>Temukan informasi lengkap mengenai fauna yang menarik di Indonesia.</p>
-        <p>Jelajahi detail spesies, habitat, dan informasi menarik lainnya.</p>
-        <p>Selamat menikmati penjelajahan Anda!</p>
-      </div>
 
       <div className="fauna-detail">
         <h2 className="fauna__name">{name}</h2>
@@ -156,7 +150,9 @@ const styles = `
   .fauna__info {
     margin-bottom: 20px;
   }
-
+  .fauna__info p{
+    font-size: 16px;
+  }
   .fauna__info h3 {
     font-size: 20px;
     font-weight: bold;
@@ -170,6 +166,8 @@ const styles = `
   }
 
   .fauna__description {
+    width: 100%;
+    max-width: 1200px;
     margin-bottom: 20px;
   }
 
@@ -179,12 +177,18 @@ const styles = `
     color: #0B2447;
   }
 
-  .fauna__description p {
-    font-size: 16px;
-    color: #333;
-    text-align: justify;
-    white-space: normal; 
-  }
+.fauna__description p {
+  justify-content: center;
+  text-align: justify;
+  
+  margin: 0 auto;
+  font-size: 16px;
+  color: #333;
+  text-align: justify;
+  overflow-wrap: break-word; /* Menangani potongan teks secara otomatis */
+  white-space: normal; /* Menampilkan teks secara normal */
+}
+
 `;
 
 const styleElement = document.createElement('style');

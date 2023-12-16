@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
-
+import '../css/leaderboard/style.css';
 const Leaderboard = () => {
   const [topScores, setTopScores] = useState([]);
   const [filterByPackage, setFilterByPackage] = useState('');
@@ -24,9 +24,9 @@ const Leaderboard = () => {
     if (!Array.isArray(data)) {
       return null;
     }
-
+  
     return data.map((leader, index) => (
-      <tr key={index}>
+      <tr className="baris2" key={index}>
         <th scope="row">{index + 1}</th>
         <td>{leader.nama}</td>
         <td>{leader.paket}</td>
@@ -45,14 +45,6 @@ const Leaderboard = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <div className="container-fluid px-0 overflow-hidden">
-        <div className="row mx-0">
-          <div className="col-lg-12 px-0">
-            <img id="homeImage" className="lazyload img-fluid w-100" data-src={hero} alt="Foto Home" />
-          </div>
-        </div>
-      </div>
       {/* Leaderboard Section */}
       <div className="container mt-5 mb-5">
         <h1>Leaderboard</h1>
@@ -65,28 +57,28 @@ const Leaderboard = () => {
             onChange={handlePackageFilterChange}
           >
             <option value="">All</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="E">E</option>
-            <option value="F">F</option>
+            <option value="Kalimantan">Kalimantan</option>
+            <option value="Sulawesi">Sulawesi</option>
+            <option value="Sumatera">Sumatera</option>
+            <option value="Jawa">Jawa</option>
+            <option value="Papua">Papua</option>
+            <option value="Nusantara">Nusantara</option>
           </select>
         </div>
 
         <div className="table-responsive">
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Paket</th>
-                <th scope="col">Score</th>
-              </tr>
-            </thead>
-            <tbody>{renderLeaderboardRows(topScores)}</tbody>
-          </table>
-        </div>
+  <table className="table table-striped">
+    <thead>
+      <tr className='baris'>
+        <th scope="col">Rank</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Paket</th>
+        <th scope="col">Score</th>
+      </tr>
+    </thead>
+    <tbody>{renderLeaderboardRows(topScores)}</tbody>
+  </table>
+</div>
       </div>
     </div>
   );

@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import '../css/home/home.css'; 
-import hero from '../../public/home/hero.jpg';
-import hero2 from '../../public/home/burung.jpg';
-import hero3 from '../../public/home/monyet.jpg';
-import mamalia from '../../public/home/jenis/mamalia.jpg';
-import reptil from '../../public/home/jenis/reptil.jpg';
-import burung from '../../public/home/jenis/burung.jpg';
-import ampibi from '../../public/home/jenis/ampibi.jpg';
-import ikan from '../../public/home/jenis/ikan.jpg';
-import serangga from '../../public/home/jenis/serangga.jpg';
-import kalimantan from '../../public/home/pulau/kalimantan.jpg';
-import papua from '../../public/home/pulau/papua.jpg';
-import sulawesi from '../../public/home/pulau/sulawesi.jpg';
-import sumatera from '../../public/home/pulau/sumatera.jpg';
-import jawa from '../../public/home/pulau/jawa.jpg';
+
+const hero = new URL('../../public/home/hero.jpg', import.meta.url);
+const hero2 = new URL('../../public/home/burung.jpg', import.meta.url);
+const hero3 = new URL('../../public/home/monyet.jpg', import.meta.url);
+const mamalia = new URL('../../public/home/jenis/Mamalia.jpg', import.meta.url);
+const reptil = new URL('../../public/home/jenis/reptil.jpg', import.meta.url);
+const burung = new URL('../../public/home/jenis/Burung.jpg', import.meta.url);
+const ampibi = new URL('../../public/home/jenis/ampibi.jpg', import.meta.url);
+const ikan = new URL('../../public/home/jenis/ikan.jpg', import.meta.url);
+const serangga = new URL('../../public/home/jenis/serangga.jpg', import.meta.url);
+const kalimantan = new URL('../../public/home/pulau/kalimantan.jpg', import.meta.url);
+const papua = new URL('../../public/home/pulau/papua.jpg', import.meta.url);
+const sulawesi = new URL('../../public/home/pulau/sulawesi.jpg', import.meta.url);
+const sumatera = new URL('../../public/home/pulau/sumatera.jpg', import.meta.url);
+const jawa = new URL('../../public/home/pulau/jawa.jpg', import.meta.url);
 
 const faunaImages = [mamalia, reptil, burung, ampibi, ikan, serangga];
 const faunaNames = ['Mamalia', 'Reptil', 'Burung', 'Amfibi', 'Ikan', 'Serangga'];
@@ -40,7 +41,7 @@ const HomePage = () => {
   return (
     <div>
       {/* HERO SECTION */}
-      <img className="homeImage" src={hero} alt="Foto Home"/>
+      <img className="lazyload homeImage" data-src={hero} alt="Foto Home"/>
       <div className="container-home">
         <div className="container1">
         </div>
@@ -54,10 +55,10 @@ const HomePage = () => {
             Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. </p>
           </div>
           <div className="item small">
-            <img src={hero2} alt="Foto Home" />
+            <img className="lazyload" data-src={hero2} alt="Foto Home" />
           </div>
           <div className="item small">
-            <img src={hero3} alt="Foto Home" />
+            <img className="lazyload" data-src={hero3} alt="Foto Home" />
           </div>
         </div>
       </div>
@@ -72,7 +73,7 @@ const HomePage = () => {
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>KALIMANTAN</h1>
-            <img className="pulau-img" src={kalimantan} alt="Foto Home" />
+            <img className="lazyload pulau-img" data-src={kalimantan} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -86,7 +87,7 @@ const HomePage = () => {
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>JAWA</h1>
-            <img className="pulau-img" src={jawa} alt="Foto Home" />
+            <img className="lazyload pulau-img" data-src={jawa} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -101,7 +102,7 @@ const HomePage = () => {
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>SULAWESI</h1>
-            <img className="pulau-img" src={sulawesi} alt="Foto Home" />
+            <img className="lazyload pulau-img" data-src={sulawesi} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -117,7 +118,7 @@ const HomePage = () => {
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>SUMATERA</h1>
-            <img className="pulau-img" src={sumatera} alt="Foto Home" />
+            <img className="lazyload pulau-img" data-src={sumatera} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -134,7 +135,7 @@ const HomePage = () => {
         <div className="pulau-container">
           <div className="fauna-item1">
             <h1>PAPUA</h1>
-            <img className="pulau-img" src={papua} alt="Foto Home" />
+            <img className="lazyload pulau-img" data-src={papua} alt="Foto Home" />
           </div>
           <div className="fauna-item2">
             <p>
@@ -162,8 +163,8 @@ const HomePage = () => {
           <div key={`fauna_${index}`} className="jenis1">
 
             <p>{faunaNames[currentSlide + index]}</p>
-            <img
-              src={image}
+            <img className="lazyload"
+              data-src={image}
               alt={`Foto ${index + 1}`}
 
               style={{ width: '350px', height: '250px', objectFit: 'cover' }}

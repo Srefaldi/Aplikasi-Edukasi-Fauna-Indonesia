@@ -176,28 +176,21 @@
 /* HERO SECTION */
 @media (max-width: 768px) {
   .container2 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  
-  .container2 {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr; 
   }
   
   .item {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; 
+    margin-bottom: 20px; 
   }
   
   .item.big {
     grid-column: span 3;
   }
   
-  .item.small {
-    grid-column: span 1;
+  .item.small{
+    grid-column:span 1;
   }
   
   .item.big img,

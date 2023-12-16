@@ -246,7 +246,6 @@
     };
 
     return (
-      <div>
       <div className="setfauna-container mt-5 content">
   <h1 className="left">Data Quiz</h1>
   <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
@@ -269,7 +268,6 @@
       </div>
     </div>
   </div>
-</div>
 
     
 

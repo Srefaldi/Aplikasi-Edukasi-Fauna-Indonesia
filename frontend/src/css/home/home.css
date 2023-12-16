@@ -159,10 +159,8 @@
   line-height: 1.6;
   color: #333;
   text-align: justify;
-  overflow: hidden;
-  text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: unset;
+  -webkit-line-clamp: 10;
   -webkit-box-orient: vertical;
 }
 
@@ -210,35 +208,37 @@
 }
 
 .header-jenis {
+  margin-top: 40px;
   text-align: center;
+  padding: 20px;
   background-color: #f0f0f0;
   margin-bottom: 30px;
-  width: 60%;
-  margin: 0 auto 0;
 }
 
 .header-jenis p {
   text-align: center;
   font-size: 16px;
-  margin-bottom: 60px
 }
+
+
 
 .jenis-container {
-  background: #f0f0f0;
-  margin: 140px 0 140px;
-  padding: 140px 0 140px;
-}
-
-.jenis-content {
 display: flex;
 align-items: center;
 justify-content: center;
+
+
 }
 
 .jenis1 {
 margin: 0 10px; 
 text-align: center; 
 }
+
+.jenis1 img {
+margin-bottom: 30px;
+}
+
 
 
 .nav-left,
@@ -258,10 +258,7 @@ transform: translateX(100%);
 transform: translateX(0);
 }
 
-.jenis1 img {
-  max-width: 250px; 
-  height: 200px;
-}
+
 .jenis1 p {
   margin-top: 20px;
   color: #f0f0f0;
@@ -272,17 +269,6 @@ transform: translateX(0);
 
 .jenis1 p:hover {
   font-weight: bold;
-}
-
-/* PLAY GAME */
-
-.game-container {
-  padding: 0 30px 140px;
-  
-}
-
-.game-container h2 {
-  margin-bottom: 20px;
 }
 
 /* PULAU CONTAINER RESPONSIVE */

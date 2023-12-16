@@ -26,14 +26,16 @@
     }
   
     .table tbody {
-      display: block;
-    }
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+  }
   
-    .table tr {
-      display: block;
-      margin-bottom: 15px; 
-      border: 1px solid #ddd; 
-    }
+  .table tr {
+    width: 100%; 
+    gap: 64px;
+    margin-bottom: 15px;
+  }
   .baris {
     display: flex;
     flex-direction: row;
@@ -56,6 +58,15 @@
       float: left;
       text-transform: uppercase;
       padding-left: 15px; 
+    }
+    .table tbody tr {
+      border: 1px solid #ddd;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto; 
     }
   }
   

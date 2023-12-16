@@ -26,7 +26,7 @@ const Leaderboard = () => {
     }
   
     return data.map((leader, index) => (
-      <tr className="baris2" key={index}>
+      <tr className={window.innerWidth <= 767 ? 'baris2' : 'baris'} key={index}>
         <th scope="row">{index + 1}</th>
         <td>{leader.nama}</td>
         <td>{leader.paket}</td>

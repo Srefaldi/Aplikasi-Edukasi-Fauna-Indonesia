@@ -1,11 +1,11 @@
 /* SetQuizResponsive.css */
 @media (max-width: 767px) {
     .setfauna-container {
-        left: 0;
-        margin-left: 20px; 
-        margin-right:100px ; 
-        width: 100%;
-        max-width: 1200px;
+      max-width: 1200px;
+      margin: 100px auto 20px auto; /* Atur margin kiri dan kanan agar konten tetap ditengah */
+      padding-left: 20px; /* Padding kiri untuk konten agar tidak terlalu ke kiri */
+      padding-right: 20px; /* Padding kanan untuk konten agar tidak terlalu ke kanan */
+      width: 100%;
       }
       open {
         left: 50%; 
@@ -53,7 +53,7 @@
         overflow-x: auto;
         margin-left: auto; 
         margin-right: auto; 
-        max-width: 100%; 
+        max-width: 1000px; 
     }
     .table tbody tr {
         display: block;
@@ -64,7 +64,7 @@
     .table tbody td {
         display: block;
         text-align: left;
-        width: 100%;
+        width: 50%;
     }
 
     .header {

@@ -219,7 +219,7 @@ const truncatedDescription = (description) => {
         {/* Modal for adding new fauna */}
         {isModalOpen && (
           <div className="modal">
-           <div className="modal-content open">
+           <div className="modal-content openn">
               <span className="close" onClick={closeModal}>
                 &times;
               </span>

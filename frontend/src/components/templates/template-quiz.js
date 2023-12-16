@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-
+import { Ripple, initMDB } from 'mdb-ui-kit';
 const TemplateQuiz = ({ quizData }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -74,6 +74,10 @@ const TemplateQuiz = ({ quizData }) => {
 
   const options = [option_1, option_2, option_3, option_4].filter(Boolean);
 
+  useEffect(() => {
+    initMDB({ Ripple });
+  }, []); 
+
   return (
     <div className="container mt-5 mb-5">
       <div className="d-flex justify-content-center row">
@@ -90,12 +94,20 @@ const TemplateQuiz = ({ quizData }) => {
                 <h5 className="mt-1 ml-2">{question}</h5>
               </div>
               {options.length > 0 ? (
-                options.map((option, index) => (
-                  <div className="ans ml-2" style={{ marginBottom: '10px', display: 'flex', alignItems: 'center' }} key={index}>
-                    <label className="radio" style={{ display: 'flex', alignItems: 'center' }}>
+              <div className="options-container">
+                {options.map((option, index) => (
+                  <div className="btn-group" key={index}>
+                    <label
+                      className="btn btn-secondary"
+                      style={{
+                        backgroundColor: selectedAnswer === option ? '#3498db' : '#F3F8FF',
+                        textAlign: 'left', 
+                      }}
+                    >
                       <input
                         type="radio"
                         name="answer"
+                        className="btn-check"
                         value={option}
                         checked={selectedAnswer === option}
                         onChange={handleOptionChange}
@@ -104,10 +116,12 @@ const TemplateQuiz = ({ quizData }) => {
                       <span style={{ color: 'black' }}>{option}</span>
                     </label>
                   </div>
-                ))
-              ) : (
-                <p>No options available</p>
-              )}
+                ))}
+              </div>
+            ) : (
+              <p>No options available</p>
+            )}
+
             </div>
             <div className="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
               <button

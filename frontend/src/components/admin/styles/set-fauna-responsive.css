@@ -13,7 +13,7 @@
 }
 @media (max-width: 767px) {
   
-    .open {
+    .openn{
       left: 50%; 
      
       transform: translateX(-50%);

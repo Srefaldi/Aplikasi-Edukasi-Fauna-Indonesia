@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import TemplateQuiz from './templates/template-quiz';
 import axios from 'axios';
-import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
-
 const PlayQuiz = () => {
   const [quizData, setQuizData] = useState([]);
   const { package: selectedPackage } = useParams();

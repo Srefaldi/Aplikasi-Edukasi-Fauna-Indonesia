@@ -292,6 +292,7 @@ margin-bottom: 20px;
 
 /* Set Fauna Styles */
 .setfauna-container {
+  
   margin-left: 250px;
   margin-top: 30px;
   width: 100%;
@@ -335,7 +336,8 @@ margin-bottom: 20px;
 }
 
 .setfauna-container .table {
-  width: 83%;
+  width: 100%;
+  max-width: 1100px;
   background-color: #fff;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -382,7 +384,14 @@ margin-bottom: 20px;
   cursor: pointer;
 }
 
-.radio-group {
-  display: flex;
-  justify-content: space-between; /* Adjust the spacing as needed */
+/* Saat dipilih */
+.btn-check:checked + .btn-secondary,
+.btn-check:checked + .btn-secondary[data-mdb-ripple-init] {
+  background-color: #3498db; /* Ganti dengan warna yang diinginkan saat dipilih */
+}
+
+/* Saat tidak dipilih */
+.btn-check:not(:checked) + .btn-secondary,
+.btn-check:not(:checked) + .btn-secondary[data-mdb-ripple-init] {
+  background-color:#112546; /* Ganti dengan warna yang diinginkan saat tidak dipilih */
 }

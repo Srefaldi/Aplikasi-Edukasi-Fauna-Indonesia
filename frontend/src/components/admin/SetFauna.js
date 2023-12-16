@@ -9,7 +9,7 @@ import Sidebar from './Sidebar';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-
+import { Ripple, initMDB } from 'mdb-ui-kit';
 
 const SetFauna = () => {
   const [token, setToken] = useState('');
@@ -176,6 +176,7 @@ const SetFauna = () => {
   );
 
   useEffect(() => {
+    initMDB({ Ripple });
     refreshToken();
     fetchData();
   }, []);
@@ -218,7 +219,7 @@ const truncatedDescription = (description) => {
         {/* Modal for adding new fauna */}
         {isModalOpen && (
           <div className="modal">
-           <div className="modal-content open" style={{ width: '50%' }}>
+           <div className="modal-content open">
               <span className="close" onClick={closeModal}>
                 &times;
               </span>
@@ -230,122 +231,166 @@ const truncatedDescription = (description) => {
                   value={formData.name}
                   onChange={handleInputChange}
                 />
+                
                 <label>Kategori 1:</label>
-                <div className="radio-group">
-                  <label>
+                  <div class="btn-group">
                     <input
                       type="radio"
+                      class="btn-check"
                       name="kategori_1"
-                      value="Jawa"
+                      id="option1"
+                      autoComplete="off"
                       checked={formData.kategori_1 === 'Jawa'}
                       onChange={handleInputChange}
+                      value="Jawa"
                     />
-                    Jawa
-                  </label>
-                  <label>
+                    <label class="btn btn-secondary" for="option1" data-mdb-ripple-init>
+                      Jawa
+                    </label>
+
                     <input
                       type="radio"
+                      class="btn-check"
                       name="kategori_1"
-                      value="Kalimantan"
+                      id="option2"
+                      autoComplete="off"
                       checked={formData.kategori_1 === 'Kalimantan'}
                       onChange={handleInputChange}
+                      value="Kalimantan"
                     />
-                    Kalimantan
-                  </label>
-                  <label>
+                    <label class="btn btn-secondary" for="option2" data-mdb-ripple-init>
+                      Kalimantan
+                    </label>
+
                     <input
                       type="radio"
+                      class="btn-check"
                       name="kategori_1"
-                      value="Papua"
+                      id="option3"
+                      autoComplete="off"
                       checked={formData.kategori_1 === 'Papua'}
                       onChange={handleInputChange}
+                      value="Papua"
                     />
-                    Papua
-                  </label>
-                  <label>
+                    <label class="btn btn-secondary" for="option3" data-mdb-ripple-init>
+                      Papua
+                    </label>
+
                     <input
                       type="radio"
+                      class="btn-check"
                       name="kategori_1"
-                      value="Sumatera"
+                      id="option4"
+                      autoComplete="off"
                       checked={formData.kategori_1 === 'Sumatera'}
                       onChange={handleInputChange}
+                      value="Sumatera"
                     />
-                    Sumatera
-                  </label>
-                  <label>
+                    <label class="btn btn-secondary" for="option4" data-mdb-ripple-init>
+                      Sumatera
+                    </label>
+
                     <input
                       type="radio"
+                      class="btn-check"
                       name="kategori_1"
-                      value="Sulawesi"
+                      id="option5"
+                      autoComplete="off"
                       checked={formData.kategori_1 === 'Sulawesi'}
                       onChange={handleInputChange}
+                      value="Sulawesi"
                     />
-                    Sulawesi
-                  </label>
-                </div>
-                <label>Kategori 2:</label>
-                <div className="radio-group">
-                  <label>
-                    <input
-                      type="radio"
-                      name="kategori_2"
-                      value="Mamalia"
-                      checked={formData.kategori_2 === 'Mamalia'}
-                      onChange={handleInputChange}
-                    />
-                    Mamalia
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="kategori_2"
-                      value="Reptil"
-                      checked={formData.kategori_2 === 'Reptil'}
-                      onChange={handleInputChange}
-                    />
-                    Reptil
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="kategori_2"
-                      value="Burung"
-                      checked={formData.kategori_2 === 'Burung'}
-                      onChange={handleInputChange}
-                    />
-                    Burung
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="kategori_2"
-                      value="Ampibi"
-                      checked={formData.kategori_2 === 'Ampibi'}
-                      onChange={handleInputChange}
-                    />
-                    Ampibi
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="kategori_2"
-                      value="Ikan"
-                      checked={formData.kategori_2 === 'Ikan'}
-                      onChange={handleInputChange}
-                    />
-                    Ikan
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      name="kategori_2"
-                      value="Serangga"
-                      checked={formData.kategori_2 === 'Serangga'}
-                      onChange={handleInputChange}
-                    />
-                    Serangga
-                  </label>
-                </div>
+                    <label class="btn btn-secondary" for="option5" data-mdb-ripple-init>
+                      Sulawesi
+                    </label>
+                  </div>
+
+                  <label>Kategori 2:</label>
+                      `<div className="btn-group">
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="kategori_2"
+                          id="mamalia"
+                          autoComplete="off"
+                          checked={formData.kategori_2 === 'Mamalia'}
+                          onChange={handleInputChange}
+                          value="Mamalia"
+                        />
+                        <label className="btn btn-secondary" htmlFor="mamalia" data-mdb-ripple-init>
+                          Mamalia
+                        </label>
+
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="kategori_2"
+                          id="reptil"
+                          autoComplete="off"
+                          checked={formData.kategori_2 === 'Reptil'}
+                          onChange={handleInputChange}
+                          value="Reptil"
+                        />
+                        <label className="btn btn-secondary" htmlFor="reptil" data-mdb-ripple-init>
+                          Reptil
+                        </label>
+
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="kategori_2"
+                          id="burung"
+                          autoComplete="off"
+                          checked={formData.kategori_2 === 'Burung'}
+                          onChange={handleInputChange}
+                          value="Burung"
+                        />
+                        <label className="btn btn-secondary" htmlFor="burung" data-mdb-ripple-init>
+                          Burung
+                        </label>
+
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="kategori_2"
+                          id="ampibi"
+                          autoComplete="off"
+                          checked={formData.kategori_2 === 'Ampibi'}
+                          onChange={handleInputChange}
+                          value="Ampibi"
+                        />
+                        <label className="btn btn-secondary" htmlFor="ampibi" data-mdb-ripple-init>
+                          Ampibi
+                        </label>
+
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="kategori_2"
+                          id="ikan"
+                          autoComplete="off"
+                          checked={formData.kategori_2 === 'Ikan'}
+                          onChange={handleInputChange}
+                          value="Ikan"
+                        />
+                        <label className="btn btn-secondary" htmlFor="ikan" data-mdb-ripple-init>
+                          Ikan
+                        </label>
+
+                        <input
+                          type="radio"
+                          className="btn-check"
+                          name="kategori_2"
+                          id="serangga"
+                          autoComplete="off"
+                          checked={formData.kategori_2 === 'Serangga'}
+                          onChange={handleInputChange}
+                          value="Serangga"
+                        />
+                        <label className="btn btn-secondary" htmlFor="serangga" data-mdb-ripple-init>
+                          Serangga
+                        </label>
+                      </div>`
                 <label>Deskripsi:</label>
                 <CKEditor
                   editor={ClassicEditor}

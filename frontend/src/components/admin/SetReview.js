@@ -4,7 +4,7 @@ import { jwtDecode } from 'jwt-decode';
 import { useNavigate } from 'react-router-dom';
 import './styles/Admin.css';
 import Sidebar from './Sidebar';
-import './styles/set-reviews.css';
+import './styles/set-fauna-responsive.css';
 
 const SetReview = () => {
   const [token, setToken] = useState('');
@@ -161,21 +161,22 @@ const SetReview = () => {
       <div className="setfauna-container content">
         <h1>Data Reviewer</h1>
         <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
-        <div>
-          <input
-            type="text"
-            placeholder="Cari Data..."
-            className="searchInput"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <button className="btn-search" onClick={() => handleSearch()}>
-            Cari
-          </button>
-          <button className="btn-reset" onClick={() => handleResetSearch()}>
-            Reset
-          </button>
-        </div>
+        <div className="d-flex justify-content-between align-items-center mb-3">
+          <div className="d-flex flex-column">
+            <div className="d-flex flex-column">
+            <input
+              type="text"
+              placeholder="Cari Data..."
+              className="form-control"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />  
+            <div className="btn btn-primary cari" onClick={() => handleSearch()}>
+              Cari
+            </div>
+          </div>
+          </div>
+        </div> 
 
         {isModalOpen && (
           <div className="modal">
@@ -237,7 +238,7 @@ const SetReview = () => {
                 <td>{review.review}</td>
                 <td className="actionButtonsCell">
                   <div
-                    className="deleteButton"
+                    className="btn btn-danger"
                     onClick={() => handleDeleteReview(review.id)}
                   >
                     Hapus

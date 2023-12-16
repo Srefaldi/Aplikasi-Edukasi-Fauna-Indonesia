@@ -1,0 +1,109 @@
+@media (max-width: 576px) {
+    .dropdown-submenu .dropdown-menu {
+        display: none; /* Initially hide submenu items */
+        position: static; /* Change the submenu position to static */
+        float: none; /* Remove float */
+        width: auto; /* Set width to auto */
+        margin-top: 0; /* Reset margin */
+        margin-left: 0; /* Reset margin */
+      }
+    
+      .dropdown-submenu .dropdown-item ul li{
+        padding-left: 20px; /* Add padding to differentiate submenu items */
+      }
+    
+      .submenu-pulau .dropdown-menu,
+      .submenu-jenis-fauna .dropdown-menu ul li{
+        /* Adjust the positioning of submenus */
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+        min-width: 150px; /* Set a minimum width for submenus */
+      }
+    .kategori-content {
+      grid-template-columns: 1fr;
+    }
+  
+    .fauna-item-content {
+      padding: 10px;
+    }
+  
+    .fauna-title {
+      font-size: 16px;
+    }
+  
+    .fauna-item-content h5 {
+      font-size: 13px;
+    }
+  
+    .fauna-item-content p {
+      font-size: 13px;
+    }
+    .dropdown-container {
+      margin-top: 5px;
+      margin-left: 10px; /* Adjust margin for smaller screens */
+      width: 100%; /* Make the dropdown full width */
+    }
+  
+    .dropdown-toggle {
+      font-size: 14px; /* Adjust font size for smaller screens */
+      padding: 6px 12px; /* Adjust padding for smaller screens */
+    }
+  
+    .dropdown-item-container {
+      padding: 6px 12px; /* Adjust padding for smaller screens */
+    }
+  
+    .dropdown-menu {
+      width: 100%;
+      max-width: 100px;
+      left: 0; 
+      right: auto; 
+      transform: none; 
+    }
+  
+    .fauna-item-content {
+      padding: 10px; 
+    }
+  
+    .fauna-title {
+      font-size: 16px; 
+    }
+  
+    .fauna-item-content h5,
+    .fauna-item-content p {
+      font-size: 12px; 
+    }
+    .form-control1{
+        margin-top: 40px;
+      margin-right: 7px;
+      justify-content: center;
+    }
+    .cari1{
+        margin-top: 45px;
+        margin-bottom: 15px;
+    }
+  }
+  
+  @media (min-width: 577px) and (max-width: 767px) {
+    .kategori-content {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  
+    .fauna-item-content {
+      padding: 12px;
+    }
+  
+    .fauna-title {
+      font-size: 15px;
+    }
+  
+    .fauna-item-content h5 {
+      font-size: 12px;
+    }
+  
+    .fauna-item-content p {
+      font-size: 12px;
+    }
+   
+  }

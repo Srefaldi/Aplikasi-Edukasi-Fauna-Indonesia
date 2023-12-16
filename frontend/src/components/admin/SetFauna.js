@@ -192,11 +192,11 @@ const truncatedDescription = (description) => {
     <>
       <Sidebar />
       <div className="setfauna-container mt-5 content">
-      <h1 className="left">Data Fauna</h1>
-      <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
-      <div className="d-flex justify-content-between align-items-center mb-3">
-      <div className="d-flex flex-column">
-    <div className="btn btn-primary mb-2" onClick={openModal}>
+  <h1 className="left">Data Fauna</h1>
+  <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
+  <div className="d-flex justify-content-between align-items-center mb-3">
+  <div className="d-flex flex-column">
+    <div style={{ backgroundColor:  '#3498db'}}className="btn btn-primary2 mb-2" onClick={openModal}>
       Tambah Fauna
     </div>
     {/* <div className="btn btn-success mb-2 cetak-fauna">Cetak</div> */}

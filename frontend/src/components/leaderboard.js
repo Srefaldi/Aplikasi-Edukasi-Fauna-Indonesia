@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/leaderboard/leaderboard.css';
-
+import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
+import '../css/leaderboard/style.css';
 const Leaderboard = () => {
   const [topScores, setTopScores] = useState([]);
   const [filterByPackage, setFilterByPackage] = useState('');
@@ -27,8 +26,8 @@ const Leaderboard = () => {
     }
   
     return data.map((leader, index) => (
-      <tr key={index} className={index % 2 === 0 ? 'even-row' : 'odd-row'}>
-        <td>{index + 1}</td>
+      <tr className="baris2" key={index}>
+        <th scope="row">{index + 1}</th>
         <td>{leader.nama}</td>
         <td>{leader.paket}</td>
         <td>{leader.score}</td>
@@ -68,18 +67,18 @@ const Leaderboard = () => {
         </div>
 
         <div className="table-responsive">
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Paket</th>
-                <th scope="col">Score</th>
-              </tr>
-            </thead>
-            {renderLeaderboardRows(topScores)}
-          </table>
-        </div>
+  <table className="table table-striped">
+    <thead>
+      <tr className='baris'>
+        <th scope="col">Rank</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Paket</th>
+        <th scope="col">Score</th>
+      </tr>
+    </thead>
+    <tbody>{renderLeaderboardRows(topScores)}</tbody>
+  </table>
+</div>
       </div>
     </div>
   );

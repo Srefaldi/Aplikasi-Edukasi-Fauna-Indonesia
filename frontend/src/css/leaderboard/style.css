@@ -1,0 +1,61 @@
+/* style.css */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+
+  .table th,
+  .table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+
+  @media (max-width: 767px) {
+    .table-responsive {
+      overflow-x: auto;
+    }
+  
+    .table {
+      width: 100%;
+    }
+  
+    .table thead {
+    }
+  
+    .table tbody {
+      display: block;
+    }
+  
+    .table tr {
+      display: block;
+      margin-bottom: 15px; 
+      border: 1px solid #ddd; 
+    }
+  .baris {
+    display: flex;
+    flex-direction: row;
+  }
+  .bais2{
+    display: flex;
+    flex-direction: column;
+  }
+    .table td {
+      text-align: left;
+      width: 100%;
+      box-sizing: border-box;
+      word-wrap: break-word;
+      padding-left: 50%; 
+    }
+  
+    .table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      float: left;
+      text-transform: uppercase;
+      padding-left: 15px; 
+    }
+  }
+  

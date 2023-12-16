@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
-
+import '../css/leaderboard/style.css';
 const Leaderboard = () => {
   const [topScores, setTopScores] = useState([]);
   const [filterByPackage, setFilterByPackage] = useState('');
@@ -26,7 +26,7 @@ const Leaderboard = () => {
     }
 
     return data.map((leader, index) => (
-      <tr key={index}>
+      <tr className="baris2" key={index}>
         <th scope="row">{index + 1}</th>
         <td>{leader.nama}</td>
         <td>{leader.paket}</td>
@@ -75,18 +75,18 @@ const Leaderboard = () => {
         </div>
 
         <div className="table-responsive">
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th scope="col">Rank</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Paket</th>
-                <th scope="col">Score</th>
-              </tr>
-            </thead>
-            <tbody>{renderLeaderboardRows(topScores)}</tbody>
-          </table>
-        </div>
+  <table className="table table-striped">
+    <thead>
+      <tr className='baris'>
+        <th scope="col">Rank</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Paket</th>
+        <th scope="col">Score</th>
+      </tr>
+    </thead>
+    <tbody>{renderLeaderboardRows(topScores)}</tbody>
+  </table>
+</div>
       </div>
     </div>
   );

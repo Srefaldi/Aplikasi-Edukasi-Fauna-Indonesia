@@ -1,6 +1,8 @@
 @media (min-width: 768px) {
   .btn-primary {
     width: 30%;
+    background-color: #3498db;
+  color: white;
     margin-bottom: 10px;
   }
   .cetak {
@@ -85,8 +87,10 @@
       margin-top: 15px;
     }
     
-    .btn-primary {
+    .btn-primary2 {
       width: 30%;
+      background-color: #3498db;
+      color: white;
       margin-bottom: 10px;
     }
     .cetak-fauna {
@@ -97,5 +101,9 @@
       margin-left: 20px;
       width: 30%;
     }
+  }
+  .btn-primary2{
+    background-color: #3498db;
+  color: white;
   }
   

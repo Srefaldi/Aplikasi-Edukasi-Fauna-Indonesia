@@ -246,7 +246,7 @@
       <hr style={{ border: '1px solid black', marginBottom: '20px' }} />
       <div className="d-flex justify-content-between align-items-center mb-3">
       <div className="d-flex flex-column">
-      <div className="btn btn-primary mb-2 cetak" onClick={openModal}>
+      <div className="btn btn-primary1 mb-2 cetak" onClick={openModal}>
       Tambah Quiz
     </div>
       </div>

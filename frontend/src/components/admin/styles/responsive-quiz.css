@@ -84,9 +84,10 @@
         border: 1px solid #ccc;
         margin-bottom: 20px;
     }  
-    .btn-primary {
+    .btn-primary1 {
       width: 30%;
       margin-bottom: 10px;
+      background-color: #3498db;
     }
     .cetak {
       width: 100%;
@@ -94,10 +95,15 @@
     }
 
 }
+.btn-primary1{
+  background-color: #3498db;
+  color: white;
+}
 @media (min-width: 768px) {
-  .btn-primary {
+  .btn-primary1 {
     width: 30%;
     margin-bottom: 10px;
+    background-color: #3498db;
   }
   .cetak {
     width: 100%;

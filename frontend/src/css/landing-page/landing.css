@@ -394,15 +394,6 @@ h5 {
   color: #444444;
 }
 
-p {
-  font-size: 0.8rem;
-  line-height: 1.6;
-  color: #444444;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  -webkit-line-clamp: 5; 
-}
 
 .user-review {
   display: flex;

@@ -74,16 +74,21 @@
     }
 
     .input-container h1 {
-        font-size: 12px;
+        font-size: 16px;
         text-align: center;
     }
 
     .input-container p {
-        font-size: 10px;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: unset;
+        -webkit-box-orient: vertical;
     }
 
     .input-quiz {
-        font-size: 10px;
+        font-size: 14px;
     }
 
     .btn-start-quiz {

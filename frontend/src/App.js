@@ -41,7 +41,7 @@ function App() {
         <Route path="/input-name-quiz/:package" element={<><Navbar /><Slider /><InputName /><Footer /></>} />
         <Route path="/play-quiz/:package" element={<><Navbar/><Slider /><PlayQuiz/><Footer/></>}/>
         <Route path="/result-quiz" element={<><Navbar/><Slider /><ResultQuiz/><Footer/></>}/>
-        <Route exact path="/leaderboard" element={<><Navbar /><Leaderboard /><Footer /></>} />
+        <Route exact path="/leaderboard" element={<><Navbar /><Slider /><Leaderboard /><Footer /></>} />
 
         {/* Admin Route */}
         <Route exact path="/login" element={<><Login/><Footer/></>}/>

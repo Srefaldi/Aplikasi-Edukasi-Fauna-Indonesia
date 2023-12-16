@@ -142,12 +142,12 @@ const Leaderboard = () => {
             onChange={handlePackageFilterChange}
           >
             <option value="">All</option>
-            <option value="A">A</option>
-            <option value="B">B</option>
-            <option value="C">C</option>
-            <option value="D">D</option>
-            <option value="E">E</option>
-            <option value="F">F</option>
+            <option value="Kalimantan">Kalimantan</option>
+            <option value="Sulawesi">Sulawesi</option>
+            <option value="Sumatera">Sumatera</option>
+            <option value="Jawa">Jawa</option>
+            <option value="Papua">Papua</option>
+            <option value="Nusantara">Nusantara</option>
           </select>
         </div>
 
@@ -171,12 +171,13 @@ const Leaderboard = () => {
                   value={selectedPackage}
                   onChange={(e) => setSelectedPackage(e.target.value)}
                 >
-                  <option value="A">A</option>
-                  <option value="B">B</option>
-                  <option value="C">C</option>
-                  <option value="D">D</option>
-                  <option value="E">E</option>
-                  <option value="F">F</option>
+                  <option value="">All</option>
+                  <option value="Kalimantan">Kalimantan</option>
+                  <option value="Sulawesi">Sulawesi</option>
+                  <option value="Sumatera">Sumatera</option>
+                  <option value="Jawa">Jawa</option>
+                  <option value="Papua">Papua</option>
+                  <option value="Nusantara">Nusantara</option>
                 </select>
                 <label>Score:</label>
                 <input

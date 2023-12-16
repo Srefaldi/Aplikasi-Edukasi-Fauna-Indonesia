@@ -8,7 +8,6 @@
   const SetQuizContainer = () => {
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
-    const navigate = useNavigate();
     const [quizList, setQuizList] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
@@ -21,6 +20,8 @@
       paket: '',
     });
     const [editId, setEditId] = useState(null);
+    const [filterByPackage, setFilterByPackage] = useState('');
+    const navigate = useNavigate();
 
     const openModal = () => {
       setIsModalOpen(true);
@@ -94,7 +95,11 @@
 
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/get-allquizzes');
+        const url = filterByPackage
+          ? `http://localhost:5000/get-quizzes-by-package/${filterByPackage}`
+          : 'http://localhost:5000/get-allquizzes';
+
+        const response = await axios.get(url);
         setQuizList(response.data);
       } catch (error) {
         console.error('Error fetching quiz data:', error);
@@ -133,7 +138,7 @@
     useEffect(() => {
       fetchData();
       refreshToken();
-    }, []);
+    }, [filterByPackage]);
 
     const styles = {
       container: {
@@ -151,18 +156,18 @@
         marginBottom: '20px',
       },
       modal: {
-          display: isModalOpen ? 'block' : 'none',
-          position: 'fixed',
-          zIndex: '1',
-          left: '50%',
-          top: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '100%',
-          height: '100%',
-          overflow: 'auto',
-          backgroundColor: 'rgba(0,0,0,0.4)',
-          padding: '130px',
-      },
+        display: isModalOpen ? 'block' : 'none',
+        position: 'fixed',
+        zIndex: '1',  // Make sure the z-index is appropriate
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '100%',
+        height: '100%',
+        overflow: 'auto',
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        padding: '130px',
+      },      
       modalContent: {
         backgroundColor: '#fefefe',
         margin: 'auto',
@@ -248,8 +253,18 @@
       <div className="d-flex flex-column">
       <div className="btn btn-primary1 mb-2 cetak" onClick={openModal}>
       Tambah Quiz
-    </div>
       </div>
+      </div>
+      <label>Filter by Package:</label>
+      <select value={filterByPackage} onChange={(e) => setFilterByPackage(e.target.value)}>
+        <option value="">All</option>
+        <option value="Kalimantan">Kalimantan</option>
+        <option value="Sulawesi">Sulawesi</option>
+        <option value="Sumatera">Sumatera</option>
+        <option value="Jawa">Jawa</option>
+        <option value="Papua">Papua</option>
+        <option value="Nusantara">Nusantara</option>
+      </select>
       
     </div>
 
@@ -309,14 +324,69 @@
                 value={formData.answer}
                 onChange={handleInputChange}
               />
-              <input
-                type="text"
-                placeholder="Paket"
-                style={styles.input}
-                name="paket"
-                value={formData.paket}
-                onChange={handleInputChange}
-              />
+              <label>Paket:</label>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="Kalimantan"
+                    checked={formData.paket === 'Kalimantan'}
+                    onChange={handleInputChange}
+                  />
+                  Kalimantan
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="Sulawesi"
+                    checked={formData.paket === 'Sulawesi'}
+                    onChange={handleInputChange}
+                  />
+                  Sulawesi
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="Sumatera"
+                    checked={formData.paket === 'Sumatera'}
+                    onChange={handleInputChange}
+                  />
+                  Sumatera
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="Jawa"
+                    checked={formData.paket === 'Jawa'}
+                    onChange={handleInputChange}
+                  />
+                  Jawa
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="Papua"
+                    checked={formData.paket === 'Papua'}
+                    onChange={handleInputChange}
+                  />
+                  Papua
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="Nusantara"
+                    checked={formData.paket === 'Nusantara'}
+                    onChange={handleInputChange}
+                  />
+                  Nusantara
+                </label>
+              </div>
               <button type="submit" style={styles.button} onClick={handleSaveQuiz}>
                 {editId ? 'Simpan Edit' : 'Simpan'}
               </button>

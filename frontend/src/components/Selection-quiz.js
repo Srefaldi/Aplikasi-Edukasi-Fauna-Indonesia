@@ -16,12 +16,12 @@ const QuizSelection = ({ onSelectQuiz }) => {
   };
   
   const packageDescriptions = {
-    Kalimantan: 'Paket ini mengajak Anda untuk menjelajahi spesies-spesies khas Kalimantan, termasuk informasi tentang habitatnya, serta fakta-fakta menarik yang membuatnya unik. Dalam petualangan ini, Anda akan diperkenalkan dengan keragaman fauna Kalimantan.',
-    Sulawesi: 'Petualangan ini membawa Anda dalam eksplorasi keanekaragaman hayati di Pulau Sulawesi. Anda akan menemukan spesies-spesies langka yang hanya ada di pulau ini, serta menguji pengetahuan Anda melalui kuis yang menantang.',
-    Sumatera: 'Mengajak Anda untuk menjelajahi habitat hutan Sumatera dan melihat bagaimana kehidupan fauna beradaptasi di lingkungan unik ini. Di sini, Anda dapat mempelajari tentang spesies langka, ekosistem khas, dan tantangan pelestarian fauna Sumatera.',
-    Jawa: 'Paket ini memberikan informasi komprehensif tentang spesies, habitat, dan fakta menarik tentang fauna di Pulau Jawa. Anda dapat menjelajahi keanekaragaman hayati yang luar biasa dan menguji pemahaman Anda melalui kuis yang mencakup berbagai aspek.',
-    Papua: 'Mengajak Anda untuk memahami keunikan fauna di Pulau Papua, termasuk penjelajahan spesies endemik dan melodi hutan hujan Papua. Di sini, Anda akan menguji pengetahuan Anda melalui kuis yang menggugah rasa ingin tahu tentang biodiversitas tertinggi di dunia.',
-    Nusantara: 'Paket ini mengundang Anda untuk merayakan kesatuan keanekaragaman hayati di seluruh nusantara Indonesia. Ini menggabungkan informasi tentang fauna dari berbagai pulau, memperkenalkan spesies-spesies khas, habitatnya, dan fakta menarik yang mencerminkan keindahan Indonesia.'
+    Kalimantan: 'Paket ini mengajak Anda untuk menjelajahi spesies-spesies khas Kalimantan, termasuk informasi tentang habitatnya, serta fakta-fakta menarik yang membuatnya unik.',
+    Sulawesi: 'Petualangan ini membawa Anda dalam eksplorasi keanekaragaman hayati di Pulau Sulawesi. Anda akan menemukan spesies-spesies langka yang hanya ada di pulau ini.',
+    Sumatera: 'Mengajak Anda untuk menjelajahi habitat hutan Sumatera dan melihat bagaimana kehidupan fauna beradaptasi di lingkungan unik ini.',
+    Jawa: 'Paket ini memberikan informasi komprehensif tentang spesies, habitat, dan fakta menarik tentang fauna di Pulau Jawa. ',
+    Papua: 'Mengajak Anda untuk memahami keunikan fauna di Pulau Papua, termasuk penjelajahan spesies endemik dan melodi hutan hujan Papua. ',
+    Nusantara: 'Paket ini mengundang Anda untuk merayakan kesatuan keanekaragaman hayati di seluruh nusantara Indonesia. Ini menggabungkan informasi tentang fauna dari berbagai pulau yang ada di Indonesia'
   };
   
     

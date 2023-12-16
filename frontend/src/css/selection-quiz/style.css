@@ -85,20 +85,32 @@
 
 }
 
+
 /* Responsive */
 @media (max-width: 767px) {
-  .welcome-text,
-  .selection-container {
+  .welcome-text {
     padding: 20px;
     margin: 10px;
   }
-  .selection-card{
-  display: flex;
-  flex-direction: row;
-  }
+
   .selection-container {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 10px;
+    padding: 20px;
+  }
+  
+  .selection-card {
+    flex-direction: column;
+    text-align: center;
+    width: 100%; 
+    box-sizing: border-box;
+  }
+
+  .cover-image-container {
+    order: 1;
+    margin-bottom: 10px;
+    width: 100%;
+    max-height: 200px; 
   }
 
   .cover-image {
@@ -108,7 +120,8 @@
   }
 
   .card-content {
-    padding: 15px;
+    order: 2;
+    width: 100%;
   }
 
   .card-headings {
@@ -119,17 +132,14 @@
   }
 
   .btn-card {
-    margin-top: auto; 
-    margin-left: auto; 
-    margin-right: auto; 
-    display: block; 
-    text-align: center; 
+    margin-top: 20px;
+    display: block;
+    text-align: center;
     background-color: #112546;
     color: #fff;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    margin-top: 30px;
     border-radius: 10px;
     font-size: 14px;
   }

@@ -309,14 +309,69 @@
                 value={formData.answer}
                 onChange={handleInputChange}
               />
-              <input
-                type="text"
-                placeholder="Paket"
-                style={styles.input}
-                name="paket"
-                value={formData.paket}
-                onChange={handleInputChange}
-              />
+              <label>Paket:</label>
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="A"
+                    checked={formData.paket === 'A'}
+                    onChange={handleInputChange}
+                  />
+                  A
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="B"
+                    checked={formData.paket === 'B'}
+                    onChange={handleInputChange}
+                  />
+                  B
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="C"
+                    checked={formData.paket === 'C'}
+                    onChange={handleInputChange}
+                  />
+                  C
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="D"
+                    checked={formData.paket === 'D'}
+                    onChange={handleInputChange}
+                  />
+                  D
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="E"
+                    checked={formData.paket === 'E'}
+                    onChange={handleInputChange}
+                  />
+                  E
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="paket"
+                    value="F"
+                    checked={formData.paket === 'F'}
+                    onChange={handleInputChange}
+                  />
+                  F
+                </label>
+              </div>
               <button type="submit" style={styles.button} onClick={handleSaveQuiz}>
                 {editId ? 'Simpan Edit' : 'Simpan'}
               </button>

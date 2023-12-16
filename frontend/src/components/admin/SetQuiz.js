@@ -258,12 +258,12 @@
       <label>Filter by Package:</label>
       <select value={filterByPackage} onChange={(e) => setFilterByPackage(e.target.value)}>
         <option value="">All</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-        <option value="D">D</option>
-        <option value="E">E</option>
-        <option value="F">F</option>
+        <option value="Kalimantan">Kalimantan</option>
+        <option value="Sulawesi">Sulawesi</option>
+        <option value="Sumatera">Sumatera</option>
+        <option value="Jawa">Jawa</option>
+        <option value="Papua">Papua</option>
+        <option value="Nusantara">Nusantara</option>
       </select>
       
     </div>
@@ -330,61 +330,61 @@
                   <input
                     type="radio"
                     name="paket"
-                    value="A"
-                    checked={formData.paket === 'A'}
+                    value="Kalimantan"
+                    checked={formData.paket === 'Kalimantan'}
                     onChange={handleInputChange}
                   />
-                  A
+                  Kalimantan
                 </label>
                 <label>
                   <input
                     type="radio"
                     name="paket"
-                    value="B"
-                    checked={formData.paket === 'B'}
+                    value="Sulawesi"
+                    checked={formData.paket === 'Sulawesi'}
                     onChange={handleInputChange}
                   />
-                  B
+                  Sulawesi
                 </label>
                 <label>
                   <input
                     type="radio"
                     name="paket"
-                    value="C"
-                    checked={formData.paket === 'C'}
+                    value="Sumatera"
+                    checked={formData.paket === 'Sumatera'}
                     onChange={handleInputChange}
                   />
-                  C
+                  Sumatera
                 </label>
                 <label>
                   <input
                     type="radio"
                     name="paket"
-                    value="D"
-                    checked={formData.paket === 'D'}
+                    value="Jawa"
+                    checked={formData.paket === 'Jawa'}
                     onChange={handleInputChange}
                   />
-                  D
+                  Jawa
                 </label>
                 <label>
                   <input
                     type="radio"
                     name="paket"
-                    value="E"
-                    checked={formData.paket === 'E'}
+                    value="Papua"
+                    checked={formData.paket === 'Papua'}
                     onChange={handleInputChange}
                   />
-                  E
+                  Papua
                 </label>
                 <label>
                   <input
                     type="radio"
                     name="paket"
-                    value="F"
-                    checked={formData.paket === 'F'}
+                    value="Nusantara"
+                    checked={formData.paket === 'Nusantara'}
                     onChange={handleInputChange}
                   />
-                  F
+                  Nusantara
                 </label>
               </div>
               <button type="submit" style={styles.button} onClick={handleSaveQuiz}>

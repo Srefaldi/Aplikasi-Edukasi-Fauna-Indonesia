@@ -1,21 +1,4 @@
 import React, { useState, useEffect } from "react";
-<<<<<<< Updated upstream
-import '../css/home/home.css'; 
-import hero from '../../public/home/hero.jpg';
-import hero2 from '../../public/home/burung.jpg';
-import hero3 from '../../public/home/monyet.jpg';
-import mamalia from '../../public/home/jenis/mamalia.jpg';
-import reptil from '../../public/home/jenis/reptil.jpg';
-import burung from '../../public/home/jenis/burung.jpg';
-import ampibi from '../../public/home/jenis/ampibi.jpg';
-import ikan from '../../public/home/jenis/ikan.jpg';
-import serangga from '../../public/home/jenis/serangga.jpg';
-import kalimantan from '../../public/home/pulau/kalimantan.jpg';
-import papua from '../../public/home/pulau/papua.jpg';
-import sulawesi from '../../public/home/pulau/sulawesi.jpg';
-import sumatera from '../../public/home/pulau/sumatera.jpg';
-import jawa from '../../public/home/pulau/jawa.jpg';
-=======
 import '../css/home/home.css'; // Pastikan file CSS Anda telah diimpor dengan benar
 
 // Import gambar
@@ -33,7 +16,6 @@ import sulawesi from '../css/home/pulau/sulawesi.jpg';
 import sumatera from '../css/home/pulau/sumatera.jpg';
 import papua from '../css/home/pulau/papua.jpg';
 import olga from '../css/home/olga.jpeg';
->>>>>>> Stashed changes
 
 const faunaImages = [mamalia, reptil, burung, ampibi, ikan, serangga];
 const faunaNames = ['Mamalia', 'Reptil', 'Burung', 'Amfibi', 'Ikan', 'Serangga'];
@@ -60,23 +42,11 @@ const HomePage = () => {
   return (
     <div>
       {/* HERO SECTION */}
-      <img className="homeImage" src={hero} alt="Foto Home"/>
+      <img className="homeImage" src={hero1} alt="Foto Home"/>
       <div className="container-home">
         <div className="container1">
         </div>
         {/* Section Kedua */}
-        <div className="container2">
-          <div className="item big">
-            <p>Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
-            Setiap sudut tanah air ini menyimpan pesona fauna yang menakjubkan, menghadirkan kecantikan tak terhingga. 
-            Aplikasi Edukasi Fauna Indonesia unggul dalam menyajikan informasi komprehensif mengenai keanekaragaman fauna Indonesia. 
-            Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
-            Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. </p>
-          </div>
-<<<<<<< Updated upstream
-          <div className="item small">
-            <img src={hero2} alt="Foto Home" />
-=======
           <div className="container2">
             <div className="item big">
               <p>Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
@@ -91,14 +61,7 @@ const HomePage = () => {
             <div className="item small">
               <img src={ikan} alt="Foto Home" />
             </div>
-            
-
->>>>>>> Stashed changes
           </div>
-          <div className="item small">
-            <img src={hero3} alt="Foto Home" />
-          </div>
-        </div>
       </div>
 
       {/* INTRO SECTION */}
@@ -167,14 +130,7 @@ const HomePage = () => {
             hanya menciptakan keindahan visual, tetapi juga menjadi bagian integral dari ekosistem pulau ini. Keberagaman 
             hayati yang luar biasa di Sumatera menjadikannya destinasi yang menarik bagi para penggemar alam.
             </p>
-          </div> 
-<<<<<<< Updated upstream
-=======
-          <div className="fauna-item1">
-            <h1>SUMATERA</h1>
-            <img className="pulau-img" src={sumatera} alt="Foto Home" />
           </div>
->>>>>>> Stashed changes
         </div>
 
         <div className="pulau-container">
@@ -195,33 +151,6 @@ const HomePage = () => {
       </div>
 
       {/* JENIS SECTION */}
-<<<<<<< Updated upstream
-      <div className="header-jenis">
-        <h1>Keberagaman Jenis Fauna</h1>
-      </div>
-
-      <div className="jenis-container mb-5">
-        <div className="nav-left" onClick={prevSlide}>
-          ❮
-        </div>
-
-        {faunaImages.slice(currentSlide, currentSlide + 3).map((image, index) => (
-          <div key={`fauna_${index}`} className="jenis1">
-
-            <p>{faunaNames[currentSlide + index]}</p>
-            <img
-              src={image}
-              alt={`Foto ${index + 1}`}
-
-              style={{ width: '350px', height: '250px', objectFit: 'cover' }}
-            />
-          </div>
-        ))}
-
-
-        <div className="nav-right" onClick={nextSlide}>
-          ❯
-=======
       <div className="jenis-container">
         <div className="header-jenis">
           <h1>JENIS FAUNA</h1>
@@ -251,23 +180,21 @@ const HomePage = () => {
       </div>
 
       {/* Fauna Game Section */}
-
-      <div className="album py-1 mt-5">
-        <div className="container">
+      <div className="game-container">
+        <div className="album py-1 mt-5">
+            <div className="row">
+              <div className="col text-left mb-5">
+                <h2 style={{ fontWeight: 'bold', color: '#3498db'}}>FAUNA GAME</h2>
+              </div>
+            </div>
+        </div>
+        <div className="mb-5 bg-image" style={{ backgroundImage: `url(${olga})`, borderRadius: '15px', padding: '20px', height: '350px', backgroundSize: 'cover' }}>
           <div className="row">
-            <div className="col text-left mb-5">
-              <h5 style={{ fontWeight: 'bold', color: '#3498db', marginBottom: '5px' }}>FAUNA GAME</h5>
+            <div className="col-lg-12 text-left mt-5 mb-5">
+              <h2 style={{ color: 'white', fontWeight: 'bold', marginTop: '30px', paddingLeft: '20px' }}>Mengenal fauna dengan cara yang lebih menyenangkan </h2>
+              <a href="/link-ke-halaman-play-now" className="btn mt-3 d-inline-block" style={{ borderRadius: '15px', backgroundColor: '#29ADB2', color: 'white', padding: '8px 20px', fontWeight: 'bold', marginLeft: '20px' }}>Play now</a>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="container mb-5 bg-image" style={{ backgroundImage: `url(${olga})`, borderRadius: '15px', padding: '20px', height: '350px', backgroundSize: 'cover' }}>
-        <div className="row">
-          <div className="col-lg-12 text-left mt-5 mb-5">
-            <h2 style={{ color: 'white', fontWeight: 'bold', marginTop: '30px', paddingLeft: '20px' }}>Mengenal fauna dengan cara yang lebih menyenangkan </h2>
-            <a href="/link-ke-halaman-play-now" className="btn mt-3 d-inline-block" style={{ borderRadius: '15px', backgroundColor: '#29ADB2', color: 'white', padding: '8px 20px', fontWeight: 'bold', marginLeft: '20px' }}>Play now</a>
-          </div>
->>>>>>> Stashed changes
         </div>
       </div>
     </div>

@@ -8,7 +8,6 @@
   const SetQuizContainer = () => {
     const [token, setToken] = useState('');
     const [expire, setExpire] = useState('');
-    const navigate = useNavigate();
     const [quizList, setQuizList] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [formData, setFormData] = useState({
@@ -21,6 +20,8 @@
       paket: '',
     });
     const [editId, setEditId] = useState(null);
+    const [filterByPackage, setFilterByPackage] = useState('');
+    const navigate = useNavigate();
 
     const openModal = () => {
       setIsModalOpen(true);
@@ -94,7 +95,11 @@
 
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/get-allquizzes');
+        const url = filterByPackage
+          ? `http://localhost:5000/get-quizzes-by-package/${filterByPackage}`
+          : 'http://localhost:5000/get-allquizzes';
+
+        const response = await axios.get(url);
         setQuizList(response.data);
       } catch (error) {
         console.error('Error fetching quiz data:', error);
@@ -133,7 +138,7 @@
     useEffect(() => {
       fetchData();
       refreshToken();
-    }, []);
+    }, [filterByPackage]);
 
     const styles = {
       container: {
@@ -151,18 +156,18 @@
         marginBottom: '20px',
       },
       modal: {
-          display: isModalOpen ? 'block' : 'none',
-          position: 'fixed',
-          zIndex: '1',
-          left: '50%',
-          top: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '100%',
-          height: '100%',
-          overflow: 'auto',
-          backgroundColor: 'rgba(0,0,0,0.4)',
-          padding: '130px',
-      },
+        display: isModalOpen ? 'block' : 'none',
+        position: 'fixed',
+        zIndex: '1',  // Make sure the z-index is appropriate
+        left: '50%',
+        top: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '100%',
+        height: '100%',
+        overflow: 'auto',
+        backgroundColor: 'rgba(0,0,0,0.4)',
+        padding: '130px',
+      },      
       modalContent: {
         backgroundColor: '#fefefe',
         margin: 'auto',
@@ -248,8 +253,18 @@
       <div className="d-flex flex-column">
       <div className="btn btn-primary mb-2 cetak" onClick={openModal}>
       Tambah Quiz
-    </div>
       </div>
+      </div>
+      <label>Filter by Package:</label>
+      <select value={filterByPackage} onChange={(e) => setFilterByPackage(e.target.value)}>
+        <option value="">All</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+      </select>
       
     </div>
 

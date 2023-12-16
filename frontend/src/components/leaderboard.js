@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import hero from '../css/home/rishabh-pandoh-klpWbwujpUg-unsplash.jpg';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../css/leaderboard/leaderboard.css';
 
 const Leaderboard = () => {
   const [topScores, setTopScores] = useState([]);
@@ -24,10 +25,10 @@ const Leaderboard = () => {
     if (!Array.isArray(data)) {
       return null;
     }
-
+  
     return data.map((leader, index) => (
-      <tr key={index}>
-        <th scope="row">{index + 1}</th>
+      <tr key={index} className={index % 2 === 0 ? 'even-row' : 'odd-row'}>
+        <td>{index + 1}</td>
         <td>{leader.nama}</td>
         <td>{leader.paket}</td>
         <td>{leader.score}</td>
@@ -45,14 +46,6 @@ const Leaderboard = () => {
 
   return (
     <div>
-      {/* Hero Section */}
-      <div className="container-fluid px-0 overflow-hidden">
-        <div className="row mx-0">
-          <div className="col-lg-12 px-0">
-            <img id="homeImage" className="lazyload img-fluid w-100" data-src={hero} alt="Foto Home" />
-          </div>
-        </div>
-      </div>
       {/* Leaderboard Section */}
       <div className="container mt-5 mb-5">
         <h1>Leaderboard</h1>
@@ -84,7 +77,7 @@ const Leaderboard = () => {
                 <th scope="col">Score</th>
               </tr>
             </thead>
-            <tbody>{renderLeaderboardRows(topScores)}</tbody>
+            {renderLeaderboardRows(topScores)}
           </table>
         </div>
       </div>

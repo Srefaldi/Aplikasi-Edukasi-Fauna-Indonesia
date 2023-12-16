@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+<<<<<<< Updated upstream
 import '../css/home/home.css'; 
 import hero from '../../public/home/hero.jpg';
 import hero2 from '../../public/home/burung.jpg';
@@ -14,6 +15,25 @@ import papua from '../../public/home/pulau/papua.jpg';
 import sulawesi from '../../public/home/pulau/sulawesi.jpg';
 import sumatera from '../../public/home/pulau/sumatera.jpg';
 import jawa from '../../public/home/pulau/jawa.jpg';
+=======
+import '../css/home/home.css'; // Pastikan file CSS Anda telah diimpor dengan benar
+
+// Import gambar
+import hero from '../css/home/hero2.jpg';
+import hero1 from '../css/home/fauna2.jpg';
+import mamalia from '../css/home/jenis/Mamalia.jpg';
+import reptil from '../css/home/jenis/reptil.jpg';
+import burung from '../css/home/jenis/Burung.jpg';
+import ampibi from '../css/home/jenis/ampibi.jpg';
+import ikan from '../css/home/jenis/ikan.jpg';
+import serangga from '../css/home/jenis/serangga.jpg';
+import kalimantan from '../css/home/pulau/kalimantan.jpg';
+import jawa from '../css/home/pulau/jawa.jpg';
+import sulawesi from '../css/home/pulau/sulawesi.jpg';
+import sumatera from '../css/home/pulau/sumatera.jpg';
+import papua from '../css/home/pulau/papua.jpg';
+import olga from '../css/home/olga.jpeg';
+>>>>>>> Stashed changes
 
 const faunaImages = [mamalia, reptil, burung, ampibi, ikan, serangga];
 const faunaNames = ['Mamalia', 'Reptil', 'Burung', 'Amfibi', 'Ikan', 'Serangga'];
@@ -53,8 +73,27 @@ const HomePage = () => {
             Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
             Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. </p>
           </div>
+<<<<<<< Updated upstream
           <div className="item small">
             <img src={hero2} alt="Foto Home" />
+=======
+          <div className="container2">
+            <div className="item big">
+              <p>Pesona Fauna Indonesia mengajak kita menjelajahi keanekaragaman yang memukau, dari hutan yang rimbun hingga lautan yang dalam. 
+              Setiap sudut tanah air ini menyimpan pesona fauna yang menakjubkan, menghadirkan kecantikan tak terhingga. 
+              Aplikasi Edukasi Fauna Indonesia unggul dalam menyajikan informasi komprehensif mengenai keanekaragaman fauna Indonesia. 
+              Pendekatan belajar yang interaktif memungkinkan pengguna menjelajahi dunia satwa Indonesia secara mendalam. 
+              Terus diperbarui, aplikasi ini menjadi sumber rujukan relevan, menjadi pilihan sempurna bagi para pecinta pengetahuan. </p>
+            </div>
+            <div className="item small">
+              <img src={hero} alt="Foto Home" />
+            </div>
+            <div className="item small">
+              <img src={ikan} alt="Foto Home" />
+            </div>
+            
+
+>>>>>>> Stashed changes
           </div>
           <div className="item small">
             <img src={hero3} alt="Foto Home" />
@@ -129,6 +168,13 @@ const HomePage = () => {
             hayati yang luar biasa di Sumatera menjadikannya destinasi yang menarik bagi para penggemar alam.
             </p>
           </div> 
+<<<<<<< Updated upstream
+=======
+          <div className="fauna-item1">
+            <h1>SUMATERA</h1>
+            <img className="pulau-img" src={sumatera} alt="Foto Home" />
+          </div>
+>>>>>>> Stashed changes
         </div>
 
         <div className="pulau-container">
@@ -149,6 +195,7 @@ const HomePage = () => {
       </div>
 
       {/* JENIS SECTION */}
+<<<<<<< Updated upstream
       <div className="header-jenis">
         <h1>Keberagaman Jenis Fauna</h1>
       </div>
@@ -174,6 +221,53 @@ const HomePage = () => {
 
         <div className="nav-right" onClick={nextSlide}>
           ❯
+=======
+      <div className="jenis-container">
+        <div className="header-jenis">
+          <h1>JENIS FAUNA</h1>
+          <p>
+            Indonesia, sebagai negara kepulauan yang luas dan kaya akan keberagaman alam, mempersembahkan panggung spektakuler bagi beragam
+            fauna yang mendiami setiap sudutnya. Keberagaman ini terwujud dalam kategori-kategori utama, seperti mamalia, reptil, amfibi, ikan,
+            burung, dan serangga, masing-masing menampilkan pesona dan keunikan tersendiri.
+          </p>
+        </div>
+
+      
+        <div className="jenis-content">
+          <div className="nav-left" onClick={prevSlide}>
+            ❮
+          </div>
+
+          {faunaImages.slice(currentSlide, currentSlide + 3).map((image, index) => (
+            <div key={index} className="jenis1">
+              <img src={image} alt={`Foto ${index + 1}`} />
+              <p>{faunaNames[currentSlide + index]}</p>
+            </div>
+          ))}
+          <div className="nav-right" onClick={nextSlide}>
+            ❯
+          </div>
+        </div>
+      </div>
+
+      {/* Fauna Game Section */}
+
+      <div className="album py-1 mt-5">
+        <div className="container">
+          <div className="row">
+            <div className="col text-left mb-5">
+              <h5 style={{ fontWeight: 'bold', color: '#3498db', marginBottom: '5px' }}>FAUNA GAME</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mb-5 bg-image" style={{ backgroundImage: `url(${olga})`, borderRadius: '15px', padding: '20px', height: '350px', backgroundSize: 'cover' }}>
+        <div className="row">
+          <div className="col-lg-12 text-left mt-5 mb-5">
+            <h2 style={{ color: 'white', fontWeight: 'bold', marginTop: '30px', paddingLeft: '20px' }}>Mengenal fauna dengan cara yang lebih menyenangkan </h2>
+            <a href="/link-ke-halaman-play-now" className="btn mt-3 d-inline-block" style={{ borderRadius: '15px', backgroundColor: '#29ADB2', color: 'white', padding: '8px 20px', fontWeight: 'bold', marginLeft: '20px' }}>Play now</a>
+          </div>
+>>>>>>> Stashed changes
         </div>
       </div>
     </div>

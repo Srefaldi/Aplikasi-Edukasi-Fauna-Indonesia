@@ -20,7 +20,7 @@ const createFaunaDetailTemplate = (fauna) => {
         <div className="container position-relative d-flex flex-column align-items-center">
           <h2>Detail Fauna</h2>
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="/home">Home</a></li>
             <li><a href="/kategori">Kategori</a></li>
           </ol>
         </div>
@@ -97,8 +97,10 @@ const styles = `
   }
 
   .breadcrumbs a:hover {
-    backgroun-color: white;
+    background-color: white;
     text-decoration: none;
+    padding : 8px 12px;
+    border-radius: 10px;
   }
 
   .welcome-text {
@@ -163,6 +165,7 @@ const styles = `
     font-size: 16px;
     color: #0B2447;
     margin-top: 10px;
+    font-weight: bold;
   }
 
   .fauna__description {
@@ -185,8 +188,8 @@ const styles = `
   font-size: 16px;
   color: #333;
   text-align: justify;
-  overflow-wrap: break-word; /* Menangani potongan teks secara otomatis */
-  white-space: normal; /* Menampilkan teks secara normal */
+  overflow-wrap: break-word; 
+  white-space: normal; 
 }
 
 `;

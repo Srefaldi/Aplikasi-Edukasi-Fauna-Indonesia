@@ -56,7 +56,11 @@
   padding-left: 8px;
   font-weight: 400;
   background-color: white;
+  padding: 8px 12px;
+  border-radius: 10px;
+  text-align: center;
 }
+
 
 .footer-item .social-links a:hover {
   color: #24262b;

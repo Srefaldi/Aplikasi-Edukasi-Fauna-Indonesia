@@ -75,5 +75,6 @@
     background-color: white;
     color: #000000; 
     transition: background-color 0.3s, color 0.3s; 
+    border-radius: 10px;
   }
   

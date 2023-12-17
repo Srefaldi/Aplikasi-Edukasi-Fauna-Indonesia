@@ -160,7 +160,7 @@ const LandingPage = () => {
       <div class="pic"><img data-src={marzaq} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Marzaq Syihab</h4>
-        <span>Frontend</span>
+        <span>UI/UX Design and Frontend</span>
         <div class="social">
           <a href="/"><i class="bi bi-twitter"></i></a>
           <a href="/"><i class="bi bi-facebook"></i></a>

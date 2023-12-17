@@ -10,6 +10,8 @@ const TemplateQuiz = ({ quizData }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { state: { nama, selectedPackage } } = location;
+  const [userAnswers, setUserAnswers] = useState({});
+  
 
   useEffect(() => {
     console.log('Skor Sementara:', score);
@@ -43,6 +45,11 @@ const TemplateQuiz = ({ quizData }) => {
       setLastQuestionReached(true);
     }
     console.log('Nama:', nama, 'Skor Sementara:', score);
+
+    setUserAnswers({
+      ...userAnswers,
+      [currentQuestionIndex]: selectedAnswer,
+    });
   };
   
   const finishQuiz = () => {
@@ -77,6 +84,10 @@ const TemplateQuiz = ({ quizData }) => {
   useEffect(() => {
     initMDB({ Ripple });
   }, []); 
+
+  useEffect(() => {
+    setSelectedAnswer(userAnswers[currentQuestionIndex] || null);
+  }, [currentQuestionIndex, userAnswers]);
 
   return (
     <div className="container mt-5 mb-5">

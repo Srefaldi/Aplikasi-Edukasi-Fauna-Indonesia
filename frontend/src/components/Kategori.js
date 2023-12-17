@@ -242,8 +242,8 @@ const KategoriPage = () => {
                   <img data-src={item.image_url} className="lazyload fauna-item-image" alt={item.name} loading="lazy" />
                 </div>
                 <div className='fauna-item-content'>
-                  <p className='fauna-title'><a href={`/detail/${item.id}`}>{item.name} | {item.kategori_1}</a></p>
-                  <h5>{item.kategori_2}</h5>
+                  <p className='fauna-title'><a href={`/detail/${item.id}`}>{item.name}</a></p>
+                  <h5>{item.kategori_1} | {item.kategori_2}</h5>
                   <p dangerouslySetInnerHTML={{ __html: truncatedDescription(item.description) + '...' }}></p>
                 </div>
               </div>

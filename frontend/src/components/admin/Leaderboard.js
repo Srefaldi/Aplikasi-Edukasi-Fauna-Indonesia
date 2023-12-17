@@ -23,7 +23,7 @@ const Leaderboard = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/token');
+      const response = await axios.get(`${process.env.API_ENDPOINT}/token`);
       setToken(response.data.accessToken);
       const decoded = jwtDecode(response.data.accessToken);
       setExpire(decoded.exp);
@@ -40,7 +40,7 @@ const Leaderboard = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const response = await axios.get('http://localhost:5000/token');
+        const response = await axios.get(`${process.env.API_ENDPOINT}/token`);
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decoded = jwtDecode(response.data.accessToken);
@@ -72,8 +72,8 @@ const Leaderboard = () => {
   const fetchData = async () => {
     try {
       const url = filterByPackage
-        ? `http://localhost:5000/get-leaderboard-by-package/${filterByPackage}`
-        : 'http://localhost:5000/get-allleaderboard';
+        ? `${process.env.API_ENDPOINT}/get-leaderboard-by-package/${filterByPackage}`
+        : `${process.env.API_ENDPOINT}/get-allleaderboard`;
 
       const response = await axios.get(url);
       setLeaderboardList(response.data);
@@ -84,7 +84,7 @@ const Leaderboard = () => {
 
   const handleAddLeaderboard = async () => {
     try {
-      await axios.post('http://localhost:5000/add-leaderboard', {
+      await axios.post(`${process.env.API_ENDPOINT}/add-leaderboard`, {
         nama: formData.nama,
         paket: selectedPackage,
         score: formData.score,
@@ -98,7 +98,7 @@ const Leaderboard = () => {
 
   const handleEditLeaderboard = async () => {
     try {
-      await axios.put(`http://localhost:5000/edit-leaderboard/${editId}`, {
+      await axios.put(`${process.env.API_ENDPOINT}/edit-leaderboard/${editId}`, {
         nama: formData.nama,
         paket: selectedPackage,
         score: formData.score,
@@ -112,7 +112,7 @@ const Leaderboard = () => {
 
   const handleDeleteLeaderboard = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/delete-leaderboard/${id}`);
+      await axios.delete(`${process.env.API_ENDPOINT}/delete-leaderboard/${id}`);
       fetchData();
     } catch (error) {
       console.error('Error deleting leaderboard entry:', error);

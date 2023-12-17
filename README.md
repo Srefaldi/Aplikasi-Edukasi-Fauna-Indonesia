@@ -1,7 +1,19 @@
 
 
 
-# Capstopne Project C523-PS042
+# Capstopne Project 
+### Created By
+ - #### C523-PS042
+
+
+
+- F247YA290 : [Sopia Refaldi](https://github.com/Srefaldi)
+- F247XA305 : [Difana Nanda Pridhasila Zein](https://github.com/nandaazein)
+- F247YA274 : [Khoyrur Roykhan](https://github.com/KhoyrurRoykhan)
+
+ 
+- S381XB471 : [Alda Amorita Azza](https://github.com/aldaaaaa)
+- F633YA176 : [Marzaq Syihab](https://github.com/MarzaqSyihab)
 
 ---
 ![SS](foto/landinpage.png)
@@ -13,7 +25,7 @@
 ---
 
 
-#### Link production: []()
+#### Link production: [EDFAID](https://apl-edfa-id-devn.vercel.app/)
 
 
 
@@ -50,17 +62,18 @@ Script
 
 ### Akses Page Admin
 - Untuk halaman admin hanya dikhususkan kepada tim development atau memiliki kode akses
+```cmd
+Username : admin@gmail.com
+Password : admin
 
-Contoh :
-
-- Jika anda adalah tim development atau yang memiliki kode untuk mendaftarkan diri 
-
+Kode Akses Untuk Register : 12345edfaid
+```
 ---
-    - Halaman Login ketika anda memiliki Username dan Password maka anda akan bisa langsung masuk
+#### Halaman Login ketika anda memiliki Username dan Password maka anda akan bisa langsung masuk
 ![SS](foto/login-admin.png)
 ---
 
-    - Tetapi Ketika anda belum memiliki username dan password anda dapat mendaftarkan dan pastikan anda memiliki Kode untuk registrasi 
+#### Tetapi Ketika anda belum memiliki username dan password anda dapat mendaftarkan dan pastikan anda memiliki Kode untuk registrasi 
 ![SS](foto/login-dengan-token-admin.png)
 
 
@@ -78,28 +91,16 @@ Contoh :
 - [HTML](https://www.w3schools.com/html/)
 - [CSS](https://www.w3schools.com/css/)
 - [JS](https://www.javascript.com/)
+- [Firebase](https://firebase.google.com/?hl=id)
 
 
 ---
 
-### Created By
- - #### C523-PS042
 
-
-
-- F247YA290 : [Sopia Refaldi](https://github.com/Srefaldi)
-- F247XA305 : [Difana Nanda Pridhasila Zein](https://github.com/nandaazein)
-- F247YA274 : [Khoyrur Roykhan](https://github.com/KhoyrurRoykhan)
-
- 
-- S381XB471 : [Alda Amorita Azza](https://github.com/aldaaaaa)
-- F633YA176 : [Marzaq Syihab](https://github.com/MarzaqSyihab)
-
----
 
 ### Info Lebih Lengkap
 
-- Website : [EFDA ID](https://firmanjabar.my.id)
+- Website : [EFDA ID](https://apl-edfa-id-devn.vercel.app/)
 - Twitter: [Here](https://twitter.com/edfa_id)
 - Instagram : [Here](https://www.instagram.com/edfa_id)
 - Facebook : [Here](https://www.facebook.com/profile.php?id=61554381522504&mibextid=ZbWKwL)

@@ -1,7 +1,19 @@
 
 
 
-# Capstopne Project C523-PS042
+# Capstopne Project 
+### Created By
+ - #### C523-PS042
+
+
+
+- F247YA290 : [Sopia Refaldi](https://github.com/Srefaldi)
+- F247XA305 : [Difana Nanda Pridhasila Zein](https://github.com/nandaazein)
+- F247YA274 : [Khoyrur Roykhan](https://github.com/KhoyrurRoykhan)
+
+ 
+- S381XB471 : [Alda Amorita Azza](https://github.com/aldaaaaa)
+- F633YA176 : [Marzaq Syihab](https://github.com/MarzaqSyihab)
 
 ---
 ![SS](foto/landinpage.png)
@@ -88,20 +100,7 @@ Contoh :
 
 ---
 
-### Created By
- - #### C523-PS042
 
-
-
-- F247YA290 : [Sopia Refaldi](https://github.com/Srefaldi)
-- F247XA305 : [Difana Nanda Pridhasila Zein](https://github.com/nandaazein)
-- F247YA274 : [Khoyrur Roykhan](https://github.com/KhoyrurRoykhan)
-
- 
-- S381XB471 : [Alda Amorita Azza](https://github.com/aldaaaaa)
-- F633YA176 : [Marzaq Syihab](https://github.com/MarzaqSyihab)
-
----
 
 ### Info Lebih Lengkap
 

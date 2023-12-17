@@ -68,16 +68,12 @@ Password : admin
 
 Kode Akses Untuk Register : 12345edfaid
 ```
-Contoh :
-
-- Jika anda adalah tim development atau yang memiliki kode untuk mendaftarkan diri 
-
 ---
-    - Halaman Login ketika anda memiliki Username dan Password maka anda akan bisa langsung masuk
+#### Halaman Login ketika anda memiliki Username dan Password maka anda akan bisa langsung masuk
 ![SS](foto/login-admin.png)
 ---
 
-    - Tetapi Ketika anda belum memiliki username dan password anda dapat mendaftarkan dan pastikan anda memiliki Kode untuk registrasi 
+#### Tetapi Ketika anda belum memiliki username dan password anda dapat mendaftarkan dan pastikan anda memiliki Kode untuk registrasi 
 ![SS](foto/login-dengan-token-admin.png)
 
 
@@ -104,7 +100,7 @@ Contoh :
 
 ### Info Lebih Lengkap
 
-- Website : [EFDA ID](https://firmanjabar.my.id)
+- Website : [EFDA ID](https://apl-edfa-id-devn.vercel.app/)
 - Twitter: [Here](https://twitter.com/edfa_id)
 - Instagram : [Here](https://www.instagram.com/edfa_id)
 - Facebook : [Here](https://www.facebook.com/profile.php?id=61554381522504&mibextid=ZbWKwL)

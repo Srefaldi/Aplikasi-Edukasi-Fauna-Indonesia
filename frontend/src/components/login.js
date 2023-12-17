@@ -6,9 +6,7 @@ import '../../src/components/admin/styles/responsive-login.css'
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [regPassword, setRegPassword] = useState('');
     const [msg, setMsg] = useState('');
-    const [showRegPopup, setShowRegPopup] = useState(false);
     const navigate = useNavigate();
 
     const Auth = async (e) => {
@@ -26,34 +24,10 @@ const Login = () => {
         }
     };
 
-    const showRegisterPopup = () => {
-        setShowRegPopup(true);
-    };
 
-    const hideRegisterPopup = () => {
-        setShowRegPopup(false);
-        setRegPassword('');
-    };
 
     const handleRegister = async () => {
-        try {
-            const response = await axios.post(`${process.env.API_ENDPOINT}/compare-password`, {
-                enteredPassword: regPassword,
-            });
-    
-            if (response.data.isPasswordValid) {
-               
-                navigate("/register");
-            } else {
-                setMsg('Invalid registration password.');
-                hideRegisterPopup();
-            }
-        } catch (error) {
-          console.error('Error registering:', error);
-          if (error.response) {
-            setMsg(error.response.data.error);
-          }
-        }
+        navigate("/register");
     };
 
     return (
@@ -85,7 +59,7 @@ const Login = () => {
                                     <button type="submit" className="btn btn-primary mb-4" style={{ width: '200px', backgroundColor: '#112546' }}>Sign in</button>
                                     <p>
                                         Not an admin?{' '}
-                                        <a href="#register" className="link-button" onClick={showRegisterPopup} style={{ color: '#112546' }}>
+                                        <a href="#register" className="link-button" onClick={handleRegister} style={{ color: '#112546' }}>
                                             Register Here
                                         </a>
 
@@ -96,23 +70,7 @@ const Login = () => {
                     </div>
                
                     </div>
-          
-                    {showRegPopup && (
-                    <div className="modal" style={{ backgroundColor: 'rgba(0, 0, 0, 0)', }}>
-                    <div className="modal-content" style={{ marginTop: '100px' }}>
-                        <span className="close" onClick={hideRegisterPopup}>&times;</span>
-                        <form>
-                            <label>Password Registrasi:</label>
-                            <input
-                                type="password"
-                                value={regPassword}
-                                onChange={(e) => setRegPassword(e.target.value)}
-                            />
-                            <button type="button" onClick={handleRegister}>Register</button>
-                        </form>
-                    </div>
-                </div>
-            )}
+        
 
 </div>
 </div>

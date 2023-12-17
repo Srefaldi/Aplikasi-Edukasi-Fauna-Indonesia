@@ -20,7 +20,7 @@ const KategoriPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/get-allfauna');
+        const response = await axios.get(`${process.env.API_ENDPOINT}/get-allfauna`);
         setFaunaData(response.data);
       } catch (error) {
         console.error('There was a problem fetching the data:', error);
@@ -65,7 +65,7 @@ const KategoriPage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/get-allfauna?search=${searchTerm}`);
+      const response = await axios.get(`${process.env.API_ENDPOINT}/get-allfauna?search=${searchTerm}`);
       setFaunaData(response.data);
       setSelectedCategory(null);
       setSelectedSubCategory(null);

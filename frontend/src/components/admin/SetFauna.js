@@ -91,7 +91,7 @@ const SetFauna = () => {
       formDataWithImage.append('desc_populasi', formData.desc_populasi);
 
       // Send the new fauna data to the server
-      await axios.post('http://localhost:5000/add-fauna', formDataWithImage);
+      await axios.post(`${process.env.API_ENDPOINT}/add-fauna`, formDataWithImage);
       
       // After adding the fauna, you may want to refetch the data:
       fetchData();
@@ -113,7 +113,7 @@ const SetFauna = () => {
       formDataWithImage.append('desc_habitat', formData.desc_habitat);
       formDataWithImage.append('desc_populasi', formData.desc_populasi);
 
-      await axios.put(`http://localhost:5000/edit-fauna/${editId}`, formDataWithImage);
+      await axios.put(`${process.env.API_ENDPOINT}/edit-fauna/${editId}`, formDataWithImage);
 
       fetchData();
       closeModal();
@@ -124,7 +124,7 @@ const SetFauna = () => {
 
   const handleDeleteFauna = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/delete-fauna/${id}`);
+      await axios.delete(`${process.env.API_ENDPOINT}/delete-fauna/${id}`);
       fetchData();
     } catch (error) {
       console.error('Error deleting fauna:', error);
@@ -133,7 +133,7 @@ const SetFauna = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/get-allfauna?search=${searchTerm}`);
+      const response = await axios.get(`${process.env.API_ENDPOINT}/get-allfauna?search=${searchTerm}`);
       setFaunaList(response.data);
     } catch (error) {
       if (error.response) {
@@ -144,7 +144,7 @@ const SetFauna = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/token');
+      const response = await axios.get(`${process.env.API_ENDPOINT}/token`);
       setToken(response.data.accessToken);
       const decoded = jwtDecode(response.data.accessToken);
       setExpire(decoded.exp);
@@ -161,7 +161,7 @@ const SetFauna = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const response = await axios.get('http://localhost:5000/token');
+        const response = await axios.get(`${process.env.API_ENDPOINT}/token`);
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decoded = jwtDecode(response.data.accessToken);

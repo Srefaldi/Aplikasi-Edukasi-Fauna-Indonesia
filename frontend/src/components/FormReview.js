@@ -34,7 +34,7 @@ const AddReviewForm = () => {
         review: formData.review,
       };
 
-      await axios.post('http://localhost:5000/add-review', formDataReview);
+      await axios.post(`${process.env.API_ENDPOINT}/add-review`, formDataReview);
 
       setFormData({
         name: '',

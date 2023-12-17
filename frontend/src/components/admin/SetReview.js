@@ -61,7 +61,7 @@ const SetReview = () => {
       formDataReview.append('rating', formData.rating);
       formDataReview.append('review', formData.review);
 
-      await axios.post('http://localhost:5000/add-review', formDataReview);
+      await axios.post(`${process.env.API_ENDPOINT}/add-review`, formDataReview);
 
       fetchData();
       closeModal();
@@ -77,7 +77,7 @@ const SetReview = () => {
       formDataReview.append('rating', formData.rating);
       formDataReview.append('review', formData.review);
 
-      await axios.put(`http://localhost:5000/edit-review/${editId}`, formDataReview);
+      await axios.put(`${process.env.API_ENDPOINT}/edit-review/${editId}`, formDataReview);
 
       fetchData();
       closeModal();
@@ -88,7 +88,7 @@ const SetReview = () => {
 
   const handleDeleteReview = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/delete-review/${id}`);
+      await axios.delete(`${process.env.API_ENDPOINT}/delete-review/${id}`);
       fetchData();
     } catch (error) {
       console.error('Error deleting review:', error);
@@ -97,7 +97,7 @@ const SetReview = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/get-allreview');
+      const response = await axios.get(`${process.env.API_ENDPOINT}/get-allreview`);
       setReviewList(response.data);
     } catch (error) {
       if (error.response) {
@@ -108,7 +108,7 @@ const SetReview = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/token');
+      const response = await axios.get(`${process.env.API_ENDPOINT}/token`);
       setToken(response.data.accessToken);
       const decoded = jwtDecode(response.data.accessToken);
       setExpire(decoded.exp);
@@ -125,7 +125,7 @@ const SetReview = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const response = await axios.get('http://localhost:5000/token');
+        const response = await axios.get(`${process.env.API_ENDPOINT}/token`);
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decoded = jwtDecode(response.data.accessToken);

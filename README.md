@@ -13,7 +13,7 @@
 ---
 
 
-#### Link production: []()
+#### Link production: [EDFAID](https://apl-edfa-id-devn.vercel.app/)
 
 
 
@@ -50,7 +50,12 @@ Script
 
 ### Akses Page Admin
 - Untuk halaman admin hanya dikhususkan kepada tim development atau memiliki kode akses
+```cmd
+Username : admin@gmail.com
+Password : admin
 
+Kode Akses Untuk Register : 12345edfaid
+```
 Contoh :
 
 - Jika anda adalah tim development atau yang memiliki kode untuk mendaftarkan diri 
@@ -78,6 +83,7 @@ Contoh :
 - [HTML](https://www.w3schools.com/html/)
 - [CSS](https://www.w3schools.com/css/)
 - [JS](https://www.javascript.com/)
+- [Firebase](https://firebase.google.com/?hl=id)
 
 
 ---

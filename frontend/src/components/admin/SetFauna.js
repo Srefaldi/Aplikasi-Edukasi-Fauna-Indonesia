@@ -244,7 +244,7 @@ const truncatedDescription = (description) => {
                       onChange={handleInputChange}
                       value="Jawa"
                     />
-                    <label class="btn btn-secondary" for="option1" data-mdb-ripple-init>
+                    <label class="btn btn-secondary" for="option1" >
                       Jawa
                     </label>
 
@@ -258,7 +258,7 @@ const truncatedDescription = (description) => {
                       onChange={handleInputChange}
                       value="Kalimantan"
                     />
-                    <label class="btn btn-secondary" for="option2" data-mdb-ripple-init>
+                    <label class="btn btn-secondary" for="option2" >
                       Kalimantan
                     </label>
 
@@ -272,7 +272,7 @@ const truncatedDescription = (description) => {
                       onChange={handleInputChange}
                       value="Papua"
                     />
-                    <label class="btn btn-secondary" for="option3" data-mdb-ripple-init>
+                    <label class="btn btn-secondary" for="option3" >
                       Papua
                     </label>
 
@@ -286,7 +286,7 @@ const truncatedDescription = (description) => {
                       onChange={handleInputChange}
                       value="Sumatera"
                     />
-                    <label class="btn btn-secondary" for="option4" data-mdb-ripple-init>
+                    <label class="btn btn-secondary" for="option4" >
                       Sumatera
                     </label>
 
@@ -300,13 +300,13 @@ const truncatedDescription = (description) => {
                       onChange={handleInputChange}
                       value="Sulawesi"
                     />
-                    <label class="btn btn-secondary" for="option5" data-mdb-ripple-init>
+                    <label class="btn btn-secondary" for="option5" >
                       Sulawesi
                     </label>
                   </div>
 
                   <label>Kategori 2:</label>
-                      `<div className="btn-group">
+                      <div className="btn-group">
                         <input
                           type="radio"
                           className="btn-check"
@@ -317,7 +317,7 @@ const truncatedDescription = (description) => {
                           onChange={handleInputChange}
                           value="Mamalia"
                         />
-                        <label className="btn btn-secondary" htmlFor="mamalia" data-mdb-ripple-init>
+                        <label className="btn btn-secondary" htmlFor="mamalia" >
                           Mamalia
                         </label>
 
@@ -331,7 +331,7 @@ const truncatedDescription = (description) => {
                           onChange={handleInputChange}
                           value="Reptil"
                         />
-                        <label className="btn btn-secondary" htmlFor="reptil" data-mdb-ripple-init>
+                        <label className="btn btn-secondary" htmlFor="reptil" >
                           Reptil
                         </label>
 
@@ -345,7 +345,7 @@ const truncatedDescription = (description) => {
                           onChange={handleInputChange}
                           value="Burung"
                         />
-                        <label className="btn btn-secondary" htmlFor="burung" data-mdb-ripple-init>
+                        <label className="btn btn-secondary" htmlFor="burung" >
                           Burung
                         </label>
 
@@ -359,7 +359,7 @@ const truncatedDescription = (description) => {
                           onChange={handleInputChange}
                           value="Ampibi"
                         />
-                        <label className="btn btn-secondary" htmlFor="ampibi" data-mdb-ripple-init>
+                        <label className="btn btn-secondary" htmlFor="ampibi" >
                           Ampibi
                         </label>
 
@@ -373,7 +373,7 @@ const truncatedDescription = (description) => {
                           onChange={handleInputChange}
                           value="Ikan"
                         />
-                        <label className="btn btn-secondary" htmlFor="ikan" data-mdb-ripple-init>
+                        <label className="btn btn-secondary" htmlFor="ikan" >
                           Ikan
                         </label>
 
@@ -387,10 +387,10 @@ const truncatedDescription = (description) => {
                           onChange={handleInputChange}
                           value="Serangga"
                         />
-                        <label className="btn btn-secondary" htmlFor="serangga" data-mdb-ripple-init>
+                        <label className="btn btn-secondary" htmlFor="serangga" >
                           Serangga
                         </label>
-                      </div>`
+                      </div>
                 <label>Deskripsi:</label>
                 <CKEditor
                   editor={ClassicEditor}

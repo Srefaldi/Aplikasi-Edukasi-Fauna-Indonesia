@@ -13,13 +13,13 @@ const Register = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Cek status sesi ketika komponen dimuat
-        const loggedIn = localStorage.getItem('loggedIn');
+        // // Cek status sesi ketika komponen dimuat
+        // const loggedIn = localStorage.getItem('loggedIn');
 
-        if (!loggedIn) {
-            // Jika belum masuk, arahkan kembali ke halaman login
-            navigate("/login");
-        }
+        // if (!loggedIn) {
+        //     // Jika belum masuk, arahkan kembali ke halaman login
+        //     navigate("/login");
+        // }
     }, [navigate]);
 
     const handleRegister = async (e) => {

@@ -34,9 +34,9 @@ const createFaunaDetailTemplate = (fauna) => {
           <h3>Information</h3>
           <h4>Nama</h4>
           <p>{name}</p>
-          <h4>Jenis</h4>
-          <p>{kategori_1}</p>
           <h4>Pulau</h4>
+          <p>{kategori_1}</p>
+          <h4>Jenis</h4>
           <p>{kategori_2}</p>
           <h4>Habitat</h4>
           <p>{desc_habitat}</p>

@@ -161,16 +161,15 @@ const HomePage = () => {
 
         {faunaImages.slice(currentSlide, currentSlide + 3).map((image, index) => (
           <div key={`fauna_${index}`} className="jenis1">
-
             <p>{faunaNames[currentSlide + index]}</p>
-            <img className="lazyload"
-              data-src={image}
+            <img
+              src={image}
               alt={`Foto ${index + 1}`}
-
               style={{ width: '350px', height: '250px', objectFit: 'cover' }}
             />
           </div>
         ))}
+
 
 
         <div className="nav-right" onClick={nextSlide}>

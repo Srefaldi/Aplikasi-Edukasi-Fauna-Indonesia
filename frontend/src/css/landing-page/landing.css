@@ -366,11 +366,15 @@ font-size: 13px;
 
 .pic img {
   width: 100%; 
-  height: 270px; 
+  height: 300px; 
 }
 
 @media (max-width: 768px) {
   
+.pic img {
+  width: 280px; 
+  height: 300px; 
+}
 }
 
 
@@ -707,4 +711,18 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
 .box2 {
 transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 600px) {
+  .box1 {
+    padding: 10px; 
+  }
+
+  .box1 img {
+    height: 150px; 
+  }
+
+  .box1 h1 {
+    font-size: 20px;
+  }
 }

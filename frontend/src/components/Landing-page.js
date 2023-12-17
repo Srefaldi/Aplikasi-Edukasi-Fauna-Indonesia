@@ -12,6 +12,7 @@ import fauna4 from '../../public/landing/fauna4.jpg';
 import faldi from '../../public/landing/faldi.jpg';
 import alda from '../../public/landing/alda.png';
 import roy2 from '../../public/landing/roy2.jpg';
+import marzaq from '../../public/landing/marzaq.png';
 
 
 
@@ -156,7 +157,7 @@ const LandingPage = () => {
       </div>
 
       <div class="member" data-aos="fade-up">
-      <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
+      <div class="pic"><img data-src={marzaq} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Marzaq Syihab</h4>
         <span>Frontend</span>

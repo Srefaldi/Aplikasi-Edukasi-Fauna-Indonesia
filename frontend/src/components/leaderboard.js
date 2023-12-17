@@ -8,8 +8,8 @@ const Leaderboard = () => {
   const fetchLeaderboardData = async () => {
     try {
       const url = filterByPackage
-        ? `http://localhost:5000/get-leaderboard-by-package/${filterByPackage}`
-        : 'http://localhost:5000/get-allleaderboard';
+        ? `${process.env.API_ENDPOINT}/get-leaderboard-by-package/${filterByPackage}`
+        : `${process.env.API_ENDPOINT}/get-allleaderboard`;
 
       const response = await fetch(url);
       const data = await response.json();

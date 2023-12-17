@@ -9,7 +9,7 @@ const PlayQuiz = () => {
   useEffect(() => {
     const fetchQuizData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/get-quizzes-by-package/${selectedPackage}`);
+        const response = await axios.get(`${process.env.API_ENDPOINT}/get-quizzes-by-package/${selectedPackage}`);
         setQuizData(response.data);
       } catch (error) {
         console.error('Error fetching quiz data:', error);

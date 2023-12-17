@@ -73,9 +73,9 @@
     const handleSaveQuiz = async () => {
       try {
         if (editId) {
-          await axios.put(`http://localhost:5000/edit-quiz/${editId}`, formData);
+          await axios.put(`${process.env.API_ENDPOINT}/edit-quiz/${editId}`, formData);
         } else {
-          await axios.post('http://localhost:5000/add-quiz', formData);
+          await axios.post(`${process.env.API_ENDPOINT}/add-quiz`, formData);
         }
 
         fetchData();
@@ -87,7 +87,7 @@
 
     const handleDeleteQuiz = async (id) => {
       try {
-        await axios.delete(`http://localhost:5000/delete-quiz/${id}`);
+        await axios.delete(`${process.env.API_ENDPOINT}/delete-quiz/${id}`);
         fetchData();
       } catch (error) {
         console.error('Error deleting quiz:', error);
@@ -97,8 +97,8 @@
     const fetchData = async () => {
       try {
         const url = filterByPackage
-          ? `http://localhost:5000/get-quizzes-by-package/${filterByPackage}`
-          : 'http://localhost:5000/get-allquizzes';
+          ? `${process.env.API_ENDPOINT}/get-quizzes-by-package/${filterByPackage}`
+          : `${process.env.API_ENDPOINT}/get-allquizzes`;
 
         const response = await axios.get(url);
         setQuizList(response.data);
@@ -109,7 +109,7 @@
 
     const refreshToken = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/token');
+        const response = await axios.get(`${process.env.API_ENDPOINT}/token`);
         setToken(response.data.accessToken);
         const decoded = jwtDecode(response.data.accessToken);
         setExpire(decoded.exp);

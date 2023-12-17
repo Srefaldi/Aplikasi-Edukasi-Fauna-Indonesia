@@ -11,7 +11,7 @@ const DetailPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/get-fauna/${itemName}`);
+        const response = await axios.get(`${process.env.API_ENDPOINT}/get-fauna/${itemName}`);
         const foundFaunaDetail = response.data;
 
         if (!foundFaunaDetail) {

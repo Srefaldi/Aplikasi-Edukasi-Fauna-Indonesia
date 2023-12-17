@@ -14,7 +14,7 @@ const Login = () => {
     const Auth = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/login', {
+            await axios.post(`${process.env.API_ENDPOINT}/login`, {
                 email: email,
                 password: password
             });
@@ -37,7 +37,7 @@ const Login = () => {
 
     const handleRegister = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/compare-password', {
+            const response = await axios.post(`${process.env.API_ENDPOINT}/compare-password`, {
                 enteredPassword: regPassword,
             });
     

@@ -19,7 +19,7 @@ const HomeAdmin = () => {
 
   const refreshToken = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/token');
+      const response = await axios.get(`${process.env.API_ENDPOINT}/token`);
       setToken(response.data.accessToken);
       const decoded = jwtDecode(response.data.accessToken);
       setName(decoded.name);
@@ -37,7 +37,7 @@ const HomeAdmin = () => {
     async (config) => {
       const currentDate = new Date();
       if (expire * 1000 < currentDate.getTime()) {
-        const response = await axios.get('http://localhost:5000/token');
+        const response = await axios.get(`${process.env.API_ENDPOINT}/token`);
         config.headers.Authorization = `Bearer ${response.data.accessToken}`;
         setToken(response.data.accessToken);
         const decoded = jwtDecode(response.data.accessToken);
@@ -52,7 +52,7 @@ const HomeAdmin = () => {
   );
 
   const getUsers = async () => {
-    const response = await axiosJWT.get('http://localhost:5000/users', {
+    const response = await axiosJWT.get(`${process.env.API_ENDPOINT}/users`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

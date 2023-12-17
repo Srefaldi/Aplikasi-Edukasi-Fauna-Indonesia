@@ -9,6 +9,10 @@ import winner from '../../public/landing/winner.png'
 import nanda from '../../public/landing/nanda.jpeg';
 import fauna1 from '../../public/landing/fauna1.png';
 import fauna4 from '../../public/landing/fauna4.jpg';
+import faldi from '../../public/landing/faldi.jpg';
+import alda from '../../public/landing/alda.png';
+import roy2 from '../../public/landing/roy2.jpg';
+import marzaq from '../../public/landing/marzaq.png';
 
 
 
@@ -111,7 +115,7 @@ const LandingPage = () => {
     <h3 class="headings" id="Team"> <span>Our</span> Team </h3>
     <div className='team-container'>
     <div class="member" data-aos="fade-up">
-    <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
+    <div class="pic"><img data-src={roy2} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Khoyrur Roykhan</h4>
         <span>Project Manager and Backend</span>
@@ -125,7 +129,7 @@ const LandingPage = () => {
       </div>
 
       <div class="member" data-aos="fade-up">
-      <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
+      <div class="pic"><img data-src={alda} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Alda Amorita Azza</h4>
         <span>Backend</span>
@@ -139,7 +143,7 @@ const LandingPage = () => {
       </div>
 
       <div class="member" data-aos="fade-up">
-      <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
+      <div class="pic"><img data-src={faldi} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Sopia Refaldi</h4>
         <span>Frontend</span>
@@ -153,10 +157,10 @@ const LandingPage = () => {
       </div>
 
       <div class="member" data-aos="fade-up">
-      <div class="pic"><img data-src={nanda} class="lazyload img-fluid" alt=""/></div>
+      <div class="pic"><img data-src={marzaq} class="lazyload img-fluid" alt=""/></div>
       <div class="member-info">
         <h4>Marzaq Syihab</h4>
-        <span>Frontend</span>
+        <span>UI/UX Design and Frontend</span>
         <div class="social">
           <a href="/"><i class="bi bi-twitter"></i></a>
           <a href="/"><i class="bi bi-facebook"></i></a>

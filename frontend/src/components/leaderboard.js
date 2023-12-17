@@ -8,8 +8,8 @@ const Leaderboard = () => {
   const fetchLeaderboardData = async () => {
     try {
       const url = filterByPackage
-        ? `http://localhost:5000/get-leaderboard-by-package/${filterByPackage}`
-        : 'http://localhost:5000/get-allleaderboard';
+        ? `${process.env.API_ENDPOINT}/get-leaderboard-by-package/${filterByPackage}`
+        : `${process.env.API_ENDPOINT}/get-allleaderboard`;
 
       const response = await fetch(url);
       const data = await response.json();
@@ -47,16 +47,42 @@ const Leaderboard = () => {
     <div>
       {/* Leaderboard Section */}
       <div className="container mt-5 mb-5">
-        <h1>Leaderboard</h1>
+        <h1 style={{ 
+            fontSize: '40px',
+            marginBottom: '20px',
+            color: '#112546',
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
+            letterSpacing: '1px',
+            lineHeight: '1.4',
+            fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+            fontWeight: 'bold',
+            textAlign: 'center'
+          }}>Leaderboard</h1>
 
         {/* Dropdown to select the package */}
         <div className="filter-container">
-          <label>Filter by Package:</label>
+          <label style={{ marginRight: '10px',
+                          fontSize: '16px',
+                          color: '#112546',
+                          textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
+                          letterSpacing: '1px',
+                          lineHeight: '1.4',
+                          fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                          fontWeight: 'bold', }}>Cari Berdasarkan :</label>
           <select
             value={filterByPackage}
             onChange={handlePackageFilterChange}
+            style={{
+              backgroundColor: '#112546',
+              color: 'white',
+              fontSize: '16px',
+              padding: '12px 18px',
+              borderRadius: '4px',
+              border: '1px solid #ccc',
+              marginRight: '10px',
+            }}
           >
-            <option value="">All</option>
+            <option value="" >All</option>
             <option value="Kalimantan">Kalimantan</option>
             <option value="Sulawesi">Sulawesi</option>
             <option value="Sumatera">Sumatera</option>
@@ -66,19 +92,19 @@ const Leaderboard = () => {
           </select>
         </div>
 
-        <div className="table-responsive">
-  <table className="table table-striped">
-    <thead>
-      <tr className='baris'>
-        <th scope="col">Rank</th>
-        <th scope="col">Nama</th>
-        <th scope="col">Paket</th>
-        <th scope="col">Score</th>
-      </tr>
-    </thead>
-    <tbody>{renderLeaderboardRows(topScores)}</tbody>
-  </table>
-</div>
+        <div className="table-responsive mt-5">
+          <table className="table table-striped">
+            <thead>
+              <tr className='baris'>
+                <th scope="col">Rank</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Paket</th>
+                <th scope="col">Score</th>
+              </tr>
+            </thead>
+            <tbody>{renderLeaderboardRows(topScores)}</tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

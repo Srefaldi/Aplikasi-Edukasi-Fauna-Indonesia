@@ -18,7 +18,7 @@ const ResultQuiz = () => {
         return;
       }
 
-      const response = await fetch('http://localhost:5000/add-leaderboard', {
+      const response = await fetch(`${process.env.API_ENDPOINT}/add-leaderboard`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

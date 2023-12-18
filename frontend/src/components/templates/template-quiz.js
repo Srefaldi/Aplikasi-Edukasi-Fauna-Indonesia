@@ -11,7 +11,8 @@ const TemplateQuiz = ({ quizData }) => {
   const location = useLocation();
   const { state: { nama, selectedPackage } } = location;
   const [userAnswers, setUserAnswers] = useState({});
-  
+  const [answeredCorrectly, setAnsweredCorrectly] = useState([]);
+
 
   useEffect(() => {
     console.log('Skor Sementara:', score);
@@ -30,8 +31,9 @@ const TemplateQuiz = ({ quizData }) => {
       const updatedTotalCorrectAnswers = totalCorrectAnswers + (userAnswer === correctAnswer ? 1 : 0);
       setTotalCorrectAnswers(updatedTotalCorrectAnswers);
   
-      if (userAnswer === correctAnswer) {
+      if (userAnswer === correctAnswer && !answeredCorrectly.includes(currentQuestionIndex)) {
         setScore(score + 1);
+        setAnsweredCorrectly([...answeredCorrectly, currentQuestionIndex]);
       }
     }
   
@@ -45,12 +47,14 @@ const TemplateQuiz = ({ quizData }) => {
       setLastQuestionReached(true);
     }
     console.log('Nama:', nama, 'Skor Sementara:', score);
-
+  
     setUserAnswers({
       ...userAnswers,
       [currentQuestionIndex]: selectedAnswer,
     });
   };
+  
+  
   
   const finishQuiz = () => {
     const totalQuestions = quizData.length;
@@ -134,32 +138,28 @@ const TemplateQuiz = ({ quizData }) => {
             )}
 
             </div>
-            <div className="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
-              <button
-                className="btn btn-primary align-items-center btn-danger"
-                type="button"
-                onClick={() => setCurrentQuestionIndex((prevIndex) => Math.max(prevIndex - 1, 0))}
-              >
-                <i className="fa fa-angle-left mt-1 mr-1" style={{ textAlign: 'center' }}></i>&nbsp;Previous
-              </button>
-              {lastQuestionReached ? (
-                <button
-                  className="btn btn-primary border-success align-items-center btn-success"
-                  type="button"
-                  onClick={finishQuiz}
-                >
-                  Selesai
-                </button>
-              ) : (
-                <button
-                  className="btn btn-primary border-success align-items-center btn-success"
-                  type="button"
-                  onClick={handleCheckAnswer}
-                >
-                  Next<i className="fa fa-angle-right ml-2"></i>
-                </button>
-              )}
-            </div>
+            <div className="d-flex justify-content-center">
+  <div className="d-flex flex-row justify-content-between align-items-center p-3 bg-white w-50">
+    {lastQuestionReached ? (
+      <button
+        className="btn btn-primary border-success align-items-center btn-success w-100"
+        type="button"
+        onClick={finishQuiz}
+      >
+        Selesai
+      </button>
+    ) : (
+      <button
+        className="btn btn-primary border-success align-items-center btn-success w-100"
+        type="button"
+        onClick={handleCheckAnswer}
+      >
+        Next<i className="fa fa-angle-right ml-2"></i>
+      </button>
+    )}
+  </div>
+</div>
+
           </div>
         </div>
       </div>

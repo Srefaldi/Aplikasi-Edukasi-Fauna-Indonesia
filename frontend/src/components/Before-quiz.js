@@ -13,6 +13,11 @@ const BeforeQuiz = ({ onStartQuiz }) => {
   };
 
   const handleStartQuiz = () => {
+    if (nama.trim() === '') {
+      alert('Mohon masukkan nama Anda sebelum memulai Quiz.');
+      return;
+    }
+    
     navigate(`/play-quiz/${selectedPackage}`, { state: { nama, selectedPackage } });
   };
 
